@@ -1506,7 +1506,7 @@ struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_
 struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results;
 struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images;
 
-/* "src/orchestrator/orchestrator_neoqcr.py":161
+/* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -1554,7 +1554,7 @@ struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__p
 };
 
 
-/* "src/orchestrator/orchestrator_neoqcr.py":547
+/* "src/orchestrator/orchestrator_neoqcr.py":549
  *     # ------------------------------------------------------------------
  * 
  *     async def process_batch_images(             # <<<<<<<<<<<<<<
@@ -1589,7 +1589,7 @@ struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_
 };
 
 
-/* "src/orchestrator/orchestrator_neoqcr.py":611
+/* "src/orchestrator/orchestrator_neoqcr.py":613
  *     # ------------------------------------------------------------------
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -1602,7 +1602,7 @@ struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2_
 };
 
 
-/* "src/orchestrator/orchestrator_neoqcr.py":646
+/* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -2471,6 +2471,14 @@ static CYTHON_INLINE PyObject* __Pyx_PyLong_MultiplyObjC(PyObject *op1, PyObject
     (inplace ? PyNumber_InPlaceMultiply(op1, op2) : PyNumber_Multiply(op1, op2))
 #endif
 
+/* PyLongBinop.proto */
+#if !CYTHON_COMPILING_IN_PYPY
+static CYTHON_INLINE PyObject* __Pyx_PyLong_TrueDivideObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check);
+#else
+#define __Pyx_PyLong_TrueDivideObjC(op1, op2, intval, inplace, zerodivision_check)\
+    (inplace ? PyNumber_InPlaceTrueDivide(op1, op2) : PyNumber_TrueDivide(op1, op2))
+#endif
+
 /* RaiseTooManyValuesToUnpack.proto */
 static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected);
 
@@ -2953,6 +2961,7 @@ static const char __pyx_k_expiry[] = "' \342\206\222 expiry='";
 static const char __pyx_k_gather[] = "gather";
 static const char __pyx_k_getmrp[] = "getmrp";
 static const char __pyx_k_images[] = "images";
+static const char __pyx_k_labels[] = "labels";
 static const char __pyx_k_merged[] = "merged";
 static const char __pyx_k_module[] = "__module__";
 static const char __pyx_k_ms_avg[] = " ms avg)";
@@ -2978,6 +2987,7 @@ static const char __pyx_k_elapsed[] = "elapsed";
 static const char __pyx_k_getdate[] = "getdate";
 static const char __pyx_k_img_idx[] = "img_idx";
 static const char __pyx_k_img_url[] = "img_url";
+static const char __pyx_k_observe[] = "observe";
 static const char __pyx_k_ocr_raw[] = "ocr_raw";
 static const char __pyx_k_patches[] = "patches";
 static const char __pyx_k_plotted[] = "plotted";
@@ -2985,6 +2995,7 @@ static const char __pyx_k_prepare[] = "__prepare__";
 static const char __pyx_k_replace[] = "replace";
 static const char __pyx_k_results[] = "results";
 static const char __pyx_k_storage[] = "storage";
+static const char __pyx_k_unknown[] = "unknown";
 static const char __pyx_k_user_id[] = "user_id";
 static const char __pyx_k_Datetime[] = "Datetime";
 static const char __pyx_k_E_A_q_ES[] = "\320\004 \240\001\330\010\t\330\014\021\220\021\220!\330\014\020\220\014\230E\240\021\330\010\017\210}\230A\330\014\022\220-\230q\240\002\320\"E\300S\310\001\310\021";
@@ -3066,6 +3077,7 @@ static const char __pyx_k_snap_dates[] = "snap_dates";
 static const char __pyx_k_snap_image[] = "snap_image";
 static const char __pyx_k_startswith[] = "startswith";
 static const char __pyx_k_url_holder[] = "url_holder";
+static const char __pyx_k_VLM_LATENCY[] = "VLM_LATENCY";
 static const char __pyx_k_client_name[] = "client_name";
 static const char __pyx_k_collections[] = "collections";
 static const char __pyx_k_d_2_d_2_d_4[] = "^\\d{2}-\\d{2}-\\d{4}$";
@@ -3190,8 +3202,8 @@ static const char __pyx_k_Error_in_save_metadata[] = "Error in save_metadata: ";
 static const char __pyx_k_Error_processing_image[] = "Error processing image ";
 static const char __pyx_k_TIMER_Regex_extraction[] = "[TIMER] Regex extraction: ";
 static const char __pyx_k_src_data_handler_mongo[] = "src.data_handler.mongo";
+static const char __pyx_k_src_utils_prom_metrics[] = "src.utils.prom_metrics";
 static const char __pyx_k_Failed_to_save_metadata[] = "Failed to save metadata: ";
-static const char __pyx_k_http_neo_qcr_model_8093[] = "http://neo-qcr-model:8093";
 static const char __pyx_k_src_utils_session_cache[] = "src.utils.session_cache";
 static const char __pyx_k_ModelInitializationError[] = "ModelInitializationError";
 static const char __pyx_k_No_valid_images_provided[] = "No valid images provided";
@@ -3249,6 +3261,7 @@ static const char __pyx_k_Stream_MULTICAPTURE_Case_B_iden[] = "[Stream][MULTICAP
 static const char __pyx_k_Stream_Metadata_extraction_erro[] = "[Stream] Metadata extraction error for raw='";
 static const char __pyx_k_a_D_Q_nAXQ_a_E_Ba_81_j_A_2_NcQR[] = "\320\004\036\230a\330\010\t\330\014\021\220\021\220!\330\014\031\230\021\330\014\024\220D\230\005\230Q\360\006\000\r\021\220\016\230n\250A\250X\260Q\330\014\020\220\013\230;\240a\330\014\021\220\021\220\"\320\024(\250\004\250E\260\023\260B\260a\340\014\021\220\021\220!\330\014\020\220\n\230'\240\021\330\014\020\220\013\2308\2401\330\014\020\220\016\230j\250\001\330\010\017\210}\230A\330\014\022\320\022*\250!\2502\320-N\310c\320QR\320RS";
 static const char __pyx_k_captured_again_keeping_as_expir[] = "' captured again; keeping as expiry";
+static const char __pyx_k_https_sentinel_compute_neophyte[] = "https://sentinel-compute.neophyte.live/neo-vlm";
 static const char __pyx_k_save_metadata_Using_resolved_ex[] = "[save_metadata] Using resolved expiry date for DB: ";
 static const char __pyx_k_save_metadata_Waiting_for_paral[] = "[save_metadata] Waiting for parallel upload URL...";
 static const char __pyx_k_saved_with_capture_type_multica[] = " saved with capture_type=multicapture";
@@ -3353,7 +3366,7 @@ typedef struct {
   PyObject *__pyx_slice[2];
   PyObject *__pyx_tuple[6];
   PyObject *__pyx_codeobj_tab[15];
-  PyObject *__pyx_string_tab[422];
+  PyObject *__pyx_string_tab[427];
   PyObject *__pyx_float_0_0;
   PyObject *__pyx_float_0_1;
   PyObject *__pyx_int_0;
@@ -3548,309 +3561,314 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_kp_u_Unknown_image_type __pyx_string_tab[116]
 #define __pyx_kp_u_Upload_Done_in __pyx_string_tab[117]
 #define __pyx_kp_u_Upload_Failed __pyx_string_tab[118]
-#define __pyx_n_u_ValueError __pyx_string_tab[119]
-#define __pyx_n_u_Vllm_inference __pyx_string_tab[120]
-#define __pyx_kp_u__10 __pyx_string_tab[121]
-#define __pyx_kp_u__11 __pyx_string_tab[122]
-#define __pyx_kp_u__12 __pyx_string_tab[123]
-#define __pyx_n_u__14 __pyx_string_tab[124]
-#define __pyx_kp_u__2 __pyx_string_tab[125]
-#define __pyx_kp_u__3 __pyx_string_tab[126]
-#define __pyx_kp_u__4 __pyx_string_tab[127]
-#define __pyx_kp_u__5 __pyx_string_tab[128]
-#define __pyx_kp_u__6 __pyx_string_tab[129]
-#define __pyx_kp_u__7 __pyx_string_tab[130]
-#define __pyx_kp_u__8 __pyx_string_tab[131]
-#define __pyx_kp_u__9 __pyx_string_tab[132]
-#define __pyx_kp_u_add_note __pyx_string_tab[133]
-#define __pyx_n_u_all_batch __pyx_string_tab[134]
-#define __pyx_n_u_all_dates __pyx_string_tab[135]
-#define __pyx_n_u_all_mrp __pyx_string_tab[136]
-#define __pyx_n_u_api_url __pyx_string_tab[137]
-#define __pyx_n_u_apply_ean_corrections_to_metadat __pyx_string_tab[138]
-#define __pyx_n_u_asyncio __pyx_string_tab[139]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[140]
-#define __pyx_n_u_await __pyx_string_tab[141]
-#define __pyx_n_u_azure __pyx_string_tab[142]
-#define __pyx_kp_u_b_months_years_days_weeks_b __pyx_string_tab[143]
-#define __pyx_kp_u_batch_no __pyx_string_tab[144]
-#define __pyx_n_u_batch_no_2 __pyx_string_tab[145]
-#define __pyx_n_u_blob_name __pyx_string_tab[146]
-#define __pyx_n_u_bool __pyx_string_tab[147]
-#define __pyx_n_u_build_blob_name __pyx_string_tab[148]
-#define __pyx_n_u_calculate_expiry_date __pyx_string_tab[149]
-#define __pyx_n_u_capture_type __pyx_string_tab[150]
-#define __pyx_kp_u_captured_again_keeping_as_expir __pyx_string_tab[151]
-#define __pyx_n_u_cdn_url __pyx_string_tab[152]
-#define __pyx_n_u_check_env_doc __pyx_string_tab[153]
-#define __pyx_n_u_check_result __pyx_string_tab[154]
-#define __pyx_n_u_class_getitem __pyx_string_tab[155]
-#define __pyx_kp_u_client __pyx_string_tab[156]
-#define __pyx_n_u_client_name __pyx_string_tab[157]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[158]
-#define __pyx_n_u_close __pyx_string_tab[159]
-#define __pyx_n_u_collections __pyx_string_tab[160]
-#define __pyx_n_u_complete __pyx_string_tab[161]
-#define __pyx_n_u_copy __pyx_string_tab[162]
-#define __pyx_n_u_create_env_data __pyx_string_tab[163]
-#define __pyx_n_u_create_env_doc __pyx_string_tab[164]
-#define __pyx_n_u_create_metadata __pyx_string_tab[165]
-#define __pyx_n_u_created_id __pyx_string_tab[166]
-#define __pyx_kp_u_created_successfully __pyx_string_tab[167]
-#define __pyx_n_u_d __pyx_string_tab[168]
-#define __pyx_n_u_d1 __pyx_string_tab[169]
-#define __pyx_n_u_d2 __pyx_string_tab[170]
-#define __pyx_kp_u_d_2_d_2_d_4 __pyx_string_tab[171]
-#define __pyx_kp_u_d_m_Y __pyx_string_tab[172]
-#define __pyx_n_u_daemon __pyx_string_tab[173]
-#define __pyx_n_u_data __pyx_string_tab[174]
-#define __pyx_n_u_database __pyx_string_tab[175]
-#define __pyx_n_u_dates __pyx_string_tab[176]
-#define __pyx_kp_u_dates_2 __pyx_string_tab[177]
-#define __pyx_n_u_datetime __pyx_string_tab[178]
-#define __pyx_n_u_deepcopy __pyx_string_tab[179]
-#define __pyx_n_u_device_id __pyx_string_tab[180]
-#define __pyx_kp_u_disable __pyx_string_tab[181]
-#define __pyx_n_u_doc __pyx_string_tab[182]
-#define __pyx_n_u_dotenv __pyx_string_tab[183]
-#define __pyx_n_u_dt __pyx_string_tab[184]
-#define __pyx_n_u_e __pyx_string_tab[185]
-#define __pyx_n_u_e2e __pyx_string_tab[186]
-#define __pyx_n_u_ean_code __pyx_string_tab[187]
-#define __pyx_n_u_ean_corrections __pyx_string_tab[188]
-#define __pyx_n_u_elapsed __pyx_string_tab[189]
-#define __pyx_n_u_elapsed_ms __pyx_string_tab[190]
-#define __pyx_kp_u_enable __pyx_string_tab[191]
-#define __pyx_n_u_enumerate __pyx_string_tab[192]
-#define __pyx_n_u_env_data __pyx_string_tab[193]
-#define __pyx_n_u_env_id __pyx_string_tab[194]
-#define __pyx_kp_u_env_id_is_not_defined_skipping_D __pyx_string_tab[195]
-#define __pyx_n_u_exc __pyx_string_tab[196]
-#define __pyx_n_u_exp_date __pyx_string_tab[197]
-#define __pyx_kp_u_expiry __pyx_string_tab[198]
-#define __pyx_kp_u_expiry_2 __pyx_string_tab[199]
-#define __pyx_n_u_expiry_date __pyx_string_tab[200]
-#define __pyx_n_u_ext __pyx_string_tab[201]
-#define __pyx_n_u_extract_img_details __pyx_string_tab[202]
-#define __pyx_n_u_extract_metadata __pyx_string_tab[203]
-#define __pyx_n_u_filename __pyx_string_tab[204]
-#define __pyx_n_u_final_id __pyx_string_tab[205]
-#define __pyx_n_u_final_metadata_id __pyx_string_tab[206]
-#define __pyx_n_u_format_datetime_array __pyx_string_tab[207]
-#define __pyx_n_u_func __pyx_string_tab[208]
-#define __pyx_n_u_gather __pyx_string_tab[209]
-#define __pyx_kp_u_gc __pyx_string_tab[210]
-#define __pyx_n_u_get __pyx_string_tab[211]
-#define __pyx_n_u_get_batch_number __pyx_string_tab[212]
-#define __pyx_n_u_get_processed_data __pyx_string_tab[213]
-#define __pyx_n_u_getbatchno __pyx_string_tab[214]
-#define __pyx_n_u_getdate __pyx_string_tab[215]
-#define __pyx_n_u_getmrp __pyx_string_tab[216]
-#define __pyx_kp_u_http_neo_qcr_model_8093 __pyx_string_tab[217]
-#define __pyx_n_u_i __pyx_string_tab[218]
-#define __pyx_n_u_image __pyx_string_tab[219]
-#define __pyx_n_u_image_copy __pyx_string_tab[220]
-#define __pyx_n_u_image_data __pyx_string_tab[221]
-#define __pyx_n_u_image_name __pyx_string_tab[222]
-#define __pyx_n_u_image_processor __pyx_string_tab[223]
-#define __pyx_n_u_images __pyx_string_tab[224]
-#define __pyx_kp_u_images_2 __pyx_string_tab[225]
-#define __pyx_n_u_img __pyx_string_tab[226]
-#define __pyx_n_u_img_blob __pyx_string_tab[227]
-#define __pyx_n_u_img_idx __pyx_string_tab[228]
-#define __pyx_n_u_img_name __pyx_string_tab[229]
-#define __pyx_n_u_img_url __pyx_string_tab[230]
-#define __pyx_kp_u_in __pyx_string_tab[231]
-#define __pyx_n_u_inference_temp __pyx_string_tab[232]
-#define __pyx_n_u_init __pyx_string_tab[233]
-#define __pyx_n_u_init_database __pyx_string_tab[234]
-#define __pyx_n_u_init_models __pyx_string_tab[235]
-#define __pyx_n_u_init_utils __pyx_string_tab[236]
-#define __pyx_n_u_initialize __pyx_string_tab[237]
-#define __pyx_n_u_initializing __pyx_string_tab[238]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[239]
-#define __pyx_n_u_is_streaming __pyx_string_tab[240]
-#define __pyx_kp_u_isenabled __pyx_string_tab[241]
-#define __pyx_n_u_items __pyx_string_tab[242]
-#define __pyx_n_u_jpg __pyx_string_tab[243]
-#define __pyx_n_u_key __pyx_string_tab[244]
-#define __pyx_n_u_label __pyx_string_tab[245]
-#define __pyx_n_u_load_dotenv __pyx_string_tab[246]
-#define __pyx_n_u_lower __pyx_string_tab[247]
-#define __pyx_n_u_main __pyx_string_tab[248]
-#define __pyx_n_u_main_image __pyx_string_tab[249]
-#define __pyx_n_u_majority __pyx_string_tab[250]
-#define __pyx_n_u_match __pyx_string_tab[251]
-#define __pyx_n_u_merge_multicapture_metadata __pyx_string_tab[252]
-#define __pyx_n_u_merge_stream_results __pyx_string_tab[253]
-#define __pyx_n_u_merged __pyx_string_tab[254]
-#define __pyx_n_u_metaclass __pyx_string_tab[255]
-#define __pyx_n_u_metadata __pyx_string_tab[256]
-#define __pyx_n_u_metadata_id __pyx_string_tab[257]
-#define __pyx_kp_u_mfg __pyx_string_tab[258]
-#define __pyx_kp_u_mfg_2 __pyx_string_tab[259]
-#define __pyx_n_u_mfg_date __pyx_string_tab[260]
-#define __pyx_n_u_mfg_exp_dates __pyx_string_tab[261]
-#define __pyx_kp_u_model_loaded_in __pyx_string_tab[262]
-#define __pyx_n_u_model_path __pyx_string_tab[263]
-#define __pyx_n_u_model_time_ms __pyx_string_tab[264]
-#define __pyx_n_u_module __pyx_string_tab[265]
-#define __pyx_n_u_most_common __pyx_string_tab[266]
-#define __pyx_n_u_mro_entries __pyx_string_tab[267]
-#define __pyx_n_u_mrp __pyx_string_tab[268]
-#define __pyx_kp_u_ms __pyx_string_tab[269]
-#define __pyx_kp_u_ms_2 __pyx_string_tab[270]
-#define __pyx_kp_u_ms_avg __pyx_string_tab[271]
-#define __pyx_n_u_multicapture __pyx_string_tab[272]
-#define __pyx_n_u_name __pyx_string_tab[273]
-#define __pyx_n_u_nan __pyx_string_tab[274]
-#define __pyx_n_u_new_data __pyx_string_tab[275]
-#define __pyx_kp_u_new_date_as_mfg __pyx_string_tab[276]
-#define __pyx_n_u_new_expiry __pyx_string_tab[277]
-#define __pyx_kp_u_new_period __pyx_string_tab[278]
-#define __pyx_n_u_next __pyx_string_tab[279]
-#define __pyx_n_u_non_null __pyx_string_tab[280]
-#define __pyx_n_u_ocr __pyx_string_tab[281]
-#define __pyx_n_u_ocr_query __pyx_string_tab[282]
-#define __pyx_n_u_ocr_raw __pyx_string_tab[283]
-#define __pyx_n_u_ocr_raw_output __pyx_string_tab[284]
-#define __pyx_n_u_ocr_result __pyx_string_tab[285]
-#define __pyx_n_u_ocr_results __pyx_string_tab[286]
-#define __pyx_n_u_original __pyx_string_tab[287]
-#define __pyx_n_u_original_blob __pyx_string_tab[288]
-#define __pyx_kp_u_parallel_Qwen_calls __pyx_string_tab[289]
-#define __pyx_n_u_parsed_exp __pyx_string_tab[290]
-#define __pyx_n_u_patch __pyx_string_tab[291]
-#define __pyx_n_u_patches __pyx_string_tab[292]
-#define __pyx_kp_u_patches_env_id __pyx_string_tab[293]
-#define __pyx_n_u_perf_counter __pyx_string_tab[294]
-#define __pyx_n_u_pid __pyx_string_tab[295]
-#define __pyx_n_u_plotted __pyx_string_tab[296]
-#define __pyx_n_u_plotted_2 __pyx_string_tab[297]
-#define __pyx_n_u_plt_blob __pyx_string_tab[298]
-#define __pyx_n_u_pop __pyx_string_tab[299]
-#define __pyx_n_u_prepare __pyx_string_tab[300]
-#define __pyx_n_u_print __pyx_string_tab[301]
-#define __pyx_n_u_print_exc __pyx_string_tab[302]
-#define __pyx_n_u_print_image_info __pyx_string_tab[303]
-#define __pyx_n_u_process_batch __pyx_string_tab[304]
-#define __pyx_n_u_process_batch_images __pyx_string_tab[305]
-#define __pyx_n_u_process_dates __pyx_string_tab[306]
-#define __pyx_n_u_process_image __pyx_string_tab[307]
-#define __pyx_n_u_process_image_get_metadata __pyx_string_tab[308]
-#define __pyx_n_u_process_image_save_metadata __pyx_string_tab[309]
-#define __pyx_n_u_process_mrp __pyx_string_tab[310]
-#define __pyx_n_u_process_stream_images __pyx_string_tab[311]
-#define __pyx_n_u_processed_data __pyx_string_tab[312]
-#define __pyx_n_u_public_url __pyx_string_tab[313]
-#define __pyx_n_u_qualname __pyx_string_tab[314]
-#define __pyx_n_u_query __pyx_string_tab[315]
-#define __pyx_n_u_qwen_model __pyx_string_tab[316]
-#define __pyx_n_u_range __pyx_string_tab[317]
-#define __pyx_n_u_raw __pyx_string_tab[318]
-#define __pyx_n_u_raw_outputs __pyx_string_tab[319]
-#define __pyx_n_u_re __pyx_string_tab[320]
-#define __pyx_n_u_re_2 __pyx_string_tab[321]
-#define __pyx_n_u_rec_metadata_id __pyx_string_tab[322]
-#define __pyx_n_u_recapture_flag __pyx_string_tab[323]
-#define __pyx_n_u_reliance __pyx_string_tab[324]
-#define __pyx_n_u_remove_metadata __pyx_string_tab[325]
-#define __pyx_n_u_replace __pyx_string_tab[326]
-#define __pyx_n_u_request_id __pyx_string_tab[327]
-#define __pyx_n_u_res __pyx_string_tab[328]
-#define __pyx_n_u_resolved __pyx_string_tab[329]
-#define __pyx_n_u_resolved_exp_str __pyx_string_tab[330]
-#define __pyx_n_u_resolved_expiry __pyx_string_tab[331]
-#define __pyx_n_u_result __pyx_string_tab[332]
-#define __pyx_n_u_results __pyx_string_tab[333]
-#define __pyx_n_u_return __pyx_string_tab[334]
-#define __pyx_n_u_return_exceptions __pyx_string_tab[335]
-#define __pyx_n_u_round __pyx_string_tab[336]
-#define __pyx_n_u_s __pyx_string_tab[337]
-#define __pyx_kp_u_s_url __pyx_string_tab[338]
-#define __pyx_kp_u_save_metadata_Uploading_image __pyx_string_tab[339]
-#define __pyx_kp_u_save_metadata_Using_resolved_ex __pyx_string_tab[340]
-#define __pyx_kp_u_save_metadata_Waiting_for_paral __pyx_string_tab[341]
-#define __pyx_kp_u_save_metadata_img_url __pyx_string_tab[342]
-#define __pyx_n_u_save_session __pyx_string_tab[343]
-#define __pyx_kp_u_saved_with_capture_type_multica __pyx_string_tab[344]
-#define __pyx_n_u_scan_duration __pyx_string_tab[345]
-#define __pyx_n_u_scan_duration_sec __pyx_string_tab[346]
-#define __pyx_n_u_sdk_data_process __pyx_string_tab[347]
-#define __pyx_n_u_search __pyx_string_tab[348]
-#define __pyx_n_u_seen_dates __pyx_string_tab[349]
-#define __pyx_n_u_seen_strs __pyx_string_tab[350]
-#define __pyx_n_u_self __pyx_string_tab[351]
-#define __pyx_n_u_send __pyx_string_tab[352]
-#define __pyx_n_u_session_cache __pyx_string_tab[353]
-#define __pyx_n_u_session_expiry __pyx_string_tab[354]
-#define __pyx_n_u_session_id __pyx_string_tab[355]
-#define __pyx_n_u_session_meta __pyx_string_tab[356]
-#define __pyx_n_u_session_mfg __pyx_string_tab[357]
-#define __pyx_n_u_set __pyx_string_tab[358]
-#define __pyx_n_u_set_name __pyx_string_tab[359]
-#define __pyx_n_u_shape __pyx_string_tab[360]
-#define __pyx_n_u_shipsy __pyx_string_tab[361]
-#define __pyx_n_u_size __pyx_string_tab[362]
-#define __pyx_n_u_skip_image_upload __pyx_string_tab[363]
-#define __pyx_n_u_sleep __pyx_string_tab[364]
-#define __pyx_n_u_snap_data __pyx_string_tab[365]
-#define __pyx_n_u_snap_dates __pyx_string_tab[366]
-#define __pyx_n_u_snap_image __pyx_string_tab[367]
-#define __pyx_n_u_snap_model_time_ms __pyx_string_tab[368]
-#define __pyx_n_u_snap_ocr_raw __pyx_string_tab[369]
-#define __pyx_n_u_snapshot __pyx_string_tab[370]
-#define __pyx_n_u_spec __pyx_string_tab[371]
-#define __pyx_kp_u_src_configs_env __pyx_string_tab[372]
-#define __pyx_n_u_src_core_think_machine_learning __pyx_string_tab[373]
-#define __pyx_n_u_src_core_think_machine_learning_2 __pyx_string_tab[374]
-#define __pyx_n_u_src_core_think_machine_learning_3 __pyx_string_tab[375]
-#define __pyx_n_u_src_core_think_machine_learning_4 __pyx_string_tab[376]
-#define __pyx_n_u_src_core_think_machine_learning_5 __pyx_string_tab[377]
-#define __pyx_n_u_src_data_handler_mongo __pyx_string_tab[378]
-#define __pyx_kp_u_src_models_checkpoint_5200_aug_2 __pyx_string_tab[379]
-#define __pyx_n_u_src_orchestrator_orchestrator_ne __pyx_string_tab[380]
-#define __pyx_kp_u_src_orchestrator_orchestrator_ne_2 __pyx_string_tab[381]
-#define __pyx_n_u_src_utils_datetime __pyx_string_tab[382]
-#define __pyx_n_u_src_utils_image_processor __pyx_string_tab[383]
-#define __pyx_n_u_src_utils_metadata_processor __pyx_string_tab[384]
-#define __pyx_n_u_src_utils_monitoring __pyx_string_tab[385]
-#define __pyx_n_u_src_utils_session_cache __pyx_string_tab[386]
-#define __pyx_n_u_src_utils_storage_router __pyx_string_tab[387]
-#define __pyx_n_u_start __pyx_string_tab[388]
-#define __pyx_n_u_startswith __pyx_string_tab[389]
-#define __pyx_n_u_staticmethod __pyx_string_tab[390]
-#define __pyx_n_u_storage __pyx_string_tab[391]
-#define __pyx_n_u_store __pyx_string_tab[392]
-#define __pyx_n_u_store_id __pyx_string_tab[393]
-#define __pyx_n_u_str __pyx_string_tab[394]
-#define __pyx_n_u_str_to_datetime __pyx_string_tab[395]
-#define __pyx_n_u_strptime __pyx_string_tab[396]
-#define __pyx_n_u_t0 __pyx_string_tab[397]
-#define __pyx_n_u_target __pyx_string_tab[398]
-#define __pyx_n_u_task_idx __pyx_string_tab[399]
-#define __pyx_n_u_tasks __pyx_string_tab[400]
-#define __pyx_n_u_test __pyx_string_tab[401]
-#define __pyx_n_u_threading __pyx_string_tab[402]
-#define __pyx_n_u_throw __pyx_string_tab[403]
-#define __pyx_n_u_time __pyx_string_tab[404]
-#define __pyx_n_u_time_calculate __pyx_string_tab[405]
-#define __pyx_n_u_total_ocr_time __pyx_string_tab[406]
-#define __pyx_n_u_traceback __pyx_string_tab[407]
-#define __pyx_kp_u_trends_beauty __pyx_string_tab[408]
-#define __pyx_n_u_trends_beauty_2 __pyx_string_tab[409]
-#define __pyx_n_u_typing __pyx_string_tab[410]
-#define __pyx_n_u_upload_image __pyx_string_tab[411]
-#define __pyx_n_u_upload_result __pyx_string_tab[412]
-#define __pyx_n_u_upload_worker __pyx_string_tab[413]
-#define __pyx_n_u_url_holder __pyx_string_tab[414]
-#define __pyx_n_u_user_id __pyx_string_tab[415]
-#define __pyx_n_u_v __pyx_string_tab[416]
-#define __pyx_n_u_valid_indices __pyx_string_tab[417]
-#define __pyx_n_u_value __pyx_string_tab[418]
-#define __pyx_n_u_values __pyx_string_tab[419]
-#define __pyx_kp_u_w_x_h __pyx_string_tab[420]
-#define __pyx_kp_u_what_is_the_maximum_retail_price __pyx_string_tab[421]
+#define __pyx_n_u_VLM_LATENCY __pyx_string_tab[119]
+#define __pyx_n_u_ValueError __pyx_string_tab[120]
+#define __pyx_n_u_Vllm_inference __pyx_string_tab[121]
+#define __pyx_kp_u__10 __pyx_string_tab[122]
+#define __pyx_kp_u__11 __pyx_string_tab[123]
+#define __pyx_kp_u__12 __pyx_string_tab[124]
+#define __pyx_n_u__14 __pyx_string_tab[125]
+#define __pyx_kp_u__2 __pyx_string_tab[126]
+#define __pyx_kp_u__3 __pyx_string_tab[127]
+#define __pyx_kp_u__4 __pyx_string_tab[128]
+#define __pyx_kp_u__5 __pyx_string_tab[129]
+#define __pyx_kp_u__6 __pyx_string_tab[130]
+#define __pyx_kp_u__7 __pyx_string_tab[131]
+#define __pyx_kp_u__8 __pyx_string_tab[132]
+#define __pyx_kp_u__9 __pyx_string_tab[133]
+#define __pyx_kp_u_add_note __pyx_string_tab[134]
+#define __pyx_n_u_all_batch __pyx_string_tab[135]
+#define __pyx_n_u_all_dates __pyx_string_tab[136]
+#define __pyx_n_u_all_mrp __pyx_string_tab[137]
+#define __pyx_n_u_api_url __pyx_string_tab[138]
+#define __pyx_n_u_apply_ean_corrections_to_metadat __pyx_string_tab[139]
+#define __pyx_n_u_asyncio __pyx_string_tab[140]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[141]
+#define __pyx_n_u_await __pyx_string_tab[142]
+#define __pyx_n_u_azure __pyx_string_tab[143]
+#define __pyx_kp_u_b_months_years_days_weeks_b __pyx_string_tab[144]
+#define __pyx_kp_u_batch_no __pyx_string_tab[145]
+#define __pyx_n_u_batch_no_2 __pyx_string_tab[146]
+#define __pyx_n_u_blob_name __pyx_string_tab[147]
+#define __pyx_n_u_bool __pyx_string_tab[148]
+#define __pyx_n_u_build_blob_name __pyx_string_tab[149]
+#define __pyx_n_u_calculate_expiry_date __pyx_string_tab[150]
+#define __pyx_n_u_capture_type __pyx_string_tab[151]
+#define __pyx_kp_u_captured_again_keeping_as_expir __pyx_string_tab[152]
+#define __pyx_n_u_cdn_url __pyx_string_tab[153]
+#define __pyx_n_u_check_env_doc __pyx_string_tab[154]
+#define __pyx_n_u_check_result __pyx_string_tab[155]
+#define __pyx_n_u_class_getitem __pyx_string_tab[156]
+#define __pyx_kp_u_client __pyx_string_tab[157]
+#define __pyx_n_u_client_name __pyx_string_tab[158]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[159]
+#define __pyx_n_u_close __pyx_string_tab[160]
+#define __pyx_n_u_collections __pyx_string_tab[161]
+#define __pyx_n_u_complete __pyx_string_tab[162]
+#define __pyx_n_u_copy __pyx_string_tab[163]
+#define __pyx_n_u_create_env_data __pyx_string_tab[164]
+#define __pyx_n_u_create_env_doc __pyx_string_tab[165]
+#define __pyx_n_u_create_metadata __pyx_string_tab[166]
+#define __pyx_n_u_created_id __pyx_string_tab[167]
+#define __pyx_kp_u_created_successfully __pyx_string_tab[168]
+#define __pyx_n_u_d __pyx_string_tab[169]
+#define __pyx_n_u_d1 __pyx_string_tab[170]
+#define __pyx_n_u_d2 __pyx_string_tab[171]
+#define __pyx_kp_u_d_2_d_2_d_4 __pyx_string_tab[172]
+#define __pyx_kp_u_d_m_Y __pyx_string_tab[173]
+#define __pyx_n_u_daemon __pyx_string_tab[174]
+#define __pyx_n_u_data __pyx_string_tab[175]
+#define __pyx_n_u_database __pyx_string_tab[176]
+#define __pyx_n_u_dates __pyx_string_tab[177]
+#define __pyx_kp_u_dates_2 __pyx_string_tab[178]
+#define __pyx_n_u_datetime __pyx_string_tab[179]
+#define __pyx_n_u_deepcopy __pyx_string_tab[180]
+#define __pyx_n_u_device_id __pyx_string_tab[181]
+#define __pyx_kp_u_disable __pyx_string_tab[182]
+#define __pyx_n_u_doc __pyx_string_tab[183]
+#define __pyx_n_u_dotenv __pyx_string_tab[184]
+#define __pyx_n_u_dt __pyx_string_tab[185]
+#define __pyx_n_u_e __pyx_string_tab[186]
+#define __pyx_n_u_e2e __pyx_string_tab[187]
+#define __pyx_n_u_ean_code __pyx_string_tab[188]
+#define __pyx_n_u_ean_corrections __pyx_string_tab[189]
+#define __pyx_n_u_elapsed __pyx_string_tab[190]
+#define __pyx_n_u_elapsed_ms __pyx_string_tab[191]
+#define __pyx_kp_u_enable __pyx_string_tab[192]
+#define __pyx_n_u_enumerate __pyx_string_tab[193]
+#define __pyx_n_u_env_data __pyx_string_tab[194]
+#define __pyx_n_u_env_id __pyx_string_tab[195]
+#define __pyx_kp_u_env_id_is_not_defined_skipping_D __pyx_string_tab[196]
+#define __pyx_n_u_exc __pyx_string_tab[197]
+#define __pyx_n_u_exp_date __pyx_string_tab[198]
+#define __pyx_kp_u_expiry __pyx_string_tab[199]
+#define __pyx_kp_u_expiry_2 __pyx_string_tab[200]
+#define __pyx_n_u_expiry_date __pyx_string_tab[201]
+#define __pyx_n_u_ext __pyx_string_tab[202]
+#define __pyx_n_u_extract_img_details __pyx_string_tab[203]
+#define __pyx_n_u_extract_metadata __pyx_string_tab[204]
+#define __pyx_n_u_filename __pyx_string_tab[205]
+#define __pyx_n_u_final_id __pyx_string_tab[206]
+#define __pyx_n_u_final_metadata_id __pyx_string_tab[207]
+#define __pyx_n_u_format_datetime_array __pyx_string_tab[208]
+#define __pyx_n_u_func __pyx_string_tab[209]
+#define __pyx_n_u_gather __pyx_string_tab[210]
+#define __pyx_kp_u_gc __pyx_string_tab[211]
+#define __pyx_n_u_get __pyx_string_tab[212]
+#define __pyx_n_u_get_batch_number __pyx_string_tab[213]
+#define __pyx_n_u_get_processed_data __pyx_string_tab[214]
+#define __pyx_n_u_getbatchno __pyx_string_tab[215]
+#define __pyx_n_u_getdate __pyx_string_tab[216]
+#define __pyx_n_u_getmrp __pyx_string_tab[217]
+#define __pyx_kp_u_https_sentinel_compute_neophyte __pyx_string_tab[218]
+#define __pyx_n_u_i __pyx_string_tab[219]
+#define __pyx_n_u_image __pyx_string_tab[220]
+#define __pyx_n_u_image_copy __pyx_string_tab[221]
+#define __pyx_n_u_image_data __pyx_string_tab[222]
+#define __pyx_n_u_image_name __pyx_string_tab[223]
+#define __pyx_n_u_image_processor __pyx_string_tab[224]
+#define __pyx_n_u_images __pyx_string_tab[225]
+#define __pyx_kp_u_images_2 __pyx_string_tab[226]
+#define __pyx_n_u_img __pyx_string_tab[227]
+#define __pyx_n_u_img_blob __pyx_string_tab[228]
+#define __pyx_n_u_img_idx __pyx_string_tab[229]
+#define __pyx_n_u_img_name __pyx_string_tab[230]
+#define __pyx_n_u_img_url __pyx_string_tab[231]
+#define __pyx_kp_u_in __pyx_string_tab[232]
+#define __pyx_n_u_inference_temp __pyx_string_tab[233]
+#define __pyx_n_u_init __pyx_string_tab[234]
+#define __pyx_n_u_init_database __pyx_string_tab[235]
+#define __pyx_n_u_init_models __pyx_string_tab[236]
+#define __pyx_n_u_init_utils __pyx_string_tab[237]
+#define __pyx_n_u_initialize __pyx_string_tab[238]
+#define __pyx_n_u_initializing __pyx_string_tab[239]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[240]
+#define __pyx_n_u_is_streaming __pyx_string_tab[241]
+#define __pyx_kp_u_isenabled __pyx_string_tab[242]
+#define __pyx_n_u_items __pyx_string_tab[243]
+#define __pyx_n_u_jpg __pyx_string_tab[244]
+#define __pyx_n_u_key __pyx_string_tab[245]
+#define __pyx_n_u_label __pyx_string_tab[246]
+#define __pyx_n_u_labels __pyx_string_tab[247]
+#define __pyx_n_u_load_dotenv __pyx_string_tab[248]
+#define __pyx_n_u_lower __pyx_string_tab[249]
+#define __pyx_n_u_main __pyx_string_tab[250]
+#define __pyx_n_u_main_image __pyx_string_tab[251]
+#define __pyx_n_u_majority __pyx_string_tab[252]
+#define __pyx_n_u_match __pyx_string_tab[253]
+#define __pyx_n_u_merge_multicapture_metadata __pyx_string_tab[254]
+#define __pyx_n_u_merge_stream_results __pyx_string_tab[255]
+#define __pyx_n_u_merged __pyx_string_tab[256]
+#define __pyx_n_u_metaclass __pyx_string_tab[257]
+#define __pyx_n_u_metadata __pyx_string_tab[258]
+#define __pyx_n_u_metadata_id __pyx_string_tab[259]
+#define __pyx_kp_u_mfg __pyx_string_tab[260]
+#define __pyx_kp_u_mfg_2 __pyx_string_tab[261]
+#define __pyx_n_u_mfg_date __pyx_string_tab[262]
+#define __pyx_n_u_mfg_exp_dates __pyx_string_tab[263]
+#define __pyx_kp_u_model_loaded_in __pyx_string_tab[264]
+#define __pyx_n_u_model_path __pyx_string_tab[265]
+#define __pyx_n_u_model_time_ms __pyx_string_tab[266]
+#define __pyx_n_u_module __pyx_string_tab[267]
+#define __pyx_n_u_most_common __pyx_string_tab[268]
+#define __pyx_n_u_mro_entries __pyx_string_tab[269]
+#define __pyx_n_u_mrp __pyx_string_tab[270]
+#define __pyx_kp_u_ms __pyx_string_tab[271]
+#define __pyx_kp_u_ms_2 __pyx_string_tab[272]
+#define __pyx_kp_u_ms_avg __pyx_string_tab[273]
+#define __pyx_n_u_multicapture __pyx_string_tab[274]
+#define __pyx_n_u_name __pyx_string_tab[275]
+#define __pyx_n_u_nan __pyx_string_tab[276]
+#define __pyx_n_u_new_data __pyx_string_tab[277]
+#define __pyx_kp_u_new_date_as_mfg __pyx_string_tab[278]
+#define __pyx_n_u_new_expiry __pyx_string_tab[279]
+#define __pyx_kp_u_new_period __pyx_string_tab[280]
+#define __pyx_n_u_next __pyx_string_tab[281]
+#define __pyx_n_u_non_null __pyx_string_tab[282]
+#define __pyx_n_u_observe __pyx_string_tab[283]
+#define __pyx_n_u_ocr __pyx_string_tab[284]
+#define __pyx_n_u_ocr_query __pyx_string_tab[285]
+#define __pyx_n_u_ocr_raw __pyx_string_tab[286]
+#define __pyx_n_u_ocr_raw_output __pyx_string_tab[287]
+#define __pyx_n_u_ocr_result __pyx_string_tab[288]
+#define __pyx_n_u_ocr_results __pyx_string_tab[289]
+#define __pyx_n_u_original __pyx_string_tab[290]
+#define __pyx_n_u_original_blob __pyx_string_tab[291]
+#define __pyx_kp_u_parallel_Qwen_calls __pyx_string_tab[292]
+#define __pyx_n_u_parsed_exp __pyx_string_tab[293]
+#define __pyx_n_u_patch __pyx_string_tab[294]
+#define __pyx_n_u_patches __pyx_string_tab[295]
+#define __pyx_kp_u_patches_env_id __pyx_string_tab[296]
+#define __pyx_n_u_perf_counter __pyx_string_tab[297]
+#define __pyx_n_u_pid __pyx_string_tab[298]
+#define __pyx_n_u_plotted __pyx_string_tab[299]
+#define __pyx_n_u_plotted_2 __pyx_string_tab[300]
+#define __pyx_n_u_plt_blob __pyx_string_tab[301]
+#define __pyx_n_u_pop __pyx_string_tab[302]
+#define __pyx_n_u_prepare __pyx_string_tab[303]
+#define __pyx_n_u_print __pyx_string_tab[304]
+#define __pyx_n_u_print_exc __pyx_string_tab[305]
+#define __pyx_n_u_print_image_info __pyx_string_tab[306]
+#define __pyx_n_u_process_batch __pyx_string_tab[307]
+#define __pyx_n_u_process_batch_images __pyx_string_tab[308]
+#define __pyx_n_u_process_dates __pyx_string_tab[309]
+#define __pyx_n_u_process_image __pyx_string_tab[310]
+#define __pyx_n_u_process_image_get_metadata __pyx_string_tab[311]
+#define __pyx_n_u_process_image_save_metadata __pyx_string_tab[312]
+#define __pyx_n_u_process_mrp __pyx_string_tab[313]
+#define __pyx_n_u_process_stream_images __pyx_string_tab[314]
+#define __pyx_n_u_processed_data __pyx_string_tab[315]
+#define __pyx_n_u_public_url __pyx_string_tab[316]
+#define __pyx_n_u_qualname __pyx_string_tab[317]
+#define __pyx_n_u_query __pyx_string_tab[318]
+#define __pyx_n_u_qwen_model __pyx_string_tab[319]
+#define __pyx_n_u_range __pyx_string_tab[320]
+#define __pyx_n_u_raw __pyx_string_tab[321]
+#define __pyx_n_u_raw_outputs __pyx_string_tab[322]
+#define __pyx_n_u_re __pyx_string_tab[323]
+#define __pyx_n_u_re_2 __pyx_string_tab[324]
+#define __pyx_n_u_rec_metadata_id __pyx_string_tab[325]
+#define __pyx_n_u_recapture_flag __pyx_string_tab[326]
+#define __pyx_n_u_reliance __pyx_string_tab[327]
+#define __pyx_n_u_remove_metadata __pyx_string_tab[328]
+#define __pyx_n_u_replace __pyx_string_tab[329]
+#define __pyx_n_u_request_id __pyx_string_tab[330]
+#define __pyx_n_u_res __pyx_string_tab[331]
+#define __pyx_n_u_resolved __pyx_string_tab[332]
+#define __pyx_n_u_resolved_exp_str __pyx_string_tab[333]
+#define __pyx_n_u_resolved_expiry __pyx_string_tab[334]
+#define __pyx_n_u_result __pyx_string_tab[335]
+#define __pyx_n_u_results __pyx_string_tab[336]
+#define __pyx_n_u_return __pyx_string_tab[337]
+#define __pyx_n_u_return_exceptions __pyx_string_tab[338]
+#define __pyx_n_u_round __pyx_string_tab[339]
+#define __pyx_n_u_s __pyx_string_tab[340]
+#define __pyx_kp_u_s_url __pyx_string_tab[341]
+#define __pyx_kp_u_save_metadata_Uploading_image __pyx_string_tab[342]
+#define __pyx_kp_u_save_metadata_Using_resolved_ex __pyx_string_tab[343]
+#define __pyx_kp_u_save_metadata_Waiting_for_paral __pyx_string_tab[344]
+#define __pyx_kp_u_save_metadata_img_url __pyx_string_tab[345]
+#define __pyx_n_u_save_session __pyx_string_tab[346]
+#define __pyx_kp_u_saved_with_capture_type_multica __pyx_string_tab[347]
+#define __pyx_n_u_scan_duration __pyx_string_tab[348]
+#define __pyx_n_u_scan_duration_sec __pyx_string_tab[349]
+#define __pyx_n_u_sdk_data_process __pyx_string_tab[350]
+#define __pyx_n_u_search __pyx_string_tab[351]
+#define __pyx_n_u_seen_dates __pyx_string_tab[352]
+#define __pyx_n_u_seen_strs __pyx_string_tab[353]
+#define __pyx_n_u_self __pyx_string_tab[354]
+#define __pyx_n_u_send __pyx_string_tab[355]
+#define __pyx_n_u_session_cache __pyx_string_tab[356]
+#define __pyx_n_u_session_expiry __pyx_string_tab[357]
+#define __pyx_n_u_session_id __pyx_string_tab[358]
+#define __pyx_n_u_session_meta __pyx_string_tab[359]
+#define __pyx_n_u_session_mfg __pyx_string_tab[360]
+#define __pyx_n_u_set __pyx_string_tab[361]
+#define __pyx_n_u_set_name __pyx_string_tab[362]
+#define __pyx_n_u_shape __pyx_string_tab[363]
+#define __pyx_n_u_shipsy __pyx_string_tab[364]
+#define __pyx_n_u_size __pyx_string_tab[365]
+#define __pyx_n_u_skip_image_upload __pyx_string_tab[366]
+#define __pyx_n_u_sleep __pyx_string_tab[367]
+#define __pyx_n_u_snap_data __pyx_string_tab[368]
+#define __pyx_n_u_snap_dates __pyx_string_tab[369]
+#define __pyx_n_u_snap_image __pyx_string_tab[370]
+#define __pyx_n_u_snap_model_time_ms __pyx_string_tab[371]
+#define __pyx_n_u_snap_ocr_raw __pyx_string_tab[372]
+#define __pyx_n_u_snapshot __pyx_string_tab[373]
+#define __pyx_n_u_spec __pyx_string_tab[374]
+#define __pyx_kp_u_src_configs_env __pyx_string_tab[375]
+#define __pyx_n_u_src_core_think_machine_learning __pyx_string_tab[376]
+#define __pyx_n_u_src_core_think_machine_learning_2 __pyx_string_tab[377]
+#define __pyx_n_u_src_core_think_machine_learning_3 __pyx_string_tab[378]
+#define __pyx_n_u_src_core_think_machine_learning_4 __pyx_string_tab[379]
+#define __pyx_n_u_src_core_think_machine_learning_5 __pyx_string_tab[380]
+#define __pyx_n_u_src_data_handler_mongo __pyx_string_tab[381]
+#define __pyx_kp_u_src_models_checkpoint_5200_aug_2 __pyx_string_tab[382]
+#define __pyx_n_u_src_orchestrator_orchestrator_ne __pyx_string_tab[383]
+#define __pyx_kp_u_src_orchestrator_orchestrator_ne_2 __pyx_string_tab[384]
+#define __pyx_n_u_src_utils_datetime __pyx_string_tab[385]
+#define __pyx_n_u_src_utils_image_processor __pyx_string_tab[386]
+#define __pyx_n_u_src_utils_metadata_processor __pyx_string_tab[387]
+#define __pyx_n_u_src_utils_monitoring __pyx_string_tab[388]
+#define __pyx_n_u_src_utils_prom_metrics __pyx_string_tab[389]
+#define __pyx_n_u_src_utils_session_cache __pyx_string_tab[390]
+#define __pyx_n_u_src_utils_storage_router __pyx_string_tab[391]
+#define __pyx_n_u_start __pyx_string_tab[392]
+#define __pyx_n_u_startswith __pyx_string_tab[393]
+#define __pyx_n_u_staticmethod __pyx_string_tab[394]
+#define __pyx_n_u_storage __pyx_string_tab[395]
+#define __pyx_n_u_store __pyx_string_tab[396]
+#define __pyx_n_u_store_id __pyx_string_tab[397]
+#define __pyx_n_u_str __pyx_string_tab[398]
+#define __pyx_n_u_str_to_datetime __pyx_string_tab[399]
+#define __pyx_n_u_strptime __pyx_string_tab[400]
+#define __pyx_n_u_t0 __pyx_string_tab[401]
+#define __pyx_n_u_target __pyx_string_tab[402]
+#define __pyx_n_u_task_idx __pyx_string_tab[403]
+#define __pyx_n_u_tasks __pyx_string_tab[404]
+#define __pyx_n_u_test __pyx_string_tab[405]
+#define __pyx_n_u_threading __pyx_string_tab[406]
+#define __pyx_n_u_throw __pyx_string_tab[407]
+#define __pyx_n_u_time __pyx_string_tab[408]
+#define __pyx_n_u_time_calculate __pyx_string_tab[409]
+#define __pyx_n_u_total_ocr_time __pyx_string_tab[410]
+#define __pyx_n_u_traceback __pyx_string_tab[411]
+#define __pyx_kp_u_trends_beauty __pyx_string_tab[412]
+#define __pyx_n_u_trends_beauty_2 __pyx_string_tab[413]
+#define __pyx_n_u_typing __pyx_string_tab[414]
+#define __pyx_n_u_unknown __pyx_string_tab[415]
+#define __pyx_n_u_upload_image __pyx_string_tab[416]
+#define __pyx_n_u_upload_result __pyx_string_tab[417]
+#define __pyx_n_u_upload_worker __pyx_string_tab[418]
+#define __pyx_n_u_url_holder __pyx_string_tab[419]
+#define __pyx_n_u_user_id __pyx_string_tab[420]
+#define __pyx_n_u_v __pyx_string_tab[421]
+#define __pyx_n_u_valid_indices __pyx_string_tab[422]
+#define __pyx_n_u_value __pyx_string_tab[423]
+#define __pyx_n_u_values __pyx_string_tab[424]
+#define __pyx_kp_u_w_x_h __pyx_string_tab[425]
+#define __pyx_kp_u_what_is_the_maximum_retail_price __pyx_string_tab[426]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -3882,7 +3900,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   for (int i=0; i<2; ++i) { Py_CLEAR(clear_module_state->__pyx_slice[i]); }
   for (int i=0; i<6; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
   for (int i=0; i<15; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<422; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<427; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   Py_CLEAR(clear_module_state->__pyx_float_0_0);
   Py_CLEAR(clear_module_state->__pyx_float_0_1);
   Py_CLEAR(clear_module_state->__pyx_int_0);
@@ -3922,7 +3940,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   for (int i=0; i<2; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_slice[i]); }
   for (int i=0; i<6; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
   for (int i=0; i<15; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<422; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<427; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_0);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_1);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_0);
@@ -3936,7 +3954,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "src/orchestrator/orchestrator_neoqcr.py":47
+/* "src/orchestrator/orchestrator_neoqcr.py":48
  * # ---------------------------------------------------------------------------
  * 
  * def build_blob_name(             # <<<<<<<<<<<<<<
@@ -3987,36 +4005,36 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_final_metadata_id,&__pyx_mstate_global->__pyx_n_u_plotted,&__pyx_mstate_global->__pyx_n_u_ext,&__pyx_mstate_global->__pyx_n_u_client_name,&__pyx_mstate_global->__pyx_n_u_user_id,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 47, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 48, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "build_blob_name", 0) < 0) __PYX_ERR(0, 47, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "build_blob_name", 0) < 0) __PYX_ERR(0, 48, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":49
+      /* "src/orchestrator/orchestrator_neoqcr.py":50
  * def build_blob_name(
  *     final_metadata_id: str,
  *     plotted: bool = False,             # <<<<<<<<<<<<<<
@@ -4026,7 +4044,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject*)((PyObject*)__pyx_mstate_global->__pyx_n_u_jpg)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":51
+      /* "src/orchestrator/orchestrator_neoqcr.py":52
  *     plotted: bool = False,
  *     ext: str = "jpg",
  *     client_name: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -4035,7 +4053,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[3]) values[3] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":52
+      /* "src/orchestrator/orchestrator_neoqcr.py":53
  *     ext: str = "jpg",
  *     client_name: Optional[str] = None,
  *     user_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -4044,36 +4062,36 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject*)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("build_blob_name", 0, 1, 5, i); __PYX_ERR(0, 47, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("build_blob_name", 0, 1, 5, i); __PYX_ERR(0, 48, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 48, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 47, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 48, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
       if (!values[1]) values[1] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject*)((PyObject*)__pyx_mstate_global->__pyx_n_u_jpg)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":51
+      /* "src/orchestrator/orchestrator_neoqcr.py":52
  *     plotted: bool = False,
  *     ext: str = "jpg",
  *     client_name: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -4082,7 +4100,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[3]) values[3] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":52
+      /* "src/orchestrator/orchestrator_neoqcr.py":53
  *     ext: str = "jpg",
  *     client_name: Optional[str] = None,
  *     user_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -4099,7 +4117,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("build_blob_name", 0, 1, 5, __pyx_nargs); __PYX_ERR(0, 47, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("build_blob_name", 0, 1, 5, __pyx_nargs); __PYX_ERR(0, 48, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4110,13 +4128,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_final_metadata_id), (&PyUnicode_Type), 0, "final_metadata_id", 2))) __PYX_ERR(0, 48, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ext), (&PyUnicode_Type), 0, "ext", 2))) __PYX_ERR(0, 50, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 51, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_final_metadata_id), (&PyUnicode_Type), 0, "final_metadata_id", 2))) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ext), (&PyUnicode_Type), 0, "ext", 2))) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 53, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_name(__pyx_self, __pyx_v_final_metadata_id, __pyx_v_plotted, __pyx_v_ext, __pyx_v_client_name, __pyx_v_user_id);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":47
+  /* "src/orchestrator/orchestrator_neoqcr.py":48
  * # ---------------------------------------------------------------------------
  * 
  * def build_blob_name(             # <<<<<<<<<<<<<<
@@ -4158,14 +4176,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("build_blob_name", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":54
+  /* "src/orchestrator/orchestrator_neoqcr.py":55
  *     user_id: Optional[str] = None,
  * ) -> str:
  *     filename = f"{final_metadata_id}{'_plotted' if plotted else ''}.{ext.lower()}"             # <<<<<<<<<<<<<<
  *     if client_name and user_id and client_name.lower() in [
  *         "reliance",
 */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_plotted); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_plotted); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
   if (__pyx_t_2) {
     __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_plotted_2);
     __pyx_t_1 = __pyx_mstate_global->__pyx_n_u_plotted_2;
@@ -4173,24 +4191,24 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
     __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_);
     __pyx_t_1 = __pyx_mstate_global->__pyx_kp_u_;
   }
-  __pyx_t_3 = __Pyx_PyUnicode_Unicode(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyUnicode_Unicode(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_ext); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_ext); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_4[0] = __pyx_v_final_metadata_id;
   __pyx_t_4[1] = __pyx_t_3;
   __pyx_t_4[2] = __pyx_mstate_global->__pyx_kp_u__2;
   __pyx_t_4[3] = __pyx_t_1;
   __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_4, 4, __Pyx_PyUnicode_GET_LENGTH(__pyx_v_final_metadata_id) + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 1 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_final_metadata_id) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1));
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 54, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_filename = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":55
+  /* "src/orchestrator/orchestrator_neoqcr.py":56
  * ) -> str:
  *     filename = f"{final_metadata_id}{'_plotted' if plotted else ''}.{ext.lower()}"
  *     if client_name and user_id and client_name.lower() in [             # <<<<<<<<<<<<<<
@@ -4198,40 +4216,40 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
  *         "trends-beauty",
 */
   __pyx_t_6 = (__pyx_v_client_name != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_v_client_name) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   if (__pyx_t_6) {
   } else {
     __pyx_t_2 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
   __pyx_t_6 = (__pyx_v_user_id != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_v_user_id) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_6 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   if (__pyx_t_6) {
   } else {
     __pyx_t_2 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_5 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_client_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_client_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_reliance, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_reliance, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   if (!__pyx_t_7) {
   } else {
     __pyx_t_6 = __pyx_t_7;
     goto __pyx_L7_bool_binop_done;
   }
-  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_trends_beauty, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_trends_beauty, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   if (!__pyx_t_7) {
   } else {
     __pyx_t_6 = __pyx_t_7;
     goto __pyx_L7_bool_binop_done;
   }
-  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_trends_beauty_2, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_trends_beauty_2, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   if (!__pyx_t_7) {
   } else {
     __pyx_t_6 = __pyx_t_7;
     goto __pyx_L7_bool_binop_done;
   }
-  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_shipsy, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_shipsy, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
   __pyx_t_6 = __pyx_t_7;
   __pyx_L7_bool_binop_done:;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -4240,7 +4258,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_2) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":61
+    /* "src/orchestrator/orchestrator_neoqcr.py":62
  *         "shipsy"
  *     ]:
  *         return f"{client_name}/{user_id}/{filename}"             # <<<<<<<<<<<<<<
@@ -4248,9 +4266,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
  * 
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __Pyx_PyUnicode_Unicode(__pyx_v_client_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyUnicode_Unicode(__pyx_v_client_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_1 = __Pyx_PyUnicode_Unicode(__pyx_v_user_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyUnicode_Unicode(__pyx_v_user_id); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_8[0] = __pyx_t_5;
     __pyx_t_8[1] = __pyx_mstate_global->__pyx_kp_u__3;
@@ -4258,7 +4276,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
     __pyx_t_8[3] = __pyx_mstate_global->__pyx_kp_u__3;
     __pyx_t_8[4] = __pyx_v_filename;
     __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_8, 5, __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5) + 1 * 2 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_filename), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_filename));
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4266,7 +4284,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":55
+    /* "src/orchestrator/orchestrator_neoqcr.py":56
  * ) -> str:
  *     filename = f"{final_metadata_id}{'_plotted' if plotted else ''}.{ext.lower()}"
  *     if client_name and user_id and client_name.lower() in [             # <<<<<<<<<<<<<<
@@ -4275,7 +4293,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
 */
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":62
+  /* "src/orchestrator/orchestrator_neoqcr.py":63
  *     ]:
  *         return f"{client_name}/{user_id}/{filename}"
  *     return filename             # <<<<<<<<<<<<<<
@@ -4287,7 +4305,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
   __pyx_r = __pyx_v_filename;
   goto __pyx_L0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":47
+  /* "src/orchestrator/orchestrator_neoqcr.py":48
  * # ---------------------------------------------------------------------------
  * 
  * def build_blob_name(             # <<<<<<<<<<<<<<
@@ -4309,7 +4327,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_build_blob_n
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":77
+/* "src/orchestrator/orchestrator_neoqcr.py":78
  *     """
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -4356,32 +4374,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 77, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 78, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 77, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 78, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 77, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__init__", 0) < 0) __PYX_ERR(0, 78, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, i); __PYX_ERR(0, 77, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, i); __PYX_ERR(0, 78, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 77, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 78, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 77, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 78, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4432,7 +4450,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":78
+  /* "src/orchestrator/orchestrator_neoqcr.py":79
  * 
  *     def __init__(self):
  *         try:             # <<<<<<<<<<<<<<
@@ -4448,7 +4466,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":79
+      /* "src/orchestrator/orchestrator_neoqcr.py":80
  *     def __init__(self):
  *         try:
  *             print("Initializing Orchestrator...")             # <<<<<<<<<<<<<<
@@ -4464,12 +4482,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":80
+      /* "src/orchestrator/orchestrator_neoqcr.py":81
  *         try:
  *             print("Initializing Orchestrator...")
  *             self._init_models()             # <<<<<<<<<<<<<<
@@ -4483,12 +4501,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_init_models, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 81, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":81
+      /* "src/orchestrator/orchestrator_neoqcr.py":82
  *             print("Initializing Orchestrator...")
  *             self._init_models()
  *             self._init_database()             # <<<<<<<<<<<<<<
@@ -4502,12 +4520,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_init_database, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 81, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":82
+      /* "src/orchestrator/orchestrator_neoqcr.py":83
  *             self._init_models()
  *             self._init_database()
  *             self._init_utils()             # <<<<<<<<<<<<<<
@@ -4521,12 +4539,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_init_utils, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 83, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":83
+      /* "src/orchestrator/orchestrator_neoqcr.py":84
  *             self._init_database()
  *             self._init_utils()
  *             self.session_cache = SessionCache()             # <<<<<<<<<<<<<<
@@ -4534,7 +4552,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             print("Orchestrator initialization completed successfully")
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_SessionCache); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 83, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_SessionCache); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 84, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -4553,22 +4571,22 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 83, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 84, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache, __pyx_t_4) < 0) __PYX_ERR(0, 83, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache, __pyx_t_4) < 0) __PYX_ERR(0, 84, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":84
+      /* "src/orchestrator/orchestrator_neoqcr.py":85
  *             self._init_utils()
  *             self.session_cache = SessionCache()
  *             self.total_ocr_time = 0.0             # <<<<<<<<<<<<<<
  *             print("Orchestrator initialization completed successfully")
  *         except Exception as e:
 */
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_total_ocr_time, __pyx_mstate_global->__pyx_float_0_0) < 0) __PYX_ERR(0, 84, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_total_ocr_time, __pyx_mstate_global->__pyx_float_0_0) < 0) __PYX_ERR(0, 85, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":85
+      /* "src/orchestrator/orchestrator_neoqcr.py":86
  *             self.session_cache = SessionCache()
  *             self.total_ocr_time = 0.0
  *             print("Orchestrator initialization completed successfully")             # <<<<<<<<<<<<<<
@@ -4584,12 +4602,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 85, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 86, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":78
+      /* "src/orchestrator/orchestrator_neoqcr.py":79
  * 
  *     def __init__(self):
  *         try:             # <<<<<<<<<<<<<<
@@ -4606,7 +4624,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":86
+    /* "src/orchestrator/orchestrator_neoqcr.py":87
  *             self.total_ocr_time = 0.0
  *             print("Orchestrator initialization completed successfully")
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -4616,7 +4634,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_8 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_8) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 86, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 87, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_5);
@@ -4624,7 +4642,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_e = __pyx_t_6;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":87
+        /* "src/orchestrator/orchestrator_neoqcr.py":88
  *             print("Orchestrator initialization completed successfully")
  *         except Exception as e:
  *             raise ModelInitializationError(f"Failed to initialize Orchestrator: {str(e)}")             # <<<<<<<<<<<<<<
@@ -4632,11 +4650,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     # ------------------------------------------------------------------
 */
         __pyx_t_10 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 87, __pyx_L14_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 88, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 87, __pyx_L14_error)
+        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 88, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_Orchestrato, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 87, __pyx_L14_error)
+        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_Orchestrato, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 88, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_t_7 = 1;
@@ -4657,15 +4675,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 87, __pyx_L14_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 88, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_Raise(__pyx_t_9, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __PYX_ERR(0, 87, __pyx_L14_error)
+        __PYX_ERR(0, 88, __pyx_L14_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":86
+      /* "src/orchestrator/orchestrator_neoqcr.py":87
  *             self.total_ocr_time = 0.0
  *             print("Orchestrator initialization completed successfully")
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -4711,7 +4729,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":78
+    /* "src/orchestrator/orchestrator_neoqcr.py":79
  * 
  *     def __init__(self):
  *         try:             # <<<<<<<<<<<<<<
@@ -4727,7 +4745,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":77
+  /* "src/orchestrator/orchestrator_neoqcr.py":78
  *     """
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -4756,7 +4774,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":93
+/* "src/orchestrator/orchestrator_neoqcr.py":94
  *     # ------------------------------------------------------------------
  * 
  *     def _init_models(self) -> None:             # <<<<<<<<<<<<<<
@@ -4803,32 +4821,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 93, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 94, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 93, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 94, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_models", 0) < 0) __PYX_ERR(0, 93, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_models", 0) < 0) __PYX_ERR(0, 94, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_models", 1, 1, 1, i); __PYX_ERR(0, 93, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_models", 1, 1, 1, i); __PYX_ERR(0, 94, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 93, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 94, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_init_models", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 93, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_init_models", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 94, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4882,7 +4900,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_init_models", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":94
+  /* "src/orchestrator/orchestrator_neoqcr.py":95
  * 
  *     def _init_models(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -4898,7 +4916,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":95
+      /* "src/orchestrator/orchestrator_neoqcr.py":96
  *     def _init_models(self) -> None:
  *         try:
  *             print("Loading model...")             # <<<<<<<<<<<<<<
@@ -4914,12 +4932,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 95, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 96, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":96
+      /* "src/orchestrator/orchestrator_neoqcr.py":97
  *         try:
  *             print("Loading model...")
  *             model_path = "src/models/checkpoint-5200_aug_25"             # <<<<<<<<<<<<<<
@@ -4929,7 +4947,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_src_models_checkpoint_5200_aug_2);
       __pyx_v_model_path = __pyx_mstate_global->__pyx_kp_u_src_models_checkpoint_5200_aug_2;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":97
+      /* "src/orchestrator/orchestrator_neoqcr.py":98
  *             print("Loading model...")
  *             model_path = "src/models/checkpoint-5200_aug_25"
  *             start = time.time()             # <<<<<<<<<<<<<<
@@ -4937,9 +4955,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             # self.qwen_model = Vllm_inference(model_path, image_dir=None, output_csv=None)
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 98, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 97, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 98, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_7 = 1;
@@ -4959,21 +4977,21 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 97, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 98, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_start = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":100
+      /* "src/orchestrator/orchestrator_neoqcr.py":101
  *             # print(f"model path :: {model_path}")
  *             # self.qwen_model = Vllm_inference(model_path, image_dir=None, output_csv=None)
- *             self.qwen_model = Vllm_inference(api_url="http://neo-qcr-model:8093")             # <<<<<<<<<<<<<<
+ *             self.qwen_model = Vllm_inference(api_url="https://sentinel-compute.neophyte.live/neo-vlm")             # <<<<<<<<<<<<<<
  *             self.qwen_model.initialize()
  *             print(f"model loaded in {time.time() - start:.2f}s")
 */
       __pyx_t_8 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_Vllm_inference); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 100, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_Vllm_inference); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 101, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -4989,27 +5007,27 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       #endif
       {
         PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_8, NULL};
-        __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 100, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 101, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_api_url, __pyx_mstate_global->__pyx_kp_u_http_neo_qcr_model_8093, __pyx_t_5, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 100, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_api_url, __pyx_mstate_global->__pyx_kp_u_https_sentinel_compute_neophyte, __pyx_t_5, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 101, __pyx_L3_error)
         __pyx_t_4 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_6, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_5);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model, __pyx_t_4) < 0) __PYX_ERR(0, 100, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model, __pyx_t_4) < 0) __PYX_ERR(0, 101, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":101
+      /* "src/orchestrator/orchestrator_neoqcr.py":102
  *             # self.qwen_model = Vllm_inference(model_path, image_dir=None, output_csv=None)
- *             self.qwen_model = Vllm_inference(api_url="http://neo-qcr-model:8093")
+ *             self.qwen_model = Vllm_inference(api_url="https://sentinel-compute.neophyte.live/neo-vlm")
  *             self.qwen_model.initialize()             # <<<<<<<<<<<<<<
  *             print(f"model loaded in {time.time() - start:.2f}s")
  * 
 */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 101, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 102, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = __pyx_t_5;
       __Pyx_INCREF(__pyx_t_6);
@@ -5019,13 +5037,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_initialize, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":102
- *             self.qwen_model = Vllm_inference(api_url="http://neo-qcr-model:8093")
+      /* "src/orchestrator/orchestrator_neoqcr.py":103
+ *             self.qwen_model = Vllm_inference(api_url="https://sentinel-compute.neophyte.live/neo-vlm")
  *             self.qwen_model.initialize()
  *             print(f"model loaded in {time.time() - start:.2f}s")             # <<<<<<<<<<<<<<
  * 
@@ -5034,25 +5052,25 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_6 = __pyx_builtin_print; 
-      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 102, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 102, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = PyNumber_Subtract(__pyx_t_8, __pyx_v_start); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L3_error)
+      __pyx_t_9 = PyNumber_Subtract(__pyx_t_8, __pyx_v_start); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyObject_Format(__pyx_t_9, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 102, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_Format(__pyx_t_9, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_10[0] = __pyx_mstate_global->__pyx_kp_u_model_loaded_in;
       __pyx_t_10[1] = __pyx_t_8;
       __pyx_t_10[2] = __pyx_mstate_global->__pyx_n_u_s;
       __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_10, 3, 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8) + 1, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8));
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L3_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_7 = 1;
@@ -5062,12 +5080,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":104
+      /* "src/orchestrator/orchestrator_neoqcr.py":105
  *             print(f"model loaded in {time.time() - start:.2f}s")
  * 
  *             print("Initializing regex modules...")             # <<<<<<<<<<<<<<
@@ -5083,12 +5101,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":105
+      /* "src/orchestrator/orchestrator_neoqcr.py":106
  * 
  *             print("Initializing regex modules...")
  *             self.getmrp = Get_mrp()             # <<<<<<<<<<<<<<
@@ -5096,7 +5114,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             self.getbatchno = GetBatchno()
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_Get_mrp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 105, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_Get_mrp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 106, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5115,13 +5133,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getmrp, __pyx_t_4) < 0) __PYX_ERR(0, 105, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getmrp, __pyx_t_4) < 0) __PYX_ERR(0, 106, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":106
+      /* "src/orchestrator/orchestrator_neoqcr.py":107
  *             print("Initializing regex modules...")
  *             self.getmrp = Get_mrp()
  *             self.getdate = GetDates()             # <<<<<<<<<<<<<<
@@ -5129,7 +5147,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         except Exception as e:
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_GetDates); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 106, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_GetDates); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 107, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5148,13 +5166,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getdate, __pyx_t_4) < 0) __PYX_ERR(0, 106, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getdate, __pyx_t_4) < 0) __PYX_ERR(0, 107, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":107
+      /* "src/orchestrator/orchestrator_neoqcr.py":108
  *             self.getmrp = Get_mrp()
  *             self.getdate = GetDates()
  *             self.getbatchno = GetBatchno()             # <<<<<<<<<<<<<<
@@ -5162,7 +5180,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             raise ModelInitializationError(f"Failed to initialize models: {str(e)}")
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_GetBatchno); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_GetBatchno); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5181,13 +5199,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getbatchno, __pyx_t_4) < 0) __PYX_ERR(0, 107, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getbatchno, __pyx_t_4) < 0) __PYX_ERR(0, 108, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":94
+      /* "src/orchestrator/orchestrator_neoqcr.py":95
  * 
  *     def _init_models(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5206,7 +5224,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":108
+    /* "src/orchestrator/orchestrator_neoqcr.py":109
  *             self.getdate = GetDates()
  *             self.getbatchno = GetBatchno()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -5216,7 +5234,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_11) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator._init_models", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_9) < 0) __PYX_ERR(0, 108, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_6, &__pyx_t_9) < 0) __PYX_ERR(0, 109, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_9);
@@ -5224,7 +5242,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_e = __pyx_t_6;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":109
+        /* "src/orchestrator/orchestrator_neoqcr.py":110
  *             self.getbatchno = GetBatchno()
  *         except Exception as e:
  *             raise ModelInitializationError(f"Failed to initialize models: {str(e)}")             # <<<<<<<<<<<<<<
@@ -5232,11 +5250,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     def _init_database(self) -> None:
 */
         __pyx_t_8 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 109, __pyx_L14_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 110, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 109, __pyx_L14_error)
+        __pyx_t_13 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 110, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_models, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 109, __pyx_L14_error)
+        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_models, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 110, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_7 = 1;
@@ -5257,15 +5275,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 109, __pyx_L14_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 110, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __Pyx_Raise(__pyx_t_5, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __PYX_ERR(0, 109, __pyx_L14_error)
+        __PYX_ERR(0, 110, __pyx_L14_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":108
+      /* "src/orchestrator/orchestrator_neoqcr.py":109
  *             self.getdate = GetDates()
  *             self.getbatchno = GetBatchno()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -5311,7 +5329,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":94
+    /* "src/orchestrator/orchestrator_neoqcr.py":95
  * 
  *     def _init_models(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5327,7 +5345,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":93
+  /* "src/orchestrator/orchestrator_neoqcr.py":94
  *     # ------------------------------------------------------------------
  * 
  *     def _init_models(self) -> None:             # <<<<<<<<<<<<<<
@@ -5358,7 +5376,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":111
+/* "src/orchestrator/orchestrator_neoqcr.py":112
  *             raise ModelInitializationError(f"Failed to initialize models: {str(e)}")
  * 
  *     def _init_database(self) -> None:             # <<<<<<<<<<<<<<
@@ -5405,32 +5423,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 111, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 112, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 111, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 112, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_database", 0) < 0) __PYX_ERR(0, 111, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_database", 0) < 0) __PYX_ERR(0, 112, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_database", 1, 1, 1, i); __PYX_ERR(0, 111, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_database", 1, 1, 1, i); __PYX_ERR(0, 112, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 111, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 112, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_init_database", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 111, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_init_database", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 112, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5481,7 +5499,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_init_database", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":112
+  /* "src/orchestrator/orchestrator_neoqcr.py":113
  * 
  *     def _init_database(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5497,7 +5515,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":113
+      /* "src/orchestrator/orchestrator_neoqcr.py":114
  *     def _init_database(self) -> None:
  *         try:
  *             print("Connecting to database...")             # <<<<<<<<<<<<<<
@@ -5513,12 +5531,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 113, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":114
+      /* "src/orchestrator/orchestrator_neoqcr.py":115
  *         try:
  *             print("Connecting to database...")
  *             self.database = Mongo()             # <<<<<<<<<<<<<<
@@ -5526,7 +5544,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             raise DatabaseError(f"Failed to connect to database: {str(e)}")
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Mongo); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 114, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Mongo); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 115, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5545,13 +5563,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database, __pyx_t_4) < 0) __PYX_ERR(0, 114, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database, __pyx_t_4) < 0) __PYX_ERR(0, 115, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":112
+      /* "src/orchestrator/orchestrator_neoqcr.py":113
  * 
  *     def _init_database(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5568,7 +5586,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":115
+    /* "src/orchestrator/orchestrator_neoqcr.py":116
  *             print("Connecting to database...")
  *             self.database = Mongo()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -5578,7 +5596,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_8 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_8) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator._init_database", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 115, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 116, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_6);
@@ -5586,7 +5604,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_e = __pyx_t_5;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":116
+        /* "src/orchestrator/orchestrator_neoqcr.py":117
  *             self.database = Mongo()
  *         except Exception as e:
  *             raise DatabaseError(f"Failed to connect to database: {str(e)}")             # <<<<<<<<<<<<<<
@@ -5594,11 +5612,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     def _init_utils(self) -> None:
 */
         __pyx_t_10 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_DatabaseError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 116, __pyx_L14_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_DatabaseError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 117, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 116, __pyx_L14_error)
+        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_connect_to_database, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 116, __pyx_L14_error)
+        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_connect_to_database, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 117, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_t_7 = 1;
@@ -5619,15 +5637,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 116, __pyx_L14_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_Raise(__pyx_t_9, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __PYX_ERR(0, 116, __pyx_L14_error)
+        __PYX_ERR(0, 117, __pyx_L14_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":115
+      /* "src/orchestrator/orchestrator_neoqcr.py":116
  *             print("Connecting to database...")
  *             self.database = Mongo()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -5673,7 +5691,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":112
+    /* "src/orchestrator/orchestrator_neoqcr.py":113
  * 
  *     def _init_database(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5689,7 +5707,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":111
+  /* "src/orchestrator/orchestrator_neoqcr.py":112
  *             raise ModelInitializationError(f"Failed to initialize models: {str(e)}")
  * 
  *     def _init_database(self) -> None:             # <<<<<<<<<<<<<<
@@ -5718,7 +5736,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":118
+/* "src/orchestrator/orchestrator_neoqcr.py":119
  *             raise DatabaseError(f"Failed to connect to database: {str(e)}")
  * 
  *     def _init_utils(self) -> None:             # <<<<<<<<<<<<<<
@@ -5765,32 +5783,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 118, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 119, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 118, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 119, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_utils", 0) < 0) __PYX_ERR(0, 118, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_init_utils", 0) < 0) __PYX_ERR(0, 119, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_utils", 1, 1, 1, i); __PYX_ERR(0, 118, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_init_utils", 1, 1, 1, i); __PYX_ERR(0, 119, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 118, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 119, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_init_utils", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 118, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_init_utils", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 119, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5841,7 +5859,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_init_utils", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":119
+  /* "src/orchestrator/orchestrator_neoqcr.py":120
  * 
  *     def _init_utils(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5857,7 +5875,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":120
+      /* "src/orchestrator/orchestrator_neoqcr.py":121
  *     def _init_utils(self) -> None:
  *         try:
  *             print("Initializing utils...")             # <<<<<<<<<<<<<<
@@ -5873,12 +5891,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 120, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":121
+      /* "src/orchestrator/orchestrator_neoqcr.py":122
  *         try:
  *             print("Initializing utils...")
  *             self.str_to_datetime = Datetime()             # <<<<<<<<<<<<<<
@@ -5886,7 +5904,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             self.storage = StorageRouter()
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Datetime); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 121, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Datetime); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5905,13 +5923,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime, __pyx_t_4) < 0) __PYX_ERR(0, 121, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime, __pyx_t_4) < 0) __PYX_ERR(0, 122, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":122
+      /* "src/orchestrator/orchestrator_neoqcr.py":123
  *             print("Initializing utils...")
  *             self.str_to_datetime = Datetime()
  *             self.image_processor = ImageProcessor()             # <<<<<<<<<<<<<<
@@ -5919,7 +5937,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         except Exception as e:
 */
       __pyx_t_5 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 122, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 123, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5938,13 +5956,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 122, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_image_processor, __pyx_t_4) < 0) __PYX_ERR(0, 122, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_image_processor, __pyx_t_4) < 0) __PYX_ERR(0, 123, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":123
+      /* "src/orchestrator/orchestrator_neoqcr.py":124
  *             self.str_to_datetime = Datetime()
  *             self.image_processor = ImageProcessor()
  *             self.storage = StorageRouter()             # <<<<<<<<<<<<<<
@@ -5952,7 +5970,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             raise ModelInitializationError(f"Failed to initialize utilities: {str(e)}")
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_StorageRouter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_StorageRouter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -5971,13 +5989,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage, __pyx_t_4) < 0) __PYX_ERR(0, 123, __pyx_L3_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage, __pyx_t_4) < 0) __PYX_ERR(0, 124, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":119
+      /* "src/orchestrator/orchestrator_neoqcr.py":120
  * 
  *     def _init_utils(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -5994,7 +6012,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":124
+    /* "src/orchestrator/orchestrator_neoqcr.py":125
  *             self.image_processor = ImageProcessor()
  *             self.storage = StorageRouter()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -6004,7 +6022,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_8 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_8) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator._init_utils", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 124, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_5, &__pyx_t_6) < 0) __PYX_ERR(0, 125, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_6);
@@ -6012,7 +6030,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_e = __pyx_t_5;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":125
+        /* "src/orchestrator/orchestrator_neoqcr.py":126
  *             self.storage = StorageRouter()
  *         except Exception as e:
  *             raise ModelInitializationError(f"Failed to initialize utilities: {str(e)}")             # <<<<<<<<<<<<<<
@@ -6020,11 +6038,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     # ------------------------------------------------------------------
 */
         __pyx_t_10 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 125, __pyx_L14_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ModelInitializationError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 126, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 125, __pyx_L14_error)
+        __pyx_t_12 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 126, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_utilities, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 125, __pyx_L14_error)
+        __pyx_t_13 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_initialize_utilities, __pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 126, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_t_7 = 1;
@@ -6045,15 +6063,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 125, __pyx_L14_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 126, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_Raise(__pyx_t_9, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __PYX_ERR(0, 125, __pyx_L14_error)
+        __PYX_ERR(0, 126, __pyx_L14_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":124
+      /* "src/orchestrator/orchestrator_neoqcr.py":125
  *             self.image_processor = ImageProcessor()
  *             self.storage = StorageRouter()
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -6099,7 +6117,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":119
+    /* "src/orchestrator/orchestrator_neoqcr.py":120
  * 
  *     def _init_utils(self) -> None:
  *         try:             # <<<<<<<<<<<<<<
@@ -6115,7 +6133,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":118
+  /* "src/orchestrator/orchestrator_neoqcr.py":119
  *             raise DatabaseError(f"Failed to connect to database: {str(e)}")
  * 
  *     def _init_utils(self) -> None:             # <<<<<<<<<<<<<<
@@ -6144,7 +6162,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":131
+/* "src/orchestrator/orchestrator_neoqcr.py":132
  *     # ------------------------------------------------------------------
  * 
  *     def _print_image_info(self, label: str, img: Any) -> None:             # <<<<<<<<<<<<<<
@@ -6193,38 +6211,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_label,&__pyx_mstate_global->__pyx_n_u_img,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 131, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 132, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 131, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 132, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 131, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 132, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 131, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 132, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_print_image_info", 0) < 0) __PYX_ERR(0, 131, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_print_image_info", 0) < 0) __PYX_ERR(0, 132, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_print_image_info", 1, 3, 3, i); __PYX_ERR(0, 131, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_print_image_info", 1, 3, 3, i); __PYX_ERR(0, 132, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 131, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 132, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 131, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 132, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 131, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 132, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_label = ((PyObject*)values[1]);
@@ -6232,7 +6250,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_print_image_info", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 131, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_print_image_info", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 132, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6243,7 +6261,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_label), (&PyUnicode_Type), 0, "label", 2))) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_label), (&PyUnicode_Type), 0, "label", 2))) __PYX_ERR(0, 132, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_8_print_image_info(__pyx_self, __pyx_v_self, __pyx_v_label, __pyx_v_img);
 
   /* function exit code */
@@ -6280,23 +6298,23 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_print_image_info", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":132
+  /* "src/orchestrator/orchestrator_neoqcr.py":133
  * 
  *     def _print_image_info(self, label: str, img: Any) -> None:
  *         if isinstance(img, Image.Image):             # <<<<<<<<<<<<<<
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")
  *         elif hasattr(img, "shape"):
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_Image); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_Image); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_Image); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_Image); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = PyObject_IsInstance(__pyx_v_img, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_v_img, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":133
+    /* "src/orchestrator/orchestrator_neoqcr.py":134
  *     def _print_image_info(self, label: str, img: Any) -> None:
  *         if isinstance(img, Image.Image):
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")             # <<<<<<<<<<<<<<
@@ -6306,9 +6324,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_1 = NULL;
     __Pyx_INCREF(__pyx_builtin_print);
     __pyx_t_4 = __pyx_builtin_print; 
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_size); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 133, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_7[0] = __pyx_mstate_global->__pyx_kp_u__4;
@@ -6317,7 +6335,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_7[3] = __pyx_t_6;
     __pyx_t_7[4] = __pyx_mstate_global->__pyx_kp_u_w_x_h;
     __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_7, 5, 1 + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_label) + 18 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 8, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_label) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 133, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_8 = 1;
@@ -6327,12 +6345,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":132
+    /* "src/orchestrator/orchestrator_neoqcr.py":133
  * 
  *     def _print_image_info(self, label: str, img: Any) -> None:
  *         if isinstance(img, Image.Image):             # <<<<<<<<<<<<<<
@@ -6342,17 +6360,17 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L3;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":134
+  /* "src/orchestrator/orchestrator_neoqcr.py":135
  *         if isinstance(img, Image.Image):
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")
  *         elif hasattr(img, "shape"):             # <<<<<<<<<<<<<<
  *             print(f"[{label}] OpenCV image shape: {img.shape}")
  *         else:
 */
-  __pyx_t_3 = __Pyx_HasAttr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_HasAttr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 135, __pyx_L1_error)
   if (__pyx_t_3) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":135
+    /* "src/orchestrator/orchestrator_neoqcr.py":136
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")
  *         elif hasattr(img, "shape"):
  *             print(f"[{label}] OpenCV image shape: {img.shape}")             # <<<<<<<<<<<<<<
@@ -6362,9 +6380,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_4 = NULL;
     __Pyx_INCREF(__pyx_builtin_print);
     __pyx_t_5 = __pyx_builtin_print; 
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_img, __pyx_mstate_global->__pyx_n_u_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_9[0] = __pyx_mstate_global->__pyx_kp_u__4;
@@ -6372,7 +6390,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_9[2] = __pyx_mstate_global->__pyx_kp_u_OpenCV_image_shape;
     __pyx_t_9[3] = __pyx_t_6;
     __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_9, 4, 1 + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_label) + 22 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_label) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_8 = 1;
@@ -6382,12 +6400,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":134
+    /* "src/orchestrator/orchestrator_neoqcr.py":135
  *         if isinstance(img, Image.Image):
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")
  *         elif hasattr(img, "shape"):             # <<<<<<<<<<<<<<
@@ -6397,7 +6415,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L3;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":137
+  /* "src/orchestrator/orchestrator_neoqcr.py":138
  *             print(f"[{label}] OpenCV image shape: {img.shape}")
  *         else:
  *             print(f"[{label}] Unknown image type: {type(img)}")             # <<<<<<<<<<<<<<
@@ -6408,14 +6426,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_5 = NULL;
     __Pyx_INCREF(__pyx_builtin_print);
     __pyx_t_1 = __pyx_builtin_print; 
-    __pyx_t_4 = __Pyx_PyObject_FormatSimple(((PyObject *)Py_TYPE(__pyx_v_img)), __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 137, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_FormatSimple(((PyObject *)Py_TYPE(__pyx_v_img)), __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_9[0] = __pyx_mstate_global->__pyx_kp_u__4;
     __pyx_t_9[1] = __pyx_v_label;
     __pyx_t_9[2] = __pyx_mstate_global->__pyx_kp_u_Unknown_image_type;
     __pyx_t_9[3] = __pyx_t_4;
     __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_9, 4, 1 + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_label) + 22 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_label) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4));
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 137, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_8 = 1;
@@ -6425,14 +6443,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_L3:;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":131
+  /* "src/orchestrator/orchestrator_neoqcr.py":132
  *     # ------------------------------------------------------------------
  * 
  *     def _print_image_info(self, label: str, img: Any) -> None:             # <<<<<<<<<<<<<<
@@ -6457,7 +6475,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":139
+/* "src/orchestrator/orchestrator_neoqcr.py":140
  *             print(f"[{label}] Unknown image type: {type(img)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -6505,39 +6523,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_ocr_result,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 139, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 140, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 140, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 140, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_extract_metadata", 0) < 0) __PYX_ERR(0, 139, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_extract_metadata", 0) < 0) __PYX_ERR(0, 140, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_extract_metadata", 1, 2, 2, i); __PYX_ERR(0, 139, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_extract_metadata", 1, 2, 2, i); __PYX_ERR(0, 140, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 139, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 140, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 139, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 140, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_ocr_result = ((PyObject*)values[1]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_extract_metadata", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 139, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_extract_metadata", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 140, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6548,7 +6566,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ocr_result), (&PyList_Type), 0, "ocr_result", 2))) __PYX_ERR(0, 141, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ocr_result), (&PyList_Type), 0, "ocr_result", 2))) __PYX_ERR(0, 142, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_10_extract_metadata(__pyx_self, __pyx_v_self, __pyx_v_ocr_result);
 
   /* function exit code */
@@ -6602,7 +6620,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_extract_metadata", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":143
+  /* "src/orchestrator/orchestrator_neoqcr.py":144
  *         self, ocr_result: List[str]
  *     ) -> Tuple[Optional[str], List[Optional[str]], Optional[str]]:
  *         try:             # <<<<<<<<<<<<<<
@@ -6618,20 +6636,20 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":144
+      /* "src/orchestrator/orchestrator_neoqcr.py":145
  *     ) -> Tuple[Optional[str], List[Optional[str]], Optional[str]]:
  *         try:
  *             mrp      = self.getmrp.process_mrp(str(ocr_result[0]))             # <<<<<<<<<<<<<<
  *             dates    = self.getdate.process_dates(ocr_result)
  *             batch_no = self.getbatchno.get_batch_number(str(ocr_result[0]))
 */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getmrp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 144, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getmrp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 145, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_5 = __pyx_t_6;
       __Pyx_INCREF(__pyx_t_5);
-      __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 144, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyObject_Unicode(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 144, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_Unicode(__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 145, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_9 = 0;
@@ -6641,20 +6659,20 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 144, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_mrp = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":145
+      /* "src/orchestrator/orchestrator_neoqcr.py":146
  *         try:
  *             mrp      = self.getmrp.process_mrp(str(ocr_result[0]))
  *             dates    = self.getdate.process_dates(ocr_result)             # <<<<<<<<<<<<<<
  *             batch_no = self.getbatchno.get_batch_number(str(ocr_result[0]))
  *             print(f"\nMfg/exp dates: {dates}\n")
 */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getdate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 145, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getdate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 146, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_6 = __pyx_t_8;
       __Pyx_INCREF(__pyx_t_6);
@@ -6664,26 +6682,26 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_process_dates, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 145, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_dates = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":146
+      /* "src/orchestrator/orchestrator_neoqcr.py":147
  *             mrp      = self.getmrp.process_mrp(str(ocr_result[0]))
  *             dates    = self.getdate.process_dates(ocr_result)
  *             batch_no = self.getbatchno.get_batch_number(str(ocr_result[0]))             # <<<<<<<<<<<<<<
  *             print(f"\nMfg/exp dates: {dates}\n")
  *             return mrp, dates, batch_no
 */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getbatchno); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 146, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_getbatchno); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 147, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_8 = __pyx_t_6;
       __Pyx_INCREF(__pyx_t_8);
-      __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 146, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_7 = __Pyx_PyObject_Unicode(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 146, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_Unicode(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 147, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_9 = 0;
@@ -6693,13 +6711,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_batch_no = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":147
+      /* "src/orchestrator/orchestrator_neoqcr.py":148
  *             dates    = self.getdate.process_dates(ocr_result)
  *             batch_no = self.getbatchno.get_batch_number(str(ocr_result[0]))
  *             print(f"\nMfg/exp dates: {dates}\n")             # <<<<<<<<<<<<<<
@@ -6709,13 +6727,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_6 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_7 = __pyx_builtin_print; 
-      __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_dates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_v_dates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 148, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_10[0] = __pyx_mstate_global->__pyx_kp_u_Mfg_exp_dates;
       __pyx_t_10[1] = __pyx_t_8;
       __pyx_t_10[2] = __pyx_mstate_global->__pyx_kp_u__5;
       __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_10, 3, 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8) + 1, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8));
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L3_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 148, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_9 = 1;
@@ -6725,12 +6743,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 147, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":148
+      /* "src/orchestrator/orchestrator_neoqcr.py":149
  *             batch_no = self.getbatchno.get_batch_number(str(ocr_result[0]))
  *             print(f"\nMfg/exp dates: {dates}\n")
  *             return mrp, dates, batch_no             # <<<<<<<<<<<<<<
@@ -6738,22 +6756,22 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             raise ProcessingError(f"Metadata extraction failed: {str(e)}")
 */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L3_error)
+      __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 149, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_INCREF(__pyx_v_mrp);
       __Pyx_GIVEREF(__pyx_v_mrp);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_mrp) != (0)) __PYX_ERR(0, 148, __pyx_L3_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_mrp) != (0)) __PYX_ERR(0, 149, __pyx_L3_error);
       __Pyx_INCREF(__pyx_v_dates);
       __Pyx_GIVEREF(__pyx_v_dates);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_dates) != (0)) __PYX_ERR(0, 148, __pyx_L3_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_dates) != (0)) __PYX_ERR(0, 149, __pyx_L3_error);
       __Pyx_INCREF(__pyx_v_batch_no);
       __Pyx_GIVEREF(__pyx_v_batch_no);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_v_batch_no) != (0)) __PYX_ERR(0, 148, __pyx_L3_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_v_batch_no) != (0)) __PYX_ERR(0, 149, __pyx_L3_error);
       __pyx_r = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
       goto __pyx_L7_try_return;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":143
+      /* "src/orchestrator/orchestrator_neoqcr.py":144
  *         self, ocr_result: List[str]
  *     ) -> Tuple[Optional[str], List[Optional[str]], Optional[str]]:
  *         try:             # <<<<<<<<<<<<<<
@@ -6768,7 +6786,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":149
+    /* "src/orchestrator/orchestrator_neoqcr.py":150
  *             print(f"\nMfg/exp dates: {dates}\n")
  *             return mrp, dates, batch_no
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -6778,7 +6796,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_11) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator._extract_metadata", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_5) < 0) __PYX_ERR(0, 149, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_7, &__pyx_t_5) < 0) __PYX_ERR(0, 150, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_7);
       __Pyx_XGOTREF(__pyx_t_5);
@@ -6786,7 +6804,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_e = __pyx_t_7;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":150
+        /* "src/orchestrator/orchestrator_neoqcr.py":151
  *             return mrp, dates, batch_no
  *         except Exception as e:
  *             raise ProcessingError(f"Metadata extraction failed: {str(e)}")             # <<<<<<<<<<<<<<
@@ -6794,11 +6812,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     @time_calculate()
 */
         __pyx_t_8 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 150, __pyx_L14_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 151, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_13 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 150, __pyx_L14_error)
+        __pyx_t_13 = __Pyx_PyObject_Unicode(__pyx_v_e); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 151, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Metadata_extraction_failed, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 150, __pyx_L14_error)
+        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Metadata_extraction_failed, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 151, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_9 = 1;
@@ -6819,15 +6837,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 150, __pyx_L14_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 151, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_Raise(__pyx_t_6, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __PYX_ERR(0, 150, __pyx_L14_error)
+        __PYX_ERR(0, 151, __pyx_L14_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":149
+      /* "src/orchestrator/orchestrator_neoqcr.py":150
  *             print(f"\nMfg/exp dates: {dates}\n")
  *             return mrp, dates, batch_no
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -6873,7 +6891,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":143
+    /* "src/orchestrator/orchestrator_neoqcr.py":144
  *         self, ocr_result: List[str]
  *     ) -> Tuple[Optional[str], List[Optional[str]], Optional[str]]:
  *         try:             # <<<<<<<<<<<<<<
@@ -6894,7 +6912,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L0;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":139
+  /* "src/orchestrator/orchestrator_neoqcr.py":140
  *             print(f"[{label}] Unknown image type: {type(img)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -6924,7 +6942,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":152
+/* "src/orchestrator/orchestrator_neoqcr.py":153
  *             raise ProcessingError(f"Metadata extraction failed: {str(e)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -6973,38 +6991,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_data,&__pyx_mstate_global->__pyx_n_u_env_id,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 152, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 152, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 153, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 152, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 153, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 152, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "get_processed_data", 0) < 0) __PYX_ERR(0, 152, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "get_processed_data", 0) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("get_processed_data", 1, 3, 3, i); __PYX_ERR(0, 152, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("get_processed_data", 1, 3, 3, i); __PYX_ERR(0, 153, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 152, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 152, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 153, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 152, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 153, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_data = ((PyObject*)values[1]);
@@ -7012,7 +7030,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_processed_data", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 152, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_processed_data", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 153, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7023,8 +7041,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 0, "data", 2))) __PYX_ERR(0, 153, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 0, "data", 2))) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 154, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_12get_processed_data(__pyx_self, __pyx_v_self, __pyx_v_data, __pyx_v_env_id);
 
   /* function exit code */
@@ -7056,7 +7074,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_processed_data", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":154
+  /* "src/orchestrator/orchestrator_neoqcr.py":155
  *     @time_calculate()
  *     def get_processed_data(self, data: Dict, env_id: str) -> Dict:
  *         return self.database.sdk_data_process(data, env_id)             # <<<<<<<<<<<<<<
@@ -7064,7 +7082,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     # ------------------------------------------------------------------
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = __pyx_t_3;
   __Pyx_INCREF(__pyx_t_2);
@@ -7074,15 +7092,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_sdk_data_process, __pyx_callargs+__pyx_t_4, (3-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 154, __pyx_L1_error)
+  if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 155, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":152
+  /* "src/orchestrator/orchestrator_neoqcr.py":153
  *             raise ProcessingError(f"Metadata extraction failed: {str(e)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -7104,7 +7122,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 }
 static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_16generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/orchestrator/orchestrator_neoqcr.py":161
+/* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -7159,48 +7177,48 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_image_data,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_capture_type,&__pyx_mstate_global->__pyx_n_u_metadata_id,&__pyx_mstate_global->__pyx_n_u_client_name,&__pyx_mstate_global->__pyx_n_u_recapture_flag,&__pyx_mstate_global->__pyx_n_u_user_id,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 161, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 162, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  8:
         values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_image_get_metadata", 0) < 0) __PYX_ERR(0, 161, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_image_get_metadata", 0) < 0) __PYX_ERR(0, 162, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":167
+      /* "src/orchestrator/orchestrator_neoqcr.py":168
  *         env_id: str,
  *         capture_type: Optional[bool],
  *         metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7209,7 +7227,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":168
+      /* "src/orchestrator/orchestrator_neoqcr.py":169
  *         capture_type: Optional[bool],
  *         metadata_id: Optional[str] = None,
  *         client_name: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7218,7 +7236,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[5]) values[5] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":169
+      /* "src/orchestrator/orchestrator_neoqcr.py":170
  *         metadata_id: Optional[str] = None,
  *         client_name: Optional[str] = None,
  *         recapture_flag: bool = False,             # <<<<<<<<<<<<<<
@@ -7227,7 +7245,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[6]) values[6] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":170
+      /* "src/orchestrator/orchestrator_neoqcr.py":171
  *         client_name: Optional[str] = None,
  *         recapture_flag: bool = False,
  *         user_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7236,40 +7254,40 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[7]) values[7] = __Pyx_NewRef(((PyObject*)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_image_get_metadata", 0, 4, 8, i); __PYX_ERR(0, 161, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_image_get_metadata", 0, 4, 8, i); __PYX_ERR(0, 162, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  8:
         values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 162, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 162, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 162, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 162, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 161, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 162, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":167
+      /* "src/orchestrator/orchestrator_neoqcr.py":168
  *         env_id: str,
  *         capture_type: Optional[bool],
  *         metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7278,7 +7296,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":168
+      /* "src/orchestrator/orchestrator_neoqcr.py":169
  *         capture_type: Optional[bool],
  *         metadata_id: Optional[str] = None,
  *         client_name: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7288,7 +7306,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[5]) values[5] = __Pyx_NewRef(((PyObject*)Py_None));
       if (!values[6]) values[6] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":170
+      /* "src/orchestrator/orchestrator_neoqcr.py":171
  *         client_name: Optional[str] = None,
  *         recapture_flag: bool = False,
  *         user_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -7308,7 +7326,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("process_image_get_metadata", 0, 4, 8, __pyx_nargs); __PYX_ERR(0, 161, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("process_image_get_metadata", 0, 4, 8, __pyx_nargs); __PYX_ERR(0, 162, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7319,13 +7337,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 165, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 167, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 168, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 170, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 166, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 168, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 169, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 171, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_14process_image_get_metadata(__pyx_self, __pyx_v_self, __pyx_v_image_data, __pyx_v_env_id, __pyx_v_capture_type, __pyx_v_metadata_id, __pyx_v_client_name, __pyx_v_recapture_flag, __pyx_v_user_id);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":161
+  /* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -7362,7 +7380,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 161, __pyx_L1_error)
+    __PYX_ERR(0, 162, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -7391,7 +7409,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_user_id);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_user_id);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_16generator, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_image_get_metadata, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_16generator, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_image_get_metadata, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 162, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -7407,7 +7425,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":200
+/* "src/orchestrator/orchestrator_neoqcr.py":201
  *             image_copy = image.copy()   # PIL copy for thread safety
  * 
  *             def upload_worker() -> None:             # <<<<<<<<<<<<<<
@@ -7471,7 +7489,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_outer_scope = (struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":201
+  /* "src/orchestrator/orchestrator_neoqcr.py":202
  * 
  *             def upload_worker() -> None:
  *                 try:             # <<<<<<<<<<<<<<
@@ -7487,7 +7505,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":202
+      /* "src/orchestrator/orchestrator_neoqcr.py":203
  *             def upload_worker() -> None:
  *                 try:
  *                     print("[Parallel Upload] Starting...")             # <<<<<<<<<<<<<<
@@ -7503,12 +7521,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 202, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 203, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":203
+      /* "src/orchestrator/orchestrator_neoqcr.py":204
  *                 try:
  *                     print("[Parallel Upload] Starting...")
  *                     t0 = time.time()             # <<<<<<<<<<<<<<
@@ -7516,9 +7534,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 203, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 204, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 203, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 204, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_7 = 1;
@@ -7538,31 +7556,31 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 203, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 204, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_t0 = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":204
+      /* "src/orchestrator/orchestrator_neoqcr.py":205
  *                     print("[Parallel Upload] Starting...")
  *                     t0 = time.time()
  *                     final_id  = metadata_id or f"{env_id}_inference_temp"             # <<<<<<<<<<<<<<
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)
  *                     result    = self.storage.upload_image(image_copy, blob_name, client_name, user_id)
 */
-      if (unlikely(!__pyx_cur_scope->__pyx_v_metadata_id)) { __Pyx_RaiseClosureNameError("metadata_id"); __PYX_ERR(0, 204, __pyx_L3_error) }
-      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_metadata_id); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (unlikely(!__pyx_cur_scope->__pyx_v_metadata_id)) { __Pyx_RaiseClosureNameError("metadata_id"); __PYX_ERR(0, 205, __pyx_L3_error) }
+      __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_metadata_id); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 205, __pyx_L3_error)
       if (!__pyx_t_9) {
       } else {
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_metadata_id);
         __pyx_t_4 = __pyx_cur_scope->__pyx_v_metadata_id;
         goto __pyx_L9_bool_binop_done;
       }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_env_id)) { __Pyx_RaiseClosureNameError("env_id"); __PYX_ERR(0, 204, __pyx_L3_error) }
-      __pyx_t_8 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_env_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 204, __pyx_L3_error)
+      if (unlikely(!__pyx_cur_scope->__pyx_v_env_id)) { __Pyx_RaiseClosureNameError("env_id"); __PYX_ERR(0, 205, __pyx_L3_error) }
+      __pyx_t_8 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_env_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 205, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_6 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_inference_temp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 204, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_inference_temp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 205, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_INCREF(__pyx_t_6);
@@ -7572,7 +7590,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_final_id = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":205
+      /* "src/orchestrator/orchestrator_neoqcr.py":206
  *                     t0 = time.time()
  *                     final_id  = metadata_id or f"{env_id}_inference_temp"
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)             # <<<<<<<<<<<<<<
@@ -7580,10 +7598,10 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                     if isinstance(result, dict):
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 205, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 206, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      if (unlikely(!__pyx_cur_scope->__pyx_v_client_name)) { __Pyx_RaiseClosureNameError("client_name"); __PYX_ERR(0, 205, __pyx_L3_error) }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_user_id)) { __Pyx_RaiseClosureNameError("user_id"); __PYX_ERR(0, 205, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_client_name)) { __Pyx_RaiseClosureNameError("client_name"); __PYX_ERR(0, 206, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_user_id)) { __Pyx_RaiseClosureNameError("user_id"); __PYX_ERR(0, 206, __pyx_L3_error) }
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
       if (unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -7598,48 +7616,48 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       #endif
       {
         PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_6, __pyx_v_final_id};
-        __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 205, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_cur_scope->__pyx_v_client_name, __pyx_t_5, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 205, __pyx_L3_error)
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_cur_scope->__pyx_v_user_id, __pyx_t_5, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 205, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_cur_scope->__pyx_v_client_name, __pyx_t_5, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 206, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_cur_scope->__pyx_v_user_id, __pyx_t_5, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 206, __pyx_L3_error)
         __pyx_t_4 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_8, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_5);
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 205, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 206, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_blob_name = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":206
+      /* "src/orchestrator/orchestrator_neoqcr.py":207
  *                     final_id  = metadata_id or f"{env_id}_inference_temp"
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)
  *                     result    = self.storage.upload_image(image_copy, blob_name, client_name, user_id)             # <<<<<<<<<<<<<<
  *                     if isinstance(result, dict):
  *                         url_holder["img_url"] = result.get("public_url")
 */
-      if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 206, __pyx_L3_error) }
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L3_error)
+      if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 207, __pyx_L3_error) }
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 207, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_8 = __pyx_t_5;
       __Pyx_INCREF(__pyx_t_8);
-      if (unlikely(!__pyx_cur_scope->__pyx_v_image_copy)) { __Pyx_RaiseClosureNameError("image_copy"); __PYX_ERR(0, 206, __pyx_L3_error) }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_client_name)) { __Pyx_RaiseClosureNameError("client_name"); __PYX_ERR(0, 206, __pyx_L3_error) }
-      if (unlikely(!__pyx_cur_scope->__pyx_v_user_id)) { __Pyx_RaiseClosureNameError("user_id"); __PYX_ERR(0, 206, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_image_copy)) { __Pyx_RaiseClosureNameError("image_copy"); __PYX_ERR(0, 207, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_client_name)) { __Pyx_RaiseClosureNameError("client_name"); __PYX_ERR(0, 207, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_user_id)) { __Pyx_RaiseClosureNameError("user_id"); __PYX_ERR(0, 207, __pyx_L3_error) }
       __pyx_t_7 = 0;
       {
         PyObject *__pyx_callargs[5] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_image_copy, __pyx_v_blob_name, __pyx_cur_scope->__pyx_v_client_name, __pyx_cur_scope->__pyx_v_user_id};
         __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_upload_image, __pyx_callargs+__pyx_t_7, (5-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 206, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_result = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":207
+      /* "src/orchestrator/orchestrator_neoqcr.py":208
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)
  *                     result    = self.storage.upload_image(image_copy, blob_name, client_name, user_id)
  *                     if isinstance(result, dict):             # <<<<<<<<<<<<<<
@@ -7649,7 +7667,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_9 = PyDict_Check(__pyx_v_result); 
       if (__pyx_t_9) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":208
+        /* "src/orchestrator/orchestrator_neoqcr.py":209
  *                     result    = self.storage.upload_image(image_copy, blob_name, client_name, user_id)
  *                     if isinstance(result, dict):
  *                         url_holder["img_url"] = result.get("public_url")             # <<<<<<<<<<<<<<
@@ -7663,18 +7681,18 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_n_u_public_url};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
-        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 208, __pyx_L3_error) }
+        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 209, __pyx_L3_error) }
         if (unlikely(__pyx_cur_scope->__pyx_v_url_holder == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 208, __pyx_L3_error)
+          __PYX_ERR(0, 209, __pyx_L3_error)
         }
-        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_t_4) < 0))) __PYX_ERR(0, 208, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_t_4) < 0))) __PYX_ERR(0, 209, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":209
+        /* "src/orchestrator/orchestrator_neoqcr.py":210
  *                     if isinstance(result, dict):
  *                         url_holder["img_url"] = result.get("public_url")
  *                         url_holder["cdn_url"]  = result.get("cdn_url")             # <<<<<<<<<<<<<<
@@ -7688,18 +7706,18 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_n_u_cdn_url};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 210, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
-        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 209, __pyx_L3_error) }
+        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 210, __pyx_L3_error) }
         if (unlikely(__pyx_cur_scope->__pyx_v_url_holder == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 209, __pyx_L3_error)
+          __PYX_ERR(0, 210, __pyx_L3_error)
         }
-        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_cdn_url, __pyx_t_4) < 0))) __PYX_ERR(0, 209, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_cdn_url, __pyx_t_4) < 0))) __PYX_ERR(0, 210, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":207
+        /* "src/orchestrator/orchestrator_neoqcr.py":208
  *                     blob_name = build_blob_name(final_id, client_name=client_name, user_id=user_id)
  *                     result    = self.storage.upload_image(image_copy, blob_name, client_name, user_id)
  *                     if isinstance(result, dict):             # <<<<<<<<<<<<<<
@@ -7709,7 +7727,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L11;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":211
+      /* "src/orchestrator/orchestrator_neoqcr.py":212
  *                         url_holder["cdn_url"]  = result.get("cdn_url")
  *                     else:
  *                         url_holder["img_url"] = result             # <<<<<<<<<<<<<<
@@ -7717,30 +7735,30 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")
 */
       /*else*/ {
-        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 211, __pyx_L3_error) }
+        if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 212, __pyx_L3_error) }
         if (unlikely(__pyx_cur_scope->__pyx_v_url_holder == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 211, __pyx_L3_error)
+          __PYX_ERR(0, 212, __pyx_L3_error)
         }
-        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_v_result) < 0))) __PYX_ERR(0, 211, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_v_result) < 0))) __PYX_ERR(0, 212, __pyx_L3_error)
       }
       __pyx_L11:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":212
+      /* "src/orchestrator/orchestrator_neoqcr.py":213
  *                     else:
  *                         url_holder["img_url"] = result
  *                     url_holder["complete"] = True             # <<<<<<<<<<<<<<
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")
  *                 except Exception as exc:
 */
-      if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 212, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 213, __pyx_L3_error) }
       if (unlikely(__pyx_cur_scope->__pyx_v_url_holder == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 212, __pyx_L3_error)
+        __PYX_ERR(0, 213, __pyx_L3_error)
       }
-      if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0))) __PYX_ERR(0, 212, __pyx_L3_error)
+      if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0))) __PYX_ERR(0, 213, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":213
+      /* "src/orchestrator/orchestrator_neoqcr.py":214
  *                         url_holder["img_url"] = result
  *                     url_holder["complete"] = True
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")             # <<<<<<<<<<<<<<
@@ -7750,28 +7768,28 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_8 = __pyx_builtin_print; 
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = PyNumber_Subtract(__pyx_t_6, __pyx_v_t0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_10 = PyNumber_Subtract(__pyx_t_6, __pyx_v_t0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Format(__pyx_t_10, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_Format(__pyx_t_10, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 213, __pyx_L3_error) }
+      if (unlikely(!__pyx_cur_scope->__pyx_v_url_holder)) { __Pyx_RaiseClosureNameError("url_holder"); __PYX_ERR(0, 214, __pyx_L3_error) }
       if (unlikely(__pyx_cur_scope->__pyx_v_url_holder == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 213, __pyx_L3_error)
+        __PYX_ERR(0, 214, __pyx_L3_error)
       }
-      __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_img_url); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_11 = __Pyx_PyObject_FormatSimple(__pyx_t_10, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 213, __pyx_L3_error)
+      __pyx_t_11 = __Pyx_PyObject_FormatSimple(__pyx_t_10, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_12[0] = __pyx_mstate_global->__pyx_kp_u_Upload_Done_in;
@@ -7779,7 +7797,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_12[2] = __pyx_mstate_global->__pyx_kp_u_s_url;
       __pyx_t_12[3] = __pyx_t_11;
       __pyx_t_10 = __Pyx_PyUnicode_Join(__pyx_t_12, 4, 17 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 7 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_11), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_11));
-      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L3_error)
+      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 214, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -7790,12 +7808,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":201
+      /* "src/orchestrator/orchestrator_neoqcr.py":202
  * 
  *             def upload_worker() -> None:
  *                 try:             # <<<<<<<<<<<<<<
@@ -7815,7 +7833,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":214
+    /* "src/orchestrator/orchestrator_neoqcr.py":215
  *                     url_holder["complete"] = True
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")
  *                 except Exception as exc:             # <<<<<<<<<<<<<<
@@ -7825,7 +7843,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_13 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_13) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.process_image_get_metadata.upload_worker", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_8, &__pyx_t_10) < 0) __PYX_ERR(0, 214, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_8, &__pyx_t_10) < 0) __PYX_ERR(0, 215, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_8);
       __Pyx_XGOTREF(__pyx_t_10);
@@ -7833,7 +7851,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_exc = __pyx_t_8;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":215
+        /* "src/orchestrator/orchestrator_neoqcr.py":216
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")
  *                 except Exception as exc:
  *                     print(f"[Upload] Failed: {exc}")             # <<<<<<<<<<<<<<
@@ -7843,9 +7861,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_11 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_6 = __pyx_builtin_print; 
-        __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 215, __pyx_L17_error)
+        __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 216, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_15 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Upload_Failed, __pyx_t_14); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 215, __pyx_L17_error)
+        __pyx_t_15 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Upload_Failed, __pyx_t_14); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 216, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_15);
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __pyx_t_7 = 1;
@@ -7855,12 +7873,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 215, __pyx_L17_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L17_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":216
+        /* "src/orchestrator/orchestrator_neoqcr.py":217
  *                 except Exception as exc:
  *                     print(f"[Upload] Failed: {exc}")
  *                     traceback.print_exc()             # <<<<<<<<<<<<<<
@@ -7868,9 +7886,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             threading.Thread(target=upload_worker, daemon=True).start()
 */
         __pyx_t_6 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_15, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 216, __pyx_L17_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_15, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 217, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_15);
-        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_15, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 216, __pyx_L17_error)
+        __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_15, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 217, __pyx_L17_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
         __pyx_t_7 = 1;
@@ -7890,13 +7908,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 216, __pyx_L17_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 217, __pyx_L17_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":214
+      /* "src/orchestrator/orchestrator_neoqcr.py":215
  *                     url_holder["complete"] = True
  *                     print(f"[Upload] Done in {time.time() - t0:.2f}s  url={url_holder['img_url']}")
  *                 except Exception as exc:             # <<<<<<<<<<<<<<
@@ -7951,7 +7969,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":201
+    /* "src/orchestrator/orchestrator_neoqcr.py":202
  * 
  *             def upload_worker() -> None:
  *                 try:             # <<<<<<<<<<<<<<
@@ -7972,7 +7990,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":200
+  /* "src/orchestrator/orchestrator_neoqcr.py":201
  *             image_copy = image.copy()   # PIL copy for thread safety
  * 
  *             def upload_worker() -> None:             # <<<<<<<<<<<<<<
@@ -8005,7 +8023,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":161
+/* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -8056,10 +8074,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_L3_first_run:;
   if (unlikely(__pyx_sent_value != Py_None)) {
     if (unlikely(__pyx_sent_value)) PyErr_SetString(PyExc_TypeError, "can't send non-None value to a just-started coroutine");
-    __PYX_ERR(0, 161, __pyx_L1_error)
+    __PYX_ERR(0, 162, __pyx_L1_error)
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":179
+  /* "src/orchestrator/orchestrator_neoqcr.py":180
  *         No request-specific data is stored on self.
  *         """
  *         print(f"Processing for client: {client_name}...")             # <<<<<<<<<<<<<<
@@ -8069,13 +8087,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_4 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 179, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_Processing_for_client;
   __pyx_t_5[1] = __pyx_t_4;
   __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u__6;
   __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 23 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4));
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 179, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 180, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_7 = 1;
@@ -8085,12 +8103,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":182
+  /* "src/orchestrator/orchestrator_neoqcr.py":183
  * 
  *         # ---- 1. Decode / validate image (local variable) ---------------
  *         if isinstance(image_data, str):             # <<<<<<<<<<<<<<
@@ -8100,7 +8118,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_8 = PyUnicode_Check(__pyx_cur_scope->__pyx_v_image_data); 
   if (__pyx_t_8) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":183
+    /* "src/orchestrator/orchestrator_neoqcr.py":184
  *         # ---- 1. Decode / validate image (local variable) ---------------
  *         if isinstance(image_data, str):
  *             image = ImageProcessor().process_image(image_data)             # <<<<<<<<<<<<<<
@@ -8108,7 +8126,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             image = image_data
 */
     __pyx_t_2 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 183, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 184, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_7 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -8127,7 +8145,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 183, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 184, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     __pyx_t_3 = __pyx_t_6;
@@ -8138,14 +8156,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_process_image, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 184, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_cur_scope->__pyx_v_image = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":182
+    /* "src/orchestrator/orchestrator_neoqcr.py":183
  * 
  *         # ---- 1. Decode / validate image (local variable) ---------------
  *         if isinstance(image_data, str):             # <<<<<<<<<<<<<<
@@ -8155,7 +8173,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L4;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":185
+  /* "src/orchestrator/orchestrator_neoqcr.py":186
  *             image = ImageProcessor().process_image(image_data)
  *         else:
  *             image = image_data             # <<<<<<<<<<<<<<
@@ -8169,7 +8187,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   }
   __pyx_L4:;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":187
+  /* "src/orchestrator/orchestrator_neoqcr.py":188
  *             image = image_data
  * 
  *         self._print_image_info("Processed image", image)             # <<<<<<<<<<<<<<
@@ -8183,28 +8201,28 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_mstate_global->__pyx_kp_u_Processed_image, __pyx_cur_scope->__pyx_v_image};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_print_image_info, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":195
+  /* "src/orchestrator/orchestrator_neoqcr.py":196
  *         # It is NEVER stored on self.
  *         #
  *         url_holder: Dict[str, Optional[str]] = {"img_url": None, "cdn_url": None, "complete": False}             # <<<<<<<<<<<<<<
  * 
  *         if client_name and client_name.lower() != "reliance":
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_img_url, Py_None) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_cdn_url, Py_None) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_complete, Py_False) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_img_url, Py_None) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_cdn_url, Py_None) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_complete, Py_False) < 0) __PYX_ERR(0, 196, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_cur_scope->__pyx_v_url_holder = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":197
+  /* "src/orchestrator/orchestrator_neoqcr.py":198
  *         url_holder: Dict[str, Optional[str]] = {"img_url": None, "cdn_url": None, "complete": False}
  * 
  *         if client_name and client_name.lower() != "reliance":             # <<<<<<<<<<<<<<
@@ -8212,21 +8230,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
   __pyx_t_9 = (__pyx_cur_scope->__pyx_v_client_name != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_cur_scope->__pyx_v_client_name) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_9 < 0))) __PYX_ERR(0, 197, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_9 < 0))) __PYX_ERR(0, 198, __pyx_L1_error)
   if (__pyx_t_9) {
   } else {
     __pyx_t_8 = __pyx_t_9;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_1 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_9 = (__Pyx_PyUnicode_Equals(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_reliance, Py_NE)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 197, __pyx_L1_error)
+  __pyx_t_9 = (__Pyx_PyUnicode_Equals(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_reliance, Py_NE)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_8 = __pyx_t_9;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_8) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":198
+    /* "src/orchestrator/orchestrator_neoqcr.py":199
  * 
  *         if client_name and client_name.lower() != "reliance":
  *             image_copy = image.copy()   # PIL copy for thread safety             # <<<<<<<<<<<<<<
@@ -8240,24 +8258,24 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_copy, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_cur_scope->__pyx_v_image_copy = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":200
+    /* "src/orchestrator/orchestrator_neoqcr.py":201
  *             image_copy = image.copy()   # PIL copy for thread safety
  * 
  *             def upload_worker() -> None:             # <<<<<<<<<<<<<<
  *                 try:
  *                     print("[Parallel Upload] Starting...")
 */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 200, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_26process_image_get_metadata_1upload_worker, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m_2, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 200, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 201, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_26process_image_get_metadata_1upload_worker, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m_2, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 201, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_1);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -8265,7 +8283,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_cur_scope->__pyx_v_upload_worker = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":218
+    /* "src/orchestrator/orchestrator_neoqcr.py":219
  *                     traceback.print_exc()
  * 
  *             threading.Thread(target=upload_worker, daemon=True).start()             # <<<<<<<<<<<<<<
@@ -8273,9 +8291,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             url_holder["complete"] = True   # Reliance: no parallel upload needed
 */
     __pyx_t_4 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_threading); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Thread); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Thread); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_7 = 1;
@@ -8292,15 +8310,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     #endif
     {
       PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_4, NULL};
-      __pyx_t_2 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_target, __pyx_cur_scope->__pyx_v_upload_worker, __pyx_t_2, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
-      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_daemon, Py_True, __pyx_t_2, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 218, __pyx_L1_error)
+      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_target, __pyx_cur_scope->__pyx_v_upload_worker, __pyx_t_2, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
+      if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_daemon, Py_True, __pyx_t_2, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
       __pyx_t_3 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_10, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_2);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 218, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
     }
     __pyx_t_1 = __pyx_t_3;
@@ -8311,12 +8329,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_start, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":197
+    /* "src/orchestrator/orchestrator_neoqcr.py":198
  *         url_holder: Dict[str, Optional[str]] = {"img_url": None, "cdn_url": None, "complete": False}
  * 
  *         if client_name and client_name.lower() != "reliance":             # <<<<<<<<<<<<<<
@@ -8326,7 +8344,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L5;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":220
+  /* "src/orchestrator/orchestrator_neoqcr.py":221
  *             threading.Thread(target=upload_worker, daemon=True).start()
  *         else:
  *             url_holder["complete"] = True   # Reliance: no parallel upload needed             # <<<<<<<<<<<<<<
@@ -8334,11 +8352,11 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         # ---- 3. Run inference (while upload continues) -----------------
 */
   /*else*/ {
-    if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0))) __PYX_ERR(0, 220, __pyx_L1_error)
+    if (unlikely((PyDict_SetItem(__pyx_cur_scope->__pyx_v_url_holder, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0))) __PYX_ERR(0, 221, __pyx_L1_error)
   }
   __pyx_L5:;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":224
+  /* "src/orchestrator/orchestrator_neoqcr.py":225
  *         # ---- 3. Run inference (while upload continues) -----------------
  *         ocr_query = (
  *             "what is the maximum retail price, manufacturing date, "             # <<<<<<<<<<<<<<
@@ -8349,7 +8367,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_what_is_the_maximum_retail_price);
   __pyx_cur_scope->__pyx_v_ocr_query = __pyx_mstate_global->__pyx_kp_u_what_is_the_maximum_retail_price;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":228
+  /* "src/orchestrator/orchestrator_neoqcr.py":229
  *         )
  * 
  *         t0 = time.perf_counter()             # <<<<<<<<<<<<<<
@@ -8357,9 +8375,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         model_time_ms = (time.perf_counter() - t0) * 1000
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_7 = 1;
@@ -8379,21 +8397,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 228, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 229, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_cur_scope->__pyx_v_t0 = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":229
+  /* "src/orchestrator/orchestrator_neoqcr.py":230
  * 
  *         t0 = time.perf_counter()
  *         ocr_result = await self.qwen_model.process_batch(image, ocr_query)             # <<<<<<<<<<<<<<
  *         model_time_ms = (time.perf_counter() - t0) * 1000
- *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
+ *         VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
 */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_10 = __pyx_t_3;
   __Pyx_INCREF(__pyx_t_10);
@@ -8403,7 +8421,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_process_batch, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 229, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __pyx_t_11 = __Pyx_Coroutine_Yield_From(__pyx_generator, __pyx_t_6, &__pyx_r);
@@ -8417,30 +8435,30 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_generator->resume_label = 1;
     return __pyx_r;
     __pyx_L8_resume_from_await:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 229, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 230, __pyx_L1_error)
     __pyx_t_6 = __pyx_sent_value; __Pyx_INCREF(__pyx_t_6);
   } else if (likely(__pyx_t_11 == PYGEN_RETURN)) {
     __Pyx_GOTREF(__pyx_r);
     __pyx_t_6 = __pyx_r; __pyx_r = NULL;
   } else {
     __Pyx_XGOTREF(__pyx_r);
-    __PYX_ERR(0, 229, __pyx_L1_error)
+    __PYX_ERR(0, 230, __pyx_L1_error)
   }
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_cur_scope->__pyx_v_ocr_result = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":230
+  /* "src/orchestrator/orchestrator_neoqcr.py":231
  *         t0 = time.perf_counter()
  *         ocr_result = await self.qwen_model.process_batch(image, ocr_query)
  *         model_time_ms = (time.perf_counter() - t0) * 1000             # <<<<<<<<<<<<<<
+ *         VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
  *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
- *         print(f"Inference result: {ocr_result}")
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __pyx_t_7 = 1;
@@ -8460,78 +8478,138 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyLong_MultiplyObjC(__pyx_t_1, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 230, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyLong_MultiplyObjC(__pyx_t_1, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_cur_scope->__pyx_v_model_time_ms = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":231
+  /* "src/orchestrator/orchestrator_neoqcr.py":232
  *         ocr_result = await self.qwen_model.process_batch(image, ocr_query)
  *         model_time_ms = (time.perf_counter() - t0) * 1000
- *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")             # <<<<<<<<<<<<<<
- *         print(f"Inference result: {ocr_result}")
- * 
-*/
-  __pyx_t_1 = NULL;
-  __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_10 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_model_time_ms, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 231, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_TIMER_Inference;
-  __pyx_t_5[1] = __pyx_t_10;
-  __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u_ms;
-  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 19 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10));
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  __pyx_t_7 = 1;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_2};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-  }
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-  /* "src/orchestrator/orchestrator_neoqcr.py":232
- *         model_time_ms = (time.perf_counter() - t0) * 1000
+ *         VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)             # <<<<<<<<<<<<<<
  *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
- *         print(f"Inference result: {ocr_result}")             # <<<<<<<<<<<<<<
- * 
- *         # ---- 4. Extract metadata (all local) ---------------------------
+ *         print(f"Inference result: {ocr_result}")
 */
-  __pyx_t_3 = NULL;
-  __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_2 = __pyx_builtin_print; 
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_ocr_result, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_10 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Inference_result, __pyx_t_1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 232, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_10 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VLM_LATENCY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_labels); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_client_name); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 232, __pyx_L1_error)
+  if (!__pyx_t_8) {
+  } else {
+    __Pyx_INCREF(__pyx_cur_scope->__pyx_v_client_name);
+    __pyx_t_2 = __pyx_cur_scope->__pyx_v_client_name;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_unknown);
+  __pyx_t_2 = __pyx_mstate_global->__pyx_n_u_unknown;
+  __pyx_L9_bool_binop_done:;
   __pyx_t_7 = 1;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_4);
+    assert(__pyx_t_10);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+    __Pyx_INCREF(__pyx_t_10);
+    __Pyx_INCREF(__pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+    __pyx_t_7 = 0;
+  }
+  #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_t_10};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+    PyObject *__pyx_callargs[3] = {__pyx_t_10, __pyx_mstate_global->__pyx_n_u_process_image_get_metadata, __pyx_t_2};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+  }
+  __pyx_t_1 = __pyx_t_3;
+  __Pyx_INCREF(__pyx_t_1);
+  __pyx_t_4 = __Pyx_PyLong_TrueDivideObjC(__pyx_cur_scope->__pyx_v_model_time_ms, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_7 = 0;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_4};
+    __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_observe, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":235
+  /* "src/orchestrator/orchestrator_neoqcr.py":233
+ *         model_time_ms = (time.perf_counter() - t0) * 1000
+ *         VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
+ *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")             # <<<<<<<<<<<<<<
+ *         print(f"Inference result: {ocr_result}")
+ * 
+*/
+  __pyx_t_3 = NULL;
+  __Pyx_INCREF(__pyx_builtin_print);
+  __pyx_t_4 = __pyx_builtin_print; 
+  __pyx_t_1 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_model_time_ms, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_TIMER_Inference;
+  __pyx_t_5[1] = __pyx_t_1;
+  __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u_ms;
+  __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 19 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1));
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 233, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_7 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_t_2};
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 233, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+  }
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+  /* "src/orchestrator/orchestrator_neoqcr.py":234
+ *         VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
+ *         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
+ *         print(f"Inference result: {ocr_result}")             # <<<<<<<<<<<<<<
+ * 
+ *         # ---- 4. Extract metadata (all local) ---------------------------
+*/
+  __pyx_t_4 = NULL;
+  __Pyx_INCREF(__pyx_builtin_print);
+  __pyx_t_2 = __pyx_builtin_print; 
+  __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_ocr_result, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Inference_result, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_7 = 1;
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_1};
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 234, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+  }
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+  /* "src/orchestrator/orchestrator_neoqcr.py":237
  * 
  *         # ---- 4. Extract metadata (all local) ---------------------------
  *         t0 = time.perf_counter()             # <<<<<<<<<<<<<<
@@ -8539,29 +8617,29 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 235, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 235, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_7 = 1;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+  if (unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
     assert(__pyx_t_2);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
     __pyx_t_7 = 0;
   }
   #endif
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __Pyx_GOTREF(__pyx_cur_scope->__pyx_v_t0);
@@ -8569,21 +8647,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":236
+  /* "src/orchestrator/orchestrator_neoqcr.py":238
  *         # ---- 4. Extract metadata (all local) ---------------------------
  *         t0 = time.perf_counter()
  *         mrp, dates, batch_no = self._extract_metadata(ocr_result)             # <<<<<<<<<<<<<<
  *         print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")
  * 
 */
-  __pyx_t_3 = __pyx_cur_scope->__pyx_v_self;
-  __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_4 = __pyx_cur_scope->__pyx_v_self;
+  __Pyx_INCREF(__pyx_t_4);
   __pyx_t_7 = 0;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_ocr_result};
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_ocr_result};
     __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_extract_metadata, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 236, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
@@ -8592,116 +8670,116 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 236, __pyx_L1_error)
+      __PYX_ERR(0, 238, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
-      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0);
-      __Pyx_INCREF(__pyx_t_3);
+      __pyx_t_4 = PyTuple_GET_ITEM(sequence, 0);
+      __Pyx_INCREF(__pyx_t_4);
       __pyx_t_2 = PyTuple_GET_ITEM(sequence, 1);
       __Pyx_INCREF(__pyx_t_2);
-      __pyx_t_10 = PyTuple_GET_ITEM(sequence, 2);
-      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_1 = PyTuple_GET_ITEM(sequence, 2);
+      __Pyx_INCREF(__pyx_t_1);
     } else {
-      __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 0);
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 236, __pyx_L1_error)
-      __Pyx_XGOTREF(__pyx_t_3);
+      __pyx_t_4 = __Pyx_PyList_GetItemRef(sequence, 0);
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_XGOTREF(__pyx_t_4);
       __pyx_t_2 = __Pyx_PyList_GetItemRef(sequence, 1);
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
       __Pyx_XGOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyList_GetItemRef(sequence, 2);
-      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L1_error)
-      __Pyx_XGOTREF(__pyx_t_10);
+      __pyx_t_1 = __Pyx_PyList_GetItemRef(sequence, 2);
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_XGOTREF(__pyx_t_1);
     }
     #else
-    __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 236, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 236, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 236, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
+    __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 238, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     #endif
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 236, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_12 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1);
-    index = 0; __pyx_t_3 = __pyx_t_12(__pyx_t_1); if (unlikely(!__pyx_t_3)) goto __pyx_L9_unpacking_failed;
+    __pyx_t_3 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    index = 1; __pyx_t_2 = __pyx_t_12(__pyx_t_1); if (unlikely(!__pyx_t_2)) goto __pyx_L9_unpacking_failed;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_12 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3);
+    index = 0; __pyx_t_4 = __pyx_t_12(__pyx_t_3); if (unlikely(!__pyx_t_4)) goto __pyx_L11_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_4);
+    index = 1; __pyx_t_2 = __pyx_t_12(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L11_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
-    index = 2; __pyx_t_10 = __pyx_t_12(__pyx_t_1); if (unlikely(!__pyx_t_10)) goto __pyx_L9_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_10);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_1), 3) < 0) __PYX_ERR(0, 236, __pyx_L1_error)
+    index = 2; __pyx_t_1 = __pyx_t_12(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L11_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_1);
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_3), 3) < 0) __PYX_ERR(0, 238, __pyx_L1_error)
     __pyx_t_12 = NULL;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    goto __pyx_L10_unpacking_done;
-    __pyx_L9_unpacking_failed:;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L12_unpacking_done;
+    __pyx_L11_unpacking_failed:;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_12 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 236, __pyx_L1_error)
-    __pyx_L10_unpacking_done:;
+    __PYX_ERR(0, 238, __pyx_L1_error)
+    __pyx_L12_unpacking_done:;
   }
-  __Pyx_GIVEREF(__pyx_t_3);
-  __pyx_cur_scope->__pyx_v_mrp = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __Pyx_GIVEREF(__pyx_t_4);
+  __pyx_cur_scope->__pyx_v_mrp = __pyx_t_4;
+  __pyx_t_4 = 0;
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_cur_scope->__pyx_v_dates = __pyx_t_2;
   __pyx_t_2 = 0;
-  __Pyx_GIVEREF(__pyx_t_10);
-  __pyx_cur_scope->__pyx_v_batch_no = __pyx_t_10;
-  __pyx_t_10 = 0;
+  __Pyx_GIVEREF(__pyx_t_1);
+  __pyx_cur_scope->__pyx_v_batch_no = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":237
+  /* "src/orchestrator/orchestrator_neoqcr.py":239
  *         t0 = time.perf_counter()
  *         mrp, dates, batch_no = self._extract_metadata(ocr_result)
  *         print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")             # <<<<<<<<<<<<<<
  * 
  *         data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
 */
-  __pyx_t_10 = NULL;
+  __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_2 = __pyx_builtin_print; 
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Subtract(__pyx_t_4, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Subtract(__pyx_t_3, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyLong_MultiplyObjC(__pyx_t_3, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyLong_MultiplyObjC(__pyx_t_1, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Format(__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Format(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_TIMER_Regex_extraction;
-  __pyx_t_5[1] = __pyx_t_1;
+  __pyx_t_5[1] = __pyx_t_3;
   __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u_ms;
-  __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 26 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1));
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 26 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3));
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_7 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_3};
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_4};
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 237, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 239, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":239
+  /* "src/orchestrator/orchestrator_neoqcr.py":241
  *         print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")
  * 
  *         data = MetadataProcessor.create_metadata(mrp, dates, batch_no)             # <<<<<<<<<<<<<<
@@ -8709,193 +8787,193 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         # ---- 5. Session cache (keyed by env_id  already isolated) -----
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 239, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 239, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 241, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_7 = 1;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_10))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_10);
+  if (unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
     assert(__pyx_t_2);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_10);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_10, __pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_1, __pyx__function);
     __pyx_t_7 = 0;
   }
   #endif
   {
     PyObject *__pyx_callargs[4] = {__pyx_t_2, __pyx_cur_scope->__pyx_v_mrp, __pyx_cur_scope->__pyx_v_dates, __pyx_cur_scope->__pyx_v_batch_no};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (4-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_7, (4-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 239, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 241, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __Pyx_GIVEREF(__pyx_t_6);
   __pyx_cur_scope->__pyx_v_data = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":242
+  /* "src/orchestrator/orchestrator_neoqcr.py":244
  * 
  *         # ---- 5. Session cache (keyed by env_id  already isolated) -----
  *         if recapture_flag:             # <<<<<<<<<<<<<<
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))
  *         elif capture_type:
 */
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_recapture_flag); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_recapture_flag); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 244, __pyx_L1_error)
   if (__pyx_t_8) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":243
+    /* "src/orchestrator/orchestrator_neoqcr.py":245
  *         # ---- 5. Session cache (keyed by env_id  already isolated) -----
  *         if recapture_flag:
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))             # <<<<<<<<<<<<<<
  *         elif capture_type:
  *             session_meta = self.session_cache.get(env_id)
 */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 243, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 245, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = __pyx_t_2;
-    __Pyx_INCREF(__pyx_t_10);
-    __pyx_t_1 = __pyx_cur_scope->__pyx_v_self;
+    __pyx_t_1 = __pyx_t_2;
     __Pyx_INCREF(__pyx_t_1);
+    __pyx_t_3 = __pyx_cur_scope->__pyx_v_self;
+    __Pyx_INCREF(__pyx_t_3);
     __pyx_t_7 = 0;
     {
-      PyObject *__pyx_callargs[3] = {__pyx_t_1, __pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_env_id};
-      __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get_processed_data, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 243, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_env_id};
+      __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get_processed_data, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
     }
     __pyx_t_7 = 0;
     {
-      PyObject *__pyx_callargs[3] = {__pyx_t_10, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_3};
+      PyObject *__pyx_callargs[3] = {__pyx_t_1, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_4};
       __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_set, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 243, __pyx_L1_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 245, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":242
+    /* "src/orchestrator/orchestrator_neoqcr.py":244
  * 
  *         # ---- 5. Session cache (keyed by env_id  already isolated) -----
  *         if recapture_flag:             # <<<<<<<<<<<<<<
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))
  *         elif capture_type:
 */
-    goto __pyx_L11;
+    goto __pyx_L13;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":244
+  /* "src/orchestrator/orchestrator_neoqcr.py":246
  *         if recapture_flag:
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))
  *         elif capture_type:             # <<<<<<<<<<<<<<
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:
 */
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_capture_type); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 244, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_capture_type); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 246, __pyx_L1_error)
   if (__pyx_t_8) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":245
+    /* "src/orchestrator/orchestrator_neoqcr.py":247
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))
  *         elif capture_type:
  *             session_meta = self.session_cache.get(env_id)             # <<<<<<<<<<<<<<
  *             if not session_meta:
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
 */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 245, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __pyx_t_3;
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_2 = __pyx_t_4;
     __Pyx_INCREF(__pyx_t_2);
     __pyx_t_7 = 0;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_cur_scope->__pyx_v_env_id};
       __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 245, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
     }
     __Pyx_GIVEREF(__pyx_t_6);
     __pyx_cur_scope->__pyx_v_session_meta = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":246
+    /* "src/orchestrator/orchestrator_neoqcr.py":248
  *         elif capture_type:
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:             # <<<<<<<<<<<<<<
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
  *             else:
 */
-    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_meta); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 246, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_meta); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 248, __pyx_L1_error)
     __pyx_t_9 = (!__pyx_t_8);
     if (__pyx_t_9) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":247
+      /* "src/orchestrator/orchestrator_neoqcr.py":249
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:
  *                 self.session_cache.set(env_id, copy.deepcopy(data))             # <<<<<<<<<<<<<<
  *             else:
  *                 for key, value in session_meta.items():
 */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 247, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __pyx_t_2;
-      __Pyx_INCREF(__pyx_t_3);
-      __pyx_t_1 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 247, __pyx_L1_error)
+      __pyx_t_4 = __pyx_t_2;
+      __Pyx_INCREF(__pyx_t_4);
+      __pyx_t_3 = NULL;
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 249, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 249, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_7 = 1;
       #if CYTHON_UNPACK_METHODS
       if (unlikely(PyMethod_Check(__pyx_t_13))) {
-        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_13);
-        assert(__pyx_t_1);
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_13);
+        assert(__pyx_t_3);
         PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_13);
-        __Pyx_INCREF(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(__pyx__function);
         __Pyx_DECREF_SET(__pyx_t_13, __pyx__function);
         __pyx_t_7 = 0;
       }
       #endif
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_cur_scope->__pyx_v_data};
-        __pyx_t_10 = __Pyx_PyObject_FastCall(__pyx_t_13, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_data};
+        __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_13, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 247, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_10);
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 249, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
       }
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_10};
+        PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_1};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_set, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 249, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":246
+      /* "src/orchestrator/orchestrator_neoqcr.py":248
  *         elif capture_type:
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:             # <<<<<<<<<<<<<<
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
  *             else:
 */
-      goto __pyx_L12;
+      goto __pyx_L14;
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":249
+    /* "src/orchestrator/orchestrator_neoqcr.py":251
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
  *             else:
  *                 for key, value in session_meta.items():             # <<<<<<<<<<<<<<
@@ -8906,29 +8984,29 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_14 = 0;
       if (unlikely(__pyx_cur_scope->__pyx_v_session_meta == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-        __PYX_ERR(0, 249, __pyx_L1_error)
+        __PYX_ERR(0, 251, __pyx_L1_error)
       }
-      __pyx_t_2 = __Pyx_dict_iterator(__pyx_cur_scope->__pyx_v_session_meta, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_15), (&__pyx_t_16)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_dict_iterator(__pyx_cur_scope->__pyx_v_session_meta, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_15), (&__pyx_t_16)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 251, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_XDECREF(__pyx_t_6);
       __pyx_t_6 = __pyx_t_2;
       __pyx_t_2 = 0;
       while (1) {
-        __pyx_t_17 = __Pyx_dict_iter_next(__pyx_t_6, __pyx_t_15, &__pyx_t_14, &__pyx_t_2, &__pyx_t_10, NULL, __pyx_t_16);
+        __pyx_t_17 = __Pyx_dict_iter_next(__pyx_t_6, __pyx_t_15, &__pyx_t_14, &__pyx_t_2, &__pyx_t_1, NULL, __pyx_t_16);
         if (unlikely(__pyx_t_17 == 0)) break;
-        if (unlikely(__pyx_t_17 == -1)) __PYX_ERR(0, 249, __pyx_L1_error)
+        if (unlikely(__pyx_t_17 == -1)) __PYX_ERR(0, 251, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_GOTREF(__pyx_t_10);
+        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_key);
         __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_key, __pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_value);
-        __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_value, __pyx_t_10);
-        __Pyx_GIVEREF(__pyx_t_10);
-        __pyx_t_10 = 0;
+        __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_value, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_1);
+        __pyx_t_1 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":250
+        /* "src/orchestrator/orchestrator_neoqcr.py":252
  *             else:
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):             # <<<<<<<<<<<<<<
@@ -8939,64 +9017,64 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         if (!__pyx_t_8) {
         } else {
           __pyx_t_9 = __pyx_t_8;
-          goto __pyx_L16_bool_binop_done;
+          goto __pyx_L18_bool_binop_done;
         }
         __pyx_t_8 = PyUnicode_Check(__pyx_cur_scope->__pyx_v_value); 
         if (__pyx_t_8) {
         } else {
           __pyx_t_9 = __pyx_t_8;
-          goto __pyx_L16_bool_binop_done;
+          goto __pyx_L18_bool_binop_done;
         }
         __pyx_t_2 = __pyx_cur_scope->__pyx_v_value;
         __Pyx_INCREF(__pyx_t_2);
         __pyx_t_7 = 0;
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
-          __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_7, (1-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 250, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_10);
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 252, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
         }
-        __pyx_t_8 = (__Pyx_PyUnicode_Equals(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 250, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __pyx_t_8 = (__Pyx_PyUnicode_Equals(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 252, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_9 = __pyx_t_8;
-        __pyx_L16_bool_binop_done:;
+        __pyx_L18_bool_binop_done:;
         if (__pyx_t_9) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":251
+          /* "src/orchestrator/orchestrator_neoqcr.py":253
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:             # <<<<<<<<<<<<<<
  *                             session_meta[key] = data[key]
  * 
 */
-          __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_cur_scope->__pyx_v_key, __pyx_cur_scope->__pyx_v_data, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 251, __pyx_L1_error)
+          __pyx_t_8 = (__Pyx_PySequence_ContainsTF(__pyx_cur_scope->__pyx_v_key, __pyx_cur_scope->__pyx_v_data, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 253, __pyx_L1_error)
           if (__pyx_t_8) {
           } else {
             __pyx_t_9 = __pyx_t_8;
-            goto __pyx_L20_bool_binop_done;
+            goto __pyx_L22_bool_binop_done;
           }
-          __pyx_t_10 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 251, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_8 = (__pyx_t_10 != Py_None);
-          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_8 = (__pyx_t_1 != Py_None);
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_t_9 = __pyx_t_8;
-          __pyx_L20_bool_binop_done:;
+          __pyx_L22_bool_binop_done:;
           if (__pyx_t_9) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":252
+            /* "src/orchestrator/orchestrator_neoqcr.py":254
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:
  *                             session_meta[key] = data[key]             # <<<<<<<<<<<<<<
  * 
  *                 #  Multicapture expiry resolution
 */
-            __pyx_t_10 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 252, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_10);
-            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_cur_scope->__pyx_v_key, __pyx_t_10) < 0))) __PYX_ERR(0, 252, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 254, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_1);
+            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_cur_scope->__pyx_v_key, __pyx_t_1) < 0))) __PYX_ERR(0, 254, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":251
+            /* "src/orchestrator/orchestrator_neoqcr.py":253
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:             # <<<<<<<<<<<<<<
@@ -9005,7 +9083,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":250
+          /* "src/orchestrator/orchestrator_neoqcr.py":252
  *             else:
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):             # <<<<<<<<<<<<<<
@@ -9016,83 +9094,83 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":255
+      /* "src/orchestrator/orchestrator_neoqcr.py":257
  * 
  *                 #  Multicapture expiry resolution
  *                 import re as _re             # <<<<<<<<<<<<<<
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")
 */
-      __pyx_t_6 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_re, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 255, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_re, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 257, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_cur_scope->__pyx_v__re = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":256
+      /* "src/orchestrator/orchestrator_neoqcr.py":258
  *                 #  Multicapture expiry resolution
  *                 import re as _re
  *                 session_expiry = session_meta.get("expiry_date")             # <<<<<<<<<<<<<<
  *                 session_mfg    = session_meta.get("mfg_date")
  *                 new_expiry     = data.get("expiry_date")
 */
-      __pyx_t_10 = __pyx_cur_scope->__pyx_v_session_meta;
-      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_1 = __pyx_cur_scope->__pyx_v_session_meta;
+      __Pyx_INCREF(__pyx_t_1);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_mstate_global->__pyx_n_u_expiry_date};
+        PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_mstate_global->__pyx_n_u_expiry_date};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 256, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 258, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_cur_scope->__pyx_v_session_expiry = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":257
+      /* "src/orchestrator/orchestrator_neoqcr.py":259
  *                 import re as _re
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")             # <<<<<<<<<<<<<<
  *                 new_expiry     = data.get("expiry_date")
  * 
 */
-      __pyx_t_10 = __pyx_cur_scope->__pyx_v_session_meta;
-      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_1 = __pyx_cur_scope->__pyx_v_session_meta;
+      __Pyx_INCREF(__pyx_t_1);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_mstate_global->__pyx_n_u_mfg_date};
+        PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_mstate_global->__pyx_n_u_mfg_date};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 257, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 259, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_cur_scope->__pyx_v_session_mfg = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":258
+      /* "src/orchestrator/orchestrator_neoqcr.py":260
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")
  *                 new_expiry     = data.get("expiry_date")             # <<<<<<<<<<<<<<
  * 
  *                 _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'
 */
-      __pyx_t_10 = __pyx_cur_scope->__pyx_v_data;
-      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_1 = __pyx_cur_scope->__pyx_v_data;
+      __Pyx_INCREF(__pyx_t_1);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_mstate_global->__pyx_n_u_expiry_date};
+        PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_mstate_global->__pyx_n_u_expiry_date};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 258, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 260, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_cur_scope->__pyx_v_new_expiry = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":260
+      /* "src/orchestrator/orchestrator_neoqcr.py":262
  *                 new_expiry     = data.get("expiry_date")
  * 
  *                 _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'             # <<<<<<<<<<<<<<
@@ -9103,7 +9181,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_d_2_d_2_d_4);
       __pyx_cur_scope->__pyx_v__DATE_RE = __pyx_mstate_global->__pyx_kp_u_d_2_d_2_d_4;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":261
+      /* "src/orchestrator/orchestrator_neoqcr.py":263
  * 
  *                 _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'
  *                 _PERIOD_RE = r'\b(months?|years?|days?|weeks?)\b'             # <<<<<<<<<<<<<<
@@ -9114,21 +9192,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_b_months_years_days_weeks_b);
       __pyx_cur_scope->__pyx_v__PERIOD_RE = __pyx_mstate_global->__pyx_kp_u_b_months_years_days_weeks_b;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":266
+      /* "src/orchestrator/orchestrator_neoqcr.py":268
  *                 # NeoVLM puts a single date in expiry, so that date is the MFG date.
  *                 if (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 266, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 268, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L23_bool_binop_done;
+        goto __pyx_L25_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":267
+      /* "src/orchestrator/orchestrator_neoqcr.py":269
  *                 if (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -9139,52 +9217,52 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L23_bool_binop_done;
+        goto __pyx_L25_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":268
+      /* "src/orchestrator/orchestrator_neoqcr.py":270
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
 */
-      __pyx_t_10 = __pyx_cur_scope->__pyx_v__re;
-      __Pyx_INCREF(__pyx_t_10);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L1_error)
+      __pyx_t_1 = __pyx_cur_scope->__pyx_v__re;
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[4] = {__pyx_t_10, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_t_2};
+        PyObject *__pyx_callargs[4] = {__pyx_t_1, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_t_2};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_7, (4-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 268, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 270, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 268, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 270, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L23_bool_binop_done;
+        goto __pyx_L25_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":269
+      /* "src/orchestrator/orchestrator_neoqcr.py":271
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 269, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 271, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L23_bool_binop_done;
+        goto __pyx_L25_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":270
+      /* "src/orchestrator/orchestrator_neoqcr.py":272
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -9195,10 +9273,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L23_bool_binop_done;
+        goto __pyx_L25_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":271
+      /* "src/orchestrator/orchestrator_neoqcr.py":273
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)             # <<<<<<<<<<<<<<
@@ -9212,15 +9290,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_new_expiry};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 271, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 273, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 271, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 273, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_9 = __pyx_t_8;
-      __pyx_L23_bool_binop_done:;
+      __pyx_L25_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":265
+      /* "src/orchestrator/orchestrator_neoqcr.py":267
  *                 # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
  *                 # NeoVLM puts a single date in expiry, so that date is the MFG date.
  *                 if (             # <<<<<<<<<<<<<<
@@ -9229,7 +9307,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_9) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":273
+        /* "src/orchestrator/orchestrator_neoqcr.py":275
  *                     and _re.match(_DATE_RE, new_expiry)
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)             # <<<<<<<<<<<<<<
@@ -9237,126 +9315,126 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         print(
 */
         __pyx_t_2 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 273, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_10);
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_7 = 1;
         #if CYTHON_UNPACK_METHODS
-        if (unlikely(PyMethod_Check(__pyx_t_10))) {
-          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_10);
+        if (unlikely(PyMethod_Check(__pyx_t_1))) {
+          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
           assert(__pyx_t_2);
-          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_10);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_1);
           __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(__pyx__function);
-          __Pyx_DECREF_SET(__pyx_t_10, __pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_1, __pyx__function);
           __pyx_t_7 = 0;
         }
         #endif
         {
           PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_cur_scope->__pyx_v_new_expiry, __pyx_cur_scope->__pyx_v_session_expiry};
-          __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 273, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 275, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":274
+        /* "src/orchestrator/orchestrator_neoqcr.py":276
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[MULTICAPTURE] Case A1  period '{session_expiry}' + "
 */
-        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 276, __pyx_L1_error)
         if (__pyx_t_9) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":275
+          /* "src/orchestrator/orchestrator_neoqcr.py":277
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
  *                             f"[MULTICAPTURE] Case A1  period '{session_expiry}' + "
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
 */
-          __pyx_t_10 = NULL;
+          __pyx_t_1 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_2 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":276
+          /* "src/orchestrator/orchestrator_neoqcr.py":278
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A1  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 276, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 278, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_4);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":277
+          /* "src/orchestrator/orchestrator_neoqcr.py":279
  *                         print(
  *                             f"[MULTICAPTURE] Case A1  period '{session_expiry}' + "
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry
 */
-          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 277, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 279, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
           __pyx_t_18[0] = __pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Case_A1_period;
-          __pyx_t_18[1] = __pyx_t_3;
+          __pyx_t_18[1] = __pyx_t_4;
           __pyx_t_18[2] = __pyx_mstate_global->__pyx_kp_u_new_date_as_mfg;
           __pyx_t_18[3] = __pyx_t_13;
           __pyx_t_18[4] = __pyx_mstate_global->__pyx_kp_u_expiry;
-          __pyx_t_18[5] = __pyx_t_1;
+          __pyx_t_18[5] = __pyx_t_3;
           __pyx_t_18[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":276
+          /* "src/orchestrator/orchestrator_neoqcr.py":278
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A1  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 33 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 23 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1));
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __pyx_t_10 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 33 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 23 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3));
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 278, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_10);
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __pyx_t_7 = 1;
           {
-            PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_4};
+            PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_10};
             __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-            __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 275, __pyx_L1_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 277, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":279
+          /* "src/orchestrator/orchestrator_neoqcr.py":281
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry             # <<<<<<<<<<<<<<
  *                         session_meta["expiry_date"] = resolved
  * 
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_new_expiry) < 0))) __PYX_ERR(0, 279, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_new_expiry) < 0))) __PYX_ERR(0, 281, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":280
+          /* "src/orchestrator/orchestrator_neoqcr.py":282
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 280, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 282, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":274
+          /* "src/orchestrator/orchestrator_neoqcr.py":276
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -9365,31 +9443,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":265
+        /* "src/orchestrator/orchestrator_neoqcr.py":267
  *                 # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
  *                 # NeoVLM puts a single date in expiry, so that date is the MFG date.
  *                 if (             # <<<<<<<<<<<<<<
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
 */
-        goto __pyx_L22;
+        goto __pyx_L24;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":284
+      /* "src/orchestrator/orchestrator_neoqcr.py":286
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 284, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 286, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L30_bool_binop_done;
+        goto __pyx_L32_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":285
+      /* "src/orchestrator/orchestrator_neoqcr.py":287
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -9400,10 +9478,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L30_bool_binop_done;
+        goto __pyx_L32_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":286
+      /* "src/orchestrator/orchestrator_neoqcr.py":288
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)             # <<<<<<<<<<<<<<
@@ -9417,32 +9495,32 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_session_expiry};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 286, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 288, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 286, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 288, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L30_bool_binop_done;
+        goto __pyx_L32_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":287
+      /* "src/orchestrator/orchestrator_neoqcr.py":289
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 287, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 289, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L30_bool_binop_done;
+        goto __pyx_L32_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":288
+      /* "src/orchestrator/orchestrator_neoqcr.py":290
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -9453,10 +9531,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L30_bool_binop_done;
+        goto __pyx_L32_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":289
+      /* "src/orchestrator/orchestrator_neoqcr.py":291
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
@@ -9465,23 +9543,23 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       __pyx_t_2 = __pyx_cur_scope->__pyx_v__re;
       __Pyx_INCREF(__pyx_t_2);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 289, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 291, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_10);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[4] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_new_expiry, __pyx_t_4};
+        PyObject *__pyx_callargs[4] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_new_expiry, __pyx_t_10};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_7, (4-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 289, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 291, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 289, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 291, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_9 = __pyx_t_8;
-      __pyx_L30_bool_binop_done:;
+      __pyx_L32_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":283
+      /* "src/orchestrator/orchestrator_neoqcr.py":285
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -9490,51 +9568,51 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_9) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":291
+        /* "src/orchestrator/orchestrator_neoqcr.py":293
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)             # <<<<<<<<<<<<<<
  *                     if resolved:
  *                         print(
 */
-        __pyx_t_4 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+        __pyx_t_10 = NULL;
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_7 = 1;
         #if CYTHON_UNPACK_METHODS
         if (unlikely(PyMethod_Check(__pyx_t_2))) {
-          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-          assert(__pyx_t_4);
+          __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_2);
+          assert(__pyx_t_10);
           PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_10);
           __Pyx_INCREF(__pyx__function);
           __Pyx_DECREF_SET(__pyx_t_2, __pyx__function);
           __pyx_t_7 = 0;
         }
         #endif
         {
-          PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_cur_scope->__pyx_v_new_expiry};
+          PyObject *__pyx_callargs[3] = {__pyx_t_10, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_cur_scope->__pyx_v_new_expiry};
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 291, __pyx_L1_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 293, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":292
+        /* "src/orchestrator/orchestrator_neoqcr.py":294
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "
 */
-        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 292, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 294, __pyx_L1_error)
         if (__pyx_t_9) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":293
+          /* "src/orchestrator/orchestrator_neoqcr.py":295
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
@@ -9543,81 +9621,81 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           __pyx_t_2 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
-          __pyx_t_4 = __pyx_builtin_print; 
+          __pyx_t_10 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":294
+          /* "src/orchestrator/orchestrator_neoqcr.py":296
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 294, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_10);
+          __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":295
+          /* "src/orchestrator/orchestrator_neoqcr.py":297
  *                         print(
  *                             f"[MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry
 */
-          __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 295, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 297, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 297, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
           __pyx_t_18[0] = __pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Case_A2_date_as_mf;
-          __pyx_t_18[1] = __pyx_t_10;
+          __pyx_t_18[1] = __pyx_t_1;
           __pyx_t_18[2] = __pyx_mstate_global->__pyx_kp_u_new_period;
-          __pyx_t_18[3] = __pyx_t_1;
+          __pyx_t_18[3] = __pyx_t_3;
           __pyx_t_18[4] = __pyx_mstate_global->__pyx_kp_u_expiry;
           __pyx_t_18[5] = __pyx_t_13;
           __pyx_t_18[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":294
+          /* "src/orchestrator/orchestrator_neoqcr.py":296
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 40 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10) + 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13));
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 294, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 40 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13));
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 296, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __pyx_t_7 = 1;
           {
-            PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_3};
-            __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+            PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_4};
+            __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 293, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 295, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":297
+          /* "src/orchestrator/orchestrator_neoqcr.py":299
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry             # <<<<<<<<<<<<<<
  *                         session_meta["expiry_date"] = resolved
  * 
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_session_expiry) < 0))) __PYX_ERR(0, 297, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_session_expiry) < 0))) __PYX_ERR(0, 299, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":298
+          /* "src/orchestrator/orchestrator_neoqcr.py":300
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 298, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 300, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":292
+          /* "src/orchestrator/orchestrator_neoqcr.py":294
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -9626,31 +9704,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":283
+        /* "src/orchestrator/orchestrator_neoqcr.py":285
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (             # <<<<<<<<<<<<<<
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
 */
-        goto __pyx_L22;
+        goto __pyx_L24;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":302
+      /* "src/orchestrator/orchestrator_neoqcr.py":304
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 302, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L37_bool_binop_done;
+        goto __pyx_L39_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":303
+      /* "src/orchestrator/orchestrator_neoqcr.py":305
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -9661,60 +9739,60 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L37_bool_binop_done;
+        goto __pyx_L39_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":304
+      /* "src/orchestrator/orchestrator_neoqcr.py":306
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
  *                     and session_meta.get("mfg_date")
  *                 ):
 */
-      __pyx_t_4 = __pyx_cur_scope->__pyx_v__re;
-      __Pyx_INCREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 304, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_10 = __pyx_cur_scope->__pyx_v__re;
+      __Pyx_INCREF(__pyx_t_10);
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 306, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[4] = {__pyx_t_4, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_t_3};
+        PyObject *__pyx_callargs[4] = {__pyx_t_10, __pyx_cur_scope->__pyx_v__PERIOD_RE, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_t_4};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_7, (4-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 304, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 306, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 306, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L37_bool_binop_done;
+        goto __pyx_L39_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":305
+      /* "src/orchestrator/orchestrator_neoqcr.py":307
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and session_meta.get("mfg_date")             # <<<<<<<<<<<<<<
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
 */
-      __pyx_t_3 = __pyx_cur_scope->__pyx_v_session_meta;
-      __Pyx_INCREF(__pyx_t_3);
+      __pyx_t_4 = __pyx_cur_scope->__pyx_v_session_meta;
+      __Pyx_INCREF(__pyx_t_4);
       __pyx_t_7 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_n_u_mfg_date};
+        PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_n_u_mfg_date};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 305, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 307, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 305, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 307, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_9 = __pyx_t_8;
-      __pyx_L37_bool_binop_done:;
+      __pyx_L39_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":301
+      /* "src/orchestrator/orchestrator_neoqcr.py":303
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (             # <<<<<<<<<<<<<<
@@ -9723,131 +9801,131 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_9) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":307
+        /* "src/orchestrator/orchestrator_neoqcr.py":309
  *                     and session_meta.get("mfg_date")
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)             # <<<<<<<<<<<<<<
  *                     if resolved:
  *                         print(
 */
-        __pyx_t_3 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 307, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
+        __pyx_t_4 = NULL;
+        __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 309, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_10);
+        __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_7 = 1;
         #if CYTHON_UNPACK_METHODS
-        if (unlikely(PyMethod_Check(__pyx_t_4))) {
-          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-          assert(__pyx_t_3);
-          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_3);
+        if (unlikely(PyMethod_Check(__pyx_t_10))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_10);
+          assert(__pyx_t_4);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_10);
+          __Pyx_INCREF(__pyx_t_4);
           __Pyx_INCREF(__pyx__function);
-          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_10, __pyx__function);
           __pyx_t_7 = 0;
         }
         #endif
         {
-          PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_t_2, __pyx_cur_scope->__pyx_v_session_expiry};
-          __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+          PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_t_2, __pyx_cur_scope->__pyx_v_session_expiry};
+          __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 307, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 309, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":308
+        /* "src/orchestrator/orchestrator_neoqcr.py":310
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "
 */
-        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 308, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 310, __pyx_L1_error)
         if (__pyx_t_9) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":309
+          /* "src/orchestrator/orchestrator_neoqcr.py":311
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
  *                             f"[MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
 */
-          __pyx_t_4 = NULL;
+          __pyx_t_10 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_2 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":310
+          /* "src/orchestrator/orchestrator_neoqcr.py":312
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 310, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 312, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_4);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":311
+          /* "src/orchestrator/orchestrator_neoqcr.py":313
  *                         print(
  *                             f"[MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["expiry_date"] = resolved
 */
-          __pyx_t_13 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 311, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_13, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_13, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 311, __pyx_L1_error)
+          __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 313, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_13);
           __pyx_t_18[0] = __pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Case_A_legacy_peri;
-          __pyx_t_18[1] = __pyx_t_3;
+          __pyx_t_18[1] = __pyx_t_4;
           __pyx_t_18[2] = __pyx_mstate_global->__pyx_kp_u_mfg;
-          __pyx_t_18[3] = __pyx_t_1;
+          __pyx_t_18[3] = __pyx_t_3;
           __pyx_t_18[4] = __pyx_mstate_global->__pyx_kp_u_expiry;
           __pyx_t_18[5] = __pyx_t_13;
           __pyx_t_18[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":310
+          /* "src/orchestrator/orchestrator_neoqcr.py":312
  *                     if resolved:
  *                         print(
  *                             f"[MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_10 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 41 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13));
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 310, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_10);
+          __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_18, 7, 41 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13));
+          if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
           __pyx_t_7 = 1;
           {
-            PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_10};
+            PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_1};
             __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-            __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
+            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 309, __pyx_L1_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 311, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":313
+          /* "src/orchestrator/orchestrator_neoqcr.py":315
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 313, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 315, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":308
+          /* "src/orchestrator/orchestrator_neoqcr.py":310
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -9856,31 +9934,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":301
+        /* "src/orchestrator/orchestrator_neoqcr.py":303
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (             # <<<<<<<<<<<<<<
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
 */
-        goto __pyx_L22;
+        goto __pyx_L24;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":318
+      /* "src/orchestrator/orchestrator_neoqcr.py":320
  *                 # Apply MFG < EXP rule to assign roles.
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 318, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 320, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":319
+      /* "src/orchestrator/orchestrator_neoqcr.py":321
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -9891,10 +9969,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":320
+      /* "src/orchestrator/orchestrator_neoqcr.py":322
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)             # <<<<<<<<<<<<<<
@@ -9908,32 +9986,32 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_session_expiry};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 320, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 322, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 320, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 322, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":321
+      /* "src/orchestrator/orchestrator_neoqcr.py":323
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 321, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 323, __pyx_L1_error)
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":322
+      /* "src/orchestrator/orchestrator_neoqcr.py":324
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -9944,10 +10022,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":323
+      /* "src/orchestrator/orchestrator_neoqcr.py":325
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)             # <<<<<<<<<<<<<<
@@ -9961,30 +10039,30 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_new_expiry};
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 323, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 325, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 323, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 325, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_8) {
       } else {
         __pyx_t_9 = __pyx_t_8;
-        goto __pyx_L42_bool_binop_done;
+        goto __pyx_L44_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":324
+      /* "src/orchestrator/orchestrator_neoqcr.py":326
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
  *                     and not session_mfg             # <<<<<<<<<<<<<<
  *                 ):
  *                     try:
 */
-      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_mfg); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 324, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_mfg); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 326, __pyx_L1_error)
       __pyx_t_19 = (!__pyx_t_8);
       __pyx_t_9 = __pyx_t_19;
-      __pyx_L42_bool_binop_done:;
+      __pyx_L44_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":317
+      /* "src/orchestrator/orchestrator_neoqcr.py":319
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
  *                 # Apply MFG < EXP rule to assign roles.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -9993,7 +10071,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_9) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":326
+        /* "src/orchestrator/orchestrator_neoqcr.py":328
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
@@ -10007,22 +10085,22 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XGOTREF(__pyx_t_22);
           /*try:*/ {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":327
+            /* "src/orchestrator/orchestrator_neoqcr.py":329
  *                 ):
  *                     try:
  *                         from datetime import datetime as _dt             # <<<<<<<<<<<<<<
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
 */
-            __pyx_t_6 = PyList_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 327, __pyx_L49_error)
+            __pyx_t_6 = PyList_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 329, __pyx_L51_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_datetime);
             __Pyx_GIVEREF(__pyx_mstate_global->__pyx_n_u_datetime);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 0, __pyx_mstate_global->__pyx_n_u_datetime) != (0)) __PYX_ERR(0, 327, __pyx_L49_error);
-            __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_datetime, __pyx_t_6, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L49_error)
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_6, 0, __pyx_mstate_global->__pyx_n_u_datetime) != (0)) __PYX_ERR(0, 329, __pyx_L51_error);
+            __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_datetime, __pyx_t_6, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L51_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __pyx_t_6 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 327, __pyx_L49_error)
+            __pyx_t_6 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 329, __pyx_L51_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_INCREF(__pyx_t_6);
             __Pyx_GIVEREF(__pyx_t_6);
@@ -10030,7 +10108,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":328
+            /* "src/orchestrator/orchestrator_neoqcr.py":330
  *                     try:
  *                         from datetime import datetime as _dt
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')             # <<<<<<<<<<<<<<
@@ -10044,14 +10122,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_kp_u_d_m_Y};
               __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strptime, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L49_error)
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_2);
             }
             __Pyx_GIVEREF(__pyx_t_2);
             __pyx_cur_scope->__pyx_v_d1 = __pyx_t_2;
             __pyx_t_2 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":329
+            /* "src/orchestrator/orchestrator_neoqcr.py":331
  *                         from datetime import datetime as _dt
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')             # <<<<<<<<<<<<<<
@@ -10065,34 +10143,34 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_kp_u_d_m_Y};
               __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strptime, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L49_error)
+              if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_2);
             }
             __Pyx_GIVEREF(__pyx_t_2);
             __pyx_cur_scope->__pyx_v_d2 = __pyx_t_2;
             __pyx_t_2 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":330
+            /* "src/orchestrator/orchestrator_neoqcr.py":332
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:             # <<<<<<<<<<<<<<
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
 */
-            __pyx_t_2 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L49_error)
-            __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 330, __pyx_L49_error)
+            __pyx_t_2 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L51_error)
+            __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 332, __pyx_L51_error)
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             if (__pyx_t_9) {
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":331
+              /* "src/orchestrator/orchestrator_neoqcr.py":333
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry             # <<<<<<<<<<<<<<
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
 */
-              __pyx_t_6 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 331, __pyx_L49_error)
-              __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 331, __pyx_L49_error)
+              __pyx_t_6 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 333, __pyx_L51_error)
+              __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 333, __pyx_L51_error)
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               if (__pyx_t_9) {
                 __Pyx_INCREF(__pyx_cur_scope->__pyx_v_session_expiry);
@@ -10105,15 +10183,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_cur_scope->__pyx_v_mfg_date = __pyx_t_2;
               __pyx_t_2 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":332
+              /* "src/orchestrator/orchestrator_neoqcr.py":334
  *                         if d1 != d2:
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry             # <<<<<<<<<<<<<<
  *                             print(
  *                                 f"[MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "
 */
-              __pyx_t_6 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 332, __pyx_L49_error)
-              __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 332, __pyx_L49_error)
+              __pyx_t_6 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 334, __pyx_L51_error)
+              __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 334, __pyx_L51_error)
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               if (__pyx_t_9) {
                 __Pyx_INCREF(__pyx_cur_scope->__pyx_v_new_expiry);
@@ -10126,7 +10204,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_cur_scope->__pyx_v_exp_date = __pyx_t_2;
               __pyx_t_2 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":333
+              /* "src/orchestrator/orchestrator_neoqcr.py":335
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(             # <<<<<<<<<<<<<<
@@ -10135,96 +10213,96 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
               __pyx_t_6 = NULL;
               __Pyx_INCREF(__pyx_builtin_print);
-              __pyx_t_10 = __pyx_builtin_print; 
+              __pyx_t_1 = __pyx_builtin_print; 
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":334
+              /* "src/orchestrator/orchestrator_neoqcr.py":336
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
  *                                 f"[MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "             # <<<<<<<<<<<<<<
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"
  *                             )
 */
-              __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 334, __pyx_L49_error)
-              __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 334, __pyx_L49_error)
+              __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 336, __pyx_L51_error)
+              __Pyx_GOTREF(__pyx_t_10);
+              __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 336, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_13);
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":335
+              /* "src/orchestrator/orchestrator_neoqcr.py":337
  *                             print(
  *                                 f"[MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"             # <<<<<<<<<<<<<<
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date
 */
-              __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mfg_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L49_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exp_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L49_error)
+              __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mfg_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exp_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 337, __pyx_L51_error)
+              __Pyx_GOTREF(__pyx_t_4);
               __pyx_t_23[0] = __pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Case_B_two_dates;
-              __pyx_t_23[1] = __pyx_t_4;
+              __pyx_t_23[1] = __pyx_t_10;
               __pyx_t_23[2] = __pyx_mstate_global->__pyx_kp_u__8;
               __pyx_t_23[3] = __pyx_t_13;
               __pyx_t_23[4] = __pyx_mstate_global->__pyx_kp_u_mfg_2;
-              __pyx_t_23[5] = __pyx_t_1;
+              __pyx_t_23[5] = __pyx_t_3;
               __pyx_t_23[6] = __pyx_mstate_global->__pyx_kp_u_expiry_2;
-              __pyx_t_23[7] = __pyx_t_3;
+              __pyx_t_23[7] = __pyx_t_4;
               __pyx_t_23[8] = __pyx_mstate_global->__pyx_kp_u__7;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":334
+              /* "src/orchestrator/orchestrator_neoqcr.py":336
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
  *                                 f"[MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "             # <<<<<<<<<<<<<<
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"
  *                             )
 */
-              __pyx_t_24 = __Pyx_PyUnicode_Join(__pyx_t_23, 9, 35 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 5 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 11 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3));
-              if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 334, __pyx_L49_error)
+              __pyx_t_24 = __Pyx_PyUnicode_Join(__pyx_t_23, 9, 35 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10) + 5 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_13) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_3) + 11 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_13) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4));
+              if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 336, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_24);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
               __pyx_t_7 = 1;
               {
                 PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_24};
-                __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+                __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
                 __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                 __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
-                __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L49_error)
+                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L51_error)
                 __Pyx_GOTREF(__pyx_t_2);
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":337
+              /* "src/orchestrator/orchestrator_neoqcr.py":339
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date             # <<<<<<<<<<<<<<
  *                             session_meta["expiry_date"] = exp_date
  *                         else:
 */
-              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_mfg_date) < 0))) __PYX_ERR(0, 337, __pyx_L49_error)
+              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_mfg_date) < 0))) __PYX_ERR(0, 339, __pyx_L51_error)
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":338
+              /* "src/orchestrator/orchestrator_neoqcr.py":340
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date
  *                             session_meta["expiry_date"] = exp_date             # <<<<<<<<<<<<<<
  *                         else:
  *                             print(
 */
-              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_exp_date) < 0))) __PYX_ERR(0, 338, __pyx_L49_error)
+              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_exp_date) < 0))) __PYX_ERR(0, 340, __pyx_L51_error)
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":330
+              /* "src/orchestrator/orchestrator_neoqcr.py":332
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:             # <<<<<<<<<<<<<<
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
 */
-              goto __pyx_L55;
+              goto __pyx_L57;
             }
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":340
+            /* "src/orchestrator/orchestrator_neoqcr.py":342
  *                             session_meta["expiry_date"] = exp_date
  *                         else:
  *                             print(             # <<<<<<<<<<<<<<
@@ -10232,41 +10310,41 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                             )
 */
             /*else*/ {
-              __pyx_t_10 = NULL;
+              __pyx_t_1 = NULL;
               __Pyx_INCREF(__pyx_builtin_print);
               __pyx_t_24 = __pyx_builtin_print; 
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":341
+              /* "src/orchestrator/orchestrator_neoqcr.py":343
  *                         else:
  *                             print(
  *                                 f"[MULTICAPTURE] Case B  identical date '{session_expiry}' captured again; keeping as expiry"             # <<<<<<<<<<<<<<
  *                             )
  *                     except (ValueError, AttributeError):
 */
-              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 341, __pyx_L49_error)
+              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 343, __pyx_L51_error)
               __Pyx_GOTREF(__pyx_t_6);
               __pyx_t_5[0] = __pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Case_B_identical_d;
               __pyx_t_5[1] = __pyx_t_6;
               __pyx_t_5[2] = __pyx_mstate_global->__pyx_kp_u_captured_again_keeping_as_expir;
-              __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 40 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 35, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 341, __pyx_L49_error)
-              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_5, 3, 40 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 35, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
+              if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 343, __pyx_L51_error)
+              __Pyx_GOTREF(__pyx_t_4);
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               __pyx_t_7 = 1;
               {
-                PyObject *__pyx_callargs[2] = {__pyx_t_10, __pyx_t_3};
+                PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_4};
                 __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_24, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-                __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-                __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
                 __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
-                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 340, __pyx_L49_error)
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 342, __pyx_L51_error)
                 __Pyx_GOTREF(__pyx_t_2);
               }
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             }
-            __pyx_L55:;
+            __pyx_L57:;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":326
+            /* "src/orchestrator/orchestrator_neoqcr.py":328
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
@@ -10277,8 +10355,8 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
           __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
           __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
-          goto __pyx_L54_try_end;
-          __pyx_L49_error:;
+          goto __pyx_L56_try_end;
+          __pyx_L51_error:;
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
@@ -10288,7 +10366,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":343
+          /* "src/orchestrator/orchestrator_neoqcr.py":345
  *                                 f"[MULTICAPTURE] Case B  identical date '{session_expiry}' captured again; keeping as expiry"
  *                             )
  *                     except (ValueError, AttributeError):             # <<<<<<<<<<<<<<
@@ -10298,32 +10376,32 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_16 = __Pyx_PyErr_ExceptionMatches2(__pyx_builtin_ValueError, __pyx_builtin_AttributeError);
           if (__pyx_t_16) {
             __Pyx_ErrRestore(0,0,0);
-            goto __pyx_L50_exception_handled;
+            goto __pyx_L52_exception_handled;
           }
-          goto __pyx_L51_except_error;
+          goto __pyx_L53_except_error;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":326
+          /* "src/orchestrator/orchestrator_neoqcr.py":328
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
  *                         from datetime import datetime as _dt
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
 */
-          __pyx_L51_except_error:;
+          __pyx_L53_except_error:;
           __Pyx_XGIVEREF(__pyx_t_20);
           __Pyx_XGIVEREF(__pyx_t_21);
           __Pyx_XGIVEREF(__pyx_t_22);
           __Pyx_ExceptionReset(__pyx_t_20, __pyx_t_21, __pyx_t_22);
           goto __pyx_L1_error;
-          __pyx_L50_exception_handled:;
+          __pyx_L52_exception_handled:;
           __Pyx_XGIVEREF(__pyx_t_20);
           __Pyx_XGIVEREF(__pyx_t_21);
           __Pyx_XGIVEREF(__pyx_t_22);
           __Pyx_ExceptionReset(__pyx_t_20, __pyx_t_21, __pyx_t_22);
-          __pyx_L54_try_end:;
+          __pyx_L56_try_end:;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":317
+        /* "src/orchestrator/orchestrator_neoqcr.py":319
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
  *                 # Apply MFG < EXP rule to assign roles.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -10331,43 +10409,43 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                     and isinstance(session_expiry, str)
 */
       }
-      __pyx_L22:;
+      __pyx_L24:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":345
+      /* "src/orchestrator/orchestrator_neoqcr.py":347
  *                     except (ValueError, AttributeError):
  *                         pass
  *                 self.session_cache.set(env_id, session_meta)             # <<<<<<<<<<<<<<
  *         else:
  *             self.session_cache.set(env_id, copy.deepcopy(data))
 */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 345, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_24 = __pyx_t_3;
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 347, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_24 = __pyx_t_4;
       __Pyx_INCREF(__pyx_t_24);
       __pyx_t_7 = 0;
       {
         PyObject *__pyx_callargs[3] = {__pyx_t_24, __pyx_cur_scope->__pyx_v_env_id, __pyx_cur_scope->__pyx_v_session_meta};
         __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_set, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_24); __pyx_t_24 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 345, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 347, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
-    __pyx_L12:;
+    __pyx_L14:;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":244
+    /* "src/orchestrator/orchestrator_neoqcr.py":246
  *         if recapture_flag:
  *             self.session_cache.set(env_id, self.get_processed_data(data, env_id))
  *         elif capture_type:             # <<<<<<<<<<<<<<
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:
 */
-    goto __pyx_L11;
+    goto __pyx_L13;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":347
+  /* "src/orchestrator/orchestrator_neoqcr.py":349
  *                 self.session_cache.set(env_id, session_meta)
  *         else:
  *             self.session_cache.set(env_id, copy.deepcopy(data))             # <<<<<<<<<<<<<<
@@ -10375,16 +10453,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))
 */
   /*else*/ {
-    __pyx_t_24 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 347, __pyx_L1_error)
+    __pyx_t_24 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_24);
-    __pyx_t_3 = __pyx_t_24;
-    __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_4 = __pyx_t_24;
+    __Pyx_INCREF(__pyx_t_4);
     __pyx_t_6 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 347, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 347, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 349, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_7 = 1;
     #if CYTHON_UNPACK_METHODS
     if (unlikely(PyMethod_Check(__pyx_t_13))) {
@@ -10399,27 +10477,27 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     #endif
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_cur_scope->__pyx_v_data};
-      __pyx_t_10 = __Pyx_PyObject_FastCall(__pyx_t_13, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_13, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
     }
     __pyx_t_7 = 0;
     {
-      PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_10};
+      PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_cur_scope->__pyx_v_env_id, __pyx_t_1};
       __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_set, __pyx_callargs+__pyx_t_7, (3-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 347, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 349, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_L11:;
+  __pyx_L13:;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":349
+  /* "src/orchestrator/orchestrator_neoqcr.py":351
  *             self.session_cache.set(env_id, copy.deepcopy(data))
  * 
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))             # <<<<<<<<<<<<<<
@@ -10427,77 +10505,77 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
   __pyx_t_24 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 349, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 349, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 349, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 351, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 351, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_13 = __pyx_t_6;
   __Pyx_INCREF(__pyx_t_13);
   __pyx_t_7 = 0;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_13, __pyx_cur_scope->__pyx_v_env_id};
-    __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 349, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_t_7 = 1;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_24 = PyMethod_GET_SELF(__pyx_t_3);
+  if (unlikely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_24 = PyMethod_GET_SELF(__pyx_t_4);
     assert(__pyx_t_24);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
     __Pyx_INCREF(__pyx_t_24);
     __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
     __pyx_t_7 = 0;
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_24, __pyx_t_10};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    PyObject *__pyx_callargs[2] = {__pyx_t_24, __pyx_t_1};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_24); __pyx_t_24 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 349, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 351, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __Pyx_GIVEREF(__pyx_t_2);
   __pyx_cur_scope->__pyx_v_metadata = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":350
+  /* "src/orchestrator/orchestrator_neoqcr.py":352
  * 
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))
  *         print(f"[MULTICAPTURE] Final Metadata Returned: {metadata}")             # <<<<<<<<<<<<<<
  * 
  *         # ---- 6. Build and return the self-contained result bundle ------
 */
-  __pyx_t_3 = NULL;
+  __pyx_t_4 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_10 = __pyx_builtin_print; 
-  __pyx_t_24 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_metadata, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_1 = __pyx_builtin_print; 
+  __pyx_t_24 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_metadata, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_24);
-  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Final_Metadata_Ret, __pyx_t_24); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 350, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_MULTICAPTURE_Final_Metadata_Ret, __pyx_t_24); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 352, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
   __pyx_t_7 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_6};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (__pyx_t_7*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 350, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 352, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":358
+  /* "src/orchestrator/orchestrator_neoqcr.py":360
  *         # the upload to complete after inference has already returned.
  *         #
  *         return {             # <<<<<<<<<<<<<<
@@ -10506,120 +10584,120 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":359
+  /* "src/orchestrator/orchestrator_neoqcr.py":361
  *         #
  *         return {
  *             "metadata":   metadata,             # <<<<<<<<<<<<<<
  *             "snapshot": {
  *                 "image":           image,            # this request's image
 */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 359, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 361, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_metadata, __pyx_cur_scope->__pyx_v_metadata) < 0) __PYX_ERR(0, 359, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_metadata, __pyx_cur_scope->__pyx_v_metadata) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":361
+  /* "src/orchestrator/orchestrator_neoqcr.py":363
  *             "metadata":   metadata,
  *             "snapshot": {
  *                 "image":           image,            # this request's image             # <<<<<<<<<<<<<<
  *                 "data":            data,             # this request's extracted data
  *                 "ocr_raw":         ocr_result[0] if ocr_result else "N/A",
 */
-  __pyx_t_10 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 361, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_10);
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_image, __pyx_cur_scope->__pyx_v_image) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 363, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_image, __pyx_cur_scope->__pyx_v_image) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":362
+  /* "src/orchestrator/orchestrator_neoqcr.py":364
  *             "snapshot": {
  *                 "image":           image,            # this request's image
  *                 "data":            data,             # this request's extracted data             # <<<<<<<<<<<<<<
  *                 "ocr_raw":         ocr_result[0] if ocr_result else "N/A",
  *                 "dates":           dates,
 */
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_data, __pyx_cur_scope->__pyx_v_data) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_data, __pyx_cur_scope->__pyx_v_data) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":363
+  /* "src/orchestrator/orchestrator_neoqcr.py":365
  *                 "image":           image,            # this request's image
  *                 "data":            data,             # this request's extracted data
  *                 "ocr_raw":         ocr_result[0] if ocr_result else "N/A",             # <<<<<<<<<<<<<<
  *                 "dates":           dates,
  *                 "url_holder":      url_holder,       # per-request upload holder
 */
-  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_ocr_result); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 363, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_ocr_result); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 365, __pyx_L1_error)
   if (__pyx_t_9) {
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 363, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __pyx_t_3;
-    __pyx_t_3 = 0;
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr_result, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 365, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_6 = __pyx_t_4;
+    __pyx_t_4 = 0;
   } else {
     __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_N_A);
     __pyx_t_6 = __pyx_mstate_global->__pyx_kp_u_N_A;
   }
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_t_6) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_t_6) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":364
+  /* "src/orchestrator/orchestrator_neoqcr.py":366
  *                 "data":            data,             # this request's extracted data
  *                 "ocr_raw":         ocr_result[0] if ocr_result else "N/A",
  *                 "dates":           dates,             # <<<<<<<<<<<<<<
  *                 "url_holder":      url_holder,       # per-request upload holder
  *                 "capture_type":    capture_type,     # True = multicapture second+ shot
 */
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_dates, __pyx_cur_scope->__pyx_v_dates) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_dates, __pyx_cur_scope->__pyx_v_dates) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":365
+  /* "src/orchestrator/orchestrator_neoqcr.py":367
  *                 "ocr_raw":         ocr_result[0] if ocr_result else "N/A",
  *                 "dates":           dates,
  *                 "url_holder":      url_holder,       # per-request upload holder             # <<<<<<<<<<<<<<
  *                 "capture_type":    capture_type,     # True = multicapture second+ shot
  *                 "model_time_ms":   model_time_ms,
 */
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_cur_scope->__pyx_v_url_holder) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_cur_scope->__pyx_v_url_holder) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":366
+  /* "src/orchestrator/orchestrator_neoqcr.py":368
  *                 "dates":           dates,
  *                 "url_holder":      url_holder,       # per-request upload holder
  *                 "capture_type":    capture_type,     # True = multicapture second+ shot             # <<<<<<<<<<<<<<
  *                 "model_time_ms":   model_time_ms,
  *                 "resolved_expiry": metadata.get("expiry_date"),
 */
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_cur_scope->__pyx_v_capture_type) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_cur_scope->__pyx_v_capture_type) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":367
+  /* "src/orchestrator/orchestrator_neoqcr.py":369
  *                 "url_holder":      url_holder,       # per-request upload holder
  *                 "capture_type":    capture_type,     # True = multicapture second+ shot
  *                 "model_time_ms":   model_time_ms,             # <<<<<<<<<<<<<<
  *                 "resolved_expiry": metadata.get("expiry_date"),
  *             },
 */
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_model_time_ms, __pyx_cur_scope->__pyx_v_model_time_ms) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_model_time_ms, __pyx_cur_scope->__pyx_v_model_time_ms) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":368
+  /* "src/orchestrator/orchestrator_neoqcr.py":370
  *                 "capture_type":    capture_type,     # True = multicapture second+ shot
  *                 "model_time_ms":   model_time_ms,
  *                 "resolved_expiry": metadata.get("expiry_date"),             # <<<<<<<<<<<<<<
  *             },
  *         }
 */
-  __pyx_t_3 = __pyx_cur_scope->__pyx_v_metadata;
-  __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_4 = __pyx_cur_scope->__pyx_v_metadata;
+  __Pyx_INCREF(__pyx_t_4);
   __pyx_t_7 = 0;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_n_u_expiry_date};
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_n_u_expiry_date};
     __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_7, (2-__pyx_t_7) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 370, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_resolved_expiry, __pyx_t_6) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_resolved_expiry, __pyx_t_6) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_t_10) < 0) __PYX_ERR(0, 359, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_t_1) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
   goto __pyx_L0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":161
+  /* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -10652,7 +10730,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":376
+/* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -10713,72 +10791,72 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_image_name,&__pyx_mstate_global->__pyx_n_u_ean_code,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_store_id,&__pyx_mstate_global->__pyx_n_u_snapshot,&__pyx_mstate_global->__pyx_n_u_rec_metadata_id,&__pyx_mstate_global->__pyx_n_u_recapture_flag,&__pyx_mstate_global->__pyx_n_u_client_name,&__pyx_mstate_global->__pyx_n_u_metadata_id,&__pyx_mstate_global->__pyx_n_u_skip_image_upload,&__pyx_mstate_global->__pyx_n_u_pid,&__pyx_mstate_global->__pyx_n_u_request_id,&__pyx_mstate_global->__pyx_n_u_scan_duration,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 376, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 378, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case 14:
         values[13] = __Pyx_ArgRef_FASTCALL(__pyx_args, 13);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 13:
         values[12] = __Pyx_ArgRef_FASTCALL(__pyx_args, 12);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 12:
         values[11] = __Pyx_ArgRef_FASTCALL(__pyx_args, 11);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 11:
         values[10] = __Pyx_ArgRef_FASTCALL(__pyx_args, 10);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 10:
         values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  9:
         values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  8:
         values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_image_save_metadata", 0) < 0) __PYX_ERR(0, 376, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_image_save_metadata", 0) < 0) __PYX_ERR(0, 378, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":384
+      /* "src/orchestrator/orchestrator_neoqcr.py":386
  *         store_id: str,
  *         snapshot: Dict[str, Any],           # the bundle from process_image_get_metadata
  *         rec_metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10787,7 +10865,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[6]) values[6] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":385
+      /* "src/orchestrator/orchestrator_neoqcr.py":387
  *         snapshot: Dict[str, Any],           # the bundle from process_image_get_metadata
  *         rec_metadata_id: Optional[str] = None,
  *         recapture_flag: bool = False,             # <<<<<<<<<<<<<<
@@ -10797,7 +10875,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[7]) values[7] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       if (!values[8]) values[8] = __Pyx_NewRef(((PyObject*)((PyObject*)__pyx_mstate_global->__pyx_n_u_reliance)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":387
+      /* "src/orchestrator/orchestrator_neoqcr.py":389
  *         recapture_flag: bool = False,
  *         client_name: str = "reliance",
  *         metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10806,7 +10884,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[9]) values[9] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":388
+      /* "src/orchestrator/orchestrator_neoqcr.py":390
  *         client_name: str = "reliance",
  *         metadata_id: Optional[str] = None,
  *         skip_image_upload: bool = False,             # <<<<<<<<<<<<<<
@@ -10815,7 +10893,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[10]) values[10] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":389
+      /* "src/orchestrator/orchestrator_neoqcr.py":391
  *         metadata_id: Optional[str] = None,
  *         skip_image_upload: bool = False,
  *         pid: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10824,7 +10902,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[11]) values[11] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":390
+      /* "src/orchestrator/orchestrator_neoqcr.py":392
  *         skip_image_upload: bool = False,
  *         pid: Optional[str] = None,
  *         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)             # <<<<<<<<<<<<<<
@@ -10833,7 +10911,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[12]) values[12] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":391
+      /* "src/orchestrator/orchestrator_neoqcr.py":393
  *         pid: Optional[str] = None,
  *         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)
  *         scan_duration: Optional[float] = None,             # <<<<<<<<<<<<<<
@@ -10842,60 +10920,60 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[13]) values[13] = __Pyx_NewRef(((PyObject*)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 6; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_image_save_metadata", 0, 6, 14, i); __PYX_ERR(0, 376, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_image_save_metadata", 0, 6, 14, i); __PYX_ERR(0, 378, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case 14:
         values[13] = __Pyx_ArgRef_FASTCALL(__pyx_args, 13);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[13])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 13:
         values[12] = __Pyx_ArgRef_FASTCALL(__pyx_args, 12);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[12])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 12:
         values[11] = __Pyx_ArgRef_FASTCALL(__pyx_args, 11);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[11])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 11:
         values[10] = __Pyx_ArgRef_FASTCALL(__pyx_args, 10);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[10])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case 10:
         values[9] = __Pyx_ArgRef_FASTCALL(__pyx_args, 9);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[9])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  9:
         values[8] = __Pyx_ArgRef_FASTCALL(__pyx_args, 8);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[8])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  8:
         values[7] = __Pyx_ArgRef_FASTCALL(__pyx_args, 7);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[7])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 378, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 378, __pyx_L3_error)
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 378, __pyx_L3_error)
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 378, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 378, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 378, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 376, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 378, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":384
+      /* "src/orchestrator/orchestrator_neoqcr.py":386
  *         store_id: str,
  *         snapshot: Dict[str, Any],           # the bundle from process_image_get_metadata
  *         rec_metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10906,7 +10984,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[7]) values[7] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
       if (!values[8]) values[8] = __Pyx_NewRef(((PyObject*)((PyObject*)__pyx_mstate_global->__pyx_n_u_reliance)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":387
+      /* "src/orchestrator/orchestrator_neoqcr.py":389
  *         recapture_flag: bool = False,
  *         client_name: str = "reliance",
  *         metadata_id: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10916,7 +10994,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[9]) values[9] = __Pyx_NewRef(((PyObject*)Py_None));
       if (!values[10]) values[10] = __Pyx_NewRef(((PyObject *)((PyObject*)Py_False)));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":389
+      /* "src/orchestrator/orchestrator_neoqcr.py":391
  *         metadata_id: Optional[str] = None,
  *         skip_image_upload: bool = False,
  *         pid: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -10925,7 +11003,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[11]) values[11] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":390
+      /* "src/orchestrator/orchestrator_neoqcr.py":392
  *         skip_image_upload: bool = False,
  *         pid: Optional[str] = None,
  *         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)             # <<<<<<<<<<<<<<
@@ -10934,7 +11012,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[12]) values[12] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":391
+      /* "src/orchestrator/orchestrator_neoqcr.py":393
  *         pid: Optional[str] = None,
  *         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)
  *         scan_duration: Optional[float] = None,             # <<<<<<<<<<<<<<
@@ -10960,7 +11038,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("process_image_save_metadata", 0, 6, 14, __pyx_nargs); __PYX_ERR(0, 376, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("process_image_save_metadata", 0, 6, 14, __pyx_nargs); __PYX_ERR(0, 378, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10971,20 +11049,20 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image_name), (&PyUnicode_Type), 0, "image_name", 2))) __PYX_ERR(0, 379, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ean_code), (&PyUnicode_Type), 1, "ean_code", 2))) __PYX_ERR(0, 380, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 381, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_store_id), (&PyUnicode_Type), 0, "store_id", 2))) __PYX_ERR(0, 382, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_snapshot), (&PyDict_Type), 0, "snapshot", 2))) __PYX_ERR(0, 383, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rec_metadata_id), (&PyUnicode_Type), 1, "rec_metadata_id", 2))) __PYX_ERR(0, 384, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 0, "client_name", 2))) __PYX_ERR(0, 386, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 387, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pid), (&PyUnicode_Type), 1, "pid", 2))) __PYX_ERR(0, 389, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_request_id), (&PyUnicode_Type), 1, "request_id", 2))) __PYX_ERR(0, 390, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_scan_duration), (&PyFloat_Type), 1, "scan_duration", 2))) __PYX_ERR(0, 391, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image_name), (&PyUnicode_Type), 0, "image_name", 2))) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_ean_code), (&PyUnicode_Type), 1, "ean_code", 2))) __PYX_ERR(0, 382, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_store_id), (&PyUnicode_Type), 0, "store_id", 2))) __PYX_ERR(0, 384, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_snapshot), (&PyDict_Type), 0, "snapshot", 2))) __PYX_ERR(0, 385, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rec_metadata_id), (&PyUnicode_Type), 1, "rec_metadata_id", 2))) __PYX_ERR(0, 386, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 0, "client_name", 2))) __PYX_ERR(0, 388, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 389, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pid), (&PyUnicode_Type), 1, "pid", 2))) __PYX_ERR(0, 391, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_request_id), (&PyUnicode_Type), 1, "request_id", 2))) __PYX_ERR(0, 392, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_scan_duration), (&PyFloat_Type), 1, "scan_duration", 2))) __PYX_ERR(0, 393, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_17process_image_save_metadata(__pyx_self, __pyx_v_self, __pyx_v_image_name, __pyx_v_ean_code, __pyx_v_env_id, __pyx_v_store_id, __pyx_v_snapshot, __pyx_v_rec_metadata_id, __pyx_v_recapture_flag, __pyx_v_client_name, __pyx_v_metadata_id, __pyx_v_skip_image_upload, __pyx_v_pid, __pyx_v_request_id, __pyx_v_scan_duration);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":376
+  /* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -11073,7 +11151,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("process_image_save_metadata", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":399
+  /* "src/orchestrator/orchestrator_neoqcr.py":401
  *         from self.* fields set by other requests.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -11089,7 +11167,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":400
+      /* "src/orchestrator/orchestrator_neoqcr.py":402
  *         """
  *         try:
  *             print(f"Starting process_image_save_metadata (skip_upload={skip_image_upload})...")             # <<<<<<<<<<<<<<
@@ -11099,13 +11177,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_6 = __pyx_builtin_print; 
-      __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_skip_image_upload, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 400, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_skip_image_upload, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 402, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __pyx_t_8[0] = __pyx_mstate_global->__pyx_kp_u_Starting_process_image_save_meta;
       __pyx_t_8[1] = __pyx_t_7;
       __pyx_t_8[2] = __pyx_mstate_global->__pyx_kp_u__9;
       __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_8, 3, 50 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7) + 4, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7));
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 400, __pyx_L3_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 402, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_10 = 1;
@@ -11115,93 +11193,93 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 400, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 402, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":403
+      /* "src/orchestrator/orchestrator_neoqcr.py":405
  * 
  *             # Unpack snapshot
  *             snap_image   = snapshot.get("image")             # <<<<<<<<<<<<<<
  *             snap_data    = snapshot.get("data", {})
  *             snap_ocr_raw = snapshot.get("ocr_raw", "N/A")
 */
-      __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_image, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 403, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_image, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 405, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v_snap_image = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":404
+      /* "src/orchestrator/orchestrator_neoqcr.py":406
  *             # Unpack snapshot
  *             snap_image   = snapshot.get("image")
  *             snap_data    = snapshot.get("data", {})             # <<<<<<<<<<<<<<
  *             snap_ocr_raw = snapshot.get("ocr_raw", "N/A")
  *             snap_dates   = snapshot.get("dates", [])
 */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 404, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 406, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_data, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 404, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_data, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 406, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_v_snap_data = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":405
+      /* "src/orchestrator/orchestrator_neoqcr.py":407
  *             snap_image   = snapshot.get("image")
  *             snap_data    = snapshot.get("data", {})
  *             snap_ocr_raw = snapshot.get("ocr_raw", "N/A")             # <<<<<<<<<<<<<<
  *             snap_dates   = snapshot.get("dates", [])
  *             url_holder   = snapshot.get("url_holder", {})
 */
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_mstate_global->__pyx_kp_u_N_A); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 405, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_mstate_global->__pyx_kp_u_N_A); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 407, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_v_snap_ocr_raw = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":406
+      /* "src/orchestrator/orchestrator_neoqcr.py":408
  *             snap_data    = snapshot.get("data", {})
  *             snap_ocr_raw = snapshot.get("ocr_raw", "N/A")
  *             snap_dates   = snapshot.get("dates", [])             # <<<<<<<<<<<<<<
  *             url_holder   = snapshot.get("url_holder", {})
  *             snap_model_time_ms = snapshot.get("model_time_ms")
 */
-      __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 406, __pyx_L3_error)
+      __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_dates, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 406, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_dates, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 408, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_v_snap_dates = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":407
+      /* "src/orchestrator/orchestrator_neoqcr.py":409
  *             snap_ocr_raw = snapshot.get("ocr_raw", "N/A")
  *             snap_dates   = snapshot.get("dates", [])
  *             url_holder   = snapshot.get("url_holder", {})             # <<<<<<<<<<<<<<
  *             snap_model_time_ms = snapshot.get("model_time_ms")
  * 
 */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 407, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 409, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 407, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 409, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_v_url_holder = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":408
+      /* "src/orchestrator/orchestrator_neoqcr.py":410
  *             snap_dates   = snapshot.get("dates", [])
  *             url_holder   = snapshot.get("url_holder", {})
  *             snap_model_time_ms = snapshot.get("model_time_ms")             # <<<<<<<<<<<<<<
  * 
  *             store, user_id, device_id, img_name = ImageProcessor.extract_img_details(image_name)
 */
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_model_time_ms, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 408, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_model_time_ms, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 410, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_v_snap_model_time_ms = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":410
+      /* "src/orchestrator/orchestrator_neoqcr.py":412
  *             snap_model_time_ms = snapshot.get("model_time_ms")
  * 
  *             store, user_id, device_id, img_name = ImageProcessor.extract_img_details(image_name)             # <<<<<<<<<<<<<<
@@ -11209,9 +11287,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
       __pyx_t_4 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 410, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_ImageProcessor); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 412, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_extract_img_details); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 410, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_extract_img_details); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 412, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_10 = 1;
@@ -11231,7 +11309,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 410, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 412, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
@@ -11240,7 +11318,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         if (unlikely(size != 4)) {
           if (size > 4) __Pyx_RaiseTooManyValuesError(4);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 410, __pyx_L3_error)
+          __PYX_ERR(0, 412, __pyx_L3_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -11254,16 +11332,16 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_INCREF(__pyx_t_7);
         } else {
           __pyx_t_5 = __Pyx_PyList_GetItemRef(sequence, 0);
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 410, __pyx_L3_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 412, __pyx_L3_error)
           __Pyx_XGOTREF(__pyx_t_5);
           __pyx_t_4 = __Pyx_PyList_GetItemRef(sequence, 1);
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 410, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 412, __pyx_L3_error)
           __Pyx_XGOTREF(__pyx_t_4);
           __pyx_t_9 = __Pyx_PyList_GetItemRef(sequence, 2);
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 410, __pyx_L3_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 412, __pyx_L3_error)
           __Pyx_XGOTREF(__pyx_t_9);
           __pyx_t_7 = __Pyx_PyList_GetItemRef(sequence, 3);
-          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 410, __pyx_L3_error)
+          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 412, __pyx_L3_error)
           __Pyx_XGOTREF(__pyx_t_7);
         }
         #else
@@ -11271,7 +11349,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           Py_ssize_t i;
           PyObject** temps[4] = {&__pyx_t_5,&__pyx_t_4,&__pyx_t_9,&__pyx_t_7};
           for (i=0; i < 4; i++) {
-            PyObject* item = __Pyx_PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 410, __pyx_L3_error)
+            PyObject* item = __Pyx_PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 412, __pyx_L3_error)
             __Pyx_GOTREF(item);
             *(temps[i]) = item;
           }
@@ -11281,7 +11359,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       } else {
         Py_ssize_t index = -1;
         PyObject** temps[4] = {&__pyx_t_5,&__pyx_t_4,&__pyx_t_9,&__pyx_t_7};
-        __pyx_t_11 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 410, __pyx_L3_error)
+        __pyx_t_11 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 412, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_t_12 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_11);
@@ -11290,7 +11368,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_GOTREF(item);
           *(temps[index]) = item;
         }
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_11), 4) < 0) __PYX_ERR(0, 410, __pyx_L3_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_12(__pyx_t_11), 4) < 0) __PYX_ERR(0, 412, __pyx_L3_error)
         __pyx_t_12 = NULL;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         goto __pyx_L10_unpacking_done;
@@ -11298,7 +11376,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         __pyx_t_12 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 410, __pyx_L3_error)
+        __PYX_ERR(0, 412, __pyx_L3_error)
         __pyx_L10_unpacking_done:;
       }
       __pyx_v_store = __pyx_t_5;
@@ -11310,21 +11388,21 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_img_name = __pyx_t_7;
       __pyx_t_7 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":411
+      /* "src/orchestrator/orchestrator_neoqcr.py":413
  * 
  *             store, user_id, device_id, img_name = ImageProcessor.extract_img_details(image_name)
  *             final_metadata_id = metadata_id or (env_id + img_name)             # <<<<<<<<<<<<<<
  * 
  *             img_blob = build_blob_name(final_metadata_id, client_name=client_name, user_id=user_id)
 */
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_metadata_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 411, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_metadata_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 413, __pyx_L3_error)
       if (!__pyx_t_13) {
       } else {
         __Pyx_INCREF(__pyx_v_metadata_id);
         __pyx_t_6 = __pyx_v_metadata_id;
         goto __pyx_L11_bool_binop_done;
       }
-      __pyx_t_7 = PyNumber_Add(__pyx_v_env_id, __pyx_v_img_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 411, __pyx_L3_error)
+      __pyx_t_7 = PyNumber_Add(__pyx_v_env_id, __pyx_v_img_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 413, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_t_7);
       __pyx_t_6 = __pyx_t_7;
@@ -11333,7 +11411,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_final_metadata_id = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":413
+      /* "src/orchestrator/orchestrator_neoqcr.py":415
  *             final_metadata_id = metadata_id or (env_id + img_name)
  * 
  *             img_blob = build_blob_name(final_metadata_id, client_name=client_name, user_id=user_id)             # <<<<<<<<<<<<<<
@@ -11341,7 +11419,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
       __pyx_t_7 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 413, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 415, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_10 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -11357,21 +11435,21 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       #endif
       {
         PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_7, __pyx_v_final_metadata_id};
-        __pyx_t_4 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 413, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 415, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_4, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 413, __pyx_L3_error)
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_4, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 413, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_4, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 415, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_4, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 415, __pyx_L3_error)
         __pyx_t_6 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_9, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_4);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 413, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 415, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __pyx_v_img_blob = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":414
+      /* "src/orchestrator/orchestrator_neoqcr.py":416
  * 
  *             img_blob = build_blob_name(final_metadata_id, client_name=client_name, user_id=user_id)
  *             plt_blob = build_blob_name(final_metadata_id, plotted=True, client_name=client_name, user_id=user_id)             # <<<<<<<<<<<<<<
@@ -11379,7 +11457,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             # ---- Resolve image URL ------------------------------------
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 414, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_10 = 1;
       #if CYTHON_UNPACK_METHODS
@@ -11395,33 +11473,33 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       #endif
       {
         PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 3 : 0)] = {__pyx_t_9, __pyx_v_final_metadata_id};
-        __pyx_t_7 = __Pyx_MakeVectorcallBuilderKwds(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 414, __pyx_L3_error)
+        __pyx_t_7 = __Pyx_MakeVectorcallBuilderKwds(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 416, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_plotted, Py_True, __pyx_t_7, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 414, __pyx_L3_error)
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_7, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 414, __pyx_L3_error)
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_7, __pyx_callargs+2, 2) < 0) __PYX_ERR(0, 414, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_plotted, Py_True, __pyx_t_7, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 416, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_7, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 416, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_7, __pyx_callargs+2, 2) < 0) __PYX_ERR(0, 416, __pyx_L3_error)
         __pyx_t_6 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_4, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_7);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 414, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 416, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __pyx_v_plt_blob = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":417
+      /* "src/orchestrator/orchestrator_neoqcr.py":419
  * 
  *             # ---- Resolve image URL ------------------------------------
  *             if not skip_image_upload:             # <<<<<<<<<<<<<<
  *                 print("[save_metadata] Uploading image...")
  *                 upload_result = self.storage.upload_image(snap_image, img_blob, client_name, user_id)
 */
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_skip_image_upload); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 417, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_skip_image_upload); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 419, __pyx_L3_error)
       __pyx_t_14 = (!__pyx_t_13);
       if (__pyx_t_14) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":418
+        /* "src/orchestrator/orchestrator_neoqcr.py":420
  *             # ---- Resolve image URL ------------------------------------
  *             if not skip_image_upload:
  *                 print("[save_metadata] Uploading image...")             # <<<<<<<<<<<<<<
@@ -11437,19 +11515,19 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 418, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 420, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":419
+        /* "src/orchestrator/orchestrator_neoqcr.py":421
  *             if not skip_image_upload:
  *                 print("[save_metadata] Uploading image...")
  *                 upload_result = self.storage.upload_image(snap_image, img_blob, client_name, user_id)             # <<<<<<<<<<<<<<
  *                 if isinstance(upload_result, dict):
  *                     img_url = upload_result.get("public_url")
 */
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 419, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_storage); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 421, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_7 = __pyx_t_4;
         __Pyx_INCREF(__pyx_t_7);
@@ -11459,13 +11537,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_upload_image, __pyx_callargs+__pyx_t_10, (5-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 419, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 421, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_upload_result = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":420
+        /* "src/orchestrator/orchestrator_neoqcr.py":422
  *                 print("[save_metadata] Uploading image...")
  *                 upload_result = self.storage.upload_image(snap_image, img_blob, client_name, user_id)
  *                 if isinstance(upload_result, dict):             # <<<<<<<<<<<<<<
@@ -11475,7 +11553,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_14 = PyDict_Check(__pyx_v_upload_result); 
         if (__pyx_t_14) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":421
+          /* "src/orchestrator/orchestrator_neoqcr.py":423
  *                 upload_result = self.storage.upload_image(snap_image, img_blob, client_name, user_id)
  *                 if isinstance(upload_result, dict):
  *                     img_url = upload_result.get("public_url")             # <<<<<<<<<<<<<<
@@ -11489,13 +11567,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_n_u_public_url};
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 421, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 423, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_v_img_url = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":422
+          /* "src/orchestrator/orchestrator_neoqcr.py":424
  *                 if isinstance(upload_result, dict):
  *                     img_url = upload_result.get("public_url")
  *                     cdn_url = upload_result.get("cdn_url")             # <<<<<<<<<<<<<<
@@ -11509,13 +11587,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_n_u_cdn_url};
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 422, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 424, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_v_cdn_url = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":420
+          /* "src/orchestrator/orchestrator_neoqcr.py":422
  *                 print("[save_metadata] Uploading image...")
  *                 upload_result = self.storage.upload_image(snap_image, img_blob, client_name, user_id)
  *                 if isinstance(upload_result, dict):             # <<<<<<<<<<<<<<
@@ -11525,7 +11603,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           goto __pyx_L14;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":424
+        /* "src/orchestrator/orchestrator_neoqcr.py":426
  *                     cdn_url = upload_result.get("cdn_url")
  *                 else:
  *                     img_url = upload_result             # <<<<<<<<<<<<<<
@@ -11536,7 +11614,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_INCREF(__pyx_v_upload_result);
           __pyx_v_img_url = __pyx_v_upload_result;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":425
+          /* "src/orchestrator/orchestrator_neoqcr.py":427
  *                 else:
  *                     img_url = upload_result
  *                     cdn_url = None             # <<<<<<<<<<<<<<
@@ -11548,7 +11626,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         }
         __pyx_L14:;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":417
+        /* "src/orchestrator/orchestrator_neoqcr.py":419
  * 
  *             # ---- Resolve image URL ------------------------------------
  *             if not skip_image_upload:             # <<<<<<<<<<<<<<
@@ -11558,7 +11636,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L13;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":428
+      /* "src/orchestrator/orchestrator_neoqcr.py":430
  *             else:
  *                 # Wait for the parallel upload thread (max 10 s)
  *                 print("[save_metadata] Waiting for parallel upload URL...")             # <<<<<<<<<<<<<<
@@ -11575,12 +11653,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 428, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 430, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":429
+        /* "src/orchestrator/orchestrator_neoqcr.py":431
  *                 # Wait for the parallel upload thread (max 10 s)
  *                 print("[save_metadata] Waiting for parallel upload URL...")
  *                 for _ in range(100):             # <<<<<<<<<<<<<<
@@ -11590,7 +11668,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         for (__pyx_t_15 = 0; __pyx_t_15 < 0x64; __pyx_t_15+=1) {
           __pyx_v__ = __pyx_t_15;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":430
+          /* "src/orchestrator/orchestrator_neoqcr.py":432
  *                 print("[save_metadata] Waiting for parallel upload URL...")
  *                 for _ in range(100):
  *                     if url_holder.get("img_url"):             # <<<<<<<<<<<<<<
@@ -11604,14 +11682,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_mstate_global->__pyx_n_u_img_url};
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 430, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 432, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
-          __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 430, __pyx_L3_error)
+          __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 432, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           if (__pyx_t_14) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":431
+            /* "src/orchestrator/orchestrator_neoqcr.py":433
  *                 for _ in range(100):
  *                     if url_holder.get("img_url"):
  *                         break             # <<<<<<<<<<<<<<
@@ -11620,7 +11698,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
             goto __pyx_L16_break;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":430
+            /* "src/orchestrator/orchestrator_neoqcr.py":432
  *                 print("[save_metadata] Waiting for parallel upload URL...")
  *                 for _ in range(100):
  *                     if url_holder.get("img_url"):             # <<<<<<<<<<<<<<
@@ -11629,7 +11707,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":432
+          /* "src/orchestrator/orchestrator_neoqcr.py":434
  *                     if url_holder.get("img_url"):
  *                         break
  *                     time.sleep(0.1)             # <<<<<<<<<<<<<<
@@ -11637,9 +11715,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 cdn_url = url_holder.get("cdn_url")
 */
           __pyx_t_7 = NULL;
-          __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 432, __pyx_L3_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 434, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_sleep); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 432, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_sleep); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 434, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_t_10 = 1;
@@ -11659,14 +11737,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 432, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 434, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         }
         __pyx_L16_break:;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":433
+        /* "src/orchestrator/orchestrator_neoqcr.py":435
  *                         break
  *                     time.sleep(0.1)
  *                 img_url = url_holder.get("img_url")             # <<<<<<<<<<<<<<
@@ -11680,13 +11758,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_mstate_global->__pyx_n_u_img_url};
           __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 433, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 435, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_img_url = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":434
+        /* "src/orchestrator/orchestrator_neoqcr.py":436
  *                     time.sleep(0.1)
  *                 img_url = url_holder.get("img_url")
  *                 cdn_url = url_holder.get("cdn_url")             # <<<<<<<<<<<<<<
@@ -11700,7 +11778,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_mstate_global->__pyx_n_u_cdn_url};
           __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 434, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 436, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_cdn_url = __pyx_t_6;
@@ -11708,7 +11786,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __pyx_L13:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":436
+      /* "src/orchestrator/orchestrator_neoqcr.py":438
  *                 cdn_url = url_holder.get("cdn_url")
  * 
  *             print(f"[save_metadata] img_url={img_url}")             # <<<<<<<<<<<<<<
@@ -11718,9 +11796,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_9 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_7 = __pyx_builtin_print; 
-      __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_img_url, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 436, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_img_url, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 438, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_save_metadata_img_url, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 436, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_save_metadata_img_url, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 438, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_10 = 1;
@@ -11730,33 +11808,33 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 436, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 438, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":438
+      /* "src/orchestrator/orchestrator_neoqcr.py":440
  *             print(f"[save_metadata] img_url={img_url}")
  * 
  *             if img_url and snapshot.get("is_streaming"):             # <<<<<<<<<<<<<<
  *                 original_blob = build_blob_name(f"{final_metadata_id}_original", client_name=client_name, user_id=user_id)
  *                 img_url = img_url.replace(img_blob, original_blob)
 */
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_img_url); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 438, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_img_url); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 440, __pyx_L3_error)
       if (__pyx_t_13) {
       } else {
         __pyx_t_14 = __pyx_t_13;
         goto __pyx_L19_bool_binop_done;
       }
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_is_streaming, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 438, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_is_streaming, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 440, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 438, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 440, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_14 = __pyx_t_13;
       __pyx_L19_bool_binop_done:;
       if (__pyx_t_14) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":439
+        /* "src/orchestrator/orchestrator_neoqcr.py":441
  * 
  *             if img_url and snapshot.get("is_streaming"):
  *                 original_blob = build_blob_name(f"{final_metadata_id}_original", client_name=client_name, user_id=user_id)             # <<<<<<<<<<<<<<
@@ -11764,11 +11842,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
         __pyx_t_7 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 439, __pyx_L3_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_build_blob_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 441, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_final_metadata_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 439, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_final_metadata_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 441, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_4 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_original); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 439, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyUnicode_ConcatInPlace(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_original); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 441, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __pyx_t_10 = 1;
@@ -11785,22 +11863,22 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         #endif
         {
           PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_7, __pyx_t_4};
-          __pyx_t_9 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 439, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 441, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
-          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_9, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 439, __pyx_L3_error)
-          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_9, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 439, __pyx_L3_error)
+          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name, __pyx_t_9, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 441, __pyx_L3_error)
+          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_user_id, __pyx_v_user_id, __pyx_t_9, __pyx_callargs+2, 1) < 0) __PYX_ERR(0, 441, __pyx_L3_error)
           __pyx_t_6 = __Pyx_Object_Vectorcall_CallFromBuilder(__pyx_t_5, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_9);
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 439, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 441, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_original_blob = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":440
+        /* "src/orchestrator/orchestrator_neoqcr.py":442
  *             if img_url and snapshot.get("is_streaming"):
  *                 original_blob = build_blob_name(f"{final_metadata_id}_original", client_name=client_name, user_id=user_id)
  *                 img_url = img_url.replace(img_blob, original_blob)             # <<<<<<<<<<<<<<
@@ -11814,13 +11892,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_v_img_blob, __pyx_v_original_blob};
           __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_replace, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 440, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 442, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF_SET(__pyx_v_img_url, __pyx_t_6);
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":438
+        /* "src/orchestrator/orchestrator_neoqcr.py":440
  *             print(f"[save_metadata] img_url={img_url}")
  * 
  *             if img_url and snapshot.get("is_streaming"):             # <<<<<<<<<<<<<<
@@ -11829,14 +11907,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":450
+      /* "src/orchestrator/orchestrator_neoqcr.py":452
  * 
  *             # ---- Format dates and build DB document -------------------
  *             mfg_exp_dates = self.str_to_datetime.format_datetime_array(snap_dates)             # <<<<<<<<<<<<<<
  * 
  *             processed_data = copy.deepcopy(snap_data)
 */
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 450, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 452, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_5 = __pyx_t_9;
       __Pyx_INCREF(__pyx_t_5);
@@ -11846,13 +11924,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_format_datetime_array, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 450, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 452, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __pyx_v_mfg_exp_dates = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":452
+      /* "src/orchestrator/orchestrator_neoqcr.py":454
  *             mfg_exp_dates = self.str_to_datetime.format_datetime_array(snap_dates)
  * 
  *             processed_data = copy.deepcopy(snap_data)             # <<<<<<<<<<<<<<
@@ -11860,9 +11938,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             processed_data["expiry_date"]   = (
 */
       __pyx_t_9 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L3_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 454, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 452, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 454, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_10 = 1;
@@ -11882,22 +11960,22 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 452, __pyx_L3_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 454, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
       }
       __pyx_v_processed_data = __pyx_t_6;
       __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":453
+      /* "src/orchestrator/orchestrator_neoqcr.py":455
  * 
  *             processed_data = copy.deepcopy(snap_data)
  *             processed_data["mfg_date"]      = mfg_exp_dates[0] if mfg_exp_dates else None             # <<<<<<<<<<<<<<
  *             processed_data["expiry_date"]   = (
  *                 mfg_exp_dates[1]
 */
-      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_mfg_exp_dates); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 453, __pyx_L3_error)
+      __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_mfg_exp_dates); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 455, __pyx_L3_error)
       if (__pyx_t_14) {
-        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 453, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 455, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_6 = __pyx_t_4;
         __pyx_t_4 = 0;
@@ -11905,50 +11983,50 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_INCREF(Py_None);
         __pyx_t_6 = Py_None;
       }
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_t_6) < 0))) __PYX_ERR(0, 453, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_t_6) < 0))) __PYX_ERR(0, 455, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":456
+      /* "src/orchestrator/orchestrator_neoqcr.py":458
  *             processed_data["expiry_date"]   = (
  *                 mfg_exp_dates[1]
  *                 if len(mfg_exp_dates) > 1 and mfg_exp_dates[0] != mfg_exp_dates[1]             # <<<<<<<<<<<<<<
  *                 else None
  *             )
 */
-      __pyx_t_16 = PyObject_Length(__pyx_v_mfg_exp_dates); if (unlikely(__pyx_t_16 == ((Py_ssize_t)-1))) __PYX_ERR(0, 456, __pyx_L3_error)
+      __pyx_t_16 = PyObject_Length(__pyx_v_mfg_exp_dates); if (unlikely(__pyx_t_16 == ((Py_ssize_t)-1))) __PYX_ERR(0, 458, __pyx_L3_error)
       __pyx_t_13 = (__pyx_t_16 > 1);
       if (__pyx_t_13) {
       } else {
         __pyx_t_14 = __pyx_t_13;
         goto __pyx_L21_bool_binop_done;
       }
-      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 456, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 458, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 456, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 458, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_5 = PyObject_RichCompare(__pyx_t_4, __pyx_t_9, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 456, __pyx_L3_error)
+      __pyx_t_5 = PyObject_RichCompare(__pyx_t_4, __pyx_t_9, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 458, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 456, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 458, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_14 = __pyx_t_13;
       __pyx_L21_bool_binop_done:;
       if (__pyx_t_14) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":455
+        /* "src/orchestrator/orchestrator_neoqcr.py":457
  *             processed_data["mfg_date"]      = mfg_exp_dates[0] if mfg_exp_dates else None
  *             processed_data["expiry_date"]   = (
  *                 mfg_exp_dates[1]             # <<<<<<<<<<<<<<
  *                 if len(mfg_exp_dates) > 1 and mfg_exp_dates[0] != mfg_exp_dates[1]
  *                 else None
 */
-        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 455, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_mfg_exp_dates, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_6 = __pyx_t_5;
         __pyx_t_5 = 0;
       } else {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":457
+        /* "src/orchestrator/orchestrator_neoqcr.py":459
  *                 mfg_exp_dates[1]
  *                 if len(mfg_exp_dates) > 1 and mfg_exp_dates[0] != mfg_exp_dates[1]
  *                 else None             # <<<<<<<<<<<<<<
@@ -11959,26 +12037,26 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_6 = Py_None;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":454
+      /* "src/orchestrator/orchestrator_neoqcr.py":456
  *             processed_data = copy.deepcopy(snap_data)
  *             processed_data["mfg_date"]      = mfg_exp_dates[0] if mfg_exp_dates else None
  *             processed_data["expiry_date"]   = (             # <<<<<<<<<<<<<<
  *                 mfg_exp_dates[1]
  *                 if len(mfg_exp_dates) > 1 and mfg_exp_dates[0] != mfg_exp_dates[1]
 */
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_t_6) < 0))) __PYX_ERR(0, 454, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_t_6) < 0))) __PYX_ERR(0, 456, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":462
+      /* "src/orchestrator/orchestrator_neoqcr.py":464
  *             # If expiry_date is not yet set but multicapture resolved a real computed date,
  *             # format and save it as an ISODate in MongoDB!
  *             if not processed_data["expiry_date"] and snapshot.get("resolved_expiry"):             # <<<<<<<<<<<<<<
  *                 resolved_exp_str = snapshot.get("resolved_expiry")
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])
 */
-      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 464, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 462, __pyx_L3_error)
+      __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 464, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_17 = (!__pyx_t_13);
       if (__pyx_t_17) {
@@ -11986,42 +12064,42 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_14 = __pyx_t_17;
         goto __pyx_L24_bool_binop_done;
       }
-      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_resolved_expiry, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_resolved_expiry, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 464, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 462, __pyx_L3_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 464, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_14 = __pyx_t_17;
       __pyx_L24_bool_binop_done:;
       if (__pyx_t_14) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":463
+        /* "src/orchestrator/orchestrator_neoqcr.py":465
  *             # format and save it as an ISODate in MongoDB!
  *             if not processed_data["expiry_date"] and snapshot.get("resolved_expiry"):
  *                 resolved_exp_str = snapshot.get("resolved_expiry")             # <<<<<<<<<<<<<<
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])
  *                 if parsed_exp and parsed_exp[0]:
 */
-        __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_resolved_expiry, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 463, __pyx_L3_error)
+        __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_resolved_expiry, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 465, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
         __pyx_v_resolved_exp_str = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":464
+        /* "src/orchestrator/orchestrator_neoqcr.py":466
  *             if not processed_data["expiry_date"] and snapshot.get("resolved_expiry"):
  *                 resolved_exp_str = snapshot.get("resolved_expiry")
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])             # <<<<<<<<<<<<<<
  *                 if parsed_exp and parsed_exp[0]:
  *                     processed_data["expiry_date"] = parsed_exp[0]
 */
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 464, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_str_to_datetime); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 466, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_5 = __pyx_t_9;
         __Pyx_INCREF(__pyx_t_5);
-        __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 464, __pyx_L3_error)
+        __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 466, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_INCREF(__pyx_v_resolved_exp_str);
         __Pyx_GIVEREF(__pyx_v_resolved_exp_str);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_v_resolved_exp_str) != (0)) __PYX_ERR(0, 464, __pyx_L3_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_v_resolved_exp_str) != (0)) __PYX_ERR(0, 466, __pyx_L3_error);
         __pyx_t_10 = 0;
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_4};
@@ -12029,46 +12107,46 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 464, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 466, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_parsed_exp = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":465
+        /* "src/orchestrator/orchestrator_neoqcr.py":467
  *                 resolved_exp_str = snapshot.get("resolved_expiry")
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])
  *                 if parsed_exp and parsed_exp[0]:             # <<<<<<<<<<<<<<
  *                     processed_data["expiry_date"] = parsed_exp[0]
  *                     print(f"[save_metadata] Using resolved expiry date for DB: {parsed_exp[0]}")
 */
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_parsed_exp); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 465, __pyx_L3_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_parsed_exp); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 467, __pyx_L3_error)
         if (__pyx_t_17) {
         } else {
           __pyx_t_14 = __pyx_t_17;
           goto __pyx_L27_bool_binop_done;
         }
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 465, __pyx_L3_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 467, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 465, __pyx_L3_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 467, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_t_14 = __pyx_t_17;
         __pyx_L27_bool_binop_done:;
         if (__pyx_t_14) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":466
+          /* "src/orchestrator/orchestrator_neoqcr.py":468
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])
  *                 if parsed_exp and parsed_exp[0]:
  *                     processed_data["expiry_date"] = parsed_exp[0]             # <<<<<<<<<<<<<<
  *                     print(f"[save_metadata] Using resolved expiry date for DB: {parsed_exp[0]}")
  *             processed_data["ocr_raw_output"] = snap_ocr_raw
 */
-          __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 466, __pyx_L3_error)
+          __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 468, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
-          if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_t_6) < 0))) __PYX_ERR(0, 466, __pyx_L3_error)
+          if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_t_6) < 0))) __PYX_ERR(0, 468, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":467
+          /* "src/orchestrator/orchestrator_neoqcr.py":469
  *                 if parsed_exp and parsed_exp[0]:
  *                     processed_data["expiry_date"] = parsed_exp[0]
  *                     print(f"[save_metadata] Using resolved expiry date for DB: {parsed_exp[0]}")             # <<<<<<<<<<<<<<
@@ -12078,12 +12156,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_9 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_4 = __pyx_builtin_print; 
-          __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 467, __pyx_L3_error)
+          __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_parsed_exp, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 469, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 467, __pyx_L3_error)
+          __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 469, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_save_metadata_Using_resolved_ex, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 467, __pyx_L3_error)
+          __pyx_t_5 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_save_metadata_Using_resolved_ex, __pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 469, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_10 = 1;
@@ -12093,12 +12171,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 467, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 469, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":465
+          /* "src/orchestrator/orchestrator_neoqcr.py":467
  *                 resolved_exp_str = snapshot.get("resolved_expiry")
  *                 parsed_exp = self.str_to_datetime.format_datetime_array([resolved_exp_str])
  *                 if parsed_exp and parsed_exp[0]:             # <<<<<<<<<<<<<<
@@ -12107,7 +12185,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":462
+        /* "src/orchestrator/orchestrator_neoqcr.py":464
  *             # If expiry_date is not yet set but multicapture resolved a real computed date,
  *             # format and save it as an ISODate in MongoDB!
  *             if not processed_data["expiry_date"] and snapshot.get("resolved_expiry"):             # <<<<<<<<<<<<<<
@@ -12116,49 +12194,49 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":468
+      /* "src/orchestrator/orchestrator_neoqcr.py":470
  *                     processed_data["expiry_date"] = parsed_exp[0]
  *                     print(f"[save_metadata] Using resolved expiry date for DB: {parsed_exp[0]}")
  *             processed_data["ocr_raw_output"] = snap_ocr_raw             # <<<<<<<<<<<<<<
  *             processed_data["img_url"]        = img_url
  *             processed_data["client_name"]    = client_name
 */
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_ocr_raw_output, __pyx_v_snap_ocr_raw) < 0))) __PYX_ERR(0, 468, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_ocr_raw_output, __pyx_v_snap_ocr_raw) < 0))) __PYX_ERR(0, 470, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":469
+      /* "src/orchestrator/orchestrator_neoqcr.py":471
  *                     print(f"[save_metadata] Using resolved expiry date for DB: {parsed_exp[0]}")
  *             processed_data["ocr_raw_output"] = snap_ocr_raw
  *             processed_data["img_url"]        = img_url             # <<<<<<<<<<<<<<
  *             processed_data["client_name"]    = client_name
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
 */
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_v_img_url) < 0))) __PYX_ERR(0, 469, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_v_img_url) < 0))) __PYX_ERR(0, 471, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":470
+      /* "src/orchestrator/orchestrator_neoqcr.py":472
  *             processed_data["ocr_raw_output"] = snap_ocr_raw
  *             processed_data["img_url"]        = img_url
  *             processed_data["client_name"]    = client_name             # <<<<<<<<<<<<<<
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
  *             if scan_duration is not None:
 */
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name) < 0))) __PYX_ERR(0, 470, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name) < 0))) __PYX_ERR(0, 472, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":471
+      /* "src/orchestrator/orchestrator_neoqcr.py":473
  *             processed_data["img_url"]        = img_url
  *             processed_data["client_name"]    = client_name
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"             # <<<<<<<<<<<<<<
  *             if scan_duration is not None:
  *                 processed_data["scan_duration_sec"] = round(scan_duration, 2)
 */
-      __pyx_t_4 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_client_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 471, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_CallUnboundCMethod0(&__pyx_mstate_global->__pyx_umethod_PyUnicode_Type__lower, __pyx_v_client_name); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 473, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_reliance, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 471, __pyx_L3_error)
+      __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_reliance, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 473, __pyx_L3_error)
       if (!__pyx_t_17) {
       } else {
         __pyx_t_14 = __pyx_t_17;
         goto __pyx_L29_bool_binop_done;
       }
-      __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_shipsy, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 471, __pyx_L3_error)
+      __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_shipsy, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 473, __pyx_L3_error)
       __pyx_t_14 = __pyx_t_17;
       __pyx_L29_bool_binop_done:;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -12170,10 +12248,10 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_e2e);
         __pyx_t_6 = __pyx_mstate_global->__pyx_n_u_e2e;
       }
-      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_storage, __pyx_t_6) < 0))) __PYX_ERR(0, 471, __pyx_L3_error)
+      if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_storage, __pyx_t_6) < 0))) __PYX_ERR(0, 473, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":472
+      /* "src/orchestrator/orchestrator_neoqcr.py":474
  *             processed_data["client_name"]    = client_name
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
  *             if scan_duration is not None:             # <<<<<<<<<<<<<<
@@ -12183,7 +12261,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_17 = (__pyx_v_scan_duration != ((PyObject*)Py_None));
       if (__pyx_t_17) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":473
+        /* "src/orchestrator/orchestrator_neoqcr.py":475
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
  *             if scan_duration is not None:
  *                 processed_data["scan_duration_sec"] = round(scan_duration, 2)             # <<<<<<<<<<<<<<
@@ -12199,13 +12277,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 473, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 475, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
-        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_scan_duration_sec, __pyx_t_6) < 0))) __PYX_ERR(0, 473, __pyx_L3_error)
+        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_scan_duration_sec, __pyx_t_6) < 0))) __PYX_ERR(0, 475, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":472
+        /* "src/orchestrator/orchestrator_neoqcr.py":474
  *             processed_data["client_name"]    = client_name
  *             processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
  *             if scan_duration is not None:             # <<<<<<<<<<<<<<
@@ -12214,7 +12292,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":474
+      /* "src/orchestrator/orchestrator_neoqcr.py":476
  *             if scan_duration is not None:
  *                 processed_data["scan_duration_sec"] = round(scan_duration, 2)
  *             if snap_model_time_ms is not None:             # <<<<<<<<<<<<<<
@@ -12224,7 +12302,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_17 = (__pyx_v_snap_model_time_ms != Py_None);
       if (__pyx_t_17) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":475
+        /* "src/orchestrator/orchestrator_neoqcr.py":477
  *                 processed_data["scan_duration_sec"] = round(scan_duration, 2)
  *             if snap_model_time_ms is not None:
  *                 processed_data["model_time_ms"] = round(snap_model_time_ms, 2)             # <<<<<<<<<<<<<<
@@ -12240,13 +12318,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 475, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 477, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
-        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_model_time_ms, __pyx_t_6) < 0))) __PYX_ERR(0, 475, __pyx_L3_error)
+        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_model_time_ms, __pyx_t_6) < 0))) __PYX_ERR(0, 477, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":474
+        /* "src/orchestrator/orchestrator_neoqcr.py":476
  *             if scan_duration is not None:
  *                 processed_data["scan_duration_sec"] = round(scan_duration, 2)
  *             if snap_model_time_ms is not None:             # <<<<<<<<<<<<<<
@@ -12255,7 +12333,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":476
+      /* "src/orchestrator/orchestrator_neoqcr.py":478
  *             if snap_model_time_ms is not None:
  *                 processed_data["model_time_ms"] = round(snap_model_time_ms, 2)
  *             if pid is not None:             # <<<<<<<<<<<<<<
@@ -12265,16 +12343,16 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_17 = (__pyx_v_pid != ((PyObject*)Py_None));
       if (__pyx_t_17) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":477
+        /* "src/orchestrator/orchestrator_neoqcr.py":479
  *                 processed_data["model_time_ms"] = round(snap_model_time_ms, 2)
  *             if pid is not None:
  *                 processed_data["pid"]        = pid             # <<<<<<<<<<<<<<
  * 
  *             # ---- Write to DB ------------------------------------------
 */
-        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_pid, __pyx_v_pid) < 0))) __PYX_ERR(0, 477, __pyx_L3_error)
+        if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_pid, __pyx_v_pid) < 0))) __PYX_ERR(0, 479, __pyx_L3_error)
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":476
+        /* "src/orchestrator/orchestrator_neoqcr.py":478
  *             if snap_model_time_ms is not None:
  *                 processed_data["model_time_ms"] = round(snap_model_time_ms, 2)
  *             if pid is not None:             # <<<<<<<<<<<<<<
@@ -12283,7 +12361,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":480
+      /* "src/orchestrator/orchestrator_neoqcr.py":482
  * 
  *             # ---- Write to DB ------------------------------------------
  *             if env_id:             # <<<<<<<<<<<<<<
@@ -12291,17 +12369,17 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 if check_result:
 */
       __pyx_t_17 = (__Pyx_PyUnicode_IS_TRUE(__pyx_v_env_id) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 480, __pyx_L3_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 482, __pyx_L3_error)
       if (__pyx_t_17) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":481
+        /* "src/orchestrator/orchestrator_neoqcr.py":483
  *             # ---- Write to DB ------------------------------------------
  *             if env_id:
  *                 check_result = self.database.check_env_doc(env_id)             # <<<<<<<<<<<<<<
  *                 if check_result:
  *                     # env doc exists, stamp request_id if provided
 */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 481, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 483, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_4 = __pyx_t_5;
         __Pyx_INCREF(__pyx_t_4);
@@ -12311,23 +12389,23 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_check_env_doc, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 481, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 483, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __pyx_v_check_result = __pyx_t_6;
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":482
+        /* "src/orchestrator/orchestrator_neoqcr.py":484
  *             if env_id:
  *                 check_result = self.database.check_env_doc(env_id)
  *                 if check_result:             # <<<<<<<<<<<<<<
  *                     # env doc exists, stamp request_id if provided
  *                     if request_id:
 */
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_check_result); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 482, __pyx_L3_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_check_result); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 484, __pyx_L3_error)
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":484
+          /* "src/orchestrator/orchestrator_neoqcr.py":486
  *                 if check_result:
  *                     # env doc exists, stamp request_id if provided
  *                     if request_id:             # <<<<<<<<<<<<<<
@@ -12335,17 +12413,17 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 else:
 */
           __pyx_t_17 = (__pyx_v_request_id != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_v_request_id) != 0);
-          if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 484, __pyx_L3_error)
+          if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 486, __pyx_L3_error)
           if (__pyx_t_17) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":485
+            /* "src/orchestrator/orchestrator_neoqcr.py":487
  *                     # env doc exists, stamp request_id if provided
  *                     if request_id:
  *                         self.database.save_session(request_id, env_id)             # <<<<<<<<<<<<<<
  *                 else:
  *                     # env doc does not exist, create it with request_id
 */
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L3_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 487, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_5 = __pyx_t_4;
             __Pyx_INCREF(__pyx_t_5);
@@ -12355,12 +12433,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_save_session, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 485, __pyx_L3_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 487, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":484
+            /* "src/orchestrator/orchestrator_neoqcr.py":486
  *                 if check_result:
  *                     # env doc exists, stamp request_id if provided
  *                     if request_id:             # <<<<<<<<<<<<<<
@@ -12369,7 +12447,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":482
+          /* "src/orchestrator/orchestrator_neoqcr.py":484
  *             if env_id:
  *                 check_result = self.database.check_env_doc(env_id)
  *                 if check_result:             # <<<<<<<<<<<<<<
@@ -12379,7 +12457,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           goto __pyx_L35;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":488
+        /* "src/orchestrator/orchestrator_neoqcr.py":490
  *                 else:
  *                     # env doc does not exist, create it with request_id
  *                     env_data = MetadataProcessor.create_env_data(store_id, device_id, user_id, env_id)             # <<<<<<<<<<<<<<
@@ -12388,9 +12466,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         /*else*/ {
           __pyx_t_4 = NULL;
-          __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 488, __pyx_L3_error)
+          __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 490, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_create_env_data); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 488, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_create_env_data); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 490, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_t_10 = 1;
@@ -12410,32 +12488,32 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_10, (5-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 488, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 490, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_v_env_data = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":489
+          /* "src/orchestrator/orchestrator_neoqcr.py":491
  *                     # env doc does not exist, create it with request_id
  *                     env_data = MetadataProcessor.create_env_data(store_id, device_id, user_id, env_id)
  *                     if env_data:             # <<<<<<<<<<<<<<
  *                         env_data["client_name"] = client_name
  *                         if request_id:
 */
-          __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_env_data); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 489, __pyx_L3_error)
+          __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_env_data); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 491, __pyx_L3_error)
           if (__pyx_t_17) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":490
+            /* "src/orchestrator/orchestrator_neoqcr.py":492
  *                     env_data = MetadataProcessor.create_env_data(store_id, device_id, user_id, env_id)
  *                     if env_data:
  *                         env_data["client_name"] = client_name             # <<<<<<<<<<<<<<
  *                         if request_id:
  *                             env_data["session_id"] = request_id
 */
-            if (unlikely((PyObject_SetItem(__pyx_v_env_data, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name) < 0))) __PYX_ERR(0, 490, __pyx_L3_error)
+            if (unlikely((PyObject_SetItem(__pyx_v_env_data, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_v_client_name) < 0))) __PYX_ERR(0, 492, __pyx_L3_error)
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":491
+            /* "src/orchestrator/orchestrator_neoqcr.py":493
  *                     if env_data:
  *                         env_data["client_name"] = client_name
  *                         if request_id:             # <<<<<<<<<<<<<<
@@ -12443,19 +12521,19 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         self.database.create_env_doc(env_data)
 */
             __pyx_t_17 = (__pyx_v_request_id != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_v_request_id) != 0);
-            if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 491, __pyx_L3_error)
+            if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_17 < 0))) __PYX_ERR(0, 493, __pyx_L3_error)
             if (__pyx_t_17) {
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":492
+              /* "src/orchestrator/orchestrator_neoqcr.py":494
  *                         env_data["client_name"] = client_name
  *                         if request_id:
  *                             env_data["session_id"] = request_id             # <<<<<<<<<<<<<<
  *                         self.database.create_env_doc(env_data)
  * 
 */
-              if (unlikely((PyObject_SetItem(__pyx_v_env_data, __pyx_mstate_global->__pyx_n_u_session_id, __pyx_v_request_id) < 0))) __PYX_ERR(0, 492, __pyx_L3_error)
+              if (unlikely((PyObject_SetItem(__pyx_v_env_data, __pyx_mstate_global->__pyx_n_u_session_id, __pyx_v_request_id) < 0))) __PYX_ERR(0, 494, __pyx_L3_error)
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":491
+              /* "src/orchestrator/orchestrator_neoqcr.py":493
  *                     if env_data:
  *                         env_data["client_name"] = client_name
  *                         if request_id:             # <<<<<<<<<<<<<<
@@ -12464,14 +12542,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
             }
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":493
+            /* "src/orchestrator/orchestrator_neoqcr.py":495
  *                         if request_id:
  *                             env_data["session_id"] = request_id
  *                         self.database.create_env_doc(env_data)             # <<<<<<<<<<<<<<
  * 
  *                 if recapture_flag and rec_metadata_id:
 */
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 493, __pyx_L3_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 495, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_9 = __pyx_t_4;
             __Pyx_INCREF(__pyx_t_9);
@@ -12481,12 +12559,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_create_env_doc, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 493, __pyx_L3_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 495, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":489
+            /* "src/orchestrator/orchestrator_neoqcr.py":491
  *                     # env doc does not exist, create it with request_id
  *                     env_data = MetadataProcessor.create_env_data(store_id, device_id, user_id, env_id)
  *                     if env_data:             # <<<<<<<<<<<<<<
@@ -12497,33 +12575,33 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         }
         __pyx_L35:;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":495
+        /* "src/orchestrator/orchestrator_neoqcr.py":497
  *                         self.database.create_env_doc(env_data)
  * 
  *                 if recapture_flag and rec_metadata_id:             # <<<<<<<<<<<<<<
  *                     self.database.remove_metadata(rec_metadata_id)
  * 
 */
-        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_recapture_flag); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 495, __pyx_L3_error)
+        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_recapture_flag); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 497, __pyx_L3_error)
         if (__pyx_t_14) {
         } else {
           __pyx_t_17 = __pyx_t_14;
           goto __pyx_L40_bool_binop_done;
         }
         __pyx_t_14 = (__pyx_v_rec_metadata_id != Py_None)&&(__Pyx_PyUnicode_IS_TRUE(__pyx_v_rec_metadata_id) != 0);
-        if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_14 < 0))) __PYX_ERR(0, 495, __pyx_L3_error)
+        if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_14 < 0))) __PYX_ERR(0, 497, __pyx_L3_error)
         __pyx_t_17 = __pyx_t_14;
         __pyx_L40_bool_binop_done:;
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":496
+          /* "src/orchestrator/orchestrator_neoqcr.py":498
  * 
  *                 if recapture_flag and rec_metadata_id:
  *                     self.database.remove_metadata(rec_metadata_id)             # <<<<<<<<<<<<<<
  * 
  *                 # ----------------------------------------------------------
 */
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 496, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 498, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_4 = __pyx_t_9;
           __Pyx_INCREF(__pyx_t_4);
@@ -12533,12 +12611,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_remove_metadata, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 496, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 498, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":495
+          /* "src/orchestrator/orchestrator_neoqcr.py":497
  *                         self.database.create_env_doc(env_data)
  * 
  *                 if recapture_flag and rec_metadata_id:             # <<<<<<<<<<<<<<
@@ -12547,41 +12625,41 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":505
+        /* "src/orchestrator/orchestrator_neoqcr.py":507
  *                 #   The `predicted` field on the first doc is never touched.
  *                 # ----------------------------------------------------------
  *                 if snapshot.get("capture_type") and not recapture_flag:             # <<<<<<<<<<<<<<
  *                     # Step 1  patch the first doc
  *                     merged = self.database.merge_multicapture_metadata(
 */
-        __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_capture_type, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 505, __pyx_L3_error)
+        __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_capture_type, Py_None); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 507, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 505, __pyx_L3_error)
+        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 507, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         if (__pyx_t_14) {
         } else {
           __pyx_t_17 = __pyx_t_14;
           goto __pyx_L43_bool_binop_done;
         }
-        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_recapture_flag); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 505, __pyx_L3_error)
+        __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_v_recapture_flag); if (unlikely((__pyx_t_14 < 0))) __PYX_ERR(0, 507, __pyx_L3_error)
         __pyx_t_13 = (!__pyx_t_14);
         __pyx_t_17 = __pyx_t_13;
         __pyx_L43_bool_binop_done:;
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":507
+          /* "src/orchestrator/orchestrator_neoqcr.py":509
  *                 if snapshot.get("capture_type") and not recapture_flag:
  *                     # Step 1  patch the first doc
  *                     merged = self.database.merge_multicapture_metadata(             # <<<<<<<<<<<<<<
  *                         env_id   = env_id,
  *                         new_data = processed_data,
 */
-          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 507, __pyx_L3_error)
+          __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 509, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_9 = __pyx_t_4;
           __Pyx_INCREF(__pyx_t_9);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":509
+          /* "src/orchestrator/orchestrator_neoqcr.py":511
  *                     merged = self.database.merge_multicapture_metadata(
  *                         env_id   = env_id,
  *                         new_data = processed_data,             # <<<<<<<<<<<<<<
@@ -12591,31 +12669,31 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_10 = 0;
           {
             PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 2 : 0)] = {__pyx_t_9, NULL};
-            __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 507, __pyx_L3_error)
+            __pyx_t_5 = __Pyx_MakeVectorcallBuilderKwds(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 509, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
-            if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id, __pyx_t_5, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 507, __pyx_L3_error)
-            if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_new_data, __pyx_v_processed_data, __pyx_t_5, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 507, __pyx_L3_error)
+            if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id, __pyx_t_5, __pyx_callargs+1, 0) < 0) __PYX_ERR(0, 509, __pyx_L3_error)
+            if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_new_data, __pyx_v_processed_data, __pyx_t_5, __pyx_callargs+1, 1) < 0) __PYX_ERR(0, 509, __pyx_L3_error)
             __pyx_t_6 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_merge_multicapture_metadata, __pyx_callargs+__pyx_t_10, (1-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_5);
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 507, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 509, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_v_merged = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":511
+          /* "src/orchestrator/orchestrator_neoqcr.py":513
  *                         new_data = processed_data,
  *                     )
  *                     if merged:             # <<<<<<<<<<<<<<
  *                         print(f"[Multicapture] Merged second-capture data into first doc for env_id={env_id}")
  *                     else:
 */
-          __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_merged); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 511, __pyx_L3_error)
+          __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_merged); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 513, __pyx_L3_error)
           if (__pyx_t_17) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":512
+            /* "src/orchestrator/orchestrator_neoqcr.py":514
  *                     )
  *                     if merged:
  *                         print(f"[Multicapture] Merged second-capture data into first doc for env_id={env_id}")             # <<<<<<<<<<<<<<
@@ -12625,7 +12703,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_4 = NULL;
             __Pyx_INCREF(__pyx_builtin_print);
             __pyx_t_5 = __pyx_builtin_print; 
-            __pyx_t_9 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Multicapture_Merged_second_capt, __pyx_v_env_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 512, __pyx_L3_error)
+            __pyx_t_9 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Multicapture_Merged_second_capt, __pyx_v_env_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 514, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_9);
             __pyx_t_10 = 1;
             {
@@ -12634,12 +12712,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 512, __pyx_L3_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 514, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":511
+            /* "src/orchestrator/orchestrator_neoqcr.py":513
  *                         new_data = processed_data,
  *                     )
  *                     if merged:             # <<<<<<<<<<<<<<
@@ -12649,7 +12727,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             goto __pyx_L45;
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":514
+          /* "src/orchestrator/orchestrator_neoqcr.py":516
  *                         print(f"[Multicapture] Merged second-capture data into first doc for env_id={env_id}")
  *                     else:
  *                         print("[Multicapture] No existing doc to merge into  first doc will be created below")             # <<<<<<<<<<<<<<
@@ -12666,23 +12744,23 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 514, __pyx_L3_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 516, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           }
           __pyx_L45:;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":517
+          /* "src/orchestrator/orchestrator_neoqcr.py":519
  * 
  *                     # Step 2  always create the second-capture doc for reference
  *                     processed_data["capture_type"] = "multicapture"             # <<<<<<<<<<<<<<
  *                     print(f"[DB] Saving multicapture metadata document: {processed_data}")
  *                     created_id = self.database.create_metadata(processed_data, ean_code, env_id, final_metadata_id)
 */
-          if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_n_u_multicapture) < 0))) __PYX_ERR(0, 517, __pyx_L3_error)
+          if (unlikely((PyObject_SetItem(__pyx_v_processed_data, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_n_u_multicapture) < 0))) __PYX_ERR(0, 519, __pyx_L3_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":518
+          /* "src/orchestrator/orchestrator_neoqcr.py":520
  *                     # Step 2  always create the second-capture doc for reference
  *                     processed_data["capture_type"] = "multicapture"
  *                     print(f"[DB] Saving multicapture metadata document: {processed_data}")             # <<<<<<<<<<<<<<
@@ -12692,9 +12770,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_9 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_5 = __pyx_builtin_print; 
-          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_processed_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 518, __pyx_L3_error)
+          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_processed_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 520, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_DB_Saving_multicapture_metadata, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 518, __pyx_L3_error)
+          __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_DB_Saving_multicapture_metadata, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 520, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_t_10 = 1;
@@ -12704,19 +12782,19 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 518, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 520, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":519
+          /* "src/orchestrator/orchestrator_neoqcr.py":521
  *                     processed_data["capture_type"] = "multicapture"
  *                     print(f"[DB] Saving multicapture metadata document: {processed_data}")
  *                     created_id = self.database.create_metadata(processed_data, ean_code, env_id, final_metadata_id)             # <<<<<<<<<<<<<<
  *                     print(f"[Multicapture] Second-capture doc {created_id} saved with capture_type=multicapture")
  * 
 */
-          __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 519, __pyx_L3_error)
+          __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 521, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
           __pyx_t_5 = __pyx_t_7;
           __Pyx_INCREF(__pyx_t_5);
@@ -12726,13 +12804,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_create_metadata, __pyx_callargs+__pyx_t_10, (5-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 519, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 521, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __pyx_v_created_id = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":520
+          /* "src/orchestrator/orchestrator_neoqcr.py":522
  *                     print(f"[DB] Saving multicapture metadata document: {processed_data}")
  *                     created_id = self.database.create_metadata(processed_data, ean_code, env_id, final_metadata_id)
  *                     print(f"[Multicapture] Second-capture doc {created_id} saved with capture_type=multicapture")             # <<<<<<<<<<<<<<
@@ -12742,13 +12820,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_7 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_5 = __pyx_builtin_print; 
-          __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_created_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 520, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_created_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 522, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_8[0] = __pyx_mstate_global->__pyx_kp_u_Multicapture_Second_capture_doc;
           __pyx_t_8[1] = __pyx_t_9;
           __pyx_t_8[2] = __pyx_mstate_global->__pyx_kp_u_saved_with_capture_type_multica;
           __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_8, 3, 34 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_9) + 37, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9));
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 520, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 522, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __pyx_t_10 = 1;
@@ -12758,52 +12836,52 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 520, __pyx_L3_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 522, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":523
+          /* "src/orchestrator/orchestrator_neoqcr.py":525
  * 
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})             # <<<<<<<<<<<<<<
  *                     if ean_corrections and created_id:
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
 */
-          __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 523, __pyx_L3_error)
+          __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 525, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_5 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ean_corrections, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 523, __pyx_L3_error)
+          __pyx_t_5 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ean_corrections, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 525, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           __pyx_v_ean_corrections = __pyx_t_5;
           __pyx_t_5 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":524
+          /* "src/orchestrator/orchestrator_neoqcr.py":526
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:             # <<<<<<<<<<<<<<
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
  *                 else:
 */
-          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_ean_corrections); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 524, __pyx_L3_error)
+          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_ean_corrections); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 526, __pyx_L3_error)
           if (__pyx_t_13) {
           } else {
             __pyx_t_17 = __pyx_t_13;
             goto __pyx_L47_bool_binop_done;
           }
-          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_created_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 524, __pyx_L3_error)
+          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_created_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 526, __pyx_L3_error)
           __pyx_t_17 = __pyx_t_13;
           __pyx_L47_bool_binop_done:;
           if (__pyx_t_17) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":525
+            /* "src/orchestrator/orchestrator_neoqcr.py":527
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)             # <<<<<<<<<<<<<<
  *                 else:
  *                     print(f"[DB] Saving metadata document: {processed_data}")
 */
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 525, __pyx_L3_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 527, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_4);
             __pyx_t_6 = __pyx_t_4;
             __Pyx_INCREF(__pyx_t_6);
@@ -12813,12 +12891,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_5 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_apply_ean_corrections_to_metadat, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 525, __pyx_L3_error)
+              if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 527, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_5);
             }
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":524
+            /* "src/orchestrator/orchestrator_neoqcr.py":526
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:             # <<<<<<<<<<<<<<
@@ -12827,7 +12905,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":505
+          /* "src/orchestrator/orchestrator_neoqcr.py":507
  *                 #   The `predicted` field on the first doc is never touched.
  *                 # ----------------------------------------------------------
  *                 if snapshot.get("capture_type") and not recapture_flag:             # <<<<<<<<<<<<<<
@@ -12837,7 +12915,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           goto __pyx_L42;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":527
+        /* "src/orchestrator/orchestrator_neoqcr.py":529
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
  *                 else:
  *                     print(f"[DB] Saving metadata document: {processed_data}")             # <<<<<<<<<<<<<<
@@ -12848,9 +12926,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_4 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_6 = __pyx_builtin_print; 
-          __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_processed_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 527, __pyx_L3_error)
+          __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_v_processed_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 529, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_9 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_DB_Saving_metadata_document, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 527, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_DB_Saving_metadata_document, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 529, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_10 = 1;
@@ -12860,19 +12938,19 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 527, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 529, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":528
+          /* "src/orchestrator/orchestrator_neoqcr.py":530
  *                 else:
  *                     print(f"[DB] Saving metadata document: {processed_data}")
  *                     created_id = self.database.create_metadata(processed_data, ean_code, env_id, final_metadata_id)             # <<<<<<<<<<<<<<
  *                     print(f"Metadata {created_id} created successfully")
  * 
 */
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 528, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 530, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_6 = __pyx_t_9;
           __Pyx_INCREF(__pyx_t_6);
@@ -12882,13 +12960,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_5 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_create_metadata, __pyx_callargs+__pyx_t_10, (5-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 528, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 530, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __pyx_v_created_id = __pyx_t_5;
           __pyx_t_5 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":529
+          /* "src/orchestrator/orchestrator_neoqcr.py":531
  *                     print(f"[DB] Saving metadata document: {processed_data}")
  *                     created_id = self.database.create_metadata(processed_data, ean_code, env_id, final_metadata_id)
  *                     print(f"Metadata {created_id} created successfully")             # <<<<<<<<<<<<<<
@@ -12898,13 +12976,13 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_9 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_6 = __pyx_builtin_print; 
-          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_created_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 529, __pyx_L3_error)
+          __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_created_id, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 531, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
           __pyx_t_8[0] = __pyx_mstate_global->__pyx_kp_u_Metadata;
           __pyx_t_8[1] = __pyx_t_4;
           __pyx_t_8[2] = __pyx_mstate_global->__pyx_kp_u_created_successfully;
           __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_8, 3, 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 21, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4));
-          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 529, __pyx_L3_error)
+          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 531, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __pyx_t_10 = 1;
@@ -12914,52 +12992,52 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 529, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 531, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":532
+          /* "src/orchestrator/orchestrator_neoqcr.py":534
  * 
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})             # <<<<<<<<<<<<<<
  *                     if ean_corrections and created_id:
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
 */
-          __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 532, __pyx_L3_error)
+          __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 534, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ean_corrections, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 532, __pyx_L3_error)
+          __pyx_t_6 = __Pyx_PyDict_GetItemDefault(__pyx_v_snapshot, __pyx_mstate_global->__pyx_n_u_ean_corrections, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 534, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_v_ean_corrections = __pyx_t_6;
           __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":533
+          /* "src/orchestrator/orchestrator_neoqcr.py":535
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:             # <<<<<<<<<<<<<<
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
  *             else:
 */
-          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_ean_corrections); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 533, __pyx_L3_error)
+          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_ean_corrections); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 535, __pyx_L3_error)
           if (__pyx_t_13) {
           } else {
             __pyx_t_17 = __pyx_t_13;
             goto __pyx_L50_bool_binop_done;
           }
-          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_created_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 533, __pyx_L3_error)
+          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_created_id); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 535, __pyx_L3_error)
           __pyx_t_17 = __pyx_t_13;
           __pyx_L50_bool_binop_done:;
           if (__pyx_t_17) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":534
+            /* "src/orchestrator/orchestrator_neoqcr.py":536
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)             # <<<<<<<<<<<<<<
  *             else:
  *                 print("env_id is not defined  skipping DB write")
 */
-            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 534, __pyx_L3_error)
+            __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_database); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 536, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_7);
             __pyx_t_5 = __pyx_t_7;
             __Pyx_INCREF(__pyx_t_5);
@@ -12969,12 +13047,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_apply_ean_corrections_to_metadat, __pyx_callargs+__pyx_t_10, (3-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 534, __pyx_L3_error)
+              if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 536, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_6);
             }
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":533
+            /* "src/orchestrator/orchestrator_neoqcr.py":535
  *                     #  EAN Corrections: update root fields only (not predicted)
  *                     ean_corrections = snapshot.get("ean_corrections", {})
  *                     if ean_corrections and created_id:             # <<<<<<<<<<<<<<
@@ -12985,7 +13063,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         }
         __pyx_L42:;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":480
+        /* "src/orchestrator/orchestrator_neoqcr.py":482
  * 
  *             # ---- Write to DB ------------------------------------------
  *             if env_id:             # <<<<<<<<<<<<<<
@@ -12995,7 +13073,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L34;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":536
+      /* "src/orchestrator/orchestrator_neoqcr.py":538
  *                         self.database.apply_ean_corrections_to_metadata(created_id, ean_corrections)
  *             else:
  *                 print("env_id is not defined  skipping DB write")             # <<<<<<<<<<<<<<
@@ -13012,14 +13090,14 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 536, __pyx_L3_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 538, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __pyx_L34:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":399
+      /* "src/orchestrator/orchestrator_neoqcr.py":401
  *         from self.* fields set by other requests.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -13039,7 +13117,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":538
+    /* "src/orchestrator/orchestrator_neoqcr.py":540
  *                 print("env_id is not defined  skipping DB write")
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -13049,7 +13127,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_18 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_18) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.process_image_save_metadata", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_7) < 0) __PYX_ERR(0, 538, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_7) < 0) __PYX_ERR(0, 540, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_7);
@@ -13057,7 +13135,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_v_exc = __pyx_t_5;
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":539
+        /* "src/orchestrator/orchestrator_neoqcr.py":541
  * 
  *         except Exception as exc:
  *             print(f"Error in save_metadata: {exc}")             # <<<<<<<<<<<<<<
@@ -13067,9 +13145,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_11 = __pyx_builtin_print; 
-        __pyx_t_19 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 539, __pyx_L57_error)
+        __pyx_t_19 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 541, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_19);
-        __pyx_t_20 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Error_in_save_metadata, __pyx_t_19); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 539, __pyx_L57_error)
+        __pyx_t_20 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Error_in_save_metadata, __pyx_t_19); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 541, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_20);
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
         __pyx_t_10 = 1;
@@ -13079,12 +13157,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 539, __pyx_L57_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 541, __pyx_L57_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":540
+        /* "src/orchestrator/orchestrator_neoqcr.py":542
  *         except Exception as exc:
  *             print(f"Error in save_metadata: {exc}")
  *             traceback.print_exc()             # <<<<<<<<<<<<<<
@@ -13092,9 +13170,9 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
         __pyx_t_11 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_20, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 540, __pyx_L57_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_20, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 542, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_20);
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_20, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 540, __pyx_L57_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_20, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 542, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
         __pyx_t_10 = 1;
@@ -13114,12 +13192,12 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_9 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_10, (1-__pyx_t_10) | (__pyx_t_10*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 540, __pyx_L57_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 542, __pyx_L57_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":541
+        /* "src/orchestrator/orchestrator_neoqcr.py":543
  *             print(f"Error in save_metadata: {exc}")
  *             traceback.print_exc()
  *             raise ProcessingError(f"Failed to save metadata: {exc}")             # <<<<<<<<<<<<<<
@@ -13127,11 +13205,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     # ------------------------------------------------------------------
 */
         __pyx_t_4 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 541, __pyx_L57_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 543, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_20 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 541, __pyx_L57_error)
+        __pyx_t_20 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 543, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_20);
-        __pyx_t_19 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_save_metadata, __pyx_t_20); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 541, __pyx_L57_error)
+        __pyx_t_19 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Failed_to_save_metadata, __pyx_t_20); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 543, __pyx_L57_error)
         __Pyx_GOTREF(__pyx_t_19);
         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
         __pyx_t_10 = 1;
@@ -13152,15 +13230,15 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 541, __pyx_L57_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 543, __pyx_L57_error)
           __Pyx_GOTREF(__pyx_t_9);
         }
         __Pyx_Raise(__pyx_t_9, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __PYX_ERR(0, 541, __pyx_L57_error)
+        __PYX_ERR(0, 543, __pyx_L57_error)
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":538
+      /* "src/orchestrator/orchestrator_neoqcr.py":540
  *                 print("env_id is not defined  skipping DB write")
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -13206,7 +13284,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L5_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":399
+    /* "src/orchestrator/orchestrator_neoqcr.py":401
  *         from self.* fields set by other requests.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -13222,7 +13300,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L8_try_end:;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":376
+  /* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -13278,7 +13356,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 }
 static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/orchestrator/orchestrator_neoqcr.py":547
+/* "src/orchestrator/orchestrator_neoqcr.py":549
  *     # ------------------------------------------------------------------
  * 
  *     async def process_batch_images(             # <<<<<<<<<<<<<<
@@ -13328,38 +13406,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_images,&__pyx_mstate_global->__pyx_n_u_query,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 547, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 549, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 547, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 549, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 547, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 549, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 547, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 549, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_batch_images", 0) < 0) __PYX_ERR(0, 547, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_batch_images", 0) < 0) __PYX_ERR(0, 549, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_batch_images", 1, 3, 3, i); __PYX_ERR(0, 547, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_batch_images", 1, 3, 3, i); __PYX_ERR(0, 549, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 547, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 549, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 547, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 549, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 547, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 549, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_images = ((PyObject*)values[1]);
@@ -13367,7 +13445,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("process_batch_images", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 547, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("process_batch_images", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 549, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13378,8 +13456,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_images), (&PyList_Type), 0, "images", 2))) __PYX_ERR(0, 549, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_query), (&PyUnicode_Type), 0, "query", 2))) __PYX_ERR(0, 550, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_images), (&PyList_Type), 0, "images", 2))) __PYX_ERR(0, 551, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_query), (&PyUnicode_Type), 0, "query", 2))) __PYX_ERR(0, 552, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_19process_batch_images(__pyx_self, __pyx_v_self, __pyx_v_images, __pyx_v_query);
 
   /* function exit code */
@@ -13411,7 +13489,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 547, __pyx_L1_error)
+    __PYX_ERR(0, 549, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -13425,7 +13503,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_query);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_query);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21generator1, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_batch_images, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_batch_image, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 547, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21generator1, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_batch_images, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_batch_image, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 549, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -13498,10 +13576,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_L3_first_run:;
   if (unlikely(__pyx_sent_value != Py_None)) {
     if (unlikely(__pyx_sent_value)) PyErr_SetString(PyExc_TypeError, "can't send non-None value to a just-started coroutine");
-    __PYX_ERR(0, 547, __pyx_L1_error)
+    __PYX_ERR(0, 549, __pyx_L1_error)
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":556
+  /* "src/orchestrator/orchestrator_neoqcr.py":558
  *         Returns list of (metadata_dict, raw_ocr_string) tuples.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -13515,7 +13593,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":557
+      /* "src/orchestrator/orchestrator_neoqcr.py":559
  *         """
  *         try:
  *             print(f"Processing concurrent batch of {len(images)} images")             # <<<<<<<<<<<<<<
@@ -13525,14 +13603,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_6 = __pyx_builtin_print; 
-      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 557, __pyx_L4_error)
-      __pyx_t_8 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_7, 0, ' ', 'd'); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 557, __pyx_L4_error)
+      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 559, __pyx_L4_error)
+      __pyx_t_8 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_7, 0, ' ', 'd'); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 559, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_9[0] = __pyx_mstate_global->__pyx_kp_u_Processing_concurrent_batch_of;
       __pyx_t_9[1] = __pyx_t_8;
       __pyx_t_9[2] = __pyx_mstate_global->__pyx_kp_u_images_2;
       __pyx_t_10 = __Pyx_PyUnicode_Join(__pyx_t_9, 3, 31 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8) + 7, 127);
-      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 557, __pyx_L4_error)
+      if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 559, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_11 = 1;
@@ -13542,38 +13620,38 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 557, __pyx_L4_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 559, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":559
+      /* "src/orchestrator/orchestrator_neoqcr.py":561
  *             print(f"Processing concurrent batch of {len(images)} images")
  * 
  *             tasks              = []             # <<<<<<<<<<<<<<
  *             valid_indices: List[int] = []
  * 
 */
-      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 559, __pyx_L4_error)
+      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 561, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_4);
       __pyx_cur_scope->__pyx_v_tasks = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":560
+      /* "src/orchestrator/orchestrator_neoqcr.py":562
  * 
  *             tasks              = []
  *             valid_indices: List[int] = []             # <<<<<<<<<<<<<<
  * 
  *             for i, img in enumerate(images):
 */
-      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 560, __pyx_L4_error)
+      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 562, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_4);
       __pyx_cur_scope->__pyx_v_valid_indices = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":562
+      /* "src/orchestrator/orchestrator_neoqcr.py":564
  *             valid_indices: List[int] = []
  * 
  *             for i, img in enumerate(images):             # <<<<<<<<<<<<<<
@@ -13587,13 +13665,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_4);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 562, __pyx_L4_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 564, __pyx_L4_error)
           #endif
           if (__pyx_t_12 >= __pyx_temp) break;
         }
         __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_4, __pyx_t_12);
         ++__pyx_t_12;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 562, __pyx_L4_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 564, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_img);
         __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_img, __pyx_t_6);
@@ -13602,7 +13680,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_cur_scope->__pyx_v_i = __pyx_t_7;
         __pyx_t_7 = (__pyx_t_7 + 1);
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":563
+        /* "src/orchestrator/orchestrator_neoqcr.py":565
  * 
  *             for i, img in enumerate(images):
  *                 if img is not None:             # <<<<<<<<<<<<<<
@@ -13612,14 +13690,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_13 = (__pyx_cur_scope->__pyx_v_img != Py_None);
         if (__pyx_t_13) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":564
+          /* "src/orchestrator/orchestrator_neoqcr.py":566
  *             for i, img in enumerate(images):
  *                 if img is not None:
  *                     tasks.append(self.qwen_model.process_batch(img, query))             # <<<<<<<<<<<<<<
  *                     valid_indices.append(i)
  * 
 */
-          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 564, __pyx_L4_error)
+          __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 566, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_10 = __pyx_t_5;
           __Pyx_INCREF(__pyx_t_10);
@@ -13629,25 +13707,25 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_t_6 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_process_batch, __pyx_callargs+__pyx_t_11, (3-__pyx_t_11) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 564, __pyx_L4_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 566, __pyx_L4_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
-          __pyx_t_14 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_tasks, __pyx_t_6); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 564, __pyx_L4_error)
+          __pyx_t_14 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_tasks, __pyx_t_6); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 566, __pyx_L4_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":565
+          /* "src/orchestrator/orchestrator_neoqcr.py":567
  *                 if img is not None:
  *                     tasks.append(self.qwen_model.process_batch(img, query))
  *                     valid_indices.append(i)             # <<<<<<<<<<<<<<
  * 
  *             if not tasks:
 */
-          __pyx_t_6 = PyLong_FromSsize_t(__pyx_cur_scope->__pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 565, __pyx_L4_error)
+          __pyx_t_6 = PyLong_FromSsize_t(__pyx_cur_scope->__pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 567, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_14 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_valid_indices, __pyx_t_6); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 565, __pyx_L4_error)
+          __pyx_t_14 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_valid_indices, __pyx_t_6); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 567, __pyx_L4_error)
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":563
+          /* "src/orchestrator/orchestrator_neoqcr.py":565
  * 
  *             for i, img in enumerate(images):
  *                 if img is not None:             # <<<<<<<<<<<<<<
@@ -13656,7 +13734,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":562
+        /* "src/orchestrator/orchestrator_neoqcr.py":564
  *             valid_indices: List[int] = []
  * 
  *             for i, img in enumerate(images):             # <<<<<<<<<<<<<<
@@ -13666,7 +13744,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":567
+      /* "src/orchestrator/orchestrator_neoqcr.py":569
  *                     valid_indices.append(i)
  * 
  *             if not tasks:             # <<<<<<<<<<<<<<
@@ -13674,11 +13752,11 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
       __pyx_t_13 = (__Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 567, __pyx_L4_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 569, __pyx_L4_error)
       __pyx_t_15 = (!__pyx_t_13);
       if (__pyx_t_15) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":568
+        /* "src/orchestrator/orchestrator_neoqcr.py":570
  * 
  *             if not tasks:
  *                 return [(None, "No valid images provided")] * len(images)             # <<<<<<<<<<<<<<
@@ -13686,21 +13764,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             t0 = time.perf_counter()
 */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 568, __pyx_L4_error)
-        __pyx_t_4 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 568, __pyx_L4_error)
+        __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 570, __pyx_L4_error)
+        __pyx_t_4 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 570, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_4);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < __pyx_t_7; __pyx_temp++) {
             __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[0]);
             __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_4, __pyx_temp, __pyx_mstate_global->__pyx_tuple[0]) != (0)) __PYX_ERR(0, 568, __pyx_L4_error);
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_4, __pyx_temp, __pyx_mstate_global->__pyx_tuple[0]) != (0)) __PYX_ERR(0, 570, __pyx_L4_error);
           }
         }
         __pyx_r = ((PyObject*)__pyx_t_4);
         __pyx_t_4 = 0;
         goto __pyx_L8_try_return;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":567
+        /* "src/orchestrator/orchestrator_neoqcr.py":569
  *                     valid_indices.append(i)
  * 
  *             if not tasks:             # <<<<<<<<<<<<<<
@@ -13709,7 +13787,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":570
+      /* "src/orchestrator/orchestrator_neoqcr.py":572
  *                 return [(None, "No valid images provided")] * len(images)
  * 
  *             t0 = time.perf_counter()             # <<<<<<<<<<<<<<
@@ -13717,9 +13795,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             elapsed = (time.perf_counter() - t0) * 1000
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 570, __pyx_L4_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 572, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 570, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 572, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_11 = 1;
@@ -13739,31 +13817,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_11, (1-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 570, __pyx_L4_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 572, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_GIVEREF(__pyx_t_4);
       __pyx_cur_scope->__pyx_v_t0 = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":571
+      /* "src/orchestrator/orchestrator_neoqcr.py":573
  * 
  *             t0 = time.perf_counter()
  *             ocr_results = await asyncio.gather(*tasks, return_exceptions=True)             # <<<<<<<<<<<<<<
  *             elapsed = (time.perf_counter() - t0) * 1000
  *             print(f"[TIMER] Batch of {len(tasks)} in {elapsed:.2f} ms  ({elapsed/len(tasks):.2f} ms avg)")
 */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 571, __pyx_L4_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_asyncio); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 573, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_gather); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 571, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_gather); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 573, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = PySequence_Tuple(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 571, __pyx_L4_error)
+      __pyx_t_4 = PySequence_Tuple(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 573, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 571, __pyx_L4_error)
+      __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 573, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_6);
-      if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return_exceptions, Py_True) < 0) __PYX_ERR(0, 571, __pyx_L4_error)
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 571, __pyx_L4_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return_exceptions, Py_True) < 0) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 573, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -13794,20 +13872,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_3 = __pyx_cur_scope->__pyx_t_2;
         __pyx_cur_scope->__pyx_t_2 = 0;
         __Pyx_XGOTREF(__pyx_t_3);
-        if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 571, __pyx_L4_error)
+        if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 573, __pyx_L4_error)
         __pyx_t_5 = __pyx_sent_value; __Pyx_INCREF(__pyx_t_5);
       } else if (likely(__pyx_t_16 == PYGEN_RETURN)) {
         __Pyx_GOTREF(__pyx_r);
         __pyx_t_5 = __pyx_r; __pyx_r = NULL;
       } else {
         __Pyx_XGOTREF(__pyx_r);
-        __PYX_ERR(0, 571, __pyx_L4_error)
+        __PYX_ERR(0, 573, __pyx_L4_error)
       }
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_cur_scope->__pyx_v_ocr_results = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":572
+      /* "src/orchestrator/orchestrator_neoqcr.py":574
  *             t0 = time.perf_counter()
  *             ocr_results = await asyncio.gather(*tasks, return_exceptions=True)
  *             elapsed = (time.perf_counter() - t0) * 1000             # <<<<<<<<<<<<<<
@@ -13815,9 +13893,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 572, __pyx_L4_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 574, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 572, __pyx_L4_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 574, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_11 = 1;
@@ -13837,20 +13915,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_10, __pyx_callargs+__pyx_t_11, (1-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 572, __pyx_L4_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 574, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_5);
       }
-      __pyx_t_10 = PyNumber_Subtract(__pyx_t_5, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 572, __pyx_L4_error)
+      __pyx_t_10 = PyNumber_Subtract(__pyx_t_5, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 574, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyLong_MultiplyObjC(__pyx_t_10, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 572, __pyx_L4_error)
+      __pyx_t_5 = __Pyx_PyLong_MultiplyObjC(__pyx_t_10, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 574, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_cur_scope->__pyx_v_elapsed = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":573
+      /* "src/orchestrator/orchestrator_neoqcr.py":575
  *             ocr_results = await asyncio.gather(*tasks, return_exceptions=True)
  *             elapsed = (time.perf_counter() - t0) * 1000
  *             print(f"[TIMER] Batch of {len(tasks)} in {elapsed:.2f} ms  ({elapsed/len(tasks):.2f} ms avg)")             # <<<<<<<<<<<<<<
@@ -13860,18 +13938,18 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_10 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_6 = __pyx_builtin_print; 
-      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 573, __pyx_L4_error)
-      __pyx_t_4 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_7, 0, ' ', 'd'); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 575, __pyx_L4_error)
+      __pyx_t_4 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_7, 0, ' ', 'd'); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_8 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_elapsed, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_8 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_elapsed, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 573, __pyx_L4_error)
-      __pyx_t_17 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 575, __pyx_L4_error)
+      __pyx_t_17 = PyLong_FromSsize_t(__pyx_t_7); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_18 = __Pyx_PyNumber_Divide(__pyx_cur_scope->__pyx_v_elapsed, __pyx_t_17); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_18 = __Pyx_PyNumber_Divide(__pyx_cur_scope->__pyx_v_elapsed, __pyx_t_17); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = __Pyx_PyObject_Format(__pyx_t_18, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 573, __pyx_L4_error)
+      __pyx_t_17 = __Pyx_PyObject_Format(__pyx_t_18, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       __pyx_t_19[0] = __pyx_mstate_global->__pyx_kp_u_TIMER_Batch_of;
@@ -13882,7 +13960,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_19[5] = __pyx_t_17;
       __pyx_t_19[6] = __pyx_mstate_global->__pyx_kp_u_ms_avg;
       __pyx_t_18 = __Pyx_PyUnicode_Join(__pyx_t_19, 7, 17 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 4 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8) + 6 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_17) + 8, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17));
-      if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 573, __pyx_L4_error)
+      if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 575, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -13894,41 +13972,41 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 573, __pyx_L4_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 575, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_5);
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":577
+      /* "src/orchestrator/orchestrator_neoqcr.py":579
  *             results: List[Tuple[Optional[Dict], Optional[str]]] = [
  *                 (None, "Image skipped or failed preparation")
  *             ] * len(images)             # <<<<<<<<<<<<<<
  * 
  *             for task_idx, img_idx in enumerate(valid_indices):
 */
-      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 577, __pyx_L4_error)
+      __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 579, __pyx_L4_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":575
+      /* "src/orchestrator/orchestrator_neoqcr.py":577
  *             print(f"[TIMER] Batch of {len(tasks)} in {elapsed:.2f} ms  ({elapsed/len(tasks):.2f} ms avg)")
  * 
  *             results: List[Tuple[Optional[Dict], Optional[str]]] = [             # <<<<<<<<<<<<<<
  *                 (None, "Image skipped or failed preparation")
  *             ] * len(images)
 */
-      __pyx_t_5 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 575, __pyx_L4_error)
+      __pyx_t_5 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 577, __pyx_L4_error)
       __Pyx_GOTREF(__pyx_t_5);
       { Py_ssize_t __pyx_temp;
         for (__pyx_temp=0; __pyx_temp < __pyx_t_7; __pyx_temp++) {
           __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[1]);
           __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
-          if (__Pyx_PyList_SET_ITEM(__pyx_t_5, __pyx_temp, __pyx_mstate_global->__pyx_tuple[1]) != (0)) __PYX_ERR(0, 575, __pyx_L4_error);
+          if (__Pyx_PyList_SET_ITEM(__pyx_t_5, __pyx_temp, __pyx_mstate_global->__pyx_tuple[1]) != (0)) __PYX_ERR(0, 577, __pyx_L4_error);
         }
       }
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_cur_scope->__pyx_v_results = ((PyObject*)__pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":579
+      /* "src/orchestrator/orchestrator_neoqcr.py":581
  *             ] * len(images)
  * 
  *             for task_idx, img_idx in enumerate(valid_indices):             # <<<<<<<<<<<<<<
@@ -13942,13 +14020,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_5);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 579, __pyx_L4_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 581, __pyx_L4_error)
           #endif
           if (__pyx_t_12 >= __pyx_temp) break;
         }
         __pyx_t_6 = __Pyx_PyList_GetItemRef(__pyx_t_5, __pyx_t_12);
         ++__pyx_t_12;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 579, __pyx_L4_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 581, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_img_idx);
         __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_img_idx, __pyx_t_6);
@@ -13957,21 +14035,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_cur_scope->__pyx_v_task_idx = __pyx_t_7;
         __pyx_t_7 = (__pyx_t_7 + 1);
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":580
+        /* "src/orchestrator/orchestrator_neoqcr.py":582
  * 
  *             for task_idx, img_idx in enumerate(valid_indices):
  *                 ocr = ocr_results[task_idx]             # <<<<<<<<<<<<<<
  * 
  *                 if isinstance(ocr, Exception):
 */
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr_results, __pyx_cur_scope->__pyx_v_task_idx, Py_ssize_t, 1, PyLong_FromSsize_t, 0, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 580, __pyx_L4_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr_results, __pyx_cur_scope->__pyx_v_task_idx, Py_ssize_t, 1, PyLong_FromSsize_t, 0, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 582, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_ocr);
         __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_ocr, __pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_t_6 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":582
+        /* "src/orchestrator/orchestrator_neoqcr.py":584
  *                 ocr = ocr_results[task_idx]
  * 
  *                 if isinstance(ocr, Exception):             # <<<<<<<<<<<<<<
@@ -13981,7 +14059,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_15 = __Pyx_PyException_Check(__pyx_cur_scope->__pyx_v_ocr); 
         if (__pyx_t_15) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":583
+          /* "src/orchestrator/orchestrator_neoqcr.py":585
  * 
  *                 if isinstance(ocr, Exception):
  *                     print(f"Error processing image {img_idx}: {ocr}")             # <<<<<<<<<<<<<<
@@ -13991,16 +14069,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_18 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_10 = __pyx_builtin_print; 
-          __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_img_idx, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 583, __pyx_L4_error)
+          __pyx_t_17 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_img_idx, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 585, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_17);
-          __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_ocr, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 583, __pyx_L4_error)
+          __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_ocr, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 585, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_8);
           __pyx_t_20[0] = __pyx_mstate_global->__pyx_kp_u_Error_processing_image;
           __pyx_t_20[1] = __pyx_t_17;
           __pyx_t_20[2] = __pyx_mstate_global->__pyx_kp_u__10;
           __pyx_t_20[3] = __pyx_t_8;
           __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_20, 4, 23 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_17) + 2 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_17) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8));
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 583, __pyx_L4_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 585, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -14011,32 +14089,32 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L4_error)
+            if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 585, __pyx_L4_error)
             __Pyx_GOTREF(__pyx_t_6);
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":584
+          /* "src/orchestrator/orchestrator_neoqcr.py":586
  *                 if isinstance(ocr, Exception):
  *                     print(f"Error processing image {img_idx}: {ocr}")
  *                     results[img_idx] = (None, str(ocr))             # <<<<<<<<<<<<<<
  *                     continue
  * 
 */
-          __pyx_t_6 = __Pyx_PyObject_Unicode(__pyx_cur_scope->__pyx_v_ocr); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 584, __pyx_L4_error)
+          __pyx_t_6 = __Pyx_PyObject_Unicode(__pyx_cur_scope->__pyx_v_ocr); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 586, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 584, __pyx_L4_error)
+          __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 586, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_INCREF(Py_None);
           __Pyx_GIVEREF(Py_None);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, Py_None) != (0)) __PYX_ERR(0, 584, __pyx_L4_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, Py_None) != (0)) __PYX_ERR(0, 586, __pyx_L4_error);
           __Pyx_GIVEREF(__pyx_t_6);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 584, __pyx_L4_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 586, __pyx_L4_error);
           __pyx_t_6 = 0;
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 584, __pyx_L4_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 586, __pyx_L4_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":585
+          /* "src/orchestrator/orchestrator_neoqcr.py":587
  *                     print(f"Error processing image {img_idx}: {ocr}")
  *                     results[img_idx] = (None, str(ocr))
  *                     continue             # <<<<<<<<<<<<<<
@@ -14045,7 +14123,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           goto __pyx_L16_continue;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":582
+          /* "src/orchestrator/orchestrator_neoqcr.py":584
  *                 ocr = ocr_results[task_idx]
  * 
  *                 if isinstance(ocr, Exception):             # <<<<<<<<<<<<<<
@@ -14054,21 +14132,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":587
+        /* "src/orchestrator/orchestrator_neoqcr.py":589
  *                     continue
  * 
  *                 raw = ocr[0]             # <<<<<<<<<<<<<<
  *                 if raw.startswith("ERROR"):
  *                     results[img_idx] = (None, raw)
 */
-        __pyx_t_10 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 587, __pyx_L4_error)
+        __pyx_t_10 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_ocr, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 589, __pyx_L4_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_raw);
         __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_raw, __pyx_t_10);
         __Pyx_GIVEREF(__pyx_t_10);
         __pyx_t_10 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":588
+        /* "src/orchestrator/orchestrator_neoqcr.py":590
  * 
  *                 raw = ocr[0]
  *                 if raw.startswith("ERROR"):             # <<<<<<<<<<<<<<
@@ -14082,32 +14160,32 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ERROR};
           __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_startswith, __pyx_callargs+__pyx_t_11, (2-__pyx_t_11) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 588, __pyx_L4_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 590, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
-        __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_15 < 0))) __PYX_ERR(0, 588, __pyx_L4_error)
+        __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_10); if (unlikely((__pyx_t_15 < 0))) __PYX_ERR(0, 590, __pyx_L4_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         if (__pyx_t_15) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":589
+          /* "src/orchestrator/orchestrator_neoqcr.py":591
  *                 raw = ocr[0]
  *                 if raw.startswith("ERROR"):
  *                     results[img_idx] = (None, raw)             # <<<<<<<<<<<<<<
  *                     continue
  * 
 */
-          __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 589, __pyx_L4_error)
+          __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 591, __pyx_L4_error)
           __Pyx_GOTREF(__pyx_t_10);
           __Pyx_INCREF(Py_None);
           __Pyx_GIVEREF(Py_None);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, Py_None) != (0)) __PYX_ERR(0, 589, __pyx_L4_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, Py_None) != (0)) __PYX_ERR(0, 591, __pyx_L4_error);
           __Pyx_INCREF(__pyx_cur_scope->__pyx_v_raw);
           __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_raw);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 589, __pyx_L4_error);
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 589, __pyx_L4_error)
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 591, __pyx_L4_error);
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 591, __pyx_L4_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":590
+          /* "src/orchestrator/orchestrator_neoqcr.py":592
  *                 if raw.startswith("ERROR"):
  *                     results[img_idx] = (None, raw)
  *                     continue             # <<<<<<<<<<<<<<
@@ -14116,7 +14194,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           goto __pyx_L16_continue;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":588
+          /* "src/orchestrator/orchestrator_neoqcr.py":590
  * 
  *                 raw = ocr[0]
  *                 if raw.startswith("ERROR"):             # <<<<<<<<<<<<<<
@@ -14125,7 +14203,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":592
+        /* "src/orchestrator/orchestrator_neoqcr.py":594
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -14139,7 +14217,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XGOTREF(__pyx_t_23);
           /*try:*/ {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":593
+            /* "src/orchestrator/orchestrator_neoqcr.py":595
  * 
  *                 try:
  *                     mrp, dates, batch_no = self._extract_metadata([raw])             # <<<<<<<<<<<<<<
@@ -14148,18 +14226,18 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
             __pyx_t_6 = __pyx_cur_scope->__pyx_v_self;
             __Pyx_INCREF(__pyx_t_6);
-            __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 593, __pyx_L20_error)
+            __pyx_t_4 = PyList_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 595, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_INCREF(__pyx_cur_scope->__pyx_v_raw);
             __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_raw);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 593, __pyx_L20_error);
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 595, __pyx_L20_error);
             __pyx_t_11 = 0;
             {
               PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_4};
               __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_extract_metadata, __pyx_callargs+__pyx_t_11, (2-__pyx_t_11) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 593, __pyx_L20_error)
+              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 595, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_10);
             }
             if ((likely(PyTuple_CheckExact(__pyx_t_10))) || (PyList_CheckExact(__pyx_t_10))) {
@@ -14168,7 +14246,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               if (unlikely(size != 3)) {
                 if (size > 3) __Pyx_RaiseTooManyValuesError(3);
                 else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-                __PYX_ERR(0, 593, __pyx_L20_error)
+                __PYX_ERR(0, 595, __pyx_L20_error)
               }
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
               if (likely(PyTuple_CheckExact(sequence))) {
@@ -14180,27 +14258,27 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
                 __Pyx_INCREF(__pyx_t_18);
               } else {
                 __pyx_t_4 = __Pyx_PyList_GetItemRef(sequence, 0);
-                if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 593, __pyx_L20_error)
+                if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 595, __pyx_L20_error)
                 __Pyx_XGOTREF(__pyx_t_4);
                 __pyx_t_6 = __Pyx_PyList_GetItemRef(sequence, 1);
-                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 593, __pyx_L20_error)
+                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 595, __pyx_L20_error)
                 __Pyx_XGOTREF(__pyx_t_6);
                 __pyx_t_18 = __Pyx_PyList_GetItemRef(sequence, 2);
-                if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 593, __pyx_L20_error)
+                if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 595, __pyx_L20_error)
                 __Pyx_XGOTREF(__pyx_t_18);
               }
               #else
-              __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 593, __pyx_L20_error)
+              __pyx_t_4 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 595, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_6 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 593, __pyx_L20_error)
+              __pyx_t_6 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 595, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_18 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 593, __pyx_L20_error)
+              __pyx_t_18 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 595, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_18);
               #endif
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
             } else {
               Py_ssize_t index = -1;
-              __pyx_t_8 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 593, __pyx_L20_error)
+              __pyx_t_8 = PyObject_GetIter(__pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 595, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_8);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __pyx_t_24 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_8);
@@ -14210,7 +14288,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __Pyx_GOTREF(__pyx_t_6);
               index = 2; __pyx_t_18 = __pyx_t_24(__pyx_t_8); if (unlikely(!__pyx_t_18)) goto __pyx_L28_unpacking_failed;
               __Pyx_GOTREF(__pyx_t_18);
-              if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_8), 3) < 0) __PYX_ERR(0, 593, __pyx_L20_error)
+              if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_8), 3) < 0) __PYX_ERR(0, 595, __pyx_L20_error)
               __pyx_t_24 = NULL;
               __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
               goto __pyx_L29_unpacking_done;
@@ -14218,7 +14296,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
               __pyx_t_24 = NULL;
               if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-              __PYX_ERR(0, 593, __pyx_L20_error)
+              __PYX_ERR(0, 595, __pyx_L20_error)
               __pyx_L29_unpacking_done:;
             }
             __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_mrp);
@@ -14234,7 +14312,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_GIVEREF(__pyx_t_18);
             __pyx_t_18 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":594
+            /* "src/orchestrator/orchestrator_neoqcr.py":596
  *                 try:
  *                     mrp, dates, batch_no = self._extract_metadata([raw])
  *                     data = MetadataProcessor.create_metadata(mrp, dates, batch_no)             # <<<<<<<<<<<<<<
@@ -14242,9 +14320,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 except Exception as exc:
 */
             __pyx_t_18 = NULL;
-            __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 594, __pyx_L20_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 596, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 594, __pyx_L20_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 596, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             __pyx_t_11 = 1;
@@ -14264,7 +14342,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_10 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_11, (4-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 594, __pyx_L20_error)
+              if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 596, __pyx_L20_error)
               __Pyx_GOTREF(__pyx_t_10);
             }
             __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_data);
@@ -14272,25 +14350,25 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_GIVEREF(__pyx_t_10);
             __pyx_t_10 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":595
+            /* "src/orchestrator/orchestrator_neoqcr.py":597
  *                     mrp, dates, batch_no = self._extract_metadata([raw])
  *                     data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
  *                     results[img_idx] = (data, raw)             # <<<<<<<<<<<<<<
  *                 except Exception as exc:
  *                     print(f"Metadata extraction error for image {img_idx}: {exc}")
 */
-            __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 595, __pyx_L20_error)
+            __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 597, __pyx_L20_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_INCREF(__pyx_cur_scope->__pyx_v_data);
             __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_data);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_cur_scope->__pyx_v_data) != (0)) __PYX_ERR(0, 595, __pyx_L20_error);
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_cur_scope->__pyx_v_data) != (0)) __PYX_ERR(0, 597, __pyx_L20_error);
             __Pyx_INCREF(__pyx_cur_scope->__pyx_v_raw);
             __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_raw);
-            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 595, __pyx_L20_error);
-            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 595, __pyx_L20_error)
+            if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 597, __pyx_L20_error);
+            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_10) < 0))) __PYX_ERR(0, 597, __pyx_L20_error)
             __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":592
+            /* "src/orchestrator/orchestrator_neoqcr.py":594
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -14310,7 +14388,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":596
+          /* "src/orchestrator/orchestrator_neoqcr.py":598
  *                     data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
  *                     results[img_idx] = (data, raw)
  *                 except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14320,7 +14398,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_25 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
           if (__pyx_t_25) {
             __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.process_batch_images", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_4, &__pyx_t_18) < 0) __PYX_ERR(0, 596, __pyx_L22_except_error)
+            if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_4, &__pyx_t_18) < 0) __PYX_ERR(0, 598, __pyx_L22_except_error)
             __Pyx_XGOTREF(__pyx_t_10);
             __Pyx_XGOTREF(__pyx_t_4);
             __Pyx_XGOTREF(__pyx_t_18);
@@ -14329,7 +14407,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __pyx_cur_scope->__pyx_v_exc = __pyx_t_4;
             /*try:*/ {
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":597
+              /* "src/orchestrator/orchestrator_neoqcr.py":599
  *                     results[img_idx] = (data, raw)
  *                 except Exception as exc:
  *                     print(f"Metadata extraction error for image {img_idx}: {exc}")             # <<<<<<<<<<<<<<
@@ -14339,16 +14417,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_8 = NULL;
               __Pyx_INCREF(__pyx_builtin_print);
               __pyx_t_17 = __pyx_builtin_print; 
-              __pyx_t_26 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_img_idx, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 597, __pyx_L35_error)
+              __pyx_t_26 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_img_idx, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 599, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_26);
-              __pyx_t_27 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 597, __pyx_L35_error)
+              __pyx_t_27 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 599, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_27);
               __pyx_t_20[0] = __pyx_mstate_global->__pyx_kp_u_Metadata_extraction_error_for_im;
               __pyx_t_20[1] = __pyx_t_26;
               __pyx_t_20[2] = __pyx_mstate_global->__pyx_kp_u__10;
               __pyx_t_20[3] = __pyx_t_27;
               __pyx_t_28 = __Pyx_PyUnicode_Join(__pyx_t_20, 4, 36 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_26) + 2 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_27), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_26) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_27));
-              if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 597, __pyx_L35_error)
+              if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 599, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_28);
               __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
               __Pyx_DECREF(__pyx_t_27); __pyx_t_27 = 0;
@@ -14359,36 +14437,36 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
                 __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
                 __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
                 __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 597, __pyx_L35_error)
+                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 599, __pyx_L35_error)
                 __Pyx_GOTREF(__pyx_t_6);
               }
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":598
+              /* "src/orchestrator/orchestrator_neoqcr.py":600
  *                 except Exception as exc:
  *                     print(f"Metadata extraction error for image {img_idx}: {exc}")
  *                     results[img_idx] = (None, f"Metadata extraction failed: {exc}")             # <<<<<<<<<<<<<<
  * 
  *             return results
 */
-              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 598, __pyx_L35_error)
+              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 600, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_17 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Metadata_extraction_failed, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 598, __pyx_L35_error)
+              __pyx_t_17 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Metadata_extraction_failed, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 600, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_17);
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 598, __pyx_L35_error)
+              __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 600, __pyx_L35_error)
               __Pyx_GOTREF(__pyx_t_6);
               __Pyx_INCREF(Py_None);
               __Pyx_GIVEREF(Py_None);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, Py_None) != (0)) __PYX_ERR(0, 598, __pyx_L35_error);
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, Py_None) != (0)) __PYX_ERR(0, 600, __pyx_L35_error);
               __Pyx_GIVEREF(__pyx_t_17);
-              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_17) != (0)) __PYX_ERR(0, 598, __pyx_L35_error);
+              if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_17) != (0)) __PYX_ERR(0, 600, __pyx_L35_error);
               __pyx_t_17 = 0;
-              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_6) < 0))) __PYX_ERR(0, 598, __pyx_L35_error)
+              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_results, __pyx_cur_scope->__pyx_v_img_idx, __pyx_t_6) < 0))) __PYX_ERR(0, 600, __pyx_L35_error)
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             }
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":596
+            /* "src/orchestrator/orchestrator_neoqcr.py":598
  *                     data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
  *                     results[img_idx] = (data, raw)
  *                 except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14445,7 +14523,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           }
           goto __pyx_L22_except_error;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":592
+          /* "src/orchestrator/orchestrator_neoqcr.py":594
  *                     continue
  * 
  *                 try:             # <<<<<<<<<<<<<<
@@ -14466,7 +14544,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_L27_try_end:;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":579
+        /* "src/orchestrator/orchestrator_neoqcr.py":581
  *             ] * len(images)
  * 
  *             for task_idx, img_idx in enumerate(valid_indices):             # <<<<<<<<<<<<<<
@@ -14477,7 +14555,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":600
+      /* "src/orchestrator/orchestrator_neoqcr.py":602
  *                     results[img_idx] = (None, f"Metadata extraction failed: {exc}")
  * 
  *             return results             # <<<<<<<<<<<<<<
@@ -14489,7 +14567,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_r = __pyx_cur_scope->__pyx_v_results;
       goto __pyx_L8_try_return;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":556
+      /* "src/orchestrator/orchestrator_neoqcr.py":558
  *         Returns list of (metadata_dict, raw_ocr_string) tuples.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14509,7 +14587,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":602
+    /* "src/orchestrator/orchestrator_neoqcr.py":604
  *             return results
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14519,7 +14597,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_29 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_29) {
       __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.process_batch_images", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_18, &__pyx_t_4) < 0) __PYX_ERR(0, 602, __pyx_L6_except_error)
+      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_18, &__pyx_t_4) < 0) __PYX_ERR(0, 604, __pyx_L6_except_error)
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_18);
       __Pyx_XGOTREF(__pyx_t_4);
@@ -14529,7 +14607,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_GIVEREF(__pyx_t_18);
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":603
+        /* "src/orchestrator/orchestrator_neoqcr.py":605
  * 
  *         except Exception as exc:
  *             print(f"Error in process_batch_images: {exc}")             # <<<<<<<<<<<<<<
@@ -14539,9 +14617,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_6 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_17 = __pyx_builtin_print; 
-        __pyx_t_28 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 603, __pyx_L47_error)
+        __pyx_t_28 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 605, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_28);
-        __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Error_in_process_batch_images, __pyx_t_28); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 603, __pyx_L47_error)
+        __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Error_in_process_batch_images, __pyx_t_28); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 605, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
         __pyx_t_11 = 1;
@@ -14551,12 +14629,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 603, __pyx_L47_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 605, __pyx_L47_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":604
+        /* "src/orchestrator/orchestrator_neoqcr.py":606
  *         except Exception as exc:
  *             print(f"Error in process_batch_images: {exc}")
  *             traceback.print_exc()             # <<<<<<<<<<<<<<
@@ -14564,9 +14642,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
         __pyx_t_17 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 604, __pyx_L47_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_traceback); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 606, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 604, __pyx_L47_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_print_exc); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 606, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_11 = 1;
@@ -14586,12 +14664,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_10 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_11, (1-__pyx_t_11) | (__pyx_t_11*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 604, __pyx_L47_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 606, __pyx_L47_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":605
+        /* "src/orchestrator/orchestrator_neoqcr.py":607
  *             print(f"Error in process_batch_images: {exc}")
  *             traceback.print_exc()
  *             return [(None, str(exc))] * len(images)             # <<<<<<<<<<<<<<
@@ -14599,24 +14677,24 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     # ------------------------------------------------------------------
 */
         __Pyx_XDECREF(__pyx_r);
-        __pyx_t_10 = __Pyx_PyObject_Unicode(__pyx_cur_scope->__pyx_v_exc); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 605, __pyx_L47_error)
+        __pyx_t_10 = __Pyx_PyObject_Unicode(__pyx_cur_scope->__pyx_v_exc); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 607, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 605, __pyx_L47_error)
+        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 607, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(Py_None);
         __Pyx_GIVEREF(Py_None);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, Py_None) != (0)) __PYX_ERR(0, 605, __pyx_L47_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, Py_None) != (0)) __PYX_ERR(0, 607, __pyx_L47_error);
         __Pyx_GIVEREF(__pyx_t_10);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 605, __pyx_L47_error);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 607, __pyx_L47_error);
         __pyx_t_10 = 0;
-        __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 605, __pyx_L47_error)
-        __pyx_t_10 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 605, __pyx_L47_error)
+        __pyx_t_7 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_images); if (unlikely(__pyx_t_7 == ((Py_ssize_t)-1))) __PYX_ERR(0, 607, __pyx_L47_error)
+        __pyx_t_10 = PyList_New(1 * ((__pyx_t_7<0) ? 0:__pyx_t_7)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 607, __pyx_L47_error)
         __Pyx_GOTREF(__pyx_t_10);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < __pyx_t_7; __pyx_temp++) {
             __Pyx_INCREF(__pyx_t_6);
             __Pyx_GIVEREF(__pyx_t_6);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_10, __pyx_temp, __pyx_t_6) != (0)) __PYX_ERR(0, 605, __pyx_L47_error);
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_10, __pyx_temp, __pyx_t_6) != (0)) __PYX_ERR(0, 607, __pyx_L47_error);
           }
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -14628,7 +14706,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L46_return;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":602
+      /* "src/orchestrator/orchestrator_neoqcr.py":604
  *             return results
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14685,7 +14763,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     }
     goto __pyx_L6_except_error;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":556
+    /* "src/orchestrator/orchestrator_neoqcr.py":558
  *         Returns list of (metadata_dict, raw_ocr_string) tuples.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14713,7 +14791,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":547
+  /* "src/orchestrator/orchestrator_neoqcr.py":549
  *     # ------------------------------------------------------------------
  * 
  *     async def process_batch_images(             # <<<<<<<<<<<<<<
@@ -14748,7 +14826,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":611
+/* "src/orchestrator/orchestrator_neoqcr.py":613
  *     # ------------------------------------------------------------------
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -14798,38 +14876,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_all_mrp,&__pyx_mstate_global->__pyx_n_u_all_dates,&__pyx_mstate_global->__pyx_n_u_all_batch,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 611, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 613, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 611, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 613, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 611, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 613, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 611, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 613, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_merge_stream_results", 0) < 0) __PYX_ERR(0, 611, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_merge_stream_results", 0) < 0) __PYX_ERR(0, 613, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_merge_stream_results", 1, 3, 3, i); __PYX_ERR(0, 611, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_merge_stream_results", 1, 3, 3, i); __PYX_ERR(0, 613, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 611, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 613, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 611, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 613, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 611, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 613, __pyx_L3_error)
     }
     __pyx_v_all_mrp = ((PyObject*)values[0]);
     __pyx_v_all_dates = ((PyObject*)values[1]);
@@ -14837,7 +14915,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_merge_stream_results", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 611, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_merge_stream_results", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 613, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14848,9 +14926,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_mrp), (&PyList_Type), 1, "all_mrp", 2))) __PYX_ERR(0, 613, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_dates), (&PyList_Type), 0, "all_dates", 2))) __PYX_ERR(0, 614, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_batch), (&PyList_Type), 1, "all_batch", 2))) __PYX_ERR(0, 615, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_mrp), (&PyList_Type), 1, "all_mrp", 2))) __PYX_ERR(0, 615, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_dates), (&PyList_Type), 0, "all_dates", 2))) __PYX_ERR(0, 616, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_all_batch), (&PyList_Type), 1, "all_batch", 2))) __PYX_ERR(0, 617, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_22_merge_stream_results(__pyx_self, __pyx_v_all_mrp, __pyx_v_all_dates, __pyx_v_all_batch);
 
   /* function exit code */
@@ -14870,7 +14948,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":625
+/* "src/orchestrator/orchestrator_neoqcr.py":627
  *         from collections import Counter
  * 
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:             # <<<<<<<<<<<<<<
@@ -14917,32 +14995,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_values,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 625, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 627, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 625, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 627, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_majority", 0) < 0) __PYX_ERR(0, 625, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "_majority", 0) < 0) __PYX_ERR(0, 627, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_majority", 1, 1, 1, i); __PYX_ERR(0, 625, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("_majority", 1, 1, 1, i); __PYX_ERR(0, 627, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 625, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 627, __pyx_L3_error)
     }
     __pyx_v_values = ((PyObject*)values[0]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_majority", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 625, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_majority", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 627, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14953,7 +15031,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_values), (&PyList_Type), 1, "values", 2))) __PYX_ERR(0, 625, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_values), (&PyList_Type), 1, "values", 2))) __PYX_ERR(0, 627, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results__majority(__pyx_self, __pyx_v_values);
 
   /* function exit code */
@@ -14996,7 +15074,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_outer_scope = (struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":626
+  /* "src/orchestrator/orchestrator_neoqcr.py":628
  * 
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:
  *             non_null = [v for v in values if v is not None]             # <<<<<<<<<<<<<<
@@ -15004,11 +15082,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 return None
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 626, __pyx_L5_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 628, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (unlikely(__pyx_v_values == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-      __PYX_ERR(0, 626, __pyx_L5_error)
+      __PYX_ERR(0, 628, __pyx_L5_error)
     }
     __pyx_t_2 = __pyx_v_values; __Pyx_INCREF(__pyx_t_2);
     __pyx_t_3 = 0;
@@ -15016,19 +15094,19 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_2);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 626, __pyx_L5_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 628, __pyx_L5_error)
         #endif
         if (__pyx_t_3 >= __pyx_temp) break;
       }
       __pyx_t_4 = __Pyx_PyList_GetItemRef(__pyx_t_2, __pyx_t_3);
       ++__pyx_t_3;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 626, __pyx_L5_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 628, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_XDECREF_SET(__pyx_7genexpr__pyx_v_v, __pyx_t_4);
       __pyx_t_4 = 0;
       __pyx_t_5 = (__pyx_7genexpr__pyx_v_v != Py_None);
       if (__pyx_t_5) {
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_7genexpr__pyx_v_v))) __PYX_ERR(0, 626, __pyx_L5_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_7genexpr__pyx_v_v))) __PYX_ERR(0, 628, __pyx_L5_error)
       }
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15042,7 +15120,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_v_non_null = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":627
+  /* "src/orchestrator/orchestrator_neoqcr.py":629
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:
  *             non_null = [v for v in values if v is not None]
  *             if not non_null:             # <<<<<<<<<<<<<<
@@ -15050,11 +15128,11 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             return Counter(non_null).most_common(1)[0][0]
 */
   __pyx_t_5 = (__Pyx_PyList_GET_SIZE(__pyx_v_non_null) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 627, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 629, __pyx_L1_error)
   __pyx_t_6 = (!__pyx_t_5);
   if (__pyx_t_6) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":628
+    /* "src/orchestrator/orchestrator_neoqcr.py":630
  *             non_null = [v for v in values if v is not None]
  *             if not non_null:
  *                 return None             # <<<<<<<<<<<<<<
@@ -15065,7 +15143,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_r = ((PyObject*)Py_None); __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":627
+    /* "src/orchestrator/orchestrator_neoqcr.py":629
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:
  *             non_null = [v for v in values if v is not None]
  *             if not non_null:             # <<<<<<<<<<<<<<
@@ -15074,7 +15152,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":629
+  /* "src/orchestrator/orchestrator_neoqcr.py":631
  *             if not non_null:
  *                 return None
  *             return Counter(non_null).most_common(1)[0][0]             # <<<<<<<<<<<<<<
@@ -15083,7 +15161,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_7 = NULL;
-  if (unlikely(!__pyx_cur_scope->__pyx_v_Counter)) { __Pyx_RaiseClosureNameError("Counter"); __PYX_ERR(0, 629, __pyx_L1_error) }
+  if (unlikely(!__pyx_cur_scope->__pyx_v_Counter)) { __Pyx_RaiseClosureNameError("Counter"); __PYX_ERR(0, 631, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_Counter);
   __pyx_t_8 = __pyx_cur_scope->__pyx_v_Counter; 
   __pyx_t_9 = 1;
@@ -15103,7 +15181,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 629, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 631, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
   __pyx_t_2 = __pyx_t_4;
@@ -15114,21 +15192,21 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_most_common, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 629, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 631, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_1))) __PYX_ERR(0, 629, __pyx_L1_error)
+  if (!(likely(PyUnicode_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_1))) __PYX_ERR(0, 631, __pyx_L1_error)
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":625
+  /* "src/orchestrator/orchestrator_neoqcr.py":627
  *         from collections import Counter
  * 
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:             # <<<<<<<<<<<<<<
@@ -15153,7 +15231,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   return __pyx_r;
 }
 
-/* "src/orchestrator/orchestrator_neoqcr.py":611
+/* "src/orchestrator/orchestrator_neoqcr.py":613
  *     # ------------------------------------------------------------------
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -15186,27 +15264,27 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 611, __pyx_L1_error)
+    __PYX_ERR(0, 613, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":623
+  /* "src/orchestrator/orchestrator_neoqcr.py":625
  *         Dates           union across all patches, deduplicated by string repr.
  *         """
  *         from collections import Counter             # <<<<<<<<<<<<<<
  * 
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:
 */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 625, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_Counter);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_n_u_Counter);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_n_u_Counter) != (0)) __PYX_ERR(0, 623, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_collections, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 623, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_mstate_global->__pyx_n_u_Counter) != (0)) __PYX_ERR(0, 625, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_collections, __pyx_t_1, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 625, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 623, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Counter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 625, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -15214,73 +15292,73 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":625
+  /* "src/orchestrator/orchestrator_neoqcr.py":627
  *         from collections import Counter
  * 
  *         def _majority(values: List[Optional[str]]) -> Optional[str]:             # <<<<<<<<<<<<<<
  *             non_null = [v for v in values if v is not None]
  *             if not non_null:
 */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 625, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_values, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 625, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 625, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results_1_majority, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__merge_stream_resul, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 625, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_values, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 627, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 627, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results_1_majority, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__merge_stream_resul, ((PyObject*)__pyx_cur_scope), __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 627, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_1, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v__majority = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":631
+  /* "src/orchestrator/orchestrator_neoqcr.py":633
  *             return Counter(non_null).most_common(1)[0][0]
  * 
  *         mrp      = _majority(all_mrp)             # <<<<<<<<<<<<<<
  *         batch_no = _majority(all_batch)
  * 
 */
-  __pyx_t_1 = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results__majority(__pyx_v__majority, __pyx_v_all_mrp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 631, __pyx_L1_error)
+  __pyx_t_1 = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results__majority(__pyx_v__majority, __pyx_v_all_mrp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_mrp = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":632
+  /* "src/orchestrator/orchestrator_neoqcr.py":634
  * 
  *         mrp      = _majority(all_mrp)
  *         batch_no = _majority(all_batch)             # <<<<<<<<<<<<<<
  * 
  *         # Date dedup by string representation to handle equivalent date objects
 */
-  __pyx_t_1 = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results__majority(__pyx_v__majority, __pyx_v_all_batch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 632, __pyx_L1_error)
+  __pyx_t_1 = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_21_merge_stream_results__majority(__pyx_v__majority, __pyx_v_all_batch); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 634, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_batch_no = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":635
+  /* "src/orchestrator/orchestrator_neoqcr.py":637
  * 
  *         # Date dedup by string representation to handle equivalent date objects
  *         seen_dates: List[Any] = []             # <<<<<<<<<<<<<<
  *         seen_strs: set        = set()
  *         for d in all_dates:
 */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 635, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_seen_dates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":636
+  /* "src/orchestrator/orchestrator_neoqcr.py":638
  *         # Date dedup by string representation to handle equivalent date objects
  *         seen_dates: List[Any] = []
  *         seen_strs: set        = set()             # <<<<<<<<<<<<<<
  *         for d in all_dates:
  *             key = str(d)
 */
-  __pyx_t_1 = PySet_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 636, __pyx_L1_error)
+  __pyx_t_1 = PySet_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 638, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_seen_strs = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":637
+  /* "src/orchestrator/orchestrator_neoqcr.py":639
  *         seen_dates: List[Any] = []
  *         seen_strs: set        = set()
  *         for d in all_dates:             # <<<<<<<<<<<<<<
@@ -15293,58 +15371,58 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 637, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 639, __pyx_L1_error)
       #endif
       if (__pyx_t_3 >= __pyx_temp) break;
     }
     __pyx_t_2 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_3);
     ++__pyx_t_3;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 637, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 639, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_d, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":638
+    /* "src/orchestrator/orchestrator_neoqcr.py":640
  *         seen_strs: set        = set()
  *         for d in all_dates:
  *             key = str(d)             # <<<<<<<<<<<<<<
  *             if key not in seen_strs:
  *                 seen_dates.append(d)
 */
-    __pyx_t_2 = __Pyx_PyObject_Unicode(__pyx_v_d); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 638, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Unicode(__pyx_v_d); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 640, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":639
+    /* "src/orchestrator/orchestrator_neoqcr.py":641
  *         for d in all_dates:
  *             key = str(d)
  *             if key not in seen_strs:             # <<<<<<<<<<<<<<
  *                 seen_dates.append(d)
  *                 seen_strs.add(key)
 */
-    __pyx_t_4 = (__Pyx_PySet_ContainsTF(__pyx_v_key, __pyx_v_seen_strs, Py_NE)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 639, __pyx_L1_error)
+    __pyx_t_4 = (__Pyx_PySet_ContainsTF(__pyx_v_key, __pyx_v_seen_strs, Py_NE)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 641, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":640
+      /* "src/orchestrator/orchestrator_neoqcr.py":642
  *             key = str(d)
  *             if key not in seen_strs:
  *                 seen_dates.append(d)             # <<<<<<<<<<<<<<
  *                 seen_strs.add(key)
  *         dates = seen_dates
 */
-      __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_seen_dates, __pyx_v_d); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 640, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_seen_dates, __pyx_v_d); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 642, __pyx_L1_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":641
+      /* "src/orchestrator/orchestrator_neoqcr.py":643
  *             if key not in seen_strs:
  *                 seen_dates.append(d)
  *                 seen_strs.add(key)             # <<<<<<<<<<<<<<
  *         dates = seen_dates
  * 
 */
-      __pyx_t_5 = PySet_Add(__pyx_v_seen_strs, __pyx_v_key); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 641, __pyx_L1_error)
+      __pyx_t_5 = PySet_Add(__pyx_v_seen_strs, __pyx_v_key); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 643, __pyx_L1_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":639
+      /* "src/orchestrator/orchestrator_neoqcr.py":641
  *         for d in all_dates:
  *             key = str(d)
  *             if key not in seen_strs:             # <<<<<<<<<<<<<<
@@ -15353,7 +15431,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":637
+    /* "src/orchestrator/orchestrator_neoqcr.py":639
  *         seen_dates: List[Any] = []
  *         seen_strs: set        = set()
  *         for d in all_dates:             # <<<<<<<<<<<<<<
@@ -15363,7 +15441,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":642
+  /* "src/orchestrator/orchestrator_neoqcr.py":644
  *                 seen_dates.append(d)
  *                 seen_strs.add(key)
  *         dates = seen_dates             # <<<<<<<<<<<<<<
@@ -15373,7 +15451,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_INCREF(__pyx_v_seen_dates);
   __pyx_v_dates = __pyx_v_seen_dates;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":644
+  /* "src/orchestrator/orchestrator_neoqcr.py":646
  *         dates = seen_dates
  * 
  *         return mrp, dates, batch_no             # <<<<<<<<<<<<<<
@@ -15381,22 +15459,22 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *     @time_calculate()
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 644, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 646, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_mrp);
   __Pyx_GIVEREF(__pyx_v_mrp);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_mrp) != (0)) __PYX_ERR(0, 644, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_mrp) != (0)) __PYX_ERR(0, 646, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_dates);
   __Pyx_GIVEREF(__pyx_v_dates);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_dates) != (0)) __PYX_ERR(0, 644, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_dates) != (0)) __PYX_ERR(0, 646, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_batch_no);
   __Pyx_GIVEREF(__pyx_v_batch_no);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_batch_no) != (0)) __PYX_ERR(0, 644, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_batch_no) != (0)) __PYX_ERR(0, 646, __pyx_L1_error);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":611
+  /* "src/orchestrator/orchestrator_neoqcr.py":613
  *     # ------------------------------------------------------------------
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -15426,7 +15504,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 }
 static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_26generator2(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "src/orchestrator/orchestrator_neoqcr.py":646
+/* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -15480,44 +15558,44 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_patches,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_capture_type,&__pyx_mstate_global->__pyx_n_u_metadata_id,&__pyx_mstate_global->__pyx_n_u_client_name,&__pyx_mstate_global->__pyx_n_u_user_id,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 646, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 648, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_stream_images", 0) < 0) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "process_stream_images", 0) < 0) __PYX_ERR(0, 648, __pyx_L3_error)
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":652
+      /* "src/orchestrator/orchestrator_neoqcr.py":654
  *         env_id:       str,
  *         capture_type: Optional[bool],
  *         metadata_id:  Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15526,7 +15604,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":653
+      /* "src/orchestrator/orchestrator_neoqcr.py":655
  *         capture_type: Optional[bool],
  *         metadata_id:  Optional[str] = None,
  *         client_name:  Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15535,7 +15613,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[5]) values[5] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":654
+      /* "src/orchestrator/orchestrator_neoqcr.py":656
  *         metadata_id:  Optional[str] = None,
  *         client_name:  Optional[str] = None,
  *         user_id:      Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15544,36 +15622,36 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[6]) values[6] = __Pyx_NewRef(((PyObject*)Py_None));
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_stream_images", 0, 4, 7, i); __PYX_ERR(0, 646, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("process_stream_images", 0, 4, 7, i); __PYX_ERR(0, 648, __pyx_L3_error) }
       }
     } else {
       switch (__pyx_nargs) {
         case  7:
         values[6] = __Pyx_ArgRef_FASTCALL(__pyx_args, 6);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[6])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  6:
         values[5] = __Pyx_ArgRef_FASTCALL(__pyx_args, 5);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[5])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 648, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 648, __pyx_L3_error)
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 648, __pyx_L3_error)
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 648, __pyx_L3_error)
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 648, __pyx_L3_error)
         break;
         default: goto __pyx_L5_argtuple_error;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":652
+      /* "src/orchestrator/orchestrator_neoqcr.py":654
  *         env_id:       str,
  *         capture_type: Optional[bool],
  *         metadata_id:  Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15582,7 +15660,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[4]) values[4] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":653
+      /* "src/orchestrator/orchestrator_neoqcr.py":655
  *         capture_type: Optional[bool],
  *         metadata_id:  Optional[str] = None,
  *         client_name:  Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15591,7 +15669,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 */
       if (!values[5]) values[5] = __Pyx_NewRef(((PyObject*)Py_None));
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":654
+      /* "src/orchestrator/orchestrator_neoqcr.py":656
  *         metadata_id:  Optional[str] = None,
  *         client_name:  Optional[str] = None,
  *         user_id:      Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -15610,7 +15688,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("process_stream_images", 0, 4, 7, __pyx_nargs); __PYX_ERR(0, 646, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("process_stream_images", 0, 4, 7, __pyx_nargs); __PYX_ERR(0, 648, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -15621,14 +15699,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_patches), (&PyList_Type), 0, "patches", 2))) __PYX_ERR(0, 649, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 650, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 652, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 653, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 654, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_patches), (&PyList_Type), 0, "patches", 2))) __PYX_ERR(0, 651, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 652, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 1, "metadata_id", 2))) __PYX_ERR(0, 654, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_client_name), (&PyUnicode_Type), 1, "client_name", 2))) __PYX_ERR(0, 655, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_user_id), (&PyUnicode_Type), 1, "user_id", 2))) __PYX_ERR(0, 656, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_24process_stream_images(__pyx_self, __pyx_v_self, __pyx_v_patches, __pyx_v_env_id, __pyx_v_capture_type, __pyx_v_metadata_id, __pyx_v_client_name, __pyx_v_user_id);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":646
+  /* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -15665,7 +15743,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 646, __pyx_L1_error)
+    __PYX_ERR(0, 648, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -15691,7 +15769,7 @@ static PyObject *__pyx_pf_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_user_id);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_user_id);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_26generator2, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_stream_images, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_stream_imag, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 646, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_26generator2, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4]), (PyObject *) __pyx_cur_scope, __pyx_mstate_global->__pyx_n_u_process_stream_images, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_stream_imag, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne); if (unlikely(!gen)) __PYX_ERR(0, 648, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -15764,10 +15842,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_L3_first_run:;
   if (unlikely(__pyx_sent_value != Py_None)) {
     if (unlikely(__pyx_sent_value)) PyErr_SetString(PyExc_TypeError, "can't send non-None value to a just-started coroutine");
-    __PYX_ERR(0, 646, __pyx_L1_error)
+    __PYX_ERR(0, 648, __pyx_L1_error)
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":670
+  /* "src/orchestrator/orchestrator_neoqcr.py":672
  *           If SOME fail, the successful ones are still merged normally.
  *         """
  *         print(             # <<<<<<<<<<<<<<
@@ -15778,17 +15856,17 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":672
+  /* "src/orchestrator/orchestrator_neoqcr.py":674
  *         print(
  *             f"[Stream] process_stream_images  "
  *             f"{len(patches)} patches  env_id={env_id}  client={client_name}"             # <<<<<<<<<<<<<<
  *         )
  * 
 */
-  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_patches); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 672, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 672, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_patches); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 674, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 674, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 672, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_Unicode(__pyx_cur_scope->__pyx_v_client_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 674, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7[0] = __pyx_mstate_global->__pyx_kp_u_Stream_process_stream_images;
   __pyx_t_7[1] = __pyx_t_5;
@@ -15797,7 +15875,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_7[4] = __pyx_mstate_global->__pyx_kp_u_client;
   __pyx_t_7[5] = __pyx_t_6;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":671
+  /* "src/orchestrator/orchestrator_neoqcr.py":673
  *         """
  *         print(
  *             f"[Stream] process_stream_images  "             # <<<<<<<<<<<<<<
@@ -15805,7 +15883,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         )
 */
   __pyx_t_8 = __Pyx_PyUnicode_Join(__pyx_t_7, 6, 33 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5) + 17 + __Pyx_PyUnicode_GET_LENGTH(__pyx_cur_scope->__pyx_v_env_id) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6), 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_cur_scope->__pyx_v_env_id) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 671, __pyx_L1_error)
+  if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -15816,12 +15894,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 672, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":676
+  /* "src/orchestrator/orchestrator_neoqcr.py":678
  * 
  *         ocr_query = (
  *             "what is the maximum retail price, manufacturing date, "             # <<<<<<<<<<<<<<
@@ -15832,7 +15910,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_what_is_the_maximum_retail_price);
   __pyx_cur_scope->__pyx_v_ocr_query = __pyx_mstate_global->__pyx_kp_u_what_is_the_maximum_retail_price;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":681
+  /* "src/orchestrator/orchestrator_neoqcr.py":683
  * 
  *         #  1. Parallel Qwen calls
  *         tasks = [self.qwen_model.process_batch(patch, ocr_query) for patch in patches]             # <<<<<<<<<<<<<<
@@ -15840,7 +15918,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         t0 = time.perf_counter()
 */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 681, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 683, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = __pyx_cur_scope->__pyx_v_patches; __Pyx_INCREF(__pyx_t_3);
     __pyx_t_4 = 0;
@@ -15848,19 +15926,19 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       {
         Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
         #if !CYTHON_ASSUME_SAFE_SIZE
-        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 681, __pyx_L1_error)
+        if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 683, __pyx_L1_error)
         #endif
         if (__pyx_t_4 >= __pyx_temp) break;
       }
       __pyx_t_8 = __Pyx_PyList_GetItemRef(__pyx_t_3, __pyx_t_4);
       ++__pyx_t_4;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 681, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 683, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_XGOTREF(__pyx_cur_scope->__pyx_8genexpr1__pyx_v_patch);
       __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_8genexpr1__pyx_v_patch, __pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_8);
       __pyx_t_8 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 681, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_qwen_model); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 683, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_2 = __pyx_t_6;
       __Pyx_INCREF(__pyx_t_2);
@@ -15870,10 +15948,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_process_batch, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 681, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 683, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 681, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 683, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15882,7 +15960,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_cur_scope->__pyx_v_tasks = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":683
+  /* "src/orchestrator/orchestrator_neoqcr.py":685
  *         tasks = [self.qwen_model.process_batch(patch, ocr_query) for patch in patches]
  * 
  *         t0 = time.perf_counter()             # <<<<<<<<<<<<<<
@@ -15890,9 +15968,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         elapsed_ms  = (time.perf_counter() - t0) * 1000
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 683, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 685, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 683, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 685, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_9 = 1;
@@ -15912,31 +15990,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 683, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 685, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_cur_scope->__pyx_v_t0 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":684
+  /* "src/orchestrator/orchestrator_neoqcr.py":686
  * 
  *         t0 = time.perf_counter()
  *         ocr_results = await asyncio.gather(*tasks, return_exceptions=True)             # <<<<<<<<<<<<<<
  *         elapsed_ms  = (time.perf_counter() - t0) * 1000
  *         print(f"[TIMER][Stream] {len(tasks)} parallel Qwen calls: {elapsed_ms:.2f} ms")
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_asyncio); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 684, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_asyncio); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_gather); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 684, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_gather); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PySequence_Tuple(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 684, __pyx_L1_error)
+  __pyx_t_1 = PySequence_Tuple(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 684, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_return_exceptions, Py_True) < 0) __PYX_ERR(0, 684, __pyx_L1_error)
-  __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 684, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_return_exceptions, Py_True) < 0) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 686, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -15952,20 +16030,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_generator->resume_label = 1;
     return __pyx_r;
     __pyx_L7_resume_from_await:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 684, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 686, __pyx_L1_error)
     __pyx_t_8 = __pyx_sent_value; __Pyx_INCREF(__pyx_t_8);
   } else if (likely(__pyx_t_10 == PYGEN_RETURN)) {
     __Pyx_GOTREF(__pyx_r);
     __pyx_t_8 = __pyx_r; __pyx_r = NULL;
   } else {
     __Pyx_XGOTREF(__pyx_r);
-    __PYX_ERR(0, 684, __pyx_L1_error)
+    __PYX_ERR(0, 686, __pyx_L1_error)
   }
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_ocr_results = __pyx_t_8;
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":685
+  /* "src/orchestrator/orchestrator_neoqcr.py":687
  *         t0 = time.perf_counter()
  *         ocr_results = await asyncio.gather(*tasks, return_exceptions=True)
  *         elapsed_ms  = (time.perf_counter() - t0) * 1000             # <<<<<<<<<<<<<<
@@ -15973,9 +16051,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 685, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 685, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_perf_counter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_9 = 1;
@@ -15995,20 +16073,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 685, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 687, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
-  __pyx_t_6 = PyNumber_Subtract(__pyx_t_8, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 685, __pyx_L1_error)
+  __pyx_t_6 = PyNumber_Subtract(__pyx_t_8, __pyx_cur_scope->__pyx_v_t0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyLong_MultiplyObjC(__pyx_t_6, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 685, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyLong_MultiplyObjC(__pyx_t_6, __pyx_mstate_global->__pyx_int_1000, 0x3E8, 0, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 687, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_elapsed_ms = __pyx_t_8;
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":686
+  /* "src/orchestrator/orchestrator_neoqcr.py":688
  *         ocr_results = await asyncio.gather(*tasks, return_exceptions=True)
  *         elapsed_ms  = (time.perf_counter() - t0) * 1000
  *         print(f"[TIMER][Stream] {len(tasks)} parallel Qwen calls: {elapsed_ms:.2f} ms")             # <<<<<<<<<<<<<<
@@ -16018,10 +16096,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 686, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_tasks); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 688, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 688, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_elapsed_ms, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 686, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Format(__pyx_cur_scope->__pyx_v_elapsed_ms, __pyx_mstate_global->__pyx_kp_u_2f); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 688, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_11[0] = __pyx_mstate_global->__pyx_kp_u_TIMER_Stream;
   __pyx_t_11[1] = __pyx_t_1;
@@ -16029,7 +16107,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_11[3] = __pyx_t_2;
   __pyx_t_11[4] = __pyx_mstate_global->__pyx_kp_u_ms;
   __pyx_t_5 = __Pyx_PyUnicode_Join(__pyx_t_11, 5, 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 22 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2) + 3, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2));
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 686, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 688, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16040,25 +16118,25 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 686, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 688, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":689
+  /* "src/orchestrator/orchestrator_neoqcr.py":691
  * 
  *         #  2. Collect raw strings (skip exceptions / ERROR responses)
  *         raw_outputs: List[str] = []             # <<<<<<<<<<<<<<
  *         for i, res in enumerate(ocr_results):
  *             if isinstance(res, Exception):
 */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 689, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 691, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_raw_outputs = ((PyObject*)__pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":690
+  /* "src/orchestrator/orchestrator_neoqcr.py":692
  *         #  2. Collect raw strings (skip exceptions / ERROR responses)
  *         raw_outputs: List[str] = []
  *         for i, res in enumerate(ocr_results):             # <<<<<<<<<<<<<<
@@ -16072,9 +16150,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_4 = 0;
     __pyx_t_12 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_ocr_results); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 690, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_cur_scope->__pyx_v_ocr_results); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 692, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_12 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 690, __pyx_L1_error)
+    __pyx_t_12 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 692, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_12)) {
@@ -16082,7 +16160,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         {
           Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 690, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 692, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -16092,7 +16170,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         {
           Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_3);
           #if !CYTHON_ASSUME_SAFE_SIZE
-          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 690, __pyx_L1_error)
+          if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 692, __pyx_L1_error)
           #endif
           if (__pyx_t_4 >= __pyx_temp) break;
         }
@@ -16103,13 +16181,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         #endif
         ++__pyx_t_4;
       }
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 690, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 692, __pyx_L1_error)
     } else {
       __pyx_t_5 = __pyx_t_12(__pyx_t_3);
       if (unlikely(!__pyx_t_5)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
-          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 690, __pyx_L1_error)
+          if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 692, __pyx_L1_error)
           PyErr_Clear();
         }
         break;
@@ -16124,13 +16202,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_i);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_i, __pyx_t_8);
     __Pyx_GIVEREF(__pyx_t_8);
-    __pyx_t_5 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 690, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyLong_AddObjC(__pyx_t_8, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 692, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_8);
     __pyx_t_8 = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":691
+    /* "src/orchestrator/orchestrator_neoqcr.py":693
  *         raw_outputs: List[str] = []
  *         for i, res in enumerate(ocr_results):
  *             if isinstance(res, Exception):             # <<<<<<<<<<<<<<
@@ -16140,7 +16218,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_13 = __Pyx_PyException_Check(__pyx_cur_scope->__pyx_v_res); 
     if (__pyx_t_13) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":692
+      /* "src/orchestrator/orchestrator_neoqcr.py":694
  *         for i, res in enumerate(ocr_results):
  *             if isinstance(res, Exception):
  *                 print(f"[Stream] Patch {i} LLM error: {res}")             # <<<<<<<<<<<<<<
@@ -16150,16 +16228,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_6 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_2 = __pyx_builtin_print; 
-      __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 692, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_res, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 692, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_res, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Patch;
       __pyx_t_15[1] = __pyx_t_1;
       __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u_LLM_error;
       __pyx_t_15[3] = __pyx_t_14;
       __pyx_t_16 = __Pyx_PyUnicode_Join(__pyx_t_15, 4, 15 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14));
-      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 692, __pyx_L1_error)
+      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 694, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -16170,12 +16248,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 692, __pyx_L1_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 694, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":693
+      /* "src/orchestrator/orchestrator_neoqcr.py":695
  *             if isinstance(res, Exception):
  *                 print(f"[Stream] Patch {i} LLM error: {res}")
  *                 continue             # <<<<<<<<<<<<<<
@@ -16184,7 +16262,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       goto __pyx_L8_continue;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":691
+      /* "src/orchestrator/orchestrator_neoqcr.py":693
  *         raw_outputs: List[str] = []
  *         for i, res in enumerate(ocr_results):
  *             if isinstance(res, Exception):             # <<<<<<<<<<<<<<
@@ -16193,14 +16271,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":694
+    /* "src/orchestrator/orchestrator_neoqcr.py":696
  *                 print(f"[Stream] Patch {i} LLM error: {res}")
  *                 continue
  *             if not res or not isinstance(res, list):             # <<<<<<<<<<<<<<
  *                 continue
  *             raw = str(res[0])
 */
-    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_res); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 694, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_res); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 696, __pyx_L1_error)
     __pyx_t_18 = (!__pyx_t_17);
     if (!__pyx_t_18) {
     } else {
@@ -16213,7 +16291,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_L12_bool_binop_done:;
     if (__pyx_t_13) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":695
+      /* "src/orchestrator/orchestrator_neoqcr.py":697
  *                 continue
  *             if not res or not isinstance(res, list):
  *                 continue             # <<<<<<<<<<<<<<
@@ -16222,7 +16300,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       goto __pyx_L8_continue;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":694
+      /* "src/orchestrator/orchestrator_neoqcr.py":696
  *                 print(f"[Stream] Patch {i} LLM error: {res}")
  *                 continue
  *             if not res or not isinstance(res, list):             # <<<<<<<<<<<<<<
@@ -16231,16 +16309,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":696
+    /* "src/orchestrator/orchestrator_neoqcr.py":698
  *             if not res or not isinstance(res, list):
  *                 continue
  *             raw = str(res[0])             # <<<<<<<<<<<<<<
  *             if raw.startswith("ERROR"):
  *                 print(f"[Stream] Patch {i} LLM returned error string: {raw}")
 */
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_res, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 696, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_res, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 698, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_Unicode(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 696, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Unicode(__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 698, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_raw);
@@ -16248,7 +16326,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":697
+    /* "src/orchestrator/orchestrator_neoqcr.py":699
  *                 continue
  *             raw = str(res[0])
  *             if raw.startswith("ERROR"):             # <<<<<<<<<<<<<<
@@ -16262,14 +16340,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_n_u_ERROR};
       __pyx_t_2 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_startswith, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 697, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 699, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
-    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 697, __pyx_L1_error)
+    __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 699, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_13) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":698
+      /* "src/orchestrator/orchestrator_neoqcr.py":700
  *             raw = str(res[0])
  *             if raw.startswith("ERROR"):
  *                 print(f"[Stream] Patch {i} LLM returned error string: {raw}")             # <<<<<<<<<<<<<<
@@ -16279,16 +16357,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_16 = __pyx_builtin_print; 
-      __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 698, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 700, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_raw, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 698, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_raw, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 700, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Patch;
       __pyx_t_15[1] = __pyx_t_6;
       __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u_LLM_returned_error_string;
       __pyx_t_15[3] = __pyx_t_14;
       __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_15, 4, 15 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 28 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14));
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 698, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 700, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -16299,12 +16377,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 698, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 700, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":699
+      /* "src/orchestrator/orchestrator_neoqcr.py":701
  *             if raw.startswith("ERROR"):
  *                 print(f"[Stream] Patch {i} LLM returned error string: {raw}")
  *                 continue             # <<<<<<<<<<<<<<
@@ -16313,7 +16391,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       goto __pyx_L8_continue;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":697
+      /* "src/orchestrator/orchestrator_neoqcr.py":699
  *                 continue
  *             raw = str(res[0])
  *             if raw.startswith("ERROR"):             # <<<<<<<<<<<<<<
@@ -16322,16 +16400,16 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":700
+    /* "src/orchestrator/orchestrator_neoqcr.py":702
  *                 print(f"[Stream] Patch {i} LLM returned error string: {raw}")
  *                 continue
  *             raw_outputs.append(raw)             # <<<<<<<<<<<<<<
  *             print(f"[Stream] Patch {i} OCR raw: {raw[:120]}")
  * 
 */
-    __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_raw_outputs, __pyx_cur_scope->__pyx_v_raw); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 700, __pyx_L1_error)
+    __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_raw_outputs, __pyx_cur_scope->__pyx_v_raw); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 702, __pyx_L1_error)
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":701
+    /* "src/orchestrator/orchestrator_neoqcr.py":703
  *                 continue
  *             raw_outputs.append(raw)
  *             print(f"[Stream] Patch {i} OCR raw: {raw[:120]}")             # <<<<<<<<<<<<<<
@@ -16341,11 +16419,11 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_16 = NULL;
     __Pyx_INCREF(__pyx_builtin_print);
     __pyx_t_1 = __pyx_builtin_print; 
-    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 701, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 703, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_14 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_raw, 0, 0x78, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 701, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_raw, 0, 0x78, NULL, NULL, &__pyx_mstate_global->__pyx_slice[0], 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 703, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_14, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 701, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_14, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 703, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
     __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Patch;
@@ -16353,7 +16431,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u_OCR_raw;
     __pyx_t_15[3] = __pyx_t_6;
     __pyx_t_14 = __Pyx_PyUnicode_Join(__pyx_t_15, 4, 15 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5) + 10 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-    if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 701, __pyx_L1_error)
+    if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 703, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -16364,12 +16442,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 701, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 703, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":690
+    /* "src/orchestrator/orchestrator_neoqcr.py":692
  *         #  2. Collect raw strings (skip exceptions / ERROR responses)
  *         raw_outputs: List[str] = []
  *         for i, res in enumerate(ocr_results):             # <<<<<<<<<<<<<<
@@ -16381,7 +16459,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":703
+  /* "src/orchestrator/orchestrator_neoqcr.py":705
  *             print(f"[Stream] Patch {i} OCR raw: {raw[:120]}")
  * 
  *         if not raw_outputs:             # <<<<<<<<<<<<<<
@@ -16389,11 +16467,11 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 "All stream patches failed LLM inference  cannot merge results"
 */
   __pyx_t_13 = (__Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_raw_outputs) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 703, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 705, __pyx_L1_error)
   __pyx_t_17 = (!__pyx_t_13);
   if (unlikely(__pyx_t_17)) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":704
+    /* "src/orchestrator/orchestrator_neoqcr.py":706
  * 
  *         if not raw_outputs:
  *             raise ProcessingError(             # <<<<<<<<<<<<<<
@@ -16401,7 +16479,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *             )
 */
     __pyx_t_3 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 704, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ProcessingError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 706, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_9 = 1;
     #if CYTHON_UNPACK_METHODS
@@ -16420,14 +16498,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 704, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 706, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
     }
     __Pyx_Raise(__pyx_t_8, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __PYX_ERR(0, 704, __pyx_L1_error)
+    __PYX_ERR(0, 706, __pyx_L1_error)
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":703
+    /* "src/orchestrator/orchestrator_neoqcr.py":705
  *             print(f"[Stream] Patch {i} OCR raw: {raw[:120]}")
  * 
  *         if not raw_outputs:             # <<<<<<<<<<<<<<
@@ -16436,7 +16514,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":708
+  /* "src/orchestrator/orchestrator_neoqcr.py":710
  *             )
  * 
  *         print(f"[Stream] Valid OCR results: {len(raw_outputs)}/{len(patches)}")             # <<<<<<<<<<<<<<
@@ -16446,18 +16524,18 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_raw_outputs); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 708, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 708, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_raw_outputs); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 710, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 710, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_patches); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 708, __pyx_L1_error)
-  __pyx_t_14 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 708, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_patches); if (unlikely(__pyx_t_4 == ((Py_ssize_t)-1))) __PYX_ERR(0, 710, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyUnicode_From_Py_ssize_t(__pyx_t_4, 0, ' ', 'd'); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 710, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Valid_OCR_results;
   __pyx_t_15[1] = __pyx_t_1;
   __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u__3;
   __pyx_t_15[3] = __pyx_t_14;
   __pyx_t_16 = __Pyx_PyUnicode_Join(__pyx_t_15, 4, 28 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 1 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14), 127);
-  if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 708, __pyx_L1_error)
+  if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 710, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -16468,51 +16546,51 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 708, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 710, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":711
+  /* "src/orchestrator/orchestrator_neoqcr.py":713
  * 
  *         #  3. Extract metadata from each result
  *         all_mrp:   List[Optional[str]] = []             # <<<<<<<<<<<<<<
  *         all_dates: List[Any]           = []
  *         all_batch: List[Optional[str]] = []
 */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 711, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 713, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_all_mrp = ((PyObject*)__pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":712
+  /* "src/orchestrator/orchestrator_neoqcr.py":714
  *         #  3. Extract metadata from each result
  *         all_mrp:   List[Optional[str]] = []
  *         all_dates: List[Any]           = []             # <<<<<<<<<<<<<<
  *         all_batch: List[Optional[str]] = []
  * 
 */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 712, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 714, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_all_dates = ((PyObject*)__pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":713
+  /* "src/orchestrator/orchestrator_neoqcr.py":715
  *         all_mrp:   List[Optional[str]] = []
  *         all_dates: List[Any]           = []
  *         all_batch: List[Optional[str]] = []             # <<<<<<<<<<<<<<
  * 
  *         for raw in raw_outputs:
 */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 713, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 715, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_all_batch = ((PyObject*)__pyx_t_8);
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":715
+  /* "src/orchestrator/orchestrator_neoqcr.py":717
  *         all_batch: List[Optional[str]] = []
  * 
  *         for raw in raw_outputs:             # <<<<<<<<<<<<<<
@@ -16525,20 +16603,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     {
       Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_8);
       #if !CYTHON_ASSUME_SAFE_SIZE
-      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 715, __pyx_L1_error)
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 717, __pyx_L1_error)
       #endif
       if (__pyx_t_4 >= __pyx_temp) break;
     }
     __pyx_t_3 = __Pyx_PyList_GetItemRef(__pyx_t_8, __pyx_t_4);
     ++__pyx_t_4;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 715, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 717, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_raw);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_raw, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":716
+    /* "src/orchestrator/orchestrator_neoqcr.py":718
  * 
  *         for raw in raw_outputs:
  *             try:             # <<<<<<<<<<<<<<
@@ -16552,7 +16630,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XGOTREF(__pyx_t_22);
       /*try:*/ {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":717
+        /* "src/orchestrator/orchestrator_neoqcr.py":719
  *         for raw in raw_outputs:
  *             try:
  *                 mrp, dates, batch_no = self._extract_metadata([raw])             # <<<<<<<<<<<<<<
@@ -16561,18 +16639,18 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         __pyx_t_16 = __pyx_cur_scope->__pyx_v_self;
         __Pyx_INCREF(__pyx_t_16);
-        __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 717, __pyx_L19_error)
+        __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 719, __pyx_L19_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_raw);
         __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_raw);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 717, __pyx_L19_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_cur_scope->__pyx_v_raw) != (0)) __PYX_ERR(0, 719, __pyx_L19_error);
         __pyx_t_9 = 0;
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_16, __pyx_t_2};
           __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_extract_metadata, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 717, __pyx_L19_error)
+          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 719, __pyx_L19_error)
           __Pyx_GOTREF(__pyx_t_3);
         }
         if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
@@ -16581,7 +16659,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           if (unlikely(size != 3)) {
             if (size > 3) __Pyx_RaiseTooManyValuesError(3);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 717, __pyx_L19_error)
+            __PYX_ERR(0, 719, __pyx_L19_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -16593,27 +16671,27 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_INCREF(__pyx_t_14);
           } else {
             __pyx_t_2 = __Pyx_PyList_GetItemRef(sequence, 0);
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 717, __pyx_L19_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 719, __pyx_L19_error)
             __Pyx_XGOTREF(__pyx_t_2);
             __pyx_t_16 = __Pyx_PyList_GetItemRef(sequence, 1);
-            if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 717, __pyx_L19_error)
+            if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 719, __pyx_L19_error)
             __Pyx_XGOTREF(__pyx_t_16);
             __pyx_t_14 = __Pyx_PyList_GetItemRef(sequence, 2);
-            if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 717, __pyx_L19_error)
+            if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 719, __pyx_L19_error)
             __Pyx_XGOTREF(__pyx_t_14);
           }
           #else
-          __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 717, __pyx_L19_error)
+          __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 719, __pyx_L19_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_16 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 717, __pyx_L19_error)
+          __pyx_t_16 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 719, __pyx_L19_error)
           __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 717, __pyx_L19_error)
+          __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 719, __pyx_L19_error)
           __Pyx_GOTREF(__pyx_t_14);
           #endif
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 717, __pyx_L19_error)
+          __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 719, __pyx_L19_error)
           __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __pyx_t_23 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_1);
@@ -16623,7 +16701,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_GOTREF(__pyx_t_16);
           index = 2; __pyx_t_14 = __pyx_t_23(__pyx_t_1); if (unlikely(!__pyx_t_14)) goto __pyx_L27_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_14);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_1), 3) < 0) __PYX_ERR(0, 717, __pyx_L19_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_1), 3) < 0) __PYX_ERR(0, 719, __pyx_L19_error)
           __pyx_t_23 = NULL;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           goto __pyx_L28_unpacking_done;
@@ -16631,7 +16709,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __pyx_t_23 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 717, __pyx_L19_error)
+          __PYX_ERR(0, 719, __pyx_L19_error)
           __pyx_L28_unpacking_done:;
         }
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_mrp);
@@ -16647,26 +16725,26 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_GIVEREF(__pyx_t_14);
         __pyx_t_14 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":718
+        /* "src/orchestrator/orchestrator_neoqcr.py":720
  *             try:
  *                 mrp, dates, batch_no = self._extract_metadata([raw])
  *                 if mrp:             # <<<<<<<<<<<<<<
  *                     all_mrp.append(mrp)
  *                 if dates:
 */
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_mrp); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 718, __pyx_L19_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_mrp); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 720, __pyx_L19_error)
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":719
+          /* "src/orchestrator/orchestrator_neoqcr.py":721
  *                 mrp, dates, batch_no = self._extract_metadata([raw])
  *                 if mrp:
  *                     all_mrp.append(mrp)             # <<<<<<<<<<<<<<
  *                 if dates:
  *                     all_dates.extend(dates)
 */
-          __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_all_mrp, __pyx_cur_scope->__pyx_v_mrp); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 719, __pyx_L19_error)
+          __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_all_mrp, __pyx_cur_scope->__pyx_v_mrp); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 721, __pyx_L19_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":718
+          /* "src/orchestrator/orchestrator_neoqcr.py":720
  *             try:
  *                 mrp, dates, batch_no = self._extract_metadata([raw])
  *                 if mrp:             # <<<<<<<<<<<<<<
@@ -16675,26 +16753,26 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":720
+        /* "src/orchestrator/orchestrator_neoqcr.py":722
  *                 if mrp:
  *                     all_mrp.append(mrp)
  *                 if dates:             # <<<<<<<<<<<<<<
  *                     all_dates.extend(dates)
  *                 if batch_no:
 */
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_dates); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 720, __pyx_L19_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_dates); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 722, __pyx_L19_error)
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":721
+          /* "src/orchestrator/orchestrator_neoqcr.py":723
  *                     all_mrp.append(mrp)
  *                 if dates:
  *                     all_dates.extend(dates)             # <<<<<<<<<<<<<<
  *                 if batch_no:
  *                     all_batch.append(batch_no)
 */
-          __pyx_t_19 = __Pyx_PyList_Extend(__pyx_cur_scope->__pyx_v_all_dates, __pyx_cur_scope->__pyx_v_dates); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 721, __pyx_L19_error)
+          __pyx_t_19 = __Pyx_PyList_Extend(__pyx_cur_scope->__pyx_v_all_dates, __pyx_cur_scope->__pyx_v_dates); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 723, __pyx_L19_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":720
+          /* "src/orchestrator/orchestrator_neoqcr.py":722
  *                 if mrp:
  *                     all_mrp.append(mrp)
  *                 if dates:             # <<<<<<<<<<<<<<
@@ -16703,26 +16781,26 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":722
+        /* "src/orchestrator/orchestrator_neoqcr.py":724
  *                 if dates:
  *                     all_dates.extend(dates)
  *                 if batch_no:             # <<<<<<<<<<<<<<
  *                     all_batch.append(batch_no)
  *             except Exception as exc:
 */
-        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_batch_no); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 722, __pyx_L19_error)
+        __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_batch_no); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 724, __pyx_L19_error)
         if (__pyx_t_17) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":723
+          /* "src/orchestrator/orchestrator_neoqcr.py":725
  *                     all_dates.extend(dates)
  *                 if batch_no:
  *                     all_batch.append(batch_no)             # <<<<<<<<<<<<<<
  *             except Exception as exc:
  *                 print(f"[Stream] Metadata extraction error for raw='{raw[:60]}': {exc}")
 */
-          __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_all_batch, __pyx_cur_scope->__pyx_v_batch_no); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 723, __pyx_L19_error)
+          __pyx_t_19 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_all_batch, __pyx_cur_scope->__pyx_v_batch_no); if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 725, __pyx_L19_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":722
+          /* "src/orchestrator/orchestrator_neoqcr.py":724
  *                 if dates:
  *                     all_dates.extend(dates)
  *                 if batch_no:             # <<<<<<<<<<<<<<
@@ -16731,7 +16809,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":716
+        /* "src/orchestrator/orchestrator_neoqcr.py":718
  * 
  *         for raw in raw_outputs:
  *             try:             # <<<<<<<<<<<<<<
@@ -16752,7 +16830,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":724
+      /* "src/orchestrator/orchestrator_neoqcr.py":726
  *                 if batch_no:
  *                     all_batch.append(batch_no)
  *             except Exception as exc:             # <<<<<<<<<<<<<<
@@ -16762,7 +16840,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_24 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
       if (__pyx_t_24) {
         __Pyx_AddTraceback("src.orchestrator.orchestrator_neoqcr.Orchestrator.process_stream_images", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_14, &__pyx_t_16) < 0) __PYX_ERR(0, 724, __pyx_L21_except_error)
+        if (__Pyx_GetException(&__pyx_t_3, &__pyx_t_14, &__pyx_t_16) < 0) __PYX_ERR(0, 726, __pyx_L21_except_error)
         __Pyx_XGOTREF(__pyx_t_3);
         __Pyx_XGOTREF(__pyx_t_14);
         __Pyx_XGOTREF(__pyx_t_16);
@@ -16771,7 +16849,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_cur_scope->__pyx_v_exc = __pyx_t_14;
         /*try:*/ {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":725
+          /* "src/orchestrator/orchestrator_neoqcr.py":727
  *                     all_batch.append(batch_no)
  *             except Exception as exc:
  *                 print(f"[Stream] Metadata extraction error for raw='{raw[:60]}': {exc}")             # <<<<<<<<<<<<<<
@@ -16781,19 +16859,19 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_1 = NULL;
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_6 = __pyx_builtin_print; 
-          __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_raw, 0, 60, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 725, __pyx_L37_error)
+          __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_raw, 0, 60, NULL, NULL, &__pyx_mstate_global->__pyx_slice[1], 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 727, __pyx_L37_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __pyx_t_25 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 725, __pyx_L37_error)
+          __pyx_t_25 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 727, __pyx_L37_error)
           __Pyx_GOTREF(__pyx_t_25);
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 725, __pyx_L37_error)
+          __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 727, __pyx_L37_error)
           __Pyx_GOTREF(__pyx_t_5);
           __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Metadata_extraction_erro;
           __pyx_t_15[1] = __pyx_t_25;
           __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u__11;
           __pyx_t_15[3] = __pyx_t_5;
           __pyx_t_26 = __Pyx_PyUnicode_Join(__pyx_t_15, 4, 44 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_25) + 3 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_25) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5));
-          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 725, __pyx_L37_error)
+          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 727, __pyx_L37_error)
           __Pyx_GOTREF(__pyx_t_26);
           __Pyx_DECREF(__pyx_t_25); __pyx_t_25 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -16804,13 +16882,13 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 725, __pyx_L37_error)
+            if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 727, __pyx_L37_error)
             __Pyx_GOTREF(__pyx_t_2);
           }
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":724
+        /* "src/orchestrator/orchestrator_neoqcr.py":726
  *                 if batch_no:
  *                     all_batch.append(batch_no)
  *             except Exception as exc:             # <<<<<<<<<<<<<<
@@ -16867,7 +16945,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       goto __pyx_L21_except_error;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":716
+      /* "src/orchestrator/orchestrator_neoqcr.py":718
  * 
  *         for raw in raw_outputs:
  *             try:             # <<<<<<<<<<<<<<
@@ -16888,7 +16966,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_L26_try_end:;
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":715
+    /* "src/orchestrator/orchestrator_neoqcr.py":717
  *         all_batch: List[Optional[str]] = []
  * 
  *         for raw in raw_outputs:             # <<<<<<<<<<<<<<
@@ -16898,7 +16976,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":728
+  /* "src/orchestrator/orchestrator_neoqcr.py":730
  * 
  *         #  4. Majority-vote merge
  *         mrp, dates, batch_no = self._merge_stream_results(all_mrp, all_dates, all_batch)             # <<<<<<<<<<<<<<
@@ -16912,7 +16990,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     PyObject *__pyx_callargs[4] = {__pyx_t_16, __pyx_cur_scope->__pyx_v_all_mrp, __pyx_cur_scope->__pyx_v_all_dates, __pyx_cur_scope->__pyx_v_all_batch};
     __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_merge_stream_results, __pyx_callargs+__pyx_t_9, (4-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 728, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   if ((likely(PyTuple_CheckExact(__pyx_t_8))) || (PyList_CheckExact(__pyx_t_8))) {
@@ -16921,7 +16999,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 728, __pyx_L1_error)
+      __PYX_ERR(0, 730, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -16933,27 +17011,27 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_INCREF(__pyx_t_3);
     } else {
       __pyx_t_16 = __Pyx_PyList_GetItemRef(sequence, 0);
-      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 728, __pyx_L1_error)
+      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 730, __pyx_L1_error)
       __Pyx_XGOTREF(__pyx_t_16);
       __pyx_t_14 = __Pyx_PyList_GetItemRef(sequence, 1);
-      if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 728, __pyx_L1_error)
+      if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 730, __pyx_L1_error)
       __Pyx_XGOTREF(__pyx_t_14);
       __pyx_t_3 = __Pyx_PyList_GetItemRef(sequence, 2);
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 728, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 730, __pyx_L1_error)
       __Pyx_XGOTREF(__pyx_t_3);
     }
     #else
-    __pyx_t_16 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
-    __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_2 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_23 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_2);
@@ -16963,7 +17041,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_GOTREF(__pyx_t_14);
     index = 2; __pyx_t_3 = __pyx_t_23(__pyx_t_2); if (unlikely(!__pyx_t_3)) goto __pyx_L44_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_2), 3) < 0) __PYX_ERR(0, 728, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_2), 3) < 0) __PYX_ERR(0, 730, __pyx_L1_error)
     __pyx_t_23 = NULL;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     goto __pyx_L45_unpacking_done;
@@ -16971,7 +17049,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_23 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 728, __pyx_L1_error)
+    __PYX_ERR(0, 730, __pyx_L1_error)
     __pyx_L45_unpacking_done:;
   }
   __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_mrp);
@@ -16987,7 +17065,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":729
+  /* "src/orchestrator/orchestrator_neoqcr.py":731
  *         #  4. Majority-vote merge
  *         mrp, dates, batch_no = self._merge_stream_results(all_mrp, all_dates, all_batch)
  *         print(f"[Stream] Merged result  mrp={mrp}  dates={dates}  batch_no={batch_no}")             # <<<<<<<<<<<<<<
@@ -16997,11 +17075,11 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_3 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_14 = __pyx_builtin_print; 
-  __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mrp, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 729, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mrp, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 731, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_16);
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_dates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 729, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_dates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 731, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_batch_no, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 729, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_batch_no, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 731, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7[0] = __pyx_mstate_global->__pyx_kp_u_Stream_Merged_result_mrp;
   __pyx_t_7[1] = __pyx_t_16;
@@ -17010,7 +17088,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_7[4] = __pyx_mstate_global->__pyx_kp_u_batch_no;
   __pyx_t_7[5] = __pyx_t_6;
   __pyx_t_26 = __Pyx_PyUnicode_Join(__pyx_t_7, 6, 29 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16) + 8 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2) + 11 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6), 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-  if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 729, __pyx_L1_error)
+  if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 731, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_26);
   __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17022,12 +17100,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 729, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 731, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":731
+  /* "src/orchestrator/orchestrator_neoqcr.py":733
  *         print(f"[Stream] Merged result  mrp={mrp}  dates={dates}  batch_no={batch_no}")
  * 
  *         data = MetadataProcessor.create_metadata(mrp, dates, batch_no)             # <<<<<<<<<<<<<<
@@ -17035,9 +17113,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         #  5. Session cache (same logic as process_image_get_metadata)
 */
   __pyx_t_14 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 731, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_MetadataProcessor); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 733, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_26);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 731, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_create_metadata); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 733, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   __pyx_t_9 = 1;
@@ -17057,31 +17135,31 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_9, (4-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 731, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 733, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
   __Pyx_GIVEREF(__pyx_t_8);
   __pyx_cur_scope->__pyx_v_data = __pyx_t_8;
   __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":734
+  /* "src/orchestrator/orchestrator_neoqcr.py":736
  * 
  *         #  5. Session cache (same logic as process_image_get_metadata)
  *         if capture_type:             # <<<<<<<<<<<<<<
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:
 */
-  __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_capture_type); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 734, __pyx_L1_error)
+  __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_capture_type); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 736, __pyx_L1_error)
   if (__pyx_t_17) {
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":735
+    /* "src/orchestrator/orchestrator_neoqcr.py":737
  *         #  5. Session cache (same logic as process_image_get_metadata)
  *         if capture_type:
  *             session_meta = self.session_cache.get(env_id)             # <<<<<<<<<<<<<<
  *             if not session_meta:
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
 */
-    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 735, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 737, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __pyx_t_3 = __pyx_t_14;
     __Pyx_INCREF(__pyx_t_3);
@@ -17091,39 +17169,39 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 735, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 737, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
     }
     __Pyx_GIVEREF(__pyx_t_8);
     __pyx_cur_scope->__pyx_v_session_meta = __pyx_t_8;
     __pyx_t_8 = 0;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":736
+    /* "src/orchestrator/orchestrator_neoqcr.py":738
  *         if capture_type:
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:             # <<<<<<<<<<<<<<
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
  *             else:
 */
-    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_meta); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 736, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_meta); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 738, __pyx_L1_error)
     __pyx_t_13 = (!__pyx_t_17);
     if (__pyx_t_13) {
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":737
+      /* "src/orchestrator/orchestrator_neoqcr.py":739
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:
  *                 self.session_cache.set(env_id, copy.deepcopy(data))             # <<<<<<<<<<<<<<
  *             else:
  *                 for key, value in session_meta.items():
 */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_14 = __pyx_t_3;
       __Pyx_INCREF(__pyx_t_14);
       __pyx_t_6 = NULL;
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_9 = 1;
@@ -17143,7 +17221,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_26 = __Pyx_PyObject_FastCall(__pyx_t_16, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-        if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 737, __pyx_L1_error)
+        if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 739, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_26);
       }
       __pyx_t_9 = 0;
@@ -17153,12 +17231,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 737, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 739, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":736
+      /* "src/orchestrator/orchestrator_neoqcr.py":738
  *         if capture_type:
  *             session_meta = self.session_cache.get(env_id)
  *             if not session_meta:             # <<<<<<<<<<<<<<
@@ -17168,7 +17246,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       goto __pyx_L47;
     }
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":739
+    /* "src/orchestrator/orchestrator_neoqcr.py":741
  *                 self.session_cache.set(env_id, copy.deepcopy(data))
  *             else:
  *                 for key, value in session_meta.items():             # <<<<<<<<<<<<<<
@@ -17179,9 +17257,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_4 = 0;
       if (unlikely(__pyx_cur_scope->__pyx_v_session_meta == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-        __PYX_ERR(0, 739, __pyx_L1_error)
+        __PYX_ERR(0, 741, __pyx_L1_error)
       }
-      __pyx_t_3 = __Pyx_dict_iterator(__pyx_cur_scope->__pyx_v_session_meta, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_35), (&__pyx_t_27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 739, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_dict_iterator(__pyx_cur_scope->__pyx_v_session_meta, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_35), (&__pyx_t_27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 741, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_XDECREF(__pyx_t_8);
       __pyx_t_8 = __pyx_t_3;
@@ -17189,7 +17267,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       while (1) {
         __pyx_t_24 = __Pyx_dict_iter_next(__pyx_t_8, __pyx_t_35, &__pyx_t_4, &__pyx_t_3, &__pyx_t_26, NULL, __pyx_t_27);
         if (unlikely(__pyx_t_24 == 0)) break;
-        if (unlikely(__pyx_t_24 == -1)) __PYX_ERR(0, 739, __pyx_L1_error)
+        if (unlikely(__pyx_t_24 == -1)) __PYX_ERR(0, 741, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_GOTREF(__pyx_t_26);
         __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_key);
@@ -17201,7 +17279,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __Pyx_GIVEREF(__pyx_t_26);
         __pyx_t_26 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":740
+        /* "src/orchestrator/orchestrator_neoqcr.py":742
  *             else:
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):             # <<<<<<<<<<<<<<
@@ -17227,29 +17305,29 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
           __pyx_t_26 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 740, __pyx_L1_error)
+          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 742, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_26);
         }
-        __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 740, __pyx_L1_error)
+        __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 742, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
         __pyx_t_13 = __pyx_t_17;
         __pyx_L51_bool_binop_done:;
         if (__pyx_t_13) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":741
+          /* "src/orchestrator/orchestrator_neoqcr.py":743
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:             # <<<<<<<<<<<<<<
  *                             session_meta[key] = data[key]
  * 
 */
-          __pyx_t_17 = (__Pyx_PySequence_ContainsTF(__pyx_cur_scope->__pyx_v_key, __pyx_cur_scope->__pyx_v_data, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 741, __pyx_L1_error)
+          __pyx_t_17 = (__Pyx_PySequence_ContainsTF(__pyx_cur_scope->__pyx_v_key, __pyx_cur_scope->__pyx_v_data, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 743, __pyx_L1_error)
           if (__pyx_t_17) {
           } else {
             __pyx_t_13 = __pyx_t_17;
             goto __pyx_L55_bool_binop_done;
           }
-          __pyx_t_26 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 741, __pyx_L1_error)
+          __pyx_t_26 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 743, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_26);
           __pyx_t_17 = (__pyx_t_26 != Py_None);
           __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
@@ -17257,19 +17335,19 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_L55_bool_binop_done:;
           if (__pyx_t_13) {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":742
+            /* "src/orchestrator/orchestrator_neoqcr.py":744
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:
  *                             session_meta[key] = data[key]             # <<<<<<<<<<<<<<
  * 
  *                 #  Multicapture expiry resolution (stream)
 */
-            __pyx_t_26 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 742, __pyx_L1_error)
+            __pyx_t_26 = __Pyx_PyObject_GetItem(__pyx_cur_scope->__pyx_v_data, __pyx_cur_scope->__pyx_v_key); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 744, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_26);
-            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_cur_scope->__pyx_v_key, __pyx_t_26) < 0))) __PYX_ERR(0, 742, __pyx_L1_error)
+            if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_cur_scope->__pyx_v_key, __pyx_t_26) < 0))) __PYX_ERR(0, 744, __pyx_L1_error)
             __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":741
+            /* "src/orchestrator/orchestrator_neoqcr.py":743
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):
  *                         if key in data and data[key] is not None:             # <<<<<<<<<<<<<<
@@ -17278,7 +17356,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
           }
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":740
+          /* "src/orchestrator/orchestrator_neoqcr.py":742
  *             else:
  *                 for key, value in session_meta.items():
  *                     if value is None or (isinstance(value, str) and value.lower() == "nan"):             # <<<<<<<<<<<<<<
@@ -17289,20 +17367,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":745
+      /* "src/orchestrator/orchestrator_neoqcr.py":747
  * 
  *                 #  Multicapture expiry resolution (stream)
  *                 import re as _re             # <<<<<<<<<<<<<<
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")
 */
-      __pyx_t_8 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_re, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 745, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_re, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 747, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_8);
       __pyx_cur_scope->__pyx_v__re = __pyx_t_8;
       __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":746
+      /* "src/orchestrator/orchestrator_neoqcr.py":748
  *                 #  Multicapture expiry resolution (stream)
  *                 import re as _re
  *                 session_expiry = session_meta.get("expiry_date")             # <<<<<<<<<<<<<<
@@ -17316,14 +17394,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_26, __pyx_mstate_global->__pyx_n_u_expiry_date};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 746, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 748, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __Pyx_GIVEREF(__pyx_t_8);
       __pyx_cur_scope->__pyx_v_session_expiry = __pyx_t_8;
       __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":747
+      /* "src/orchestrator/orchestrator_neoqcr.py":749
  *                 import re as _re
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")             # <<<<<<<<<<<<<<
@@ -17337,14 +17415,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_26, __pyx_mstate_global->__pyx_n_u_mfg_date};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 747, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 749, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __Pyx_GIVEREF(__pyx_t_8);
       __pyx_cur_scope->__pyx_v_session_mfg = __pyx_t_8;
       __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":748
+      /* "src/orchestrator/orchestrator_neoqcr.py":750
  *                 session_expiry = session_meta.get("expiry_date")
  *                 session_mfg    = session_meta.get("mfg_date")
  *                 new_expiry     = data.get("expiry_date")             # <<<<<<<<<<<<<<
@@ -17358,14 +17436,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_26, __pyx_mstate_global->__pyx_n_u_expiry_date};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 748, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 750, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
       __Pyx_GIVEREF(__pyx_t_8);
       __pyx_cur_scope->__pyx_v_new_expiry = __pyx_t_8;
       __pyx_t_8 = 0;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":750
+      /* "src/orchestrator/orchestrator_neoqcr.py":752
  *                 new_expiry     = data.get("expiry_date")
  * 
  *                 _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'             # <<<<<<<<<<<<<<
@@ -17376,7 +17454,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_d_2_d_2_d_4);
       __pyx_cur_scope->__pyx_v__DATE_RE = __pyx_mstate_global->__pyx_kp_u_d_2_d_2_d_4;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":751
+      /* "src/orchestrator/orchestrator_neoqcr.py":753
  * 
  *                 _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'
  *                 _PERIOD_RE = r'\b(months?|years?|days?|weeks?)\b'             # <<<<<<<<<<<<<<
@@ -17387,21 +17465,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_kp_u_b_months_years_days_weeks_b);
       __pyx_cur_scope->__pyx_v__PERIOD_RE = __pyx_mstate_global->__pyx_kp_u_b_months_years_days_weeks_b;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":755
+      /* "src/orchestrator/orchestrator_neoqcr.py":757
  *                 # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
  *                 if (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 755, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 757, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L58_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":756
+      /* "src/orchestrator/orchestrator_neoqcr.py":758
  *                 if (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -17415,7 +17493,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L58_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":757
+      /* "src/orchestrator/orchestrator_neoqcr.py":759
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
@@ -17424,7 +17502,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       __pyx_t_26 = __pyx_cur_scope->__pyx_v__re;
       __Pyx_INCREF(__pyx_t_26);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 757, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 759, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_9 = 0;
       {
@@ -17432,10 +17510,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_9, (4-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 757, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 759, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 757, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 759, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_17) {
       } else {
@@ -17443,21 +17521,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L58_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":758
+      /* "src/orchestrator/orchestrator_neoqcr.py":760
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 758, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 760, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L58_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":759
+      /* "src/orchestrator/orchestrator_neoqcr.py":761
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -17471,7 +17549,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L58_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":760
+      /* "src/orchestrator/orchestrator_neoqcr.py":762
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)             # <<<<<<<<<<<<<<
@@ -17485,15 +17563,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_new_expiry};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 760, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 762, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 760, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 762, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_13 = __pyx_t_17;
       __pyx_L58_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":754
+      /* "src/orchestrator/orchestrator_neoqcr.py":756
  * 
  *                 # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
  *                 if (             # <<<<<<<<<<<<<<
@@ -17502,7 +17580,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_13) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":762
+        /* "src/orchestrator/orchestrator_neoqcr.py":764
  *                     and _re.match(_DATE_RE, new_expiry)
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)             # <<<<<<<<<<<<<<
@@ -17510,7 +17588,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         print(
 */
         __pyx_t_3 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 762, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 764, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_26);
         __pyx_t_9 = 1;
         #if CYTHON_UNPACK_METHODS
@@ -17529,24 +17607,24 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_26, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 762, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 764, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
         __Pyx_GIVEREF(__pyx_t_8);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_8;
         __pyx_t_8 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":763
+        /* "src/orchestrator/orchestrator_neoqcr.py":765
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A1  period '{session_expiry}' + "
 */
-        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 763, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 765, __pyx_L1_error)
         if (__pyx_t_13) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":764
+          /* "src/orchestrator/orchestrator_neoqcr.py":766
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
@@ -17557,26 +17635,26 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_3 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":765
+          /* "src/orchestrator/orchestrator_neoqcr.py":767
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A1  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 765, __pyx_L1_error)
+          __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 767, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":766
+          /* "src/orchestrator/orchestrator_neoqcr.py":768
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A1  period '{session_expiry}' + "
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry
 */
-          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 766, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 768, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 766, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 768, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           __pyx_t_36[0] = __pyx_mstate_global->__pyx_kp_u_Stream_MULTICAPTURE_Case_A1_per;
           __pyx_t_36[1] = __pyx_t_14;
@@ -17586,7 +17664,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_36[5] = __pyx_t_6;
           __pyx_t_36[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":765
+          /* "src/orchestrator/orchestrator_neoqcr.py":767
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A1  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
@@ -17594,7 +17672,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         )
 */
           __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_36, 7, 41 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14) + 23 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6));
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 765, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 767, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -17606,30 +17684,30 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 764, __pyx_L1_error)
+            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 766, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
           }
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":768
+          /* "src/orchestrator/orchestrator_neoqcr.py":770
  *                             f"new date (as mfg) '{new_expiry}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry             # <<<<<<<<<<<<<<
  *                         session_meta["expiry_date"] = resolved
  * 
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_new_expiry) < 0))) __PYX_ERR(0, 768, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_new_expiry) < 0))) __PYX_ERR(0, 770, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":769
+          /* "src/orchestrator/orchestrator_neoqcr.py":771
  *                         )
  *                         session_meta["mfg_date"]    = new_expiry
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 769, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 771, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":763
+          /* "src/orchestrator/orchestrator_neoqcr.py":765
  *                 ):
  *                     resolved = calculate_expiry_date(new_expiry, session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -17638,7 +17716,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":754
+        /* "src/orchestrator/orchestrator_neoqcr.py":756
  * 
  *                 # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
  *                 if (             # <<<<<<<<<<<<<<
@@ -17648,21 +17726,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L57;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":773
+      /* "src/orchestrator/orchestrator_neoqcr.py":775
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 773, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 775, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L65_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":774
+      /* "src/orchestrator/orchestrator_neoqcr.py":776
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -17676,7 +17754,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L65_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":775
+      /* "src/orchestrator/orchestrator_neoqcr.py":777
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)             # <<<<<<<<<<<<<<
@@ -17690,10 +17768,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_session_expiry};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 775, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 777, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 775, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 777, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_17) {
       } else {
@@ -17701,21 +17779,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L65_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":776
+      /* "src/orchestrator/orchestrator_neoqcr.py":778
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 776, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 778, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L65_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":777
+      /* "src/orchestrator/orchestrator_neoqcr.py":779
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -17729,7 +17807,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L65_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":778
+      /* "src/orchestrator/orchestrator_neoqcr.py":780
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
@@ -17738,7 +17816,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       __pyx_t_3 = __pyx_cur_scope->__pyx_v__re;
       __Pyx_INCREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 778, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 780, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_9 = 0;
       {
@@ -17746,15 +17824,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_9, (4-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 778, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 780, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 778, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 780, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_13 = __pyx_t_17;
       __pyx_L65_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":772
+      /* "src/orchestrator/orchestrator_neoqcr.py":774
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -17763,7 +17841,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_13) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":780
+        /* "src/orchestrator/orchestrator_neoqcr.py":782
  *                     and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)             # <<<<<<<<<<<<<<
@@ -17771,7 +17849,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         print(
 */
         __pyx_t_2 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 780, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 782, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_9 = 1;
         #if CYTHON_UNPACK_METHODS
@@ -17790,24 +17868,24 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 780, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 782, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
         __Pyx_GIVEREF(__pyx_t_8);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_8;
         __pyx_t_8 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":781
+        /* "src/orchestrator/orchestrator_neoqcr.py":783
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "
 */
-        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 781, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 783, __pyx_L1_error)
         if (__pyx_t_13) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":782
+          /* "src/orchestrator/orchestrator_neoqcr.py":784
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
@@ -17818,26 +17896,26 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_2 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":783
+          /* "src/orchestrator/orchestrator_neoqcr.py":785
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_26 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 783, __pyx_L1_error)
+          __pyx_t_26 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 785, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_26);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":784
+          /* "src/orchestrator/orchestrator_neoqcr.py":786
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry
 */
-          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 784, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 786, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 784, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 786, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
           __pyx_t_36[0] = __pyx_mstate_global->__pyx_kp_u_Stream_MULTICAPTURE_Case_A2_dat;
           __pyx_t_36[1] = __pyx_t_26;
@@ -17847,7 +17925,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_36[5] = __pyx_t_16;
           __pyx_t_36[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":783
+          /* "src/orchestrator/orchestrator_neoqcr.py":785
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A2  date (as mfg) '{session_expiry}' + "             # <<<<<<<<<<<<<<
@@ -17855,7 +17933,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         )
 */
           __pyx_t_14 = __Pyx_PyUnicode_Join(__pyx_t_36, 7, 48 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_26) + 16 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_26) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16));
-          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 783, __pyx_L1_error)
+          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 785, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -17867,30 +17945,30 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 782, __pyx_L1_error)
+            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 784, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
           }
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":786
+          /* "src/orchestrator/orchestrator_neoqcr.py":788
  *                             f"new period '{new_expiry}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry             # <<<<<<<<<<<<<<
  *                         session_meta["expiry_date"] = resolved
  * 
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_session_expiry) < 0))) __PYX_ERR(0, 786, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_session_expiry) < 0))) __PYX_ERR(0, 788, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":787
+          /* "src/orchestrator/orchestrator_neoqcr.py":789
  *                         )
  *                         session_meta["mfg_date"]    = session_expiry
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 787, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 789, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":781
+          /* "src/orchestrator/orchestrator_neoqcr.py":783
  *                 ):
  *                     resolved = calculate_expiry_date(session_expiry, new_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -17899,7 +17977,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":772
+        /* "src/orchestrator/orchestrator_neoqcr.py":774
  * 
  *                 # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -17909,21 +17987,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L57;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":791
+      /* "src/orchestrator/orchestrator_neoqcr.py":793
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 791, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 793, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L72_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":792
+      /* "src/orchestrator/orchestrator_neoqcr.py":794
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -17937,7 +18015,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L72_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":793
+      /* "src/orchestrator/orchestrator_neoqcr.py":795
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)             # <<<<<<<<<<<<<<
@@ -17946,7 +18024,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       __pyx_t_2 = __pyx_cur_scope->__pyx_v__re;
       __Pyx_INCREF(__pyx_t_2);
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 793, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v__re, __pyx_mstate_global->__pyx_n_u_IGNORECASE); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 795, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __pyx_t_9 = 0;
       {
@@ -17954,10 +18032,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_search, __pyx_callargs+__pyx_t_9, (4-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 793, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 795, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 793, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 795, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_17) {
       } else {
@@ -17965,7 +18043,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L72_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":794
+      /* "src/orchestrator/orchestrator_neoqcr.py":796
  *                     and isinstance(session_expiry, str)
  *                     and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
  *                     and session_meta.get("mfg_date")             # <<<<<<<<<<<<<<
@@ -17979,15 +18057,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[2] = {__pyx_t_14, __pyx_mstate_global->__pyx_n_u_mfg_date};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 794, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 796, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 794, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 796, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_13 = __pyx_t_17;
       __pyx_L72_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":790
+      /* "src/orchestrator/orchestrator_neoqcr.py":792
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (             # <<<<<<<<<<<<<<
@@ -17996,7 +18074,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_13) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":796
+        /* "src/orchestrator/orchestrator_neoqcr.py":798
  *                     and session_meta.get("mfg_date")
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)             # <<<<<<<<<<<<<<
@@ -18004,9 +18082,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         print(
 */
         __pyx_t_14 = NULL;
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 796, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_calculate_expiry_date); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 798, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 796, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 798, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_9 = 1;
         #if CYTHON_UNPACK_METHODS
@@ -18026,24 +18104,24 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 796, __pyx_L1_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 798, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
         __Pyx_GIVEREF(__pyx_t_8);
         __pyx_cur_scope->__pyx_v_resolved = __pyx_t_8;
         __pyx_t_8 = 0;
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":797
+        /* "src/orchestrator/orchestrator_neoqcr.py":799
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "
 */
-        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 797, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_resolved); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 799, __pyx_L1_error)
         if (__pyx_t_13) {
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":798
+          /* "src/orchestrator/orchestrator_neoqcr.py":800
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:
  *                         print(             # <<<<<<<<<<<<<<
@@ -18054,29 +18132,29 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_INCREF(__pyx_builtin_print);
           __pyx_t_3 = __pyx_builtin_print; 
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":799
+          /* "src/orchestrator/orchestrator_neoqcr.py":801
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
  *                         )
 */
-          __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 799, __pyx_L1_error)
+          __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 801, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_14);
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":800
+          /* "src/orchestrator/orchestrator_neoqcr.py":802
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"             # <<<<<<<<<<<<<<
  *                         )
  *                         session_meta["expiry_date"] = resolved
 */
-          __pyx_t_16 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 800, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_Dict_GetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 802, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_16, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 800, __pyx_L1_error)
+          __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_16, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 802, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 800, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_resolved, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 802, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_16);
           __pyx_t_36[0] = __pyx_mstate_global->__pyx_kp_u_Stream_MULTICAPTURE_Case_A_lega;
           __pyx_t_36[1] = __pyx_t_14;
@@ -18086,7 +18164,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_t_36[5] = __pyx_t_16;
           __pyx_t_36[6] = __pyx_mstate_global->__pyx_kp_u__7;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":799
+          /* "src/orchestrator/orchestrator_neoqcr.py":801
  *                     if resolved:
  *                         print(
  *                             f"[Stream][MULTICAPTURE] Case A (legacy)  period '{session_expiry}' + "             # <<<<<<<<<<<<<<
@@ -18094,7 +18172,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                         )
 */
           __pyx_t_26 = __Pyx_PyUnicode_Join(__pyx_t_36, 7, 49 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 12 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16));
-          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 799, __pyx_L1_error)
+          if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 801, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_26);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18106,21 +18184,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 798, __pyx_L1_error)
+            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 800, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
           }
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":802
+          /* "src/orchestrator/orchestrator_neoqcr.py":804
  *                             f"mfg='{session_meta['mfg_date']}'  expiry='{resolved}'"
  *                         )
  *                         session_meta["expiry_date"] = resolved             # <<<<<<<<<<<<<<
  * 
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
 */
-          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 802, __pyx_L1_error)
+          if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_resolved) < 0))) __PYX_ERR(0, 804, __pyx_L1_error)
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":797
+          /* "src/orchestrator/orchestrator_neoqcr.py":799
  *                 ):
  *                     resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
  *                     if resolved:             # <<<<<<<<<<<<<<
@@ -18129,7 +18207,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":790
+        /* "src/orchestrator/orchestrator_neoqcr.py":792
  * 
  *                 # Case A (legacy): period string + mfg was null-merged into session
  *                 elif (             # <<<<<<<<<<<<<<
@@ -18139,21 +18217,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L57;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":806
+      /* "src/orchestrator/orchestrator_neoqcr.py":808
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
  *                 elif (
  *                     session_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 806, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 808, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":807
+      /* "src/orchestrator/orchestrator_neoqcr.py":809
  *                 elif (
  *                     session_expiry
  *                     and isinstance(session_expiry, str)             # <<<<<<<<<<<<<<
@@ -18167,7 +18245,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":808
+      /* "src/orchestrator/orchestrator_neoqcr.py":810
  *                     session_expiry
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)             # <<<<<<<<<<<<<<
@@ -18181,10 +18259,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_session_expiry};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 808, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 810, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 808, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 810, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_17) {
       } else {
@@ -18192,21 +18270,21 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":809
+      /* "src/orchestrator/orchestrator_neoqcr.py":811
  *                     and isinstance(session_expiry, str)
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry             # <<<<<<<<<<<<<<
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 809, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_new_expiry); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 811, __pyx_L1_error)
       if (__pyx_t_17) {
       } else {
         __pyx_t_13 = __pyx_t_17;
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":810
+      /* "src/orchestrator/orchestrator_neoqcr.py":812
  *                     and _re.match(_DATE_RE, session_expiry)
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)             # <<<<<<<<<<<<<<
@@ -18220,7 +18298,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":811
+      /* "src/orchestrator/orchestrator_neoqcr.py":813
  *                     and new_expiry
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)             # <<<<<<<<<<<<<<
@@ -18234,10 +18312,10 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_cur_scope->__pyx_v__DATE_RE, __pyx_cur_scope->__pyx_v_new_expiry};
         __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_match, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 811, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 813, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
       }
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 811, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 813, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_17) {
       } else {
@@ -18245,19 +18323,19 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         goto __pyx_L77_bool_binop_done;
       }
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":812
+      /* "src/orchestrator/orchestrator_neoqcr.py":814
  *                     and isinstance(new_expiry, str)
  *                     and _re.match(_DATE_RE, new_expiry)
  *                     and not session_mfg             # <<<<<<<<<<<<<<
  *                 ):
  *                     try:
 */
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_mfg); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 812, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_session_mfg); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 814, __pyx_L1_error)
       __pyx_t_18 = (!__pyx_t_17);
       __pyx_t_13 = __pyx_t_18;
       __pyx_L77_bool_binop_done:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":805
+      /* "src/orchestrator/orchestrator_neoqcr.py":807
  * 
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -18266,7 +18344,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
       if (__pyx_t_13) {
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":814
+        /* "src/orchestrator/orchestrator_neoqcr.py":816
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
@@ -18280,22 +18358,22 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XGOTREF(__pyx_t_20);
           /*try:*/ {
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":815
+            /* "src/orchestrator/orchestrator_neoqcr.py":817
  *                 ):
  *                     try:
  *                         from datetime import datetime as _dt             # <<<<<<<<<<<<<<
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
 */
-            __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 815, __pyx_L84_error)
+            __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 817, __pyx_L84_error)
             __Pyx_GOTREF(__pyx_t_8);
             __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_datetime);
             __Pyx_GIVEREF(__pyx_mstate_global->__pyx_n_u_datetime);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_mstate_global->__pyx_n_u_datetime) != (0)) __PYX_ERR(0, 815, __pyx_L84_error);
-            __pyx_t_3 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_datetime, __pyx_t_8, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 815, __pyx_L84_error)
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_mstate_global->__pyx_n_u_datetime) != (0)) __PYX_ERR(0, 817, __pyx_L84_error);
+            __pyx_t_3 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_datetime, __pyx_t_8, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 817, __pyx_L84_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-            __pyx_t_8 = __Pyx_ImportFrom(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 815, __pyx_L84_error)
+            __pyx_t_8 = __Pyx_ImportFrom(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 817, __pyx_L84_error)
             __Pyx_GOTREF(__pyx_t_8);
             __Pyx_INCREF(__pyx_t_8);
             __Pyx_GIVEREF(__pyx_t_8);
@@ -18303,7 +18381,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":816
+            /* "src/orchestrator/orchestrator_neoqcr.py":818
  *                     try:
  *                         from datetime import datetime as _dt
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')             # <<<<<<<<<<<<<<
@@ -18317,14 +18395,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               PyObject *__pyx_callargs[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_kp_u_d_m_Y};
               __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strptime, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 816, __pyx_L84_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 818, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_3);
             }
             __Pyx_GIVEREF(__pyx_t_3);
             __pyx_cur_scope->__pyx_v_d1 = __pyx_t_3;
             __pyx_t_3 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":817
+            /* "src/orchestrator/orchestrator_neoqcr.py":819
  *                         from datetime import datetime as _dt
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')             # <<<<<<<<<<<<<<
@@ -18338,34 +18416,34 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               PyObject *__pyx_callargs[3] = {__pyx_t_8, __pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_kp_u_d_m_Y};
               __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strptime, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
               __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 817, __pyx_L84_error)
+              if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 819, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_3);
             }
             __Pyx_GIVEREF(__pyx_t_3);
             __pyx_cur_scope->__pyx_v_d2 = __pyx_t_3;
             __pyx_t_3 = 0;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":818
+            /* "src/orchestrator/orchestrator_neoqcr.py":820
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:             # <<<<<<<<<<<<<<
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
 */
-            __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 818, __pyx_L84_error)
-            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 818, __pyx_L84_error)
+            __pyx_t_3 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 820, __pyx_L84_error)
+            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 820, __pyx_L84_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             if (__pyx_t_13) {
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":819
+              /* "src/orchestrator/orchestrator_neoqcr.py":821
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry             # <<<<<<<<<<<<<<
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
 */
-              __pyx_t_8 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 819, __pyx_L84_error)
-              __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 819, __pyx_L84_error)
+              __pyx_t_8 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 821, __pyx_L84_error)
+              __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 821, __pyx_L84_error)
               __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
               if (__pyx_t_13) {
                 __Pyx_INCREF(__pyx_cur_scope->__pyx_v_session_expiry);
@@ -18378,15 +18456,15 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_cur_scope->__pyx_v_mfg_date = __pyx_t_3;
               __pyx_t_3 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":820
+              /* "src/orchestrator/orchestrator_neoqcr.py":822
  *                         if d1 != d2:
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry             # <<<<<<<<<<<<<<
  *                             print(
  *                                 f"[Stream][MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "
 */
-              __pyx_t_8 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 820, __pyx_L84_error)
-              __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 820, __pyx_L84_error)
+              __pyx_t_8 = PyObject_RichCompare(__pyx_cur_scope->__pyx_v_d1, __pyx_cur_scope->__pyx_v_d2, Py_LT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 822, __pyx_L84_error)
+              __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely((__pyx_t_13 < 0))) __PYX_ERR(0, 822, __pyx_L84_error)
               __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
               if (__pyx_t_13) {
                 __Pyx_INCREF(__pyx_cur_scope->__pyx_v_new_expiry);
@@ -18399,7 +18477,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_cur_scope->__pyx_v_exp_date = __pyx_t_3;
               __pyx_t_3 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":821
+              /* "src/orchestrator/orchestrator_neoqcr.py":823
  *                             mfg_date = session_expiry if d1 < d2 else new_expiry
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(             # <<<<<<<<<<<<<<
@@ -18410,28 +18488,28 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __Pyx_INCREF(__pyx_builtin_print);
               __pyx_t_26 = __pyx_builtin_print; 
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":822
+              /* "src/orchestrator/orchestrator_neoqcr.py":824
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
  *                                 f"[Stream][MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "             # <<<<<<<<<<<<<<
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"
  *                             )
 */
-              __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 822, __pyx_L84_error)
+              __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 824, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 822, __pyx_L84_error)
+              __pyx_t_16 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_new_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 824, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_16);
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":823
+              /* "src/orchestrator/orchestrator_neoqcr.py":825
  *                             print(
  *                                 f"[Stream][MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"             # <<<<<<<<<<<<<<
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date
 */
-              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mfg_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 823, __pyx_L84_error)
+              __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_mfg_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 825, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exp_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 823, __pyx_L84_error)
+              __pyx_t_14 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_exp_date, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 825, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_14);
               __pyx_t_37[0] = __pyx_mstate_global->__pyx_kp_u_Stream_MULTICAPTURE_Case_B_two;
               __pyx_t_37[1] = __pyx_t_2;
@@ -18443,7 +18521,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __pyx_t_37[7] = __pyx_t_14;
               __pyx_t_37[8] = __pyx_mstate_global->__pyx_kp_u__7;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":822
+              /* "src/orchestrator/orchestrator_neoqcr.py":824
  *                             exp_date = new_expiry     if d1 < d2 else session_expiry
  *                             print(
  *                                 f"[Stream][MULTICAPTURE] Case B  two dates '{session_expiry}' & '{new_expiry}' "             # <<<<<<<<<<<<<<
@@ -18451,7 +18529,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                             )
 */
               __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_37, 9, 43 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2) + 5 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_16) + 9 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6) + 11 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_14) + 1, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_16) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_14));
-              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 822, __pyx_L84_error)
+              if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 824, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
@@ -18464,30 +18542,30 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
                 __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 821, __pyx_L84_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 823, __pyx_L84_error)
                 __Pyx_GOTREF(__pyx_t_3);
               }
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":825
+              /* "src/orchestrator/orchestrator_neoqcr.py":827
  *                                 f" mfg='{mfg_date}'  expiry='{exp_date}'"
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date             # <<<<<<<<<<<<<<
  *                             session_meta["expiry_date"] = exp_date
  *                         else:
 */
-              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_mfg_date) < 0))) __PYX_ERR(0, 825, __pyx_L84_error)
+              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_cur_scope->__pyx_v_mfg_date) < 0))) __PYX_ERR(0, 827, __pyx_L84_error)
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":826
+              /* "src/orchestrator/orchestrator_neoqcr.py":828
  *                             )
  *                             session_meta["mfg_date"]    = mfg_date
  *                             session_meta["expiry_date"] = exp_date             # <<<<<<<<<<<<<<
  *                         else:
  *                             print(
 */
-              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_exp_date) < 0))) __PYX_ERR(0, 826, __pyx_L84_error)
+              if (unlikely((PyObject_SetItem(__pyx_cur_scope->__pyx_v_session_meta, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_cur_scope->__pyx_v_exp_date) < 0))) __PYX_ERR(0, 828, __pyx_L84_error)
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":818
+              /* "src/orchestrator/orchestrator_neoqcr.py":820
  *                         d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
  *                         d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
  *                         if d1 != d2:             # <<<<<<<<<<<<<<
@@ -18497,7 +18575,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               goto __pyx_L90;
             }
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":828
+            /* "src/orchestrator/orchestrator_neoqcr.py":830
  *                             session_meta["expiry_date"] = exp_date
  *                         else:
  *                             print(             # <<<<<<<<<<<<<<
@@ -18509,20 +18587,20 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
               __Pyx_INCREF(__pyx_builtin_print);
               __pyx_t_1 = __pyx_builtin_print; 
 
-              /* "src/orchestrator/orchestrator_neoqcr.py":829
+              /* "src/orchestrator/orchestrator_neoqcr.py":831
  *                         else:
  *                             print(
  *                                 f"[Stream][MULTICAPTURE] Case B  identical date '{session_expiry}' captured again; keeping as expiry"             # <<<<<<<<<<<<<<
  *                             )
  *                     except (ValueError, AttributeError):
 */
-              __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 829, __pyx_L84_error)
+              __pyx_t_8 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_session_expiry, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 831, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_8);
               __pyx_t_38[0] = __pyx_mstate_global->__pyx_kp_u_Stream_MULTICAPTURE_Case_B_iden;
               __pyx_t_38[1] = __pyx_t_8;
               __pyx_t_38[2] = __pyx_mstate_global->__pyx_kp_u_captured_again_keeping_as_expir;
               __pyx_t_14 = __Pyx_PyUnicode_Join(__pyx_t_38, 3, 48 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_8) + 35, 65535 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_8));
-              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 829, __pyx_L84_error)
+              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 831, __pyx_L84_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
               __pyx_t_9 = 1;
@@ -18532,14 +18610,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
                 __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
                 __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 828, __pyx_L84_error)
+                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 830, __pyx_L84_error)
                 __Pyx_GOTREF(__pyx_t_3);
               }
               __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             }
             __pyx_L90:;
 
-            /* "src/orchestrator/orchestrator_neoqcr.py":814
+            /* "src/orchestrator/orchestrator_neoqcr.py":816
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
@@ -18563,7 +18641,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":831
+          /* "src/orchestrator/orchestrator_neoqcr.py":833
  *                                 f"[Stream][MULTICAPTURE] Case B  identical date '{session_expiry}' captured again; keeping as expiry"
  *                             )
  *                     except (ValueError, AttributeError):             # <<<<<<<<<<<<<<
@@ -18577,7 +18655,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           }
           goto __pyx_L86_except_error;
 
-          /* "src/orchestrator/orchestrator_neoqcr.py":814
+          /* "src/orchestrator/orchestrator_neoqcr.py":816
  *                     and not session_mfg
  *                 ):
  *                     try:             # <<<<<<<<<<<<<<
@@ -18598,7 +18676,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
           __pyx_L89_try_end:;
         }
 
-        /* "src/orchestrator/orchestrator_neoqcr.py":805
+        /* "src/orchestrator/orchestrator_neoqcr.py":807
  * 
  *                 # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
  *                 elif (             # <<<<<<<<<<<<<<
@@ -18608,14 +18686,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       }
       __pyx_L57:;
 
-      /* "src/orchestrator/orchestrator_neoqcr.py":833
+      /* "src/orchestrator/orchestrator_neoqcr.py":835
  *                     except (ValueError, AttributeError):
  *                         pass
  *                 self.session_cache.set(env_id, session_meta)             # <<<<<<<<<<<<<<
  *         else:
  *             self.session_cache.set(env_id, copy.deepcopy(data))
 */
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 833, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 835, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __pyx_t_1 = __pyx_t_14;
       __Pyx_INCREF(__pyx_t_1);
@@ -18625,14 +18703,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
         __pyx_t_3 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_set, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 833, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 835, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_L47:;
 
-    /* "src/orchestrator/orchestrator_neoqcr.py":734
+    /* "src/orchestrator/orchestrator_neoqcr.py":736
  * 
  *         #  5. Session cache (same logic as process_image_get_metadata)
  *         if capture_type:             # <<<<<<<<<<<<<<
@@ -18642,7 +18720,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     goto __pyx_L46;
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":835
+  /* "src/orchestrator/orchestrator_neoqcr.py":837
  *                 self.session_cache.set(env_id, session_meta)
  *         else:
  *             self.session_cache.set(env_id, copy.deepcopy(data))             # <<<<<<<<<<<<<<
@@ -18650,14 +18728,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))
 */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 835, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 837, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_14 = __pyx_t_1;
     __Pyx_INCREF(__pyx_t_14);
     __pyx_t_8 = NULL;
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 835, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 837, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 835, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 837, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_16);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_9 = 1;
@@ -18677,7 +18755,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __pyx_t_26 = __Pyx_PyObject_FastCall(__pyx_t_16, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-      if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 835, __pyx_L1_error)
+      if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 837, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_26);
     }
     __pyx_t_9 = 0;
@@ -18687,14 +18765,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
       __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
       __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 835, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 837, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_L46:;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":837
+  /* "src/orchestrator/orchestrator_neoqcr.py":839
  *             self.session_cache.set(env_id, copy.deepcopy(data))
  * 
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))             # <<<<<<<<<<<<<<
@@ -18702,12 +18780,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  * 
 */
   __pyx_t_1 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 837, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_copy); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 839, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_26);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 837, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_deepcopy); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 839, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 837, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_mstate_global->__pyx_n_u_session_cache); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 839, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_16 = __pyx_t_8;
   __Pyx_INCREF(__pyx_t_16);
@@ -18717,7 +18795,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __pyx_t_26 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 837, __pyx_L1_error)
+    if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 839, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_26);
   }
   __pyx_t_9 = 1;
@@ -18738,14 +18816,14 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 837, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 839, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_cur_scope->__pyx_v_metadata = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":838
+  /* "src/orchestrator/orchestrator_neoqcr.py":840
  * 
  *         metadata = copy.deepcopy(self.session_cache.get(env_id))
  *         print(f"[Stream] Final session metadata: {metadata}")             # <<<<<<<<<<<<<<
@@ -18755,9 +18833,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_t_14 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_26 = __pyx_builtin_print; 
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_metadata, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 838, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_cur_scope->__pyx_v_metadata, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 840, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Stream_Final_session_metadata, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 838, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Stream_Final_session_metadata, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 840, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_9 = 1;
@@ -18767,12 +18845,12 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 838, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 840, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":841
+  /* "src/orchestrator/orchestrator_neoqcr.py":843
  * 
  *         #  6. Return result bundle
  *         main_image = patches[0] if patches else None             # <<<<<<<<<<<<<<
@@ -18780,9 +18858,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *         return {
 */
   __pyx_t_13 = (__Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_patches) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 841, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 843, __pyx_L1_error)
   if (__pyx_t_13) {
-    __pyx_t_26 = __Pyx_GetItemInt_List(__pyx_cur_scope->__pyx_v_patches, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 841, __pyx_L1_error)
+    __pyx_t_26 = __Pyx_GetItemInt_List(__pyx_cur_scope->__pyx_v_patches, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 843, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_26);
     __pyx_t_3 = __pyx_t_26;
     __pyx_t_26 = 0;
@@ -18794,7 +18872,7 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
   __pyx_cur_scope->__pyx_v_main_image = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":843
+  /* "src/orchestrator/orchestrator_neoqcr.py":845
  *         main_image = patches[0] if patches else None
  * 
  *         return {             # <<<<<<<<<<<<<<
@@ -18803,38 +18881,38 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
 */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":844
+  /* "src/orchestrator/orchestrator_neoqcr.py":846
  * 
  *         return {
  *             "metadata": metadata,             # <<<<<<<<<<<<<<
  *             "snapshot": {
  *                 "image":           main_image,
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 844, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 846, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_metadata, __pyx_cur_scope->__pyx_v_metadata) < 0) __PYX_ERR(0, 844, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_metadata, __pyx_cur_scope->__pyx_v_metadata) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":846
+  /* "src/orchestrator/orchestrator_neoqcr.py":848
  *             "metadata": metadata,
  *             "snapshot": {
  *                 "image":           main_image,             # <<<<<<<<<<<<<<
  *                 "data":            data,
  *                 "ocr_raw":         raw_outputs[0] if raw_outputs else "N/A",
 */
-  __pyx_t_26 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 846, __pyx_L1_error)
+  __pyx_t_26 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_26);
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_image, __pyx_cur_scope->__pyx_v_main_image) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_image, __pyx_cur_scope->__pyx_v_main_image) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":847
+  /* "src/orchestrator/orchestrator_neoqcr.py":849
  *             "snapshot": {
  *                 "image":           main_image,
  *                 "data":            data,             # <<<<<<<<<<<<<<
  *                 "ocr_raw":         raw_outputs[0] if raw_outputs else "N/A",
  *                 "dates":           dates,
 */
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_data, __pyx_cur_scope->__pyx_v_data) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_data, __pyx_cur_scope->__pyx_v_data) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":848
+  /* "src/orchestrator/orchestrator_neoqcr.py":850
  *                 "image":           main_image,
  *                 "data":            data,
  *                 "ocr_raw":         raw_outputs[0] if raw_outputs else "N/A",             # <<<<<<<<<<<<<<
@@ -18842,9 +18920,9 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
  *                 "url_holder":      {"img_url": None, "cdn_url": None, "complete": True},
 */
   __pyx_t_13 = (__Pyx_PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_raw_outputs) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 848, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_13 < 0))) __PYX_ERR(0, 850, __pyx_L1_error)
   if (__pyx_t_13) {
-    __pyx_t_14 = __Pyx_GetItemInt_List(__pyx_cur_scope->__pyx_v_raw_outputs, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 848, __pyx_L1_error)
+    __pyx_t_14 = __Pyx_GetItemInt_List(__pyx_cur_scope->__pyx_v_raw_outputs, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 850, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     __pyx_t_8 = __pyx_t_14;
     __pyx_t_14 = 0;
@@ -18852,43 +18930,43 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     __Pyx_INCREF(__pyx_mstate_global->__pyx_kp_u_N_A);
     __pyx_t_8 = __pyx_mstate_global->__pyx_kp_u_N_A;
   }
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_t_8) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_ocr_raw, __pyx_t_8) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":849
+  /* "src/orchestrator/orchestrator_neoqcr.py":851
  *                 "data":            data,
  *                 "ocr_raw":         raw_outputs[0] if raw_outputs else "N/A",
  *                 "dates":           dates,             # <<<<<<<<<<<<<<
  *                 "url_holder":      {"img_url": None, "cdn_url": None, "complete": True},
  *                 "capture_type":    capture_type,
 */
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_dates, __pyx_cur_scope->__pyx_v_dates) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_dates, __pyx_cur_scope->__pyx_v_dates) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":850
+  /* "src/orchestrator/orchestrator_neoqcr.py":852
  *                 "ocr_raw":         raw_outputs[0] if raw_outputs else "N/A",
  *                 "dates":           dates,
  *                 "url_holder":      {"img_url": None, "cdn_url": None, "complete": True},             # <<<<<<<<<<<<<<
  *                 "capture_type":    capture_type,
  *                 "resolved_expiry": metadata.get("expiry_date"),
 */
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 850, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 852, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_img_url, Py_None) < 0) __PYX_ERR(0, 850, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_cdn_url, Py_None) < 0) __PYX_ERR(0, 850, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0) __PYX_ERR(0, 850, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_t_8) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_img_url, Py_None) < 0) __PYX_ERR(0, 852, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_cdn_url, Py_None) < 0) __PYX_ERR(0, 852, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_complete, Py_True) < 0) __PYX_ERR(0, 852, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_url_holder, __pyx_t_8) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":851
+  /* "src/orchestrator/orchestrator_neoqcr.py":853
  *                 "dates":           dates,
  *                 "url_holder":      {"img_url": None, "cdn_url": None, "complete": True},
  *                 "capture_type":    capture_type,             # <<<<<<<<<<<<<<
  *                 "resolved_expiry": metadata.get("expiry_date"),
  *             },
 */
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_cur_scope->__pyx_v_capture_type) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_cur_scope->__pyx_v_capture_type) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":852
+  /* "src/orchestrator/orchestrator_neoqcr.py":854
  *                 "url_holder":      {"img_url": None, "cdn_url": None, "complete": True},
  *                 "capture_type":    capture_type,
  *                 "resolved_expiry": metadata.get("expiry_date"),             # <<<<<<<<<<<<<<
@@ -18902,19 +18980,19 @@ static PyObject *__pyx_gb_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrat
     PyObject *__pyx_callargs[2] = {__pyx_t_14, __pyx_mstate_global->__pyx_n_u_expiry_date};
     __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 852, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 854, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
-  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_resolved_expiry, __pyx_t_8) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_26, __pyx_mstate_global->__pyx_n_u_resolved_expiry, __pyx_t_8) < 0) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_t_26) < 0) __PYX_ERR(0, 844, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_t_26) < 0) __PYX_ERR(0, 846, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
   __pyx_r = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
   goto __pyx_L0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":646
+  /* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -19977,15 +20055,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata)) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata)) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata = &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata->tp_dictoffset && __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct__process_image_get_metadata->tp_getattro == PyObject_GenericGetAttr)) {
@@ -19993,15 +20071,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images)) __PYX_ERR(0, 547, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images)) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images = &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images->tp_dictoffset && __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_1_process_batch_images->tp_getattro == PyObject_GenericGetAttr)) {
@@ -20009,15 +20087,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results)) __PYX_ERR(0, 611, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results)) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results = &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results->tp_dictoffset && __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_2__merge_stream_results->tp_getattro == PyObject_GenericGetAttr)) {
@@ -20025,15 +20103,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   }
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images)) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images)) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images_spec, __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images = &__pyx_type_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images->tp_dictoffset && __pyx_mstate->__pyx_ptype_3src_12orchestrator_19orchestrator_neoqcr___pyx_scope_struct_3_process_stream_images->tp_getattro == PyObject_GenericGetAttr)) {
@@ -20656,7 +20734,7 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
  * from src.utils.storage_router import StorageRouter
  * from src.utils.monitoring import time_calculate             # <<<<<<<<<<<<<<
  * from src.utils.session_cache import SessionCache
- * 
+ * from src.utils.prom_metrics import VLM_LATENCY
 */
   __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -20673,8 +20751,8 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
  * from src.utils.storage_router import StorageRouter
  * from src.utils.monitoring import time_calculate
  * from src.utils.session_cache import SessionCache             # <<<<<<<<<<<<<<
+ * from src.utils.prom_metrics import VLM_LATENCY
  * 
- * from dotenv import load_dotenv
 */
   __pyx_t_3 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_SessionCache); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -20687,242 +20765,260 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":25
+  /* "src/orchestrator/orchestrator_neoqcr.py":24
+ * from src.utils.monitoring import time_calculate
  * from src.utils.session_cache import SessionCache
+ * from src.utils.prom_metrics import VLM_LATENCY             # <<<<<<<<<<<<<<
+ * 
+ * from dotenv import load_dotenv
+*/
+  __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_VLM_LATENCY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_src_utils_prom_metrics, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_VLM_LATENCY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VLM_LATENCY, __pyx_t_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "src/orchestrator/orchestrator_neoqcr.py":26
+ * from src.utils.prom_metrics import VLM_LATENCY
  * 
  * from dotenv import load_dotenv             # <<<<<<<<<<<<<<
  * load_dotenv('src/configs/.env')
  * 
 */
-  __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_dotenv, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_dotenv, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_load_dotenv, __pyx_t_2) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_load_dotenv, __pyx_t_3) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":26
+  /* "src/orchestrator/orchestrator_neoqcr.py":27
  * 
  * from dotenv import load_dotenv
  * load_dotenv('src/configs/.env')             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_3 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_load_dotenv); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_src_configs_env};
-    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_src_configs_env};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
   }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":33
+  /* "src/orchestrator/orchestrator_neoqcr.py":34
  * # ---------------------------------------------------------------------------
  * 
  * class ModelInitializationError(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
 */
-  __pyx_t_3 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_4, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  if (__pyx_t_4 != __pyx_t_3) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 33, __pyx_L1_error)
-  }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_t_4, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_t_3) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_4, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  if (__pyx_t_4 != __pyx_t_2) {
+    if (unlikely((PyDict_SetItemString(__pyx_t_6, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 34, __pyx_L1_error)
+  }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_t_4, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ModelInitializationError, __pyx_t_2) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":36
+  /* "src/orchestrator/orchestrator_neoqcr.py":37
  *     pass
  * 
  * class ProcessingError(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
 */
-  __pyx_t_4 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_2, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_mstate_global->__pyx_n_u_ProcessingError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (__pyx_t_2 != __pyx_t_4) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_3, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare(__pyx_t_6, __pyx_t_3, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_mstate_global->__pyx_n_u_ProcessingError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__pyx_t_3 != __pyx_t_4) {
+    if (unlikely((PyDict_SetItemString(__pyx_t_2, "__orig_bases__", __pyx_t_4) < 0))) __PYX_ERR(0, 37, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_t_2, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_t_3, __pyx_t_2, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_t_4) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ProcessingError, __pyx_t_4) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":39
+  /* "src/orchestrator/orchestrator_neoqcr.py":40
  *     pass
  * 
  * class DatabaseError(Exception):             # <<<<<<<<<<<<<<
  *     pass
  * 
 */
-  __pyx_t_2 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_3 = __Pyx_CalculateMetaclass(NULL, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_Pack(1, ((PyObject *)(((PyTypeObject*)PyExc_Exception)))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_3, __pyx_t_6, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_mstate_global->__pyx_n_u_DatabaseError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  if (__pyx_t_6 != __pyx_t_2) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 39, __pyx_L1_error)
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_t_6, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PEP560_update_bases(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_t_2) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_6, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_mstate_global->__pyx_n_u_DatabaseError, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, (PyObject *) NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (__pyx_t_6 != __pyx_t_3) {
+    if (unlikely((PyDict_SetItemString(__pyx_t_4, "__orig_bases__", __pyx_t_3) < 0))) __PYX_ERR(0, 40, __pyx_L1_error)
+  }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_t_6, __pyx_t_4, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_DatabaseError, __pyx_t_3) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":47
+  /* "src/orchestrator/orchestrator_neoqcr.py":48
  * # ---------------------------------------------------------------------------
  * 
  * def build_blob_name(             # <<<<<<<<<<<<<<
  *     final_metadata_id: str,
  *     plotted: bool = False,
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_final_metadata_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_plotted, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ext, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_1build_blob_name, 0, __pyx_mstate_global->__pyx_n_u_build_blob_name, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[2]);
-  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_6);
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_final_metadata_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_plotted, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ext, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_1build_blob_name, 0, __pyx_mstate_global->__pyx_n_u_build_blob_name, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[2]);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_build_blob_name, __pyx_t_3) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_build_blob_name, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":69
+  /* "src/orchestrator/orchestrator_neoqcr.py":70
  * # ---------------------------------------------------------------------------
  * 
  * class Orchestrator:             # <<<<<<<<<<<<<<
  *     """
  *     Singleton service object.  Only truly shared, immutable state lives on
 */
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_mstate_global->__pyx_empty_tuple, __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_mstate_global->__pyx_n_u_Orchestrator, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_kp_u_Singleton_service_object_Only_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_mstate_global->__pyx_empty_tuple, __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_mstate_global->__pyx_n_u_Orchestrator, (PyObject *) NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_kp_u_Singleton_service_object_Only_t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":77
+  /* "src/orchestrator/orchestrator_neoqcr.py":78
  *     """
  * 
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         try:
  *             print("Initializing Orchestrator...")
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_1__init__, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator___init, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_1__init__, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator___init, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 77, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_init, __pyx_t_6) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":93
+  /* "src/orchestrator/orchestrator_neoqcr.py":94
  *     # ------------------------------------------------------------------
  * 
  *     def _init_models(self) -> None:             # <<<<<<<<<<<<<<
  *         try:
  *             print("Loading model...")
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 93, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 93, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_3_init_models, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_models, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 93, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_3_init_models, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_models, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init_models, __pyx_t_4) < 0) __PYX_ERR(0, 93, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_init_models, __pyx_t_4) < 0) __PYX_ERR(0, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":111
+  /* "src/orchestrator/orchestrator_neoqcr.py":112
  *             raise ModelInitializationError(f"Failed to initialize models: {str(e)}")
  * 
  *     def _init_database(self) -> None:             # <<<<<<<<<<<<<<
  *         try:
  *             print("Connecting to database...")
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_5_init_database, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_database, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_5_init_database, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_database, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init_database, __pyx_t_6) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_init_database, __pyx_t_6) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":118
+  /* "src/orchestrator/orchestrator_neoqcr.py":119
  *             raise DatabaseError(f"Failed to connect to database: {str(e)}")
  * 
  *     def _init_utils(self) -> None:             # <<<<<<<<<<<<<<
  *         try:
  *             print("Initializing utils...")
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_7_init_utils, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_utils, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 118, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_7_init_utils, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__init_utils, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_init_utils, __pyx_t_4) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_init_utils, __pyx_t_4) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":131
+  /* "src/orchestrator/orchestrator_neoqcr.py":132
  *     # ------------------------------------------------------------------
  * 
  *     def _print_image_info(self, label: str, img: Any) -> None:             # <<<<<<<<<<<<<<
  *         if isinstance(img, Image.Image):
  *             print(f"[{label}] PIL image size: {img.size} (w x h)")
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_label, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_img, __pyx_mstate_global->__pyx_n_u_Any) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_9_print_image_info, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__print_image_info, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_label, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_img, __pyx_mstate_global->__pyx_n_u_Any) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_9_print_image_info, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__print_image_info, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_print_image_info, __pyx_t_6) < 0) __PYX_ERR(0, 131, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_print_image_info, __pyx_t_6) < 0) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":139
+  /* "src/orchestrator/orchestrator_neoqcr.py":140
  *             print(f"[{label}] Unknown image type: {type(img)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -20931,48 +21027,48 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
 */
   __pyx_t_4 = NULL;
   __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
   }
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_ocr_result, __pyx_mstate_global->__pyx_kp_u_List_str) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Tuple_Optional_str_List_Optional) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_11_extract_metadata, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__extract_metadata, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_ocr_result, __pyx_mstate_global->__pyx_kp_u_List_str) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Tuple_Optional_str_List_Optional) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_11_extract_metadata, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator__extract_metadata, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_7, __pyx_t_8);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_7};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 139, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_extract_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_extract_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":152
+  /* "src/orchestrator/orchestrator_neoqcr.py":153
  *             raise ProcessingError(f"Metadata extraction failed: {str(e)}")
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     def get_processed_data(self, data: Dict, env_id: str) -> Dict:
  *         return self.database.sdk_data_process(data, env_id)
 */
-  __pyx_t_2 = NULL;
+  __pyx_t_3 = NULL;
   __pyx_t_4 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_5 = 1;
   {
@@ -20980,32 +21076,32 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
     __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 152, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
   }
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_data, __pyx_mstate_global->__pyx_n_u_Dict) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_Dict) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_13get_processed_data, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_get_processed_data, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_data, __pyx_mstate_global->__pyx_n_u_Dict) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_Dict) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_13get_processed_data, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_get_processed_data, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[12])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_8);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_5 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_4};
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_t_4};
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 152, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_get_processed_data, __pyx_t_6) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_get_processed_data, __pyx_t_6) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":161
+  /* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -21013,63 +21109,63 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
  *         self,
 */
   __pyx_t_7 = NULL;
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_3 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_5 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 161, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 162, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":170
+  /* "src/orchestrator/orchestrator_neoqcr.py":171
  *         client_name: Optional[str] = None,
  *         recapture_flag: bool = False,
  *         user_id: Optional[str] = None,             # <<<<<<<<<<<<<<
  *     ) -> Dict[str, Any]:
  *         """
 */
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_image_data, __pyx_mstate_global->__pyx_n_u_Any) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_recapture_flag, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_image_data, __pyx_mstate_global->__pyx_n_u_Any) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_recapture_flag, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":161
+  /* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     async def process_image_get_metadata(
  *         self,
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_15process_image_get_metadata, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 161, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[3]);
-  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_8);
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_15process_image_get_metadata, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_get_m, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_mstate_global->__pyx_tuple[3]);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_8);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_5 = 1;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_2};
+    PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_3};
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 161, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 162, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_process_image_get_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 161, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_process_image_get_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":376
+  /* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -21078,50 +21174,50 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
 */
   __pyx_t_4 = NULL;
   __pyx_t_7 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_7, NULL};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":391
+  /* "src/orchestrator/orchestrator_neoqcr.py":393
  *         pid: Optional[str] = None,
  *         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)
  *         scan_duration: Optional[float] = None,             # <<<<<<<<<<<<<<
  *     ) -> None:
  *         """
 */
-  __pyx_t_8 = __Pyx_PyDict_NewPresized(14); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyDict_NewPresized(14); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_image_name, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_ean_code, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_store_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_rec_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_recapture_flag, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_skip_image_upload, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_pid, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_request_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_scan_duration, __pyx_mstate_global->__pyx_kp_u_Optional_float) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_image_name, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_ean_code, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_store_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_snapshot, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_rec_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_recapture_flag, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_skip_image_upload, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_pid, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_request_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_scan_duration, __pyx_mstate_global->__pyx_kp_u_Optional_float) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_None) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":376
+  /* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     def process_image_save_metadata(
  *         self,
 */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_18process_image_save_metadata, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_save, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_18process_image_save_metadata, 0, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_image_save, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_7, __pyx_mstate_global->__pyx_tuple[4]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_7, __pyx_t_8);
@@ -21129,36 +21225,36 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_7};
-    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_process_image_save_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_process_image_save_metadata, __pyx_t_6) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":547
+  /* "src/orchestrator/orchestrator_neoqcr.py":549
  *     # ------------------------------------------------------------------
  * 
  *     async def process_batch_images(             # <<<<<<<<<<<<<<
  *         self,
  *         images: List[Any],
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 547, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 549, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_images, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_query, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_List_Tuple_Optional_Dict_str_Any) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_20process_batch_images, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_batch_image, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 547, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_6);
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_images, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_query, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_List_Tuple_Optional_Dict_str_Any) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_20process_batch_images, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_batch_image, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_process_batch_images, __pyx_t_2) < 0) __PYX_ERR(0, 547, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_process_batch_images, __pyx_t_3) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":611
+  /* "src/orchestrator/orchestrator_neoqcr.py":613
  *     # ------------------------------------------------------------------
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
@@ -21168,30 +21264,30 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_staticmethod);
   __pyx_t_7 = __pyx_builtin_staticmethod; 
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 611, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 613, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_mrp, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_dates, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_batch, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Tuple_Optional_str_List_Any_Opti) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
-  __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_23_merge_stream_results, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_mstate_global->__pyx_n_u_Orchestrator__merge_stream_resul_2, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 611, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_mrp, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_dates, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_all_batch, __pyx_mstate_global->__pyx_kp_u_List_Optional_str) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Tuple_Optional_str_List_Any_Opti) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_23_merge_stream_results, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_mstate_global->__pyx_n_u_Orchestrator__merge_stream_resul_2, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 613, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_8, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_8};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 611, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 613, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_merge_stream_results, __pyx_t_2) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_merge_stream_results, __pyx_t_3) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":646
+  /* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
@@ -21200,7 +21296,7 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
 */
   __pyx_t_7 = NULL;
   __pyx_t_6 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 646, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_time_calculate); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = 1;
   {
@@ -21208,35 +21304,35 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
     __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 646, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 648, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
   }
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":654
+  /* "src/orchestrator/orchestrator_neoqcr.py":656
  *         metadata_id:  Optional[str] = None,
  *         client_name:  Optional[str] = None,
  *         user_id:      Optional[str] = None,             # <<<<<<<<<<<<<<
  *     ) -> Dict[str, Any]:
  *         """
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 646, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_patches, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_patches, __pyx_mstate_global->__pyx_kp_u_List_Any) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_kp_u_Optional_bool) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_client_name, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_user_id, __pyx_mstate_global->__pyx_kp_u_Optional_str) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_kp_u_Dict_str_Any) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":646
+  /* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     async def process_stream_images(
  *         self,
 */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_25process_stream_images, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_stream_imag, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 646, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12orchestrator_19orchestrator_neoqcr_12Orchestrator_25process_stream_images, __Pyx_CYFUNCTION_COROUTINE, __pyx_mstate_global->__pyx_n_u_Orchestrator_process_stream_imag, NULL, __pyx_mstate_global->__pyx_n_u_src_orchestrator_orchestrator_ne, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_6, __pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
@@ -21244,38 +21340,38 @@ __Pyx_RefNannySetupContext("PyInit_orchestrator_neoqcr", 0);
   __pyx_t_5 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 646, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 648, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
   }
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_process_stream_images, __pyx_t_2) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_process_stream_images, __pyx_t_3) < 0) __PYX_ERR(0, 648, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":69
+  /* "src/orchestrator/orchestrator_neoqcr.py":70
  * # ---------------------------------------------------------------------------
  * 
  * class Orchestrator:             # <<<<<<<<<<<<<<
  *     """
  *     Singleton service object.  Only truly shared, immutable state lives on
 */
-  __pyx_t_2 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_mstate_global->__pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_t_2) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_3 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_mstate_global->__pyx_empty_tuple, __pyx_t_2, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Orchestrator, __pyx_t_3) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "src/orchestrator/orchestrator_neoqcr.py":1
  * import copy             # <<<<<<<<<<<<<<
  * import time
  * import asyncio
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test, __pyx_t_3) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /*--- Wrapped vars code ---*/
 
@@ -21459,6 +21555,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_Unknown_image_type, sizeof(__pyx_k_Unknown_image_type), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Unknown_image_type */
   {__pyx_k_Upload_Done_in, sizeof(__pyx_k_Upload_Done_in), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Upload_Done_in */
   {__pyx_k_Upload_Failed, sizeof(__pyx_k_Upload_Failed), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Upload_Failed */
+  {__pyx_k_VLM_LATENCY, sizeof(__pyx_k_VLM_LATENCY), 0, 1, 1}, /* PyObject cname: __pyx_n_u_VLM_LATENCY */
   {__pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ValueError */
   {__pyx_k_Vllm_inference, sizeof(__pyx_k_Vllm_inference), 0, 1, 1}, /* PyObject cname: __pyx_n_u_Vllm_inference */
   {__pyx_k__10, sizeof(__pyx_k__10), 0, 1, 0}, /* PyObject cname: __pyx_kp_u__10 */
@@ -21557,7 +21654,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_getbatchno, sizeof(__pyx_k_getbatchno), 0, 1, 1}, /* PyObject cname: __pyx_n_u_getbatchno */
   {__pyx_k_getdate, sizeof(__pyx_k_getdate), 0, 1, 1}, /* PyObject cname: __pyx_n_u_getdate */
   {__pyx_k_getmrp, sizeof(__pyx_k_getmrp), 0, 1, 1}, /* PyObject cname: __pyx_n_u_getmrp */
-  {__pyx_k_http_neo_qcr_model_8093, sizeof(__pyx_k_http_neo_qcr_model_8093), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_http_neo_qcr_model_8093 */
+  {__pyx_k_https_sentinel_compute_neophyte, sizeof(__pyx_k_https_sentinel_compute_neophyte), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_https_sentinel_compute_neophyte */
   {__pyx_k_i, sizeof(__pyx_k_i), 0, 1, 1}, /* PyObject cname: __pyx_n_u_i */
   {__pyx_k_image, sizeof(__pyx_k_image), 0, 1, 1}, /* PyObject cname: __pyx_n_u_image */
   {__pyx_k_image_copy, sizeof(__pyx_k_image_copy), 0, 1, 1}, /* PyObject cname: __pyx_n_u_image_copy */
@@ -21586,6 +21683,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_jpg, sizeof(__pyx_k_jpg), 0, 1, 1}, /* PyObject cname: __pyx_n_u_jpg */
   {__pyx_k_key, sizeof(__pyx_k_key), 0, 1, 1}, /* PyObject cname: __pyx_n_u_key */
   {__pyx_k_label, sizeof(__pyx_k_label), 0, 1, 1}, /* PyObject cname: __pyx_n_u_label */
+  {__pyx_k_labels, sizeof(__pyx_k_labels), 0, 1, 1}, /* PyObject cname: __pyx_n_u_labels */
   {__pyx_k_load_dotenv, sizeof(__pyx_k_load_dotenv), 0, 1, 1}, /* PyObject cname: __pyx_n_u_load_dotenv */
   {__pyx_k_lower, sizeof(__pyx_k_lower), 0, 1, 1}, /* PyObject cname: __pyx_n_u_lower */
   {__pyx_k_main, sizeof(__pyx_k_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main */
@@ -21621,6 +21719,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_new_period, sizeof(__pyx_k_new_period), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_new_period */
   {__pyx_k_next, sizeof(__pyx_k_next), 0, 1, 1}, /* PyObject cname: __pyx_n_u_next */
   {__pyx_k_non_null, sizeof(__pyx_k_non_null), 0, 1, 1}, /* PyObject cname: __pyx_n_u_non_null */
+  {__pyx_k_observe, sizeof(__pyx_k_observe), 0, 1, 1}, /* PyObject cname: __pyx_n_u_observe */
   {__pyx_k_ocr, sizeof(__pyx_k_ocr), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ocr */
   {__pyx_k_ocr_query, sizeof(__pyx_k_ocr_query), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ocr_query */
   {__pyx_k_ocr_raw, sizeof(__pyx_k_ocr_raw), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ocr_raw */
@@ -21726,6 +21825,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_src_utils_image_processor, sizeof(__pyx_k_src_utils_image_processor), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_image_processor */
   {__pyx_k_src_utils_metadata_processor, sizeof(__pyx_k_src_utils_metadata_processor), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_metadata_processor */
   {__pyx_k_src_utils_monitoring, sizeof(__pyx_k_src_utils_monitoring), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_monitoring */
+  {__pyx_k_src_utils_prom_metrics, sizeof(__pyx_k_src_utils_prom_metrics), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_prom_metrics */
   {__pyx_k_src_utils_session_cache, sizeof(__pyx_k_src_utils_session_cache), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_session_cache */
   {__pyx_k_src_utils_storage_router, sizeof(__pyx_k_src_utils_storage_router), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_storage_router */
   {__pyx_k_start, sizeof(__pyx_k_start), 0, 1, 1}, /* PyObject cname: __pyx_n_u_start */
@@ -21751,6 +21851,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_trends_beauty, sizeof(__pyx_k_trends_beauty), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_trends_beauty */
   {__pyx_k_trends_beauty_2, sizeof(__pyx_k_trends_beauty_2), 0, 1, 1}, /* PyObject cname: __pyx_n_u_trends_beauty_2 */
   {__pyx_k_typing, sizeof(__pyx_k_typing), 0, 1, 1}, /* PyObject cname: __pyx_n_u_typing */
+  {__pyx_k_unknown, sizeof(__pyx_k_unknown), 0, 1, 1}, /* PyObject cname: __pyx_n_u_unknown */
   {__pyx_k_upload_image, sizeof(__pyx_k_upload_image), 0, 1, 1}, /* PyObject cname: __pyx_n_u_upload_image */
   {__pyx_k_upload_result, sizeof(__pyx_k_upload_result), 0, 1, 1}, /* PyObject cname: __pyx_n_u_upload_result */
   {__pyx_k_upload_worker, sizeof(__pyx_k_upload_worker), 0, 1, 1}, /* PyObject cname: __pyx_n_u_upload_worker */
@@ -21771,13 +21872,13 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry const *t, PyObject **target, c
 
 static int __Pyx_InitCachedBuiltins(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
-  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 611, __pyx_L1_error)
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_print); if (!__pyx_builtin_print) __PYX_ERR(0, 79, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 343, __pyx_L1_error)
-  __pyx_builtin_AttributeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_AttributeError); if (!__pyx_builtin_AttributeError) __PYX_ERR(0, 343, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 429, __pyx_L1_error)
-  __pyx_builtin_round = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_round); if (!__pyx_builtin_round) __PYX_ERR(0, 473, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 562, __pyx_L1_error)
+  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 613, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_print); if (!__pyx_builtin_print) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_builtin_AttributeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_AttributeError); if (!__pyx_builtin_AttributeError) __PYX_ERR(0, 345, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_builtin_round = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_round); if (!__pyx_builtin_round) __PYX_ERR(0, 475, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 564, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -21789,91 +21890,91 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":568
+  /* "src/orchestrator/orchestrator_neoqcr.py":570
  * 
  *             if not tasks:
  *                 return [(None, "No valid images provided")] * len(images)             # <<<<<<<<<<<<<<
  * 
  *             t0 = time.perf_counter()
 */
-  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, Py_None, __pyx_mstate_global->__pyx_kp_u_No_valid_images_provided); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 568, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, Py_None, __pyx_mstate_global->__pyx_kp_u_No_valid_images_provided); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 570, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":576
+  /* "src/orchestrator/orchestrator_neoqcr.py":578
  * 
  *             results: List[Tuple[Optional[Dict], Optional[str]]] = [
  *                 (None, "Image skipped or failed preparation")             # <<<<<<<<<<<<<<
  *             ] * len(images)
  * 
 */
-  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, Py_None, __pyx_mstate_global->__pyx_kp_u_Image_skipped_or_failed_preparat); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 576, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, Py_None, __pyx_mstate_global->__pyx_kp_u_Image_skipped_or_failed_preparat); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 578, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":701
+  /* "src/orchestrator/orchestrator_neoqcr.py":703
  *                 continue
  *             raw_outputs.append(raw)
  *             print(f"[Stream] Patch {i} OCR raw: {raw[:120]}")             # <<<<<<<<<<<<<<
  * 
  *         if not raw_outputs:
 */
-  __pyx_mstate_global->__pyx_slice[0] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_120, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[0])) __PYX_ERR(0, 701, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_slice[0] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_120, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[0])) __PYX_ERR(0, 703, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[0]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":725
+  /* "src/orchestrator/orchestrator_neoqcr.py":727
  *                     all_batch.append(batch_no)
  *             except Exception as exc:
  *                 print(f"[Stream] Metadata extraction error for raw='{raw[:60]}': {exc}")             # <<<<<<<<<<<<<<
  * 
  *         #  4. Majority-vote merge
 */
-  __pyx_mstate_global->__pyx_slice[1] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_60, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[1])) __PYX_ERR(0, 725, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_slice[1] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_60, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[1])) __PYX_ERR(0, 727, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_slice[1]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":47
+  /* "src/orchestrator/orchestrator_neoqcr.py":48
  * # ---------------------------------------------------------------------------
  * 
  * def build_blob_name(             # <<<<<<<<<<<<<<
  *     final_metadata_id: str,
  *     plotted: bool = False,
 */
-  __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(4, ((PyObject*)Py_False), ((PyObject*)__pyx_mstate_global->__pyx_n_u_jpg), Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(4, ((PyObject*)Py_False), ((PyObject*)__pyx_mstate_global->__pyx_n_u_jpg), Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":161
+  /* "src/orchestrator/orchestrator_neoqcr.py":162
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     async def process_image_get_metadata(
  *         self,
 */
-  __pyx_mstate_global->__pyx_tuple[3] = PyTuple_Pack(4, Py_None, Py_None, ((PyObject*)Py_False), Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[3])) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[3] = PyTuple_Pack(4, Py_None, Py_None, ((PyObject*)Py_False), Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[3])) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[3]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[3]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":376
+  /* "src/orchestrator/orchestrator_neoqcr.py":378
  *     # ------------------------------------------------------------------
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     def process_image_save_metadata(
  *         self,
 */
-  __pyx_mstate_global->__pyx_tuple[4] = PyTuple_Pack(8, Py_None, ((PyObject*)Py_False), ((PyObject*)__pyx_mstate_global->__pyx_n_u_reliance), Py_None, ((PyObject*)Py_False), Py_None, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[4] = PyTuple_Pack(8, Py_None, ((PyObject*)Py_False), ((PyObject*)__pyx_mstate_global->__pyx_n_u_reliance), Py_None, ((PyObject*)Py_False), Py_None, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[4])) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[4]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[4]);
 
-  /* "src/orchestrator/orchestrator_neoqcr.py":646
+  /* "src/orchestrator/orchestrator_neoqcr.py":648
  *         return mrp, dates, batch_no
  * 
  *     @time_calculate()             # <<<<<<<<<<<<<<
  *     async def process_stream_images(
  *         self,
 */
-  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 646, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_RefNannyFinishContext();
@@ -21931,77 +22032,77 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {8, 0, 0, 37, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 161, 36};
+    const __Pyx_PyCode_New_function_description descr = {8, 0, 0, 37, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 162, 36};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_image_data, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_capture_type, __pyx_mstate->__pyx_n_u_metadata_id, __pyx_mstate->__pyx_n_u_client_name, __pyx_mstate->__pyx_n_u_recapture_flag, __pyx_mstate->__pyx_n_u_user_id, __pyx_mstate->__pyx_n_u_image, __pyx_mstate->__pyx_n_u_url_holder, __pyx_mstate->__pyx_n_u_image_copy, __pyx_mstate->__pyx_n_u_upload_worker, __pyx_mstate->__pyx_n_u_upload_worker, __pyx_mstate->__pyx_n_u_ocr_query, __pyx_mstate->__pyx_n_u_t0, __pyx_mstate->__pyx_n_u_ocr_result, __pyx_mstate->__pyx_n_u_model_time_ms, __pyx_mstate->__pyx_n_u_mrp, __pyx_mstate->__pyx_n_u_dates, __pyx_mstate->__pyx_n_u_batch_no_2, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_session_meta, __pyx_mstate->__pyx_n_u_key, __pyx_mstate->__pyx_n_u_value, __pyx_mstate->__pyx_n_u_re_2, __pyx_mstate->__pyx_n_u_session_expiry, __pyx_mstate->__pyx_n_u_session_mfg, __pyx_mstate->__pyx_n_u_new_expiry, __pyx_mstate->__pyx_n_u_DATE_RE, __pyx_mstate->__pyx_n_u_PERIOD_RE, __pyx_mstate->__pyx_n_u_resolved, __pyx_mstate->__pyx_n_u_dt, __pyx_mstate->__pyx_n_u_d1, __pyx_mstate->__pyx_n_u_d2, __pyx_mstate->__pyx_n_u_mfg_date, __pyx_mstate->__pyx_n_u_exp_date, __pyx_mstate->__pyx_n_u_metadata};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_process_image_get_metadata, __pyx_k_A_Q_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 200, 190};
+    const __Pyx_PyCode_New_function_description descr = {0, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 201, 190};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_t0, __pyx_mstate->__pyx_n_u_final_id, __pyx_mstate->__pyx_n_u_blob_name, __pyx_mstate->__pyx_n_u_result, __pyx_mstate->__pyx_n_u_exc};
     __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_upload_worker, __pyx_k_1_U_Cr_Q_q_mS_HM_kQ___z_d_1_t1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 20, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 547, 11};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 20, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 549, 11};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_images, __pyx_mstate->__pyx_n_u_query, __pyx_mstate->__pyx_n_u_tasks, __pyx_mstate->__pyx_n_u_valid_indices, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_img, __pyx_mstate->__pyx_n_u_t0, __pyx_mstate->__pyx_n_u_ocr_results, __pyx_mstate->__pyx_n_u_elapsed, __pyx_mstate->__pyx_n_u_results, __pyx_mstate->__pyx_n_u_task_idx, __pyx_mstate->__pyx_n_u_img_idx, __pyx_mstate->__pyx_n_u_ocr, __pyx_mstate->__pyx_n_u_raw, __pyx_mstate->__pyx_n_u_mrp, __pyx_mstate->__pyx_n_u_dates, __pyx_mstate->__pyx_n_u_batch_no_2, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_exc};
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_process_batch_images, __pyx_k__13, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 625, 64};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 627, 64};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_values, __pyx_mstate->__pyx_n_u_non_null, __pyx_mstate->__pyx_n_u_v};
     __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_majority, __pyx_k_6a_q_e7_Rwa_t1_q_7_9L_1Baq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {7, 0, 0, 42, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 646, 31};
+    const __Pyx_PyCode_New_function_description descr = {7, 0, 0, 42, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE), 648, 31};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_patches, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_capture_type, __pyx_mstate->__pyx_n_u_metadata_id, __pyx_mstate->__pyx_n_u_client_name, __pyx_mstate->__pyx_n_u_user_id, __pyx_mstate->__pyx_n_u_ocr_query, __pyx_mstate->__pyx_n_u_tasks, __pyx_mstate->__pyx_n_u_t0, __pyx_mstate->__pyx_n_u_ocr_results, __pyx_mstate->__pyx_n_u_elapsed_ms, __pyx_mstate->__pyx_n_u_raw_outputs, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_res, __pyx_mstate->__pyx_n_u_raw, __pyx_mstate->__pyx_n_u_all_mrp, __pyx_mstate->__pyx_n_u_all_dates, __pyx_mstate->__pyx_n_u_all_batch, __pyx_mstate->__pyx_n_u_mrp, __pyx_mstate->__pyx_n_u_dates, __pyx_mstate->__pyx_n_u_batch_no_2, __pyx_mstate->__pyx_n_u_exc, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_session_meta, __pyx_mstate->__pyx_n_u_key, __pyx_mstate->__pyx_n_u_value, __pyx_mstate->__pyx_n_u_re_2, __pyx_mstate->__pyx_n_u_session_expiry, __pyx_mstate->__pyx_n_u_session_mfg, __pyx_mstate->__pyx_n_u_new_expiry, __pyx_mstate->__pyx_n_u_DATE_RE, __pyx_mstate->__pyx_n_u_PERIOD_RE, __pyx_mstate->__pyx_n_u_resolved, __pyx_mstate->__pyx_n_u_dt, __pyx_mstate->__pyx_n_u_d1, __pyx_mstate->__pyx_n_u_d2, __pyx_mstate->__pyx_n_u_mfg_date, __pyx_mstate->__pyx_n_u_exp_date, __pyx_mstate->__pyx_n_u_metadata, __pyx_mstate->__pyx_n_u_main_image, __pyx_mstate->__pyx_n_u_patch};
     __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_process_stream_images, __pyx_k_A_a_a_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 47, 100};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 48, 100};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_final_metadata_id, __pyx_mstate->__pyx_n_u_plotted, __pyx_mstate->__pyx_n_u_ext, __pyx_mstate->__pyx_n_u_client_name, __pyx_mstate->__pyx_n_u_user_id, __pyx_mstate->__pyx_n_u_filename};
     __pyx_mstate_global->__pyx_codeobj_tab[5] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_build_blob_name, __pyx_k_Q_Q_r_m5_6QR_4xt_fCq_r_Q_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[5])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 77, 87};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 78, 87};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_init, __pyx_k_A_Q_q_A_Q_A_2_TTWWXXY, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 93, 135};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 94, 135};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_model_path, __pyx_mstate->__pyx_n_u_start, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_init_models, __pyx_k_a_D_Q_nAXQ_a_E_Ba_81_j_A_2_NcQR, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 111, 49};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 112, 49};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_init_database, __pyx_k_E_A_q_ES, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 118, 73};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 119, 73};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[9] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_init_utils, __pyx_k_Q_81_A_2_QQTTUUV, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[9])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 131, 81};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 132, 81};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_label, __pyx_mstate->__pyx_n_u_img};
     __pyx_mstate_global->__pyx_codeobj_tab[10] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_print_image_info, __pyx_k_z_Qe5_E_2_Q_AU_E_6c_E_6d_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[10])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 139, 113};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 140, 113};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_ocr_result, __pyx_mstate->__pyx_n_u_mrp, __pyx_mstate->__pyx_n_u_dates, __pyx_mstate->__pyx_n_u_batch_no_2, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[11] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_extract_metadata, __pyx_k_A_t7_as_Qa_t8_t_7q_1Jaq_5_q_A_DC, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[11])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 152, 25};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 153, 25};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_env_id};
     __pyx_mstate_global->__pyx_codeobj_tab[12] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_get_processed_data, __pyx_k_A_5XQ_t9_QfA, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[12])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {14, 0, 0, 42, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 376, 1191};
+    const __Pyx_PyCode_New_function_description descr = {14, 0, 0, 42, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 378, 1191};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_image_name, __pyx_mstate->__pyx_n_u_ean_code, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_store_id, __pyx_mstate->__pyx_n_u_snapshot, __pyx_mstate->__pyx_n_u_rec_metadata_id, __pyx_mstate->__pyx_n_u_recapture_flag, __pyx_mstate->__pyx_n_u_client_name, __pyx_mstate->__pyx_n_u_metadata_id, __pyx_mstate->__pyx_n_u_skip_image_upload, __pyx_mstate->__pyx_n_u_pid, __pyx_mstate->__pyx_n_u_request_id, __pyx_mstate->__pyx_n_u_scan_duration, __pyx_mstate->__pyx_n_u_snap_image, __pyx_mstate->__pyx_n_u_snap_data, __pyx_mstate->__pyx_n_u_snap_ocr_raw, __pyx_mstate->__pyx_n_u_snap_dates, __pyx_mstate->__pyx_n_u_url_holder, __pyx_mstate->__pyx_n_u_snap_model_time_ms, __pyx_mstate->__pyx_n_u_store, __pyx_mstate->__pyx_n_u_user_id, __pyx_mstate->__pyx_n_u_device_id, __pyx_mstate->__pyx_n_u_img_name, __pyx_mstate->__pyx_n_u_final_metadata_id, __pyx_mstate->__pyx_n_u_img_blob, __pyx_mstate->__pyx_n_u_plt_blob, __pyx_mstate->__pyx_n_u_upload_result, __pyx_mstate->__pyx_n_u_img_url, __pyx_mstate->__pyx_n_u_cdn_url, __pyx_mstate->__pyx_n_u__14, __pyx_mstate->__pyx_n_u_original_blob, __pyx_mstate->__pyx_n_u_mfg_exp_dates, __pyx_mstate->__pyx_n_u_processed_data, __pyx_mstate->__pyx_n_u_resolved_exp_str, __pyx_mstate->__pyx_n_u_parsed_exp, __pyx_mstate->__pyx_n_u_check_result, __pyx_mstate->__pyx_n_u_env_data, __pyx_mstate->__pyx_n_u_merged, __pyx_mstate->__pyx_n_u_created_id, __pyx_mstate->__pyx_n_u_ean_corrections, __pyx_mstate->__pyx_n_u_exc};
     __pyx_mstate_global->__pyx_codeobj_tab[13] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_process_image_save_metadata, __pyx_k_A_Q_Q_1_Q_A_q_J_84q_84q_84q_1_84, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[13])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 611, 123};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 613, 123};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_all_mrp, __pyx_mstate->__pyx_n_u_all_dates, __pyx_mstate->__pyx_n_u_all_batch, __pyx_mstate->__pyx_n_u_Counter, __pyx_mstate->__pyx_n_u_majority, __pyx_mstate->__pyx_n_u_majority, __pyx_mstate->__pyx_n_u_mrp, __pyx_mstate->__pyx_n_u_batch_no_2, __pyx_mstate->__pyx_n_u_seen_dates, __pyx_mstate->__pyx_n_u_seen_strs, __pyx_mstate->__pyx_n_u_d, __pyx_mstate->__pyx_n_u_key, __pyx_mstate->__pyx_n_u_dates};
     __pyx_mstate_global->__pyx_codeobj_tab[14] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_orchestrator_orchestrator_ne_2, __pyx_mstate->__pyx_n_u_merge_stream_results, __pyx_k_A_h_6a_9AQ_9AQ_1_E_Qa_t7_Qa_uG1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[14])) goto bad;
   }
@@ -27303,6 +27404,97 @@ static CYTHON_INLINE PyObject* __Pyx_PyLong_MultiplyObjC(PyObject *op1, PyObject
         return __Pyx_Float___Pyx_PyLong_MultiplyObjC(op1, intval, zerodivision_check);
     }
     return __Pyx_Fallback___Pyx_PyLong_MultiplyObjC(op1, op2, inplace);
+}
+#endif
+
+/* PyLongBinop */
+  #if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_Fallback___Pyx_PyLong_TrueDivideObjC(PyObject *op1, PyObject *op2, int inplace) {
+    return (inplace ? PyNumber_InPlaceTrueDivide : PyNumber_TrueDivide)(op1, op2);
+}
+#if CYTHON_USE_PYLONG_INTERNALS
+static PyObject* __Pyx_Unpacked___Pyx_PyLong_TrueDivideObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
+    CYTHON_MAYBE_UNUSED_VAR(inplace);
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    const long b = intval;
+    long a, x;
+    if (unlikely(__Pyx_PyLong_IsZero(op1))) {
+    }
+    if (likely(__Pyx_PyLong_IsCompact(op1))) {
+        a = __Pyx_PyLong_CompactValue(op1);
+    } else {
+        const digit* digits = __Pyx_PyLong_Digits(op1);
+        const Py_ssize_t size = __Pyx_PyLong_SignedDigitCount(op1);
+        switch (size) {
+            case -2:
+                if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT && 1 * PyLong_SHIFT < 53) {
+                    a = -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            case 2:
+                if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT && 1 * PyLong_SHIFT < 53) {
+                    a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            case -3:
+                if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT && 2 * PyLong_SHIFT < 53) {
+                    a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            case 3:
+                if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT && 2 * PyLong_SHIFT < 53) {
+                    a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            case -4:
+                if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT && 3 * PyLong_SHIFT < 53) {
+                    a = -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            case 4:
+                if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT && 3 * PyLong_SHIFT < 53) {
+                    a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                    break;
+                }
+                CYTHON_FALLTHROUGH;
+            default: return PyLong_Type.tp_as_number->nb_true_divide(op1, op2);
+        }
+    }
+            if ((8 * sizeof(long) <= 53 || likely(labs(a) <= ((PY_LONG_LONG)1 << 53)))
+                    || __Pyx_PyLong_DigitCount(op1) <= 52 / PyLong_SHIFT) {
+                return PyFloat_FromDouble((double)a / (double)b);
+            }
+            return PyLong_Type.tp_as_number->nb_true_divide(op1, op2);
+        return PyLong_FromLong(x);
+    
+}
+#endif
+static PyObject* __Pyx_Float___Pyx_PyLong_TrueDivideObjC(PyObject *float_val, long intval, int zerodivision_check) {
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    const long b = intval;
+    double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
+        double result;
+        
+        result = ((double)a) / (double)b;
+        return PyFloat_FromDouble(result);
+}
+static CYTHON_INLINE PyObject* __Pyx_PyLong_TrueDivideObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check) {
+    CYTHON_MAYBE_UNUSED_VAR(intval);
+    CYTHON_UNUSED_VAR(zerodivision_check);
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        return __Pyx_Unpacked___Pyx_PyLong_TrueDivideObjC(op1, op2, intval, inplace, zerodivision_check);
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        return __Pyx_Float___Pyx_PyLong_TrueDivideObjC(op1, intval, zerodivision_check);
+    }
+    return __Pyx_Fallback___Pyx_PyLong_TrueDivideObjC(op1, op2, inplace);
 }
 #endif
 

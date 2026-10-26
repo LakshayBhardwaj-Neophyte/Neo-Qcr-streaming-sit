@@ -17,6 +17,11 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, Query, WebSocket, WebSocketDisconnect
 from PIL import Image
 
+from src.utils.prom_metrics import (
+    WS_SESSIONS, WS_ACTIVE_SESSIONS, WS_SESSION_DURATION,
+    WS_FRAMES_RECEIVED, WS_DATE_FOUND_LATENCY, AUTH_ATTEMPTS,
+)
+
 load_dotenv("src/configs/.env")
 
 # ---------------------------------------------------------------------------
@@ -306,12 +311,23 @@ async def stream_endpoint(
     """
     await websocket.accept()
     session_start = time.monotonic()
+    client_label  = (client_name or "unknown").strip().lower()
 
     # ── Authentication ───────────────────────────────────────────────────
     if not _ws_validate_token(token, client_name):
+        AUTH_ATTEMPTS.labels(client_label, "failure").inc()
+        WS_SESSIONS.labels(client_label, "unauthorized").inc()
         await websocket.send_json({"error": "Unauthorized — invalid or expired token"})
         await websocket.close(code=1008)
         return
+
+    AUTH_ATTEMPTS.labels(client_label, "success").inc()
+    WS_ACTIVE_SESSIONS.inc()
+
+    def _end_session_metrics(outcome: str) -> None:
+        WS_ACTIVE_SESSIONS.dec()
+        WS_SESSIONS.labels(client_label, outcome).inc()
+        WS_SESSION_DURATION.labels(client_label, outcome).observe(time.monotonic() - session_start)
 
     # ── App-state models ─────────────────────────────────────────────────
     classifier   = websocket.app.state.classifier    # 2-class ImageClassifier
@@ -441,6 +457,7 @@ async def stream_endpoint(
                 "batch_no":     batch_no,
             }
             date_found_event.set()
+            WS_DATE_FOUND_LATENCY.labels(client_label).observe(time.monotonic() - session_start)
             print(f"[WS][VLM] Frame {seq} WON ✓ — mfg={mfg}  exp={exp}")
 
     # ── Receive loop ─────────────────────────────────────────────────────
@@ -549,6 +566,8 @@ async def stream_endpoint(
                 else:
                     is_good = True
 
+            WS_FRAMES_RECEIVED.labels(client_label, "good" if is_good else "bad").inc()
+
             print(
                 f"[WS] Frame seq={seq}  ts={arrival_ts:.2f}s  "
                 f"top={detections[0]['class_name'] if detections else 'none'}  "
@@ -628,6 +647,7 @@ async def stream_endpoint(
     # ── Case T: 20 s timeout — no MFG or EXP found ───────────────────────
     if not date_found_event.is_set():
         print("[WS] Case T — no MFG/EXP found within 20 s → 422 error")
+        _end_session_metrics("timeout")
         try:
             await websocket.send_json({
                 "type":    "error",
@@ -647,6 +667,7 @@ async def stream_endpoint(
         return
 
     # ── Post-session pipeline ─────────────────────────────────────────────
+    ws_outcome = "error"
     try:
         last_clean_img = winner_result.get("original_img")
 
@@ -736,6 +757,7 @@ async def stream_endpoint(
 
         print(f"[WS] {endpoint_label} HTTP {resp.status_code} in {_proc_ms:.1f}ms")
         process_result = resp.json()
+        ws_outcome = "success" if resp.status_code == 200 else "error"
 
         # ── Step 6: Forward result over WebSocket ─────────────────────────
         try:
@@ -769,6 +791,7 @@ async def stream_endpoint(
             pass
 
     finally:
+        _end_session_metrics(ws_outcome)
         try:
             await websocket.close()
         except Exception:

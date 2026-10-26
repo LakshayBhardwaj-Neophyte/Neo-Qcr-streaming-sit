@@ -1,6 +1,7 @@
 from src.comms.server.api import SdkAPI
 import uvicorn
-from prometheus_fastapi_instrumentator import Instrumentator # <-- 1. IMPORT
+from prometheus_fastapi_instrumentator import Instrumentator 
+from src.utils.prom_metrics import start_gpu_monitor
 
 if __name__ == "__main__":
     
@@ -15,11 +16,12 @@ if __name__ == "__main__":
     # This automatically adds the /metrics endpoint
     print("Instrumenting FastAPI app for Prometheus...")
     Instrumentator().instrument(app_to_run).expose(app_to_run)
+    start_gpu_monitor()
     print("Instrumentation complete. /metrics endpoint is active.")
     # --------------------------
 
     # 3. Run the instrumented app
-    uvicorn.run(app_to_run, host="0.0.0.0", port=4099)
+    uvicorn.run(app_to_run, host="0.0.0.0", port=4097)
 
 
 

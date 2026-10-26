@@ -21,6 +21,7 @@ from src.utils.image_processor import ImageProcessor
 from src.utils.storage_router import StorageRouter
 from src.utils.monitoring import time_calculate
 from src.utils.session_cache import SessionCache
+from src.utils.prom_metrics import VLM_LATENCY
 
 from dotenv import load_dotenv
 load_dotenv('src/configs/.env')
@@ -97,7 +98,7 @@ class Orchestrator:
             start = time.time()
             # print(f"model path :: {model_path}")
             # self.qwen_model = Vllm_inference(model_path, image_dir=None, output_csv=None)
-            self.qwen_model = Vllm_inference(api_url="http://neo-qcr-model:8093")
+            self.qwen_model = Vllm_inference(api_url="https://sentinel-compute.neophyte.live/neo-vlm")
             self.qwen_model.initialize()
             print(f"model loaded in {time.time() - start:.2f}s")
 
@@ -228,6 +229,7 @@ class Orchestrator:
         t0 = time.perf_counter()
         ocr_result = await self.qwen_model.process_batch(image, ocr_query)
         model_time_ms = (time.perf_counter() - t0) * 1000
+        VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
         print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
         print(f"Inference result: {ocr_result}")
 

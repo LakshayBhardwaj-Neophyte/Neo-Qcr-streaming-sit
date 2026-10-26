@@ -40,3 +40,4 @@ psutil
 tensorboard
 thop
 pycocotools>=2.0.2
+nvidia-ml-py

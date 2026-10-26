@@ -24,6 +24,7 @@ import os
 from src.orchestrator.orchestrator_neoqcr import Orchestrator
 from src.comms.server.ws_stream import stream_router
 from src.utils.classifier import ImageClassifier
+from src.utils.prom_metrics import AUTH_ATTEMPTS, record_metadata_fields
 
 load_dotenv('src/configs/.env')
 SECRET_KEY        = os.getenv("JWT_SECRET_KEY")
@@ -139,6 +140,7 @@ def test_jwt_token(token, secret_key=None, algorithm=None):
         secret_key = SECRET_KEY
     if algorithm is None:
         algorithm = ALGORITHM
+    client_label = "shipsy" if secret_key == SHIPSY_SECRET_KEY else "reliance"
     if isinstance(token, str) and token.lower().startswith("bearer "):
         token = token[7:].strip()
     print(f"[DEBUG token] len={len(token) if token else 0}  segments={len(token.split('.')) if token else 0}  preview={repr(token[:40]) if token else repr(token)}")
@@ -147,8 +149,10 @@ def test_jwt_token(token, secret_key=None, algorithm=None):
         payload = jwt.decode(token, secret_key, algorithms=[algorithm],
                              audience="valid-audience", issuer="trusted-issuer")
         verify_claims(payload)
+        AUTH_ATTEMPTS.labels(client_label, "success").inc()
         print("✅ Token is valid and passes all checklist tests.")
     except Exception as e:
+        AUTH_ATTEMPTS.labels(client_label, "failure").inc()
         print(f"❌ Token validation failed: {e}")
         return JSONResponse(
             status_code=400,
@@ -546,41 +550,6 @@ class SdkAPI:
                 print(f"[/process] image={image_name}  ean={ean_code}  env={env_id}  "
                       f"capture_type={capture_type}  client={client_name}")
 
-                # ── ROTATION API FOR MULTICAPTURE ────────────────────────────
-                if capture_type:
-                    ROTATION_API_URL = os.getenv("ROTATION_API_URL", "https://sentinel-compute.neophyte.live/neo-orient/orient")
-                    print(f"[/process] Multicapture detected (capture_type=True), calling Rotation API {ROTATION_API_URL}...")
-                    try:
-                        jpeg_buf = io.BytesIO()
-                        pil_image.save(jpeg_buf, format="JPEG", quality=95)
-                        jpeg_bytes = jpeg_buf.getvalue()
-                        
-                        async with httpx.AsyncClient(timeout=30.0) as client_http:
-                            rot_resp = await client_http.post(
-                                ROTATION_API_URL,
-                                files={"file": (f"{image_name}_crop.jpg", jpeg_bytes, "image/jpeg")}
-                            )
-                        if rot_resp.status_code == 200:
-                            rot_bytes = rot_resp.content
-                            pil_image = self._to_pil(rot_bytes)
-                            req["pil_image"] = pil_image
-                            
-                            rot_needed_str = rot_resp.headers.get("x-rotation-needed", "0")
-                            try:
-                                req["rotation_needed"] = int(rot_needed_str)
-                            except ValueError:
-                                req["rotation_needed"] = 0
-                                
-                            upright_str = rot_resp.headers.get("x-already-upright", "false").lower()
-                            req["already_upright"] = "true" if upright_str in ("true", "1", "yes") else "false"
-                            
-                            print(f"[/process] Multicapture rotated image, rotation_needed={req['rotation_needed']}, already_upright={req['already_upright']}")
-                        else:
-                            print(f"[/process] Rotation API returned {rot_resp.status_code}, proceeding with original image")
-                    except Exception as e:
-                        print(f"[/process] Rotation API failed: {e}, proceeding with original image")
-                        traceback.print_exc()
-                # ── END ROTATION API FOR MULTICAPTURE ────────────────────────
 
                 # ── YOLO QUALITY GATE ────────────────────────────────────────
                 # Runs BEFORE OCR. Rejects blurry / dark / glare / etc. images
@@ -624,7 +593,8 @@ class SdkAPI:
 
                 metadata = result["metadata"]
                 snapshot = result["snapshot"]
-                
+                record_metadata_fields(metadata, client_name)
+
                 # Calculate latency if session_start is provided
                 session_start = req.get("session_start")
                 scan_duration = None
@@ -805,6 +775,7 @@ class SdkAPI:
 
                 metadata = result["metadata"]
                 snapshot = result["snapshot"]
+                record_metadata_fields(metadata, client_name)
 
                 metadata["qty"]         = 1
                 metadata["metadata_id"] = new_metadata_id
