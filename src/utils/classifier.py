@@ -23,7 +23,7 @@ CONF_THRESHOLD = float(os.getenv("CROP_CONF_THRESHOLD", "0.32"))
 
 # YOLOX specific paths from .env (fallback to default if not provided)
 YOLOX_EXP_PATH = os.getenv("YOLOX_EXP_PATH", str(_YOLOX_DIR / "exps" / "example" / "custom" / "my_yoloxm.py"))
-YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")
+YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")
 
 _class_names_raw = json.loads(os.getenv("CLASS_NAMES", '{}'))
 CLASS_NAMES = {int(k): v for k, v in _class_names_raw.items()}

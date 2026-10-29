@@ -2729,7 +2729,6 @@ static const char __pyx_k_ImageClassifier__load[] = "ImageClassifier._load";
 static const char __pyx_k_ImageClassifier___init[] = "ImageClassifier.__init__";
 static const char __pyx_k_ImageClassifier_predict[] = "ImageClassifier.predict";
 static const char __pyx_k_src_utils_classifier_py[] = "src/utils/classifier.py";
-static const char __pyx_k_src_models_best_ckpt_pth[] = "src/models/best_ckpt.pth";
 static const char __pyx_k_Classifier_Inference_error[] = "[Classifier] Inference error: ";
 static const char __pyx_k_Classifier_Model_loaded_from[] = "[Classifier] Model loaded from ";
 static const char __pyx_k_Classifier_YOLOX_ckpt_file_not[] = "[Classifier] YOLOX ckpt file not found: ";
@@ -2738,6 +2737,7 @@ static const char __pyx_k_Classifier_Failed_to_load_model[] = "[Classifier] Fail
 static const char __pyx_k_Classifier_YOLOX_exp_file_not_f[] = "[Classifier] YOLOX exp file not found: ";
 static const char __pyx_k_q_4r_gQa_1B_QQR_4r_gQa_1B_RRS_j[] = "\320\004\027\220q\330\010\013\2104\210r\220\025\220g\230Q\230a\330\014\022\320\022#\2401\240B\320&Q\320QR\330\010\013\2104\210r\220\025\220g\230Q\230a\330\014\022\320\022#\2401\240B\320&R\320RS\340\010\t\330\014\020\220\016\230j\250\001\320)9\270\021\340\014\020\220\013\230<\240q\330\014\021\220\021\220\"\320\0247\260q\330\010\017\210}\230A\330\014\022\220,\230a\230r\320!H\310\001";
 static const char __pyx_k_ImageClassifier_predict_locals_l[] = "ImageClassifier.predict.<locals>.<lambda>";
+static const char __pyx_k_src_models_neoqcr_goodbad_v3_bes[] = "src/models/neoqcr_goodbad_v3_best.pth";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_3src_5utils_10classifier_15ImageClassifier___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_3src_5utils_10classifier_15ImageClassifier_2_load(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
@@ -2941,7 +2941,7 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_set_name __pyx_string_tab[110]
 #define __pyx_n_u_sort __pyx_string_tab[111]
 #define __pyx_n_u_spec __pyx_string_tab[112]
-#define __pyx_kp_u_src_models_best_ckpt_pth __pyx_string_tab[113]
+#define __pyx_kp_u_src_models_neoqcr_goodbad_v3_bes __pyx_string_tab[113]
 #define __pyx_n_u_src_utils_classifier __pyx_string_tab[114]
 #define __pyx_kp_u_src_utils_classifier_py __pyx_string_tab[115]
 #define __pyx_n_u_sys __pyx_string_tab[116]
@@ -5593,7 +5593,7 @@ __Pyx_RefNannySetupContext("PyInit_classifier", 0);
  * 
  * # YOLOX specific paths from .env (fallback to default if not provided)
  * YOLOX_EXP_PATH = os.getenv("YOLOX_EXP_PATH", str(_YOLOX_DIR / "exps" / "example" / "custom" / "my_yoloxm.py"))             # <<<<<<<<<<<<<<
- * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")
+ * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")
  * 
 */
   __pyx_t_6 = NULL;
@@ -5635,7 +5635,7 @@ __Pyx_RefNannySetupContext("PyInit_classifier", 0);
   /* "src/utils/classifier.py":26
  * # YOLOX specific paths from .env (fallback to default if not provided)
  * YOLOX_EXP_PATH = os.getenv("YOLOX_EXP_PATH", str(_YOLOX_DIR / "exps" / "example" / "custom" / "my_yoloxm.py"))
- * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")             # <<<<<<<<<<<<<<
+ * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")             # <<<<<<<<<<<<<<
  * 
  * _class_names_raw = json.loads(os.getenv("CLASS_NAMES", '{}'))
 */
@@ -5651,7 +5651,7 @@ __Pyx_RefNannySetupContext("PyInit_classifier", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "src/utils/classifier.py":28
- * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")
+ * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")
  * 
  * _class_names_raw = json.loads(os.getenv("CLASS_NAMES", '{}'))             # <<<<<<<<<<<<<<
  * CLASS_NAMES = {int(k): v for k, v in _class_names_raw.items()}
@@ -6041,7 +6041,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_set_name */
   {__pyx_k_sort, sizeof(__pyx_k_sort), 0, 1, 1}, /* PyObject cname: __pyx_n_u_sort */
   {__pyx_k_spec, sizeof(__pyx_k_spec), 0, 1, 1}, /* PyObject cname: __pyx_n_u_spec */
-  {__pyx_k_src_models_best_ckpt_pth, sizeof(__pyx_k_src_models_best_ckpt_pth), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_src_models_best_ckpt_pth */
+  {__pyx_k_src_models_neoqcr_goodbad_v3_bes, sizeof(__pyx_k_src_models_neoqcr_goodbad_v3_bes), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_src_models_neoqcr_goodbad_v3_bes */
   {__pyx_k_src_utils_classifier, sizeof(__pyx_k_src_utils_classifier), 0, 1, 1}, /* PyObject cname: __pyx_n_u_src_utils_classifier */
   {__pyx_k_src_utils_classifier_py, sizeof(__pyx_k_src_utils_classifier_py), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_src_utils_classifier_py */
   {__pyx_k_sys, sizeof(__pyx_k_sys), 0, 1, 1}, /* PyObject cname: __pyx_n_u_sys */
@@ -6135,16 +6135,16 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   /* "src/utils/classifier.py":26
  * # YOLOX specific paths from .env (fallback to default if not provided)
  * YOLOX_EXP_PATH = os.getenv("YOLOX_EXP_PATH", str(_YOLOX_DIR / "exps" / "example" / "custom" / "my_yoloxm.py"))
- * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")             # <<<<<<<<<<<<<<
+ * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")             # <<<<<<<<<<<<<<
  * 
  * _class_names_raw = json.loads(os.getenv("CLASS_NAMES", '{}'))
 */
-  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_n_u_YOLOX_CKPT_PATH, __pyx_mstate_global->__pyx_kp_u_src_models_best_ckpt_pth); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_n_u_YOLOX_CKPT_PATH, __pyx_mstate_global->__pyx_kp_u_src_models_neoqcr_goodbad_v3_bes); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[5]);
 
   /* "src/utils/classifier.py":28
- * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/best_ckpt.pth")
+ * YOLOX_CKPT_PATH = os.getenv("YOLOX_CKPT_PATH", "src/models/neoqcr_goodbad_v3_best.pth")
  * 
  * _class_names_raw = json.loads(os.getenv("CLASS_NAMES", '{}'))             # <<<<<<<<<<<<<<
  * CLASS_NAMES = {int(k): v for k, v in _class_names_raw.items()}
