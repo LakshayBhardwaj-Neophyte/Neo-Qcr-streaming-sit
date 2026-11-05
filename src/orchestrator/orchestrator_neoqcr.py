@@ -480,6 +480,11 @@ class Orchestrator:
             if pid is not None:
                 processed_data["pid"]        = pid
 
+            # ── Optional flags from request ─────────────────────────────
+            if snapshot.get("data", {}).get("manual_capture") is True:
+                processed_data["manual_capture"] = True
+                print("[save_metadata] manual_capture=True → flagged in DB document")
+
             # ---- Write to DB ------------------------------------------
             if env_id:
                 check_result = self.database.check_env_doc(env_id)

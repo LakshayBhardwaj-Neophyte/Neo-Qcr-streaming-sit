@@ -199,6 +199,7 @@ class Payload(BaseModel):
     request_id:   Optional[str]  = None
     rotation_info: Optional[str] = None
     patch_info:   Optional[str]  = None
+    manual_capture: Optional[bool] = None       # optional — True when operator manually captures
 
 
 class UserRequest(BaseModel):
@@ -295,6 +296,7 @@ class SdkAPI:
                 "rotation_info": form.get("rotation_info"),
                 "patch_info": form.get("patch_info"),
                 "is_streaming": str(form.get("is_streaming")).lower() == "true",
+                "manual_capture": str(form.get("manual_capture", "")).lower() == "true" or None,
             }
 
         if "application/json" in content_type:
@@ -318,6 +320,7 @@ class SdkAPI:
                 "already_upright": None,
                 "rotation_info": payload.rotation_info,
                 "patch_info": payload.patch_info,
+                "manual_capture": payload.manual_capture if payload.manual_capture else None,
             }
 
         raise ValueError("Unsupported content-type — use application/json or multipart/form-data")
@@ -669,6 +672,13 @@ class SdkAPI:
                     
                     snapshot["is_streaming"] = req.get("is_streaming", False)
 
+                # ── manual_capture flag (optional) ────────────────────────
+                manual_capture = req.get("manual_capture")
+                if manual_capture is True:
+                    if isinstance(snapshot.get("data"), dict):
+                        snapshot["data"]["manual_capture"] = True
+                    print("[/process] manual_capture=True flagged")
+
                 print(f"[/process] metadata={metadata}")
 
                 request_id = req.get("request_id")
@@ -825,6 +835,13 @@ class SdkAPI:
 
                 if isinstance(snapshot.get("data"), dict):
                     snapshot["data"]["qty"] = 1
+
+                # ── manual_capture flag (optional) ────────────────────────
+                manual_capture = req.get("manual_capture")
+                if manual_capture is True:
+                    if isinstance(snapshot.get("data"), dict):
+                        snapshot["data"]["manual_capture"] = True
+                    print("[/recapture] manual_capture=True flagged")
 
                 print(f"[/recapture] metadata={metadata}")
 
