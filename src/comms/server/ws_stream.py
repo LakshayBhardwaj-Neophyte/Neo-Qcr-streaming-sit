@@ -4,9 +4,12 @@ import asyncio
 import io
 import json
 import os
+import re
 import threading
 import time
 import traceback
+import uuid
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -44,6 +47,111 @@ RECAPTURE_SERVER_URL: str = os.getenv("RECAPTURE_SERVER_URL", "http://localhost:
 SAVE_FRAMES: bool      = os.getenv("SAVE_FRAMES",      "false").lower() == "true"
 SAVE_FRAMES_BLOB: bool = os.getenv("SAVE_FRAMES_BLOB", "false").lower() == "true"
 FRAMES_SAVE_DIR: str   = os.getenv("WS_FRAMES_SAVE_DIR", "/home/shared/saved_frames_src")
+
+# ---------------------------------------------------------------------------
+# Stream-frame blob archive — ALL sessions, sampled at STREAM_FRAMES_FPS
+# ---------------------------------------------------------------------------
+# Blob layout:
+#   stream_frames/<YYYY-MM-DD>/<client>/<success|timeout>/
+#       <ean>_<request_id>_<uid6>/frame_<sec>_<seq>.jpg
+#
+# During the stream only ONE raw JPEG per time-bucket is held in memory
+# (a good frame replaces a bad one inside the same bucket), so a 15 s
+# session at 1 fps holds at most ~15 frames no matter how fast the SDK
+# sends. Nothing is uploaded while streaming — after the session ends
+# the sampled frames are submitted to one shared, bounded pool. The
+# classifier / VLM path is never blocked by this.
+# ---------------------------------------------------------------------------
+STREAM_FRAMES_BLOB_ENABLED: bool = os.getenv("STREAM_FRAMES_BLOB", "true").lower() == "true"
+STREAM_FRAMES_FPS: float         = max(0.1, float(os.getenv("STREAM_FRAMES_FPS", "1")))
+STREAM_FRAMES_WORKERS: int       = int(os.getenv("STREAM_FRAMES_WORKERS", "20"))
+# Back-pressure: skip archiving a session if this many uploads are already queued.
+STREAM_FRAMES_MAX_PENDING: int   = int(os.getenv("STREAM_FRAMES_MAX_PENDING", "2000"))
+
+_stream_upload_pool: ThreadPoolExecutor = ThreadPoolExecutor(
+    max_workers=STREAM_FRAMES_WORKERS,
+    thread_name_prefix="stream-blob-upload",
+)
+_stream_pending: int = 0
+_stream_pending_lock = threading.Lock()
+
+# One StorageRouter shared by all uploads (each instance starts its own
+# retention daemon thread, so creating one per frame leaks threads).
+_storage_router: Any = None
+_storage_router_lock = threading.Lock()
+
+
+def _get_storage_router() -> Any:
+    global _storage_router
+    if _storage_router is None:
+        with _storage_router_lock:
+            if _storage_router is None:
+                from src.utils.storage_router import StorageRouter
+                _storage_router = StorageRouter()
+    return _storage_router
+
+
+def _safe_seg(value: Any, default: str) -> str:
+    """Make a value safe to use as a single blob path segment."""
+    s = str(value or "").strip()
+    if not s or s.lower() in ("none", "null", "nan"):
+        return default
+    return re.sub(r"[^A-Za-z0-9._-]", "_", s)
+
+
+def _upload_stream_item(payload: Any, blob_name: str, client_name: str, user_id: str) -> None:
+    """Upload one frame (raw JPEG bytes or PIL image). Runs in the pool."""
+    global _stream_pending
+    try:
+        result = _get_storage_router().upload_image(payload, blob_name, client_name, user_id)
+        if not result:
+            print(f"[WS][StreamBlob] Upload failed for {blob_name}")
+    except Exception as exc:
+        print(f"[WS][StreamBlob] Upload error for {blob_name}: {exc}")
+    finally:
+        with _stream_pending_lock:
+            _stream_pending -= 1
+
+
+def _submit_stream_session(
+    frames:       List[Tuple[int, int, Any]],   # (sec, seq, jpeg_bytes | PIL image)
+    *,
+    date_folder:  str,
+    client_name:  str,
+    user_id:      str,
+    ean:          str,
+    request_id:   str,
+    outcome:      str,                          # "success" | "timeout"
+) -> None:
+    """Queue a session's sampled frames. Non-blocking."""
+    global _stream_pending
+    if not STREAM_FRAMES_BLOB_ENABLED or not frames:
+        return
+
+    n_items = len(frames)
+    with _stream_pending_lock:
+        if _stream_pending + n_items > STREAM_FRAMES_MAX_PENDING:
+            print(
+                f"[WS][StreamBlob] Skipping archive for request_id={request_id} — "
+                f"{_stream_pending} uploads pending (cap {STREAM_FRAMES_MAX_PENDING})"
+            )
+            return
+        _stream_pending += n_items
+
+    session_folder = (
+        f"{_safe_seg(ean, 'unknown_ean')}_{_safe_seg(request_id, 'noreq')}_{uuid.uuid4().hex[:6]}"
+    )
+    base = (
+        f"stream_frames/{date_folder}/{_safe_seg(client_name, 'unknown_client')}/"
+        f"{outcome}/{session_folder}"
+    )
+
+    for sec, seq, payload in frames:
+        _stream_upload_pool.submit(
+            _upload_stream_item, payload,
+            f"{base}/frame_{sec:02d}_{seq:06d}.jpg", client_name, user_id,
+        )
+    print(f"[WS][StreamBlob] Queued {len(frames)} frames → {base}")
 
 # ---------------------------------------------------------------------------
 # Router
@@ -338,6 +446,12 @@ async def stream_endpoint(
     save_threads: List[threading.Thread]   = []
     vlm_tasks:    List[asyncio.Task]       = []
 
+    # ── Stream archive state (sampled frames) ────────────────────────────
+    # stream_slots: bucket -> (sec, seq, raw_jpeg_bytes, is_good)
+    # Only one frame per time-bucket is kept; archived for ALL sessions.
+    stream_slots: Dict[int, Tuple[int, int, bytes, bool]] = {}
+    seq_sec:      Dict[int, int] = {}   # seq -> second of arrival (to name the winner frame)
+
     # ── Concurrency primitives (first-win flag) ──────────────────────────
     date_found_event: asyncio.Event  = asyncio.Event()
     winner_result:    Dict[str, Any] = {}
@@ -447,6 +561,7 @@ async def stream_endpoint(
                 return
 
             winner_result = {
+                "seq":          seq,
                 "data":         data,
                 "patch_img":    patch_img,
                 "original_img": original_img,
@@ -568,6 +683,15 @@ async def stream_endpoint(
 
             WS_FRAMES_RECEIVED.labels(client_label, "good" if is_good else "bad").inc()
 
+            # ── Stream archive: keep 1 JPEG per time-bucket ───────────────
+            # Pure dict ops on bytes already in hand — no decode/IO.
+            if STREAM_FRAMES_BLOB_ENABLED:
+                seq_sec[seq] = int(arrival_ts)
+                bucket = int(arrival_ts * STREAM_FRAMES_FPS)
+                held   = stream_slots.get(bucket)
+                if held is None or (is_good and not held[3]):
+                    stream_slots[bucket] = (int(arrival_ts), seq, jpeg, is_good)
+
             print(
                 f"[WS] Frame seq={seq}  ts={arrival_ts:.2f}s  "
                 f"top={detections[0]['class_name'] if detections else 'none'}  "
@@ -614,6 +738,38 @@ async def stream_endpoint(
         print(f"[WS] Receive loop error: {exc}")
         traceback.print_exc()
 
+    # ── Stream archive helper (called once, at session end) ──────────────
+    def _archive_stream(outcome: str) -> None:
+        if not STREAM_FRAMES_BLOB_ENABLED:
+            return
+        try:
+            frames: List[Tuple[int, int, Any]] = [
+                (sec, s, jpg) for _, (sec, s, jpg, _g) in sorted(stream_slots.items())
+            ]
+            # Always include the winning frame, even if it wasn't the bucket pick.
+            winner_seq = winner_result.get("seq")
+            if (
+                winner_seq is not None
+                and winner_seq not in {f[1] for f in frames}
+                and winner_result.get("original_img") is not None
+            ):
+                frames.append((seq_sec.get(winner_seq, 0), winner_seq, winner_result["original_img"]))
+
+            _submit_stream_session(
+                frames,
+                date_folder=date_folder,
+                client_name=client_name,
+                user_id=user_id,
+                ean=ean_code,
+                request_id=request_id,
+                outcome=outcome,
+            )
+        except Exception as exc:
+            print(f"[WS][StreamBlob] Could not archive session: {exc}")
+        finally:
+            stream_slots.clear()
+            seq_sec.clear()
+
     # ── Cancel all still-running VLM tasks ───────────────────────────────
     for task in vlm_tasks:
         if not task.done():
@@ -648,6 +804,10 @@ async def stream_endpoint(
     if not date_found_event.is_set():
         print("[WS] Case T — no MFG/EXP found within 20 s → 422 error")
         _end_session_metrics("timeout")
+
+        # ── Archive sampled stream frames (non-blocking) ──────────────────
+        _archive_stream("timeout")
+
         try:
             await websocket.send_json({
                 "type":    "error",
@@ -667,6 +827,9 @@ async def stream_endpoint(
         return
 
     # ── Post-session pipeline ─────────────────────────────────────────────
+    # Session succeeded (date found) → archive sampled frames (non-blocking).
+    _archive_stream("success")
+
     ws_outcome = "error"
     try:
         last_clean_img = winner_result.get("original_img")

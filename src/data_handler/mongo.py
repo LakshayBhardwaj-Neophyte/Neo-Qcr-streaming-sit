@@ -39,15 +39,18 @@ class Mongo:
 
     def _db_for(self, client_name: str):
         """
-        Both Reliance and Shipsy share the same Cosmos cluster and DB.
-        Any other client name is rejected.
+        All clients share the same Cosmos cluster and DB.
+        Any unknown client name is rejected.
         """
         name = (client_name or "").strip().lower()
 
-        if name in ("reliance", "shipsy"):
+        if name in ("reliance", "shipsy", "reliance-sap", "vinculum"):
             return self.cosmos_client, self.reliance_db_name
 
-        raise ValueError(f"Unknown client '{client_name}'. Only 'reliance' and 'shipsy' are supported.")
+        raise ValueError(
+            f"Unknown client '{client_name}'. "
+            f"Supported: reliance, shipsy, reliance-sap, vinculum."
+        )
 
     def _get_collection_names(self, client_name: str):
         """
@@ -65,7 +68,7 @@ class Mongo:
     def set_tenant(self, client_name: str):
         """
         Switch the active database/collections for the given client.
-        Supported clients: 'reliance', 'shipsy'.
+        Supported clients: 'reliance', 'shipsy', 'reliance-sap', 'vinculum'.
         Call this once per request (and inside threads) before DB ops.
         """
         client, db_name = self._db_for(client_name)

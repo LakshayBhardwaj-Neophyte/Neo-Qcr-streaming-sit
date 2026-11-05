@@ -55,9 +55,11 @@ def build_blob_name(
     filename = f"{final_metadata_id}{'_plotted' if plotted else ''}.{ext.lower()}"
     if client_name and user_id and client_name.lower() in [
         "reliance",
+        "reliance-sap",
+        "vinculum",
         "trends-beauty",
         "trends_beauty",
-        "shipsy"
+        "shipsy",
     ]:
         return f"{client_name}/{user_id}/{filename}"
     return filename
@@ -470,7 +472,7 @@ class Orchestrator:
             processed_data["ocr_raw_output"] = snap_ocr_raw
             processed_data["img_url"]        = img_url
             processed_data["client_name"]    = client_name
-            processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e"
+            processed_data["storage"]        = "azure" if client_name.lower() in ("reliance", "shipsy", "reliance-sap", "vinculum") else "e2e"
             if scan_duration is not None:
                 processed_data["scan_duration_sec"] = round(scan_duration, 2)
             if snap_model_time_ms is not None:

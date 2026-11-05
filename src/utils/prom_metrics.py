@@ -11,6 +11,8 @@ All metrics are defined here so that prometheus_client never sees
 duplicate registrations (even when modules are imported multiple times).
 """
 
+import os
+import sys
 import threading
 import time
 
@@ -179,6 +181,20 @@ GPU_UTILIZATION = Gauge(
     ["gpu_id"],
 )
 
+GPU_MEMORY_TOTAL = Gauge(
+    "neoqcr_gpu_memory_total_bytes",
+    "GPU memory total (whole GPU, or the MIG slice)",
+    ["gpu_id"],
+)
+
+# Memory held by THIS process via PyTorch — works on MIG / vGPU where NVML
+# readings are "Not Supported".
+GPU_PROCESS_MEMORY = Gauge(
+    "neoqcr_gpu_process_memory_bytes",
+    "GPU memory held by this process (PyTorch allocator)",
+    ["gpu_id", "kind"],   # kind = allocated | reserved
+)
+
 # ────────────────────────────────────────────────────────────────────────
 # 7.  FUNCTION-LEVEL (used by the time_calculate decorator)
 # ────────────────────────────────────────────────────────────────────────
@@ -208,30 +224,120 @@ def record_metadata_fields(metadata: dict, client_name: str) -> None:
 _gpu_monitor_started = False
 
 
+def _nvml_targets(pynvml) -> list:
+    """
+    Return [(gpu_id_label, handle)] to poll. On a MIG-enabled GPU the parent
+    handle cannot report usage, so each visible MIG slice is polled instead
+    (label "<gpu>-mig<slice>").
+    """
+    targets = []
+    for i in range(pynvml.nvmlDeviceGetCount()):
+        h = pynvml.nvmlDeviceGetHandleByIndex(i)
+        try:
+            name = pynvml.nvmlDeviceGetName(h)
+            name = name.decode() if isinstance(name, bytes) else name
+        except Exception:
+            name = "unknown"
+
+        mig_on = False
+        try:
+            current, _pending = pynvml.nvmlDeviceGetMigMode(h)
+            mig_on = current == getattr(pynvml, "NVML_DEVICE_MIG_ENABLE", 1)
+        except Exception:
+            pass  # not a MIG-capable GPU
+
+        if mig_on:
+            slices = 0
+            try:
+                max_mig = pynvml.nvmlDeviceGetMaxMigDeviceCount(h)
+            except Exception:
+                max_mig = 0
+            for j in range(max_mig):
+                try:
+                    mh = pynvml.nvmlDeviceGetMigDeviceHandleByIndex(h, j)
+                except Exception:
+                    continue  # slice not present / not visible to this container
+                targets.append((f"{i}-mig{j}", mh))
+                slices += 1
+            print(f"[prom_metrics] GPU {i} ({name}): MIG enabled, {slices} slice(s) visible")
+        else:
+            targets.append((str(i), h))
+            print(f"[prom_metrics] GPU {i} ({name}): MIG disabled")
+    return targets
+
+
 def start_gpu_monitor(interval_s: float = 5.0) -> None:
-    """Poll NVML in a daemon thread and publish GPU gauges. No-op without a GPU."""
+    """
+    Poll GPU stats in a daemon thread and publish GPU gauges. No-op when
+    GPU_METRICS_ENABLED=false (e.g. on K8s where DCGM exporter is used).
+
+    * NVML: utilization, memory used/total — per GPU, or per MIG slice.
+      A reading the device reports as "Not Supported" (MIG/vGPU do this for
+      utilization) is logged ONCE for that GPU and then skipped.
+    * PyTorch: memory allocated/reserved by this process — always available
+      once CUDA is in use, including on MIG/vGPU.
+    """
     global _gpu_monitor_started
     if _gpu_monitor_started:
         return
-    try:
-        import pynvml
-        pynvml.nvmlInit()
-        count = pynvml.nvmlDeviceGetCount()
-    except Exception as exc:
-        print(f"[prom_metrics] GPU monitor disabled: {exc}")
+    if os.getenv("GPU_METRICS_ENABLED", "true").strip().lower() == "false":
+        print("[prom_metrics] GPU monitor disabled by GPU_METRICS_ENABLED=false")
         return
+
+    pynvml = None
+    readings: dict = {}  # (gpu_id, reading_name) -> (gauge, read_fn, handle)
+    try:
+        import pynvml as _pynvml
+        _pynvml.nvmlInit()
+        pynvml = _pynvml
+        for gpu_id, h in _nvml_targets(pynvml):
+            readings[(gpu_id, "utilization")] = (
+                GPU_UTILIZATION, lambda h: pynvml.nvmlDeviceGetUtilizationRates(h).gpu, h)
+            readings[(gpu_id, "memory_used")] = (
+                GPU_MEMORY_USED, lambda h: pynvml.nvmlDeviceGetMemoryInfo(h).used, h)
+            readings[(gpu_id, "memory_total")] = (
+                GPU_MEMORY_TOTAL, lambda h: pynvml.nvmlDeviceGetMemoryInfo(h).total, h)
+    except Exception as exc:
+        print(f"[prom_metrics] NVML unavailable ({exc}) — only PyTorch memory will be reported")
+
+    not_supported_code = getattr(pynvml, "NVML_ERROR_NOT_SUPPORTED", 3) if pynvml else 3
+    reported: set = set()
+
+    def _is_not_supported(exc: Exception) -> bool:
+        return getattr(exc, "value", None) == not_supported_code or "Not Supported" in str(exc)
+
+    def _poll_torch() -> None:
+        # Only read if the app already initialised CUDA — never initialise it here.
+        torch = sys.modules.get("torch")
+        if torch is None or not torch.cuda.is_available() or not torch.cuda.is_initialized():
+            return
+        for d in range(torch.cuda.device_count()):
+            GPU_PROCESS_MEMORY.labels(str(d), "allocated").set(torch.cuda.memory_allocated(d))
+            GPU_PROCESS_MEMORY.labels(str(d), "reserved").set(torch.cuda.memory_reserved(d))
 
     def _poll():
         while True:
+            for key, (gauge, read, h) in list(readings.items()):
+                gpu_id, name = key
+                try:
+                    value = read(h)   # read first: a failed read must not create a 0-valued series
+                    gauge.labels(gpu_id).set(value)
+                except Exception as exc:
+                    if _is_not_supported(exc):
+                        print(f"[prom_metrics] GPU {gpu_id} {name}: Not Supported on this device "
+                              f"(MIG/vGPU) — skipping it")
+                        del readings[key]
+                    elif key not in reported:
+                        print(f"[prom_metrics] GPU {gpu_id} {name} poll error: {exc}")
+                        reported.add(key)
             try:
-                for i in range(count):
-                    handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                    GPU_UTILIZATION.labels(str(i)).set(pynvml.nvmlDeviceGetUtilizationRates(handle).gpu)
-                    GPU_MEMORY_USED.labels(str(i)).set(pynvml.nvmlDeviceGetMemoryInfo(handle).used)
+                _poll_torch()
             except Exception as exc:
-                print(f"[prom_metrics] GPU poll error: {exc}")
+                if "torch" not in reported:
+                    print(f"[prom_metrics] PyTorch GPU memory poll error: {exc}")
+                    reported.add("torch")
             time.sleep(interval_s)
 
     threading.Thread(target=_poll, name="gpu-monitor", daemon=True).start()
     _gpu_monitor_started = True
-    print(f"[prom_metrics] GPU monitor started for {count} device(s)")
+    print(f"[prom_metrics] GPU monitor started — {len(readings)} NVML reading(s) + PyTorch memory")

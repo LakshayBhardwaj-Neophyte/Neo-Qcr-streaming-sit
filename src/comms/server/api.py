@@ -27,10 +27,17 @@ from src.utils.classifier import ImageClassifier
 from src.utils.prom_metrics import AUTH_ATTEMPTS, record_metadata_fields
 
 load_dotenv('src/configs/.env')
-SECRET_KEY        = os.getenv("JWT_SECRET_KEY")
-ALGORITHM         = os.getenv("JWT_ALGORITHM", "HS256")
-SHIPSY_SECRET_KEY = os.getenv("SHIPSY_SECRET_KEY")
-SHIPSY_ALGORITHM  = os.getenv("SHIPSY_ALGORITHM", "HS256")
+SECRET_KEY            = os.getenv("JWT_SECRET_KEY")
+ALGORITHM             = os.getenv("JWT_ALGORITHM", "HS256")
+SHIPSY_SECRET_KEY     = os.getenv("SHIPSY_SECRET_KEY")
+SHIPSY_ALGORITHM      = os.getenv("SHIPSY_ALGORITHM", "HS256")
+RELIANCE_SAP_SECRET_KEY = os.getenv("RELIANCE_SAP_SECRET_KEY")
+RELIANCE_SAP_ALGORITHM  = os.getenv("RELIANCE_SAP_ALGORITHM", "HS256")
+VINCULUM_SECRET_KEY   = os.getenv("VINCULUM_SECRET_KEY")
+VINCULUM_ALGORITHM    = os.getenv("VINCULUM_ALGORITHM", "HS256")
+
+# All known clients — used for validation and routing
+KNOWN_CLIENTS = {"reliance", "shipsy", "reliance-sap", "vinculum"}
 
 # ---------------------------------------------------------------------------
 # YOLO Quality Gate helper
@@ -93,26 +100,35 @@ class InvalidClaimError(Exception):
 
 
 def _pick_jwt_key(client_name: str):
-    if (client_name or "").strip().lower() == "shipsy":
+    name = (client_name or "").strip().lower()
+    if name == "shipsy":
         return SHIPSY_SECRET_KEY, SHIPSY_ALGORITHM
+    if name == "reliance-sap":
+        return RELIANCE_SAP_SECRET_KEY, RELIANCE_SAP_ALGORITHM
+    if name == "vinculum":
+        return VINCULUM_SECRET_KEY, VINCULUM_ALGORITHM
+    # default → reliance
     return SECRET_KEY, ALGORITHM
 
 
 def _detect_client_from_token(token: str) -> str:
     if isinstance(token, str) and token.lower().startswith("bearer "):
         token = token[7:].strip()
-    try:
-        jwt.decode(token, SHIPSY_SECRET_KEY, algorithms=[SHIPSY_ALGORITHM],
-                   audience="valid-audience", issuer="trusted-issuer")
-        return "shipsy"
-    except Exception:
-        pass
-    try:
-        jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM],
-                   audience="valid-audience", issuer="trusted-issuer")
-        return "reliance"
-    except Exception:
-        pass
+    # Try each client key in order
+    for client, key, algo in [
+        ("shipsy",       SHIPSY_SECRET_KEY,       SHIPSY_ALGORITHM),
+        ("reliance-sap", RELIANCE_SAP_SECRET_KEY, RELIANCE_SAP_ALGORITHM),
+        ("vinculum",     VINCULUM_SECRET_KEY,     VINCULUM_ALGORITHM),
+        ("reliance",     SECRET_KEY,              ALGORITHM),
+    ]:
+        if not key:
+            continue
+        try:
+            jwt.decode(token, key, algorithms=[algo],
+                       audience="valid-audience", issuer="trusted-issuer")
+            return client
+        except Exception:
+            pass
     raise ValueError("Token could not be verified with any known client key")
 
 
@@ -140,7 +156,13 @@ def test_jwt_token(token, secret_key=None, algorithm=None):
         secret_key = SECRET_KEY
     if algorithm is None:
         algorithm = ALGORITHM
-    client_label = "shipsy" if secret_key == SHIPSY_SECRET_KEY else "reliance"
+    # Derive a human-readable label for Prometheus metrics
+    _key_label_map = {
+        SHIPSY_SECRET_KEY:       "shipsy",
+        RELIANCE_SAP_SECRET_KEY: "reliance-sap",
+        VINCULUM_SECRET_KEY:     "vinculum",
+    }
+    client_label = _key_label_map.get(secret_key, "reliance")
     if isinstance(token, str) and token.lower().startswith("bearer "):
         token = token[7:].strip()
     print(f"[DEBUG token] len={len(token) if token else 0}  segments={len(token.split('.')) if token else 0}  preview={repr(token[:40]) if token else repr(token)}")
@@ -424,7 +446,7 @@ class SdkAPI:
                 "barcode_no":     ean_code,          # mirrors ean, matches production format
                 "manual_entry":   True,              # ← flag to identify manual entries
                 "client_name":    client_name,
-                "storage":        "azure" if client_name.lower() in ("reliance", "shipsy") else "e2e",
+                "storage":        "azure" if client_name.lower() in ("reliance", "shipsy", "reliance-sap", "vinculum") else "e2e",
                 "predicted": {
                     "mrp":         mrp_val,
                     "mfg_date":    mfg_dt,
@@ -494,6 +516,14 @@ class SdkAPI:
                 os.getenv("SHIPSY_APP_ID", "shipsy_prod_v1"): (
                     os.getenv("SHIPSY_APP_SECRET", ""),
                     "shipsy",
+                ),
+                os.getenv("RELIANCE_SAP_APP_ID", "reliance_sap_prod_v1"): (
+                    os.getenv("RELIANCE_SAP_APP_SECRET", ""),
+                    "reliance-sap",
+                ),
+                os.getenv("VINCULUM_APP_ID", "vinculum_prod_v1"): (
+                    os.getenv("VINCULUM_APP_SECRET", ""),
+                    "vinculum",
                 ),
             }
 
@@ -655,6 +685,18 @@ class SdkAPI:
                                             content={"message": "request_id is required for reliance"})
                     print(f"[/process] Reliance request_id received from SDK: {request_id}")
 
+                elif client_name == "reliance-sap":
+                    if not request_id:
+                        return JSONResponse(status_code=400,
+                                            content={"message": "request_id is required for reliance-sap"})
+                    print(f"[/process] Reliance-SAP request_id received from SDK: {request_id}")
+
+                elif client_name == "vinculum":
+                    if not request_id:
+                        return JSONResponse(status_code=400,
+                                            content={"message": "request_id is required for vinculum"})
+                    print(f"[/process] Vinculum request_id received from SDK: {request_id}")
+
                 # ── EAN Validation (TEMPORARILY DISABLED) ───────────────────────────────────────
                 # REASON: ean_validated collection contains stale per-lot data (old mfg/expiry/batch)
                 # which incorrectly overwrites correct VLM predictions on root-level DB fields.
@@ -676,7 +718,8 @@ class SdkAPI:
                 #     print(f"[/process] EAN corrections applied to response: {list(ean_corrections.keys())}")
                 # ── END EAN Validation (DISABLED) ────────────────────────────────────────────────
 
-                skip_upload = client_name != "reliance"
+                # Upload to blob for reliance, reliance-sap, vinculum; skip for shipsy only
+                skip_upload = client_name not in ("reliance", "reliance-sap", "vinculum")
                 threading.Thread(
                     target = self._save_metadata_bg,
                     kwargs = {
@@ -799,6 +842,18 @@ class SdkAPI:
                                             content={"message": "request_id is required for reliance"})
                     print(f"[/recapture] Reliance request_id received from SDK: {request_id}")
 
+                elif client_name == "reliance-sap":
+                    if not request_id:
+                        return JSONResponse(status_code=400,
+                                            content={"message": "request_id is required for reliance-sap"})
+                    print(f"[/recapture] Reliance-SAP request_id received from SDK: {request_id}")
+
+                elif client_name == "vinculum":
+                    if not request_id:
+                        return JSONResponse(status_code=400,
+                                            content={"message": "request_id is required for vinculum"})
+                    print(f"[/recapture] Vinculum request_id received from SDK: {request_id}")
+
                 # ── EAN Validation (TEMPORARILY DISABLED) ───────────────────────────────────────
                 # REASON: Same as /process — stale per-lot data in ean_validated overwrites VLM root fields.
                 # ean_corrections = self.orchestrator.database.validate_ean_data(
@@ -813,7 +868,8 @@ class SdkAPI:
                 #     print(f"[/recapture] EAN corrections applied to response: {list(ean_corrections.keys())}")
                 # ── END EAN Validation (DISABLED) ────────────────────────────────────────────────
 
-                skip_upload = client_name != "reliance"
+                # Upload to blob for reliance, reliance-sap, vinculum; skip for shipsy only
+                skip_upload = client_name not in ("reliance", "reliance-sap", "vinculum")
                 threading.Thread(
                     target = self._save_metadata_bg,
                     kwargs = {
@@ -857,37 +913,22 @@ class SdkAPI:
 
                 print(f"[/get_session_data] client={client}  request_id={payload.request_id}")
 
-                if client == "reliance":
-                    auth_error = test_jwt_token(payload.token, SECRET_KEY, ALGORITHM)
-                    if auth_error:
-                        return auth_error
-                    self.orchestrator.database.set_tenant("reliance")
-                    meta = self.orchestrator.database.get_session(payload.request_id,
-                                                                   expected_client="reliance")
-                    if meta == "CLIENT_MISMATCH":
-                        return JSONResponse(status_code=401,
-                                            content={"message": "Token client does not match session owner"})
-                    if meta is None:
-                        return JSONResponse(status_code=400,
-                                            content={"message": "request_id not found or expired"})
-                    return JSONResponse(status_code=200, content={"metadata": meta})
+                # Generic handler: resolve key+tenant then fetch session
+                secret_key, algo = _pick_jwt_key(client)
+                auth_error = test_jwt_token(payload.token, secret_key, algo)
+                if auth_error:
+                    return auth_error
 
-                if client == "shipsy":
-                    auth_error = test_jwt_token(payload.token, SHIPSY_SECRET_KEY, SHIPSY_ALGORITHM)
-                    if auth_error:
-                        return auth_error
-                    self.orchestrator.database.set_tenant("shipsy")
-                    meta = self.orchestrator.database.get_session(payload.request_id,
-                                                                   expected_client="shipsy")
-                    if meta == "CLIENT_MISMATCH":
-                        return JSONResponse(status_code=401,
-                                            content={"message": "Token client does not match session owner"})
-                    if meta is None:
-                        return JSONResponse(status_code=400,
-                                            content={"message": "request_id not found or expired"})
-                    return JSONResponse(status_code=200, content={"metadata": meta})
-
-                return JSONResponse(status_code=401, content={"message": "Unknown client"})
+                self.orchestrator.database.set_tenant(client)
+                meta = self.orchestrator.database.get_session(payload.request_id,
+                                                               expected_client=client)
+                if meta == "CLIENT_MISMATCH":
+                    return JSONResponse(status_code=401,
+                                        content={"message": "Token client does not match session owner"})
+                if meta is None:
+                    return JSONResponse(status_code=400,
+                                        content={"message": "request_id not found or expired"})
+                return JSONResponse(status_code=200, content={"metadata": meta})
 
             except Exception as exc:
                 print(f"[/get_session_data] Error: {exc}")
