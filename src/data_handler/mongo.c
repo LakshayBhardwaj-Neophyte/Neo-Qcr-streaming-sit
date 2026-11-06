@@ -2876,6 +2876,7 @@ static const char __pyx_k_class_getitem[] = "__class_getitem__";
 static const char __pyx_k_cosmos_client[] = "cosmos_client";
 static const char __pyx_k_deleted_count[] = "deleted_count";
 static const char __pyx_k_ean_validated[] = "ean_validated";
+static const char __pyx_k_edited_expiry[] = "edited_expiry";
 static const char __pyx_k_find_document[] = "find_document";
 static const char __pyx_k_keys_to_check[] = "keys_to_check";
 static const char __pyx_k_matched_count[] = "matched_count";
@@ -2889,6 +2890,7 @@ static const char __pyx_k_Document_found[] = "Document found.";
 static const char __pyx_k_Unknown_client[] = "Unknown client '";
 static const char __pyx_k_create_env_doc[] = "create_env_doc";
 static const char __pyx_k_formatted_date[] = "formatted_date";
+static const char __pyx_k_manual_capture[] = "manual_capture";
 static const char __pyx_k_modified_count[] = "modified_count";
 static const char __pyx_k_ocr_raw_output[] = "ocr_raw_output";
 static const char __pyx_k_predicted_data[] = "predicted_data";
@@ -2975,7 +2977,7 @@ static const char __pyx_k_Mongo_Session_already_consumed[] = "[Mongo] \342\232\2
 static const char __pyx_k_Mongo_Session_found_session_id[] = "[Mongo] Session found: session_id=";
 static const char __pyx_k_Mongo_merge_multicapture_error[] = "[Mongo] merge_multicapture error: ";
 static const char __pyx_k_Mongo_validate_ean_data_locals[] = "Mongo.validate_ean_data.<locals>._to_date";
-static const char __pyx_k_Na_Q_t4q_1_4t1A_D_4t1A_D_c_d_1[] = "\320\004%\320%=\320=N\310a\360\n\000\t\n\330\014\031\230\030\240\024\240Q\330\014\027\220t\2304\230q\240\001\330\014\023\2201\330\014\023\2204\220t\2301\230A\330\014\030\230\004\230D\240\001\240\021\330\014\033\2304\230t\2401\240A\330\014\030\230\004\230D\240\001\240\021\330\014\036\230c\240\021\240$\240d\250!\2501\330\014\026\220a\330\014\027\220q\330\014\033\2301\330\014\023\2204\220t\2301\230G\2401\330\014\031\230\024\230T\240\021\240!\330\020\027\220t\2304\230q\240\001\330\020\034\230D\240\004\240A\240Q\330\020\037\230t\2404\240q\250\001\330\020\034\230D\240\004\240A\240Q\360\006\000\t\014\2104\210t\2201\320\024)\250\027\260\001\330\014\030\230\001\320\0310\260\004\260D\270\001\270\021\330\010\013\2104\210t\2201\320\024%\240W\250A\330\014\030\230\001\320\031,\250D\260\004\260A\260Q\340\010\013\2104\210t\2201\220A\330\014\030\230\001\320\031+\2504\250t\2601\260A\330\010\013\2104\210t\2201\220G\2307\240!\330\014\030\230\001\230\031\240$\240d\250!\2501\330\010\013\2104\210t\2201\220N\240'\250\021\330\014\030\230\001\320\031)\250\024\250T\260\021\260!\330\010\013\2104\210t\2201\320\024$\240G\2501\330\014\030\230\001\320\031+\2504\250t\2601\260A\330\010\013\2104\210t\2201\220O\2407\250!\330\014\030\230\001\320\031*\250$\250d\260!\2601\330\010\013\2104\210t\2201\220K\230w\240a\330\014\030\230\001\230\035\240d\250$\250a\250q\330\010\013\2104\210t\2201\220L\240\007\240q\330\014\030\230\001\230\036\240t\2504\250q\260\001\330\010\013\2104\210t\2201\220K\230w\240a\330\014\030\230\001\230\035\240d\250$\250a\250q\330\010\013\2104\210t\2201\320\024%\240W\250A\330\014\030\230\001\320\031,\250D\260\004\260A\260Q\330\010\013\2104\210t\2201\220N\240'\250\021\330\014\030\230\001\320\031)\250\024\250T\260\021\260!\340\010\017\210t\220>\240\021\240!";
+static const char __pyx_k_Na_Q_t4q_1_4t1A_D_4t1A_D_c_d_1[] = "\320\004%\320%=\320=N\310a\360\n\000\t\n\330\014\031\230\030\240\024\240Q\330\014\027\220t\2304\230q\240\001\330\014\023\2201\330\014\023\2204\220t\2301\230A\330\014\030\230\004\230D\240\001\240\021\330\014\033\2304\230t\2401\240A\330\014\030\230\004\230D\240\001\240\021\330\014\036\230c\240\021\240$\240d\250!\2501\330\014\026\220a\330\014\027\220q\330\014\033\2301\330\014\023\2204\220t\2301\230G\2401\330\014\031\230\024\230T\240\021\240!\330\020\027\220t\2304\230q\240\001\330\020\034\230D\240\004\240A\240Q\330\020\037\230t\2404\240q\250\001\330\020\034\230D\240\004\240A\240Q\360\006\000\t\014\2104\210t\2201\320\024)\250\027\260\001\330\014\030\230\001\320\0310\260\004\260D\270\001\270\021\330\010\013\2104\210t\2201\320\024%\240W\250A\330\014\030\230\001\320\031,\250D\260\004\260A\260Q\340\010\013\2104\210t\2201\220A\330\014\030\230\001\320\031+\2504\250t\2601\260A\330\010\013\2104\210t\2201\220G\2307\240!\330\014\030\230\001\230\031\240$\240d\250!\2501\330\010\013\2104\210t\2201\220N\240'\250\021\330\014\030\230\001\320\031)\250\024\250T\260\021\260!\330\010\013\2104\210t\2201\320\024$\240G\2501\330\014\030\230\001\320\031+\2504\250t\2601\260A\330\010\013\2104\210t\2201\220O\2407\250!\330\014\030\230\001\320\031*\250$\250d\260!\2601\330\010\013\2104\210t\2201\220K\230w\240a\330\014\030\230\001\230\035\240d\250$\250a\250q\330\010\013\2104\210t\2201\220L\240\007\240q\330\014\030\230\001\230\036\240t\2504\250q\260\001\330\010\013\2104\210t\2201\220K\230w\240a\330\014\030\230\001\230\035\240d\250$\250a\250q\330\010\013\2104\210t\2201\320\024%\240W\250A\330\014\030\230\001\320\031,\250D\260\004\260A\260Q\330\010\013\2104\210t\2201\220N\240'\250\021\330\014\030\230\001\320\031)\250\024\250T\260\021\260!\330\010\013\2104\210t\2201\320\024&\240c\250\021\330\014\030\230\001\320\031-\250Q\330\010\013\2104\210t\2201\320\024%\240S\250\001\330\014\030\230\001\320\031,\250A\340\010\017\210t\220>\240\021\240!";
 static const char __pyx_k_update_value_Multicapture_docs[] = "[update_value] Multicapture docs updated: matched=";
 static const char __pyx_k_z_q_s_q_z_q_q_z_q_G1L_L_xy_F_d[] = "\210\001\340\014\017\210z\230\021\230%\230q\330\020\027\220s\230%\230q\330\014\017\210z\230\021\230%\230q\330\020\027\220q\330\014\017\210z\230\021\230%\230q\330\020\024\220G\2301\230L\250\014\260L\300\001\330\024\025\330\030\037\230x\240y\260\001\260\023\260F\270$\270d\300%\300q\330\033\034\330\030\031\330\014\023\2201";
 static const char __pyx_k_7_NR_A_q_Q_q_Ql_q_U_1_d_9AWE_81[] = "\320\0047\260}\300N\320R[\320[\\\360\n\000\t\n\330\014\024\220A\330\014\017\210q\330\020\025\220Q\320\026'\240q\330\021\022\330\020\025\220Q\220l\240!\340\020\027\220q\340\014\022\220!\330\014\020\220\005\220U\230!\2301\330\020\026\220d\230)\2409\250A\250W\260E\270\022\2708\3001\330\020\023\2201\330\024\025\330\027\030\330\020\024\220F\230!\2301\340\014\017\210t\2201\330\020\025\220Q\220b\320\030R\320RS\330\020\027\220q\340\014\032\230!\330\014\020\220\003\2205\230\007\230v\240Q\330\020\023\2202\220W\230A\330\024\027\220z\240\021\240#\240U\250$\250a\250v\260R\260v\270S\300\003\3001\330\030\031\330\024\027\220r\230\024\230\\\250\037\270\004\270J\300a\300s\310!\330\030!\240\024\240Y\320.D\300A\300Q\300a\330\030#\2401\240E\250\026\250q\260\007\260w\270d\300&\310\001\310\031\320RS\330\031\033\2303\230a\330\030\031\330\034'\240q\250\005\250U\260!\2601\330 ,\250A\330\034'\240q\250\005\250Q\340\030#\2401\240E\250\021\340\014\027\220q\320\030*\250!\340\014\020\220\t\230\033\240B\240g\250S\260\001\260\032\2708\3001\330\014\021\220\021\220\"\320\024E\300T\310\021\310+\320UZ\320Zg\320gj\320jk\320kl\330\014\023\2201\330\010\017\210}\230A\330\014\021\220\021\220\"\320\024C\3001\330\014\023\2201";
@@ -3103,7 +3105,7 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyUnicode_Type__strip;
   PyObject *__pyx_tuple[8];
   PyObject *__pyx_codeobj_tab[22];
-  PyObject *__pyx_string_tab[360];
+  PyObject *__pyx_string_tab[362];
   PyObject *__pyx_float_0_2;
   PyObject *__pyx_int_0;
   PyObject *__pyx_int_1;
@@ -3310,206 +3312,208 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_ean __pyx_string_tab[157]
 #define __pyx_n_u_ean_code __pyx_string_tab[158]
 #define __pyx_n_u_ean_validated __pyx_string_tab[159]
-#define __pyx_kp_u_enable __pyx_string_tab[160]
-#define __pyx_n_u_env __pyx_string_tab[161]
-#define __pyx_kp_u_env_col __pyx_string_tab[162]
-#define __pyx_n_u_env_doc __pyx_string_tab[163]
-#define __pyx_n_u_env_id __pyx_string_tab[164]
-#define __pyx_kp_u_env_id_2 __pyx_string_tab[165]
-#define __pyx_n_u_environment __pyx_string_tab[166]
-#define __pyx_n_u_exc __pyx_string_tab[167]
-#define __pyx_n_u_existing __pyx_string_tab[168]
-#define __pyx_n_u_existing_doc __pyx_string_tab[169]
-#define __pyx_kp_u_exists __pyx_string_tab[170]
-#define __pyx_n_u_expected_client __pyx_string_tab[171]
-#define __pyx_n_u_expiry __pyx_string_tab[172]
-#define __pyx_n_u_expiry_date __pyx_string_tab[173]
-#define __pyx_n_u_fallback __pyx_string_tab[174]
-#define __pyx_n_u_field __pyx_string_tab[175]
-#define __pyx_n_u_field_name __pyx_string_tab[176]
-#define __pyx_kp_u_field_s_corrected __pyx_string_tab[177]
-#define __pyx_kp_u_fields_may_already_be_correct __pyx_string_tab[178]
-#define __pyx_n_u_find_document __pyx_string_tab[179]
-#define __pyx_n_u_find_one __pyx_string_tab[180]
-#define __pyx_n_u_first_doc __pyx_string_tab[181]
-#define __pyx_n_u_fmt __pyx_string_tab[182]
-#define __pyx_n_u_format_datetime_array __pyx_string_tab[183]
-#define __pyx_n_u_format_id __pyx_string_tab[184]
-#define __pyx_n_u_formatted_date __pyx_string_tab[185]
-#define __pyx_n_u_func __pyx_string_tab[186]
-#define __pyx_kp_u_gc __pyx_string_tab[187]
-#define __pyx_n_u_get __pyx_string_tab[188]
-#define __pyx_n_u_get_collection_names __pyx_string_tab[189]
-#define __pyx_n_u_get_session __pyx_string_tab[190]
-#define __pyx_n_u_getenv __pyx_string_tab[191]
-#define __pyx_n_u_id __pyx_string_tab[192]
-#define __pyx_n_u_id_2 __pyx_string_tab[193]
-#define __pyx_n_u_img_url __pyx_string_tab[194]
-#define __pyx_n_u_init __pyx_string_tab[195]
-#define __pyx_n_u_initializing __pyx_string_tab[196]
-#define __pyx_n_u_input_dict __pyx_string_tab[197]
-#define __pyx_n_u_insert_one __pyx_string_tab[198]
-#define __pyx_n_u_inserted_id __pyx_string_tab[199]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[200]
-#define __pyx_n_u_is_empty __pyx_string_tab[201]
-#define __pyx_kp_u_isenabled __pyx_string_tab[202]
-#define __pyx_n_u_items __pyx_string_tab[203]
-#define __pyx_n_u_k __pyx_string_tab[204]
-#define __pyx_n_u_key __pyx_string_tab[205]
-#define __pyx_n_u_keys __pyx_string_tab[206]
-#define __pyx_n_u_keys_to_check __pyx_string_tab[207]
-#define __pyx_kp_u_limit __pyx_string_tab[208]
-#define __pyx_n_u_load_dotenv __pyx_string_tab[209]
-#define __pyx_n_u_lower __pyx_string_tab[210]
-#define __pyx_kp_u_m_d_Y __pyx_string_tab[211]
-#define __pyx_n_u_main __pyx_string_tab[212]
-#define __pyx_n_u_manual_entry __pyx_string_tab[213]
-#define __pyx_kp_u_match __pyx_string_tab[214]
-#define __pyx_n_u_matched_count __pyx_string_tab[215]
-#define __pyx_n_u_mc_result __pyx_string_tab[216]
-#define __pyx_n_u_merge_multicapture_metadata __pyx_string_tab[217]
-#define __pyx_n_u_message __pyx_string_tab[218]
-#define __pyx_n_u_metaclass __pyx_string_tab[219]
-#define __pyx_n_u_metadata __pyx_string_tab[220]
-#define __pyx_kp_u_metadata_col __pyx_string_tab[221]
-#define __pyx_n_u_metadata_details __pyx_string_tab[222]
-#define __pyx_n_u_metadata_doc __pyx_string_tab[223]
-#define __pyx_kp_u_metadata_first_capture __pyx_string_tab[224]
-#define __pyx_n_u_metadata_id __pyx_string_tab[225]
-#define __pyx_n_u_metadata_object_id __pyx_string_tab[226]
-#define __pyx_n_u_mfg __pyx_string_tab[227]
-#define __pyx_n_u_mfg_date __pyx_string_tab[228]
-#define __pyx_n_u_model_time_ms __pyx_string_tab[229]
-#define __pyx_kp_u_modified __pyx_string_tab[230]
-#define __pyx_n_u_modified_count __pyx_string_tab[231]
-#define __pyx_n_u_module __pyx_string_tab[232]
-#define __pyx_n_u_mrp __pyx_string_tab[233]
-#define __pyx_n_u_multicapture __pyx_string_tab[234]
-#define __pyx_n_u_name __pyx_string_tab[235]
-#define __pyx_n_u_name_2 __pyx_string_tab[236]
-#define __pyx_n_u_nan __pyx_string_tab[237]
-#define __pyx_kp_u_neo_icr __pyx_string_tab[238]
-#define __pyx_n_u_new_data __pyx_string_tab[239]
-#define __pyx_n_u_new_doc __pyx_string_tab[240]
-#define __pyx_n_u_new_val __pyx_string_tab[241]
-#define __pyx_n_u_new_value __pyx_string_tab[242]
-#define __pyx_n_u_none __pyx_string_tab[243]
-#define __pyx_n_u_now __pyx_string_tab[244]
-#define __pyx_n_u_null __pyx_string_tab[245]
-#define __pyx_n_u_ocr_raw_output __pyx_string_tab[246]
-#define __pyx_n_u_oid __pyx_string_tab[247]
-#define __pyx_kp_u_on_doc __pyx_string_tab[248]
-#define __pyx_n_u_os __pyx_string_tab[249]
-#define __pyx_n_u_p_batch __pyx_string_tab[250]
-#define __pyx_n_u_p_batch_is_null __pyx_string_tab[251]
-#define __pyx_n_u_p_batch_s __pyx_string_tab[252]
-#define __pyx_n_u_p_exp __pyx_string_tab[253]
-#define __pyx_n_u_p_exp_d __pyx_string_tab[254]
-#define __pyx_n_u_p_exp_is_null __pyx_string_tab[255]
-#define __pyx_n_u_p_mfg __pyx_string_tab[256]
-#define __pyx_n_u_p_mfg_d __pyx_string_tab[257]
-#define __pyx_n_u_p_mfg_is_null __pyx_string_tab[258]
-#define __pyx_n_u_p_mrp __pyx_string_tab[259]
-#define __pyx_n_u_p_mrp_f __pyx_string_tab[260]
-#define __pyx_n_u_parsed __pyx_string_tab[261]
-#define __pyx_n_u_patch_info __pyx_string_tab[262]
-#define __pyx_n_u_pid __pyx_string_tab[263]
-#define __pyx_n_u_pipeline __pyx_string_tab[264]
-#define __pyx_n_u_pop __pyx_string_tab[265]
-#define __pyx_n_u_predicted __pyx_string_tab[266]
-#define __pyx_n_u_predicted_data __pyx_string_tab[267]
-#define __pyx_n_u_prepare __pyx_string_tab[268]
-#define __pyx_n_u_present __pyx_string_tab[269]
-#define __pyx_n_u_print __pyx_string_tab[270]
-#define __pyx_n_u_pymongo __pyx_string_tab[271]
-#define __pyx_n_u_qty __pyx_string_tab[272]
-#define __pyx_n_u_qualname __pyx_string_tab[273]
-#define __pyx_n_u_query __pyx_string_tab[274]
-#define __pyx_n_u_range __pyx_string_tab[275]
-#define __pyx_kp_u_re_validated __pyx_string_tab[276]
-#define __pyx_n_u_reliance __pyx_string_tab[277]
-#define __pyx_n_u_reliance_db_name __pyx_string_tab[278]
-#define __pyx_kp_u_reliance_sap __pyx_string_tab[279]
-#define __pyx_n_u_remove_metadata __pyx_string_tab[280]
-#define __pyx_kp_u_removed_successfully __pyx_string_tab[281]
-#define __pyx_n_u_result __pyx_string_tab[282]
-#define __pyx_n_u_return __pyx_string_tab[283]
-#define __pyx_n_u_rotation __pyx_string_tab[284]
-#define __pyx_n_u_rotation_info __pyx_string_tab[285]
-#define __pyx_n_u_sap_done __pyx_string_tab[286]
-#define __pyx_n_u_sap_status __pyx_string_tab[287]
-#define __pyx_n_u_save_document __pyx_string_tab[288]
-#define __pyx_n_u_save_session __pyx_string_tab[289]
-#define __pyx_n_u_scan_duration_sec __pyx_string_tab[290]
-#define __pyx_n_u_sdk_data_process __pyx_string_tab[291]
-#define __pyx_n_u_self __pyx_string_tab[292]
-#define __pyx_n_u_session_id __pyx_string_tab[293]
-#define __pyx_kp_u_session_id_2 __pyx_string_tab[294]
-#define __pyx_kp_u_set __pyx_string_tab[295]
-#define __pyx_n_u_set_name __pyx_string_tab[296]
-#define __pyx_n_u_set_tenant __pyx_string_tab[297]
-#define __pyx_n_u_shipsy __pyx_string_tab[298]
-#define __pyx_kp_u_skipping_correction __pyx_string_tab[299]
-#define __pyx_n_u_sleep __pyx_string_tab[300]
-#define __pyx_n_u_sort __pyx_string_tab[301]
-#define __pyx_kp_u_sort_2 __pyx_string_tab[302]
-#define __pyx_n_u_spec __pyx_string_tab[303]
-#define __pyx_kp_u_src_configs_env __pyx_string_tab[304]
-#define __pyx_n_u_src_data_handler_mongo __pyx_string_tab[305]
-#define __pyx_kp_u_src_data_handler_mongo_py __pyx_string_tab[306]
-#define __pyx_n_u_src_utils_datetime __pyx_string_tab[307]
-#define __pyx_n_u_status __pyx_string_tab[308]
-#define __pyx_n_u_storage __pyx_string_tab[309]
-#define __pyx_n_u_store __pyx_string_tab[310]
-#define __pyx_n_u_store_col __pyx_string_tab[311]
-#define __pyx_kp_u_store_doc __pyx_string_tab[312]
-#define __pyx_n_u_store_doc_2 __pyx_string_tab[313]
-#define __pyx_n_u_str __pyx_string_tab[314]
-#define __pyx_n_u_strftime __pyx_string_tab[315]
-#define __pyx_n_u_strip __pyx_string_tab[316]
-#define __pyx_n_u_strptime __pyx_string_tab[317]
-#define __pyx_n_u_target_doc __pyx_string_tab[318]
-#define __pyx_n_u_target_docs __pyx_string_tab[319]
-#define __pyx_n_u_test __pyx_string_tab[320]
-#define __pyx_n_u_time __pyx_string_tab[321]
-#define __pyx_n_u_timedelta __pyx_string_tab[322]
-#define __pyx_n_u_timestamp __pyx_string_tab[323]
-#define __pyx_n_u_to_date __pyx_string_tab[324]
-#define __pyx_kp_u_to_doc __pyx_string_tab[325]
-#define __pyx_kp_u_update_data __pyx_string_tab[326]
-#define __pyx_n_u_update_document __pyx_string_tab[327]
-#define __pyx_n_u_update_env_sap_status __pyx_string_tab[328]
-#define __pyx_n_u_update_many __pyx_string_tab[329]
-#define __pyx_n_u_update_one __pyx_string_tab[330]
-#define __pyx_n_u_update_revalidated_metadata __pyx_string_tab[331]
-#define __pyx_n_u_update_value __pyx_string_tab[332]
-#define __pyx_kp_u_update_value_Multicapture_docs __pyx_string_tab[333]
-#define __pyx_kp_u_update_value_Primary_doc_update __pyx_string_tab[334]
-#define __pyx_n_u_updated_dict __pyx_string_tab[335]
-#define __pyx_n_u_updated_doc __pyx_string_tab[336]
-#define __pyx_n_u_updated_document __pyx_string_tab[337]
-#define __pyx_n_u_updates __pyx_string_tab[338]
-#define __pyx_n_u_upright __pyx_string_tab[339]
-#define __pyx_n_u_user_col __pyx_string_tab[340]
-#define __pyx_kp_u_user_doc __pyx_string_tab[341]
-#define __pyx_n_u_user_id __pyx_string_tab[342]
-#define __pyx_kp_u_user_id_2 __pyx_string_tab[343]
-#define __pyx_n_u_user_validation __pyx_string_tab[344]
-#define __pyx_n_u_users __pyx_string_tab[345]
-#define __pyx_n_u_v __pyx_string_tab[346]
-#define __pyx_n_u_v_batch __pyx_string_tab[347]
-#define __pyx_n_u_v_batch_s __pyx_string_tab[348]
-#define __pyx_n_u_v_exp __pyx_string_tab[349]
-#define __pyx_n_u_v_exp_d __pyx_string_tab[350]
-#define __pyx_n_u_v_mfg __pyx_string_tab[351]
-#define __pyx_n_u_v_mfg_d __pyx_string_tab[352]
-#define __pyx_n_u_v_mrp __pyx_string_tab[353]
-#define __pyx_n_u_v_mrp_f __pyx_string_tab[354]
-#define __pyx_n_u_val __pyx_string_tab[355]
-#define __pyx_n_u_validate_ean_data __pyx_string_tab[356]
-#define __pyx_kp_u_validated __pyx_string_tab[357]
-#define __pyx_n_u_validated_doc __pyx_string_tab[358]
-#define __pyx_n_u_vinculum __pyx_string_tab[359]
+#define __pyx_n_u_edited_expiry __pyx_string_tab[160]
+#define __pyx_kp_u_enable __pyx_string_tab[161]
+#define __pyx_n_u_env __pyx_string_tab[162]
+#define __pyx_kp_u_env_col __pyx_string_tab[163]
+#define __pyx_n_u_env_doc __pyx_string_tab[164]
+#define __pyx_n_u_env_id __pyx_string_tab[165]
+#define __pyx_kp_u_env_id_2 __pyx_string_tab[166]
+#define __pyx_n_u_environment __pyx_string_tab[167]
+#define __pyx_n_u_exc __pyx_string_tab[168]
+#define __pyx_n_u_existing __pyx_string_tab[169]
+#define __pyx_n_u_existing_doc __pyx_string_tab[170]
+#define __pyx_kp_u_exists __pyx_string_tab[171]
+#define __pyx_n_u_expected_client __pyx_string_tab[172]
+#define __pyx_n_u_expiry __pyx_string_tab[173]
+#define __pyx_n_u_expiry_date __pyx_string_tab[174]
+#define __pyx_n_u_fallback __pyx_string_tab[175]
+#define __pyx_n_u_field __pyx_string_tab[176]
+#define __pyx_n_u_field_name __pyx_string_tab[177]
+#define __pyx_kp_u_field_s_corrected __pyx_string_tab[178]
+#define __pyx_kp_u_fields_may_already_be_correct __pyx_string_tab[179]
+#define __pyx_n_u_find_document __pyx_string_tab[180]
+#define __pyx_n_u_find_one __pyx_string_tab[181]
+#define __pyx_n_u_first_doc __pyx_string_tab[182]
+#define __pyx_n_u_fmt __pyx_string_tab[183]
+#define __pyx_n_u_format_datetime_array __pyx_string_tab[184]
+#define __pyx_n_u_format_id __pyx_string_tab[185]
+#define __pyx_n_u_formatted_date __pyx_string_tab[186]
+#define __pyx_n_u_func __pyx_string_tab[187]
+#define __pyx_kp_u_gc __pyx_string_tab[188]
+#define __pyx_n_u_get __pyx_string_tab[189]
+#define __pyx_n_u_get_collection_names __pyx_string_tab[190]
+#define __pyx_n_u_get_session __pyx_string_tab[191]
+#define __pyx_n_u_getenv __pyx_string_tab[192]
+#define __pyx_n_u_id __pyx_string_tab[193]
+#define __pyx_n_u_id_2 __pyx_string_tab[194]
+#define __pyx_n_u_img_url __pyx_string_tab[195]
+#define __pyx_n_u_init __pyx_string_tab[196]
+#define __pyx_n_u_initializing __pyx_string_tab[197]
+#define __pyx_n_u_input_dict __pyx_string_tab[198]
+#define __pyx_n_u_insert_one __pyx_string_tab[199]
+#define __pyx_n_u_inserted_id __pyx_string_tab[200]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[201]
+#define __pyx_n_u_is_empty __pyx_string_tab[202]
+#define __pyx_kp_u_isenabled __pyx_string_tab[203]
+#define __pyx_n_u_items __pyx_string_tab[204]
+#define __pyx_n_u_k __pyx_string_tab[205]
+#define __pyx_n_u_key __pyx_string_tab[206]
+#define __pyx_n_u_keys __pyx_string_tab[207]
+#define __pyx_n_u_keys_to_check __pyx_string_tab[208]
+#define __pyx_kp_u_limit __pyx_string_tab[209]
+#define __pyx_n_u_load_dotenv __pyx_string_tab[210]
+#define __pyx_n_u_lower __pyx_string_tab[211]
+#define __pyx_kp_u_m_d_Y __pyx_string_tab[212]
+#define __pyx_n_u_main __pyx_string_tab[213]
+#define __pyx_n_u_manual_capture __pyx_string_tab[214]
+#define __pyx_n_u_manual_entry __pyx_string_tab[215]
+#define __pyx_kp_u_match __pyx_string_tab[216]
+#define __pyx_n_u_matched_count __pyx_string_tab[217]
+#define __pyx_n_u_mc_result __pyx_string_tab[218]
+#define __pyx_n_u_merge_multicapture_metadata __pyx_string_tab[219]
+#define __pyx_n_u_message __pyx_string_tab[220]
+#define __pyx_n_u_metaclass __pyx_string_tab[221]
+#define __pyx_n_u_metadata __pyx_string_tab[222]
+#define __pyx_kp_u_metadata_col __pyx_string_tab[223]
+#define __pyx_n_u_metadata_details __pyx_string_tab[224]
+#define __pyx_n_u_metadata_doc __pyx_string_tab[225]
+#define __pyx_kp_u_metadata_first_capture __pyx_string_tab[226]
+#define __pyx_n_u_metadata_id __pyx_string_tab[227]
+#define __pyx_n_u_metadata_object_id __pyx_string_tab[228]
+#define __pyx_n_u_mfg __pyx_string_tab[229]
+#define __pyx_n_u_mfg_date __pyx_string_tab[230]
+#define __pyx_n_u_model_time_ms __pyx_string_tab[231]
+#define __pyx_kp_u_modified __pyx_string_tab[232]
+#define __pyx_n_u_modified_count __pyx_string_tab[233]
+#define __pyx_n_u_module __pyx_string_tab[234]
+#define __pyx_n_u_mrp __pyx_string_tab[235]
+#define __pyx_n_u_multicapture __pyx_string_tab[236]
+#define __pyx_n_u_name __pyx_string_tab[237]
+#define __pyx_n_u_name_2 __pyx_string_tab[238]
+#define __pyx_n_u_nan __pyx_string_tab[239]
+#define __pyx_kp_u_neo_icr __pyx_string_tab[240]
+#define __pyx_n_u_new_data __pyx_string_tab[241]
+#define __pyx_n_u_new_doc __pyx_string_tab[242]
+#define __pyx_n_u_new_val __pyx_string_tab[243]
+#define __pyx_n_u_new_value __pyx_string_tab[244]
+#define __pyx_n_u_none __pyx_string_tab[245]
+#define __pyx_n_u_now __pyx_string_tab[246]
+#define __pyx_n_u_null __pyx_string_tab[247]
+#define __pyx_n_u_ocr_raw_output __pyx_string_tab[248]
+#define __pyx_n_u_oid __pyx_string_tab[249]
+#define __pyx_kp_u_on_doc __pyx_string_tab[250]
+#define __pyx_n_u_os __pyx_string_tab[251]
+#define __pyx_n_u_p_batch __pyx_string_tab[252]
+#define __pyx_n_u_p_batch_is_null __pyx_string_tab[253]
+#define __pyx_n_u_p_batch_s __pyx_string_tab[254]
+#define __pyx_n_u_p_exp __pyx_string_tab[255]
+#define __pyx_n_u_p_exp_d __pyx_string_tab[256]
+#define __pyx_n_u_p_exp_is_null __pyx_string_tab[257]
+#define __pyx_n_u_p_mfg __pyx_string_tab[258]
+#define __pyx_n_u_p_mfg_d __pyx_string_tab[259]
+#define __pyx_n_u_p_mfg_is_null __pyx_string_tab[260]
+#define __pyx_n_u_p_mrp __pyx_string_tab[261]
+#define __pyx_n_u_p_mrp_f __pyx_string_tab[262]
+#define __pyx_n_u_parsed __pyx_string_tab[263]
+#define __pyx_n_u_patch_info __pyx_string_tab[264]
+#define __pyx_n_u_pid __pyx_string_tab[265]
+#define __pyx_n_u_pipeline __pyx_string_tab[266]
+#define __pyx_n_u_pop __pyx_string_tab[267]
+#define __pyx_n_u_predicted __pyx_string_tab[268]
+#define __pyx_n_u_predicted_data __pyx_string_tab[269]
+#define __pyx_n_u_prepare __pyx_string_tab[270]
+#define __pyx_n_u_present __pyx_string_tab[271]
+#define __pyx_n_u_print __pyx_string_tab[272]
+#define __pyx_n_u_pymongo __pyx_string_tab[273]
+#define __pyx_n_u_qty __pyx_string_tab[274]
+#define __pyx_n_u_qualname __pyx_string_tab[275]
+#define __pyx_n_u_query __pyx_string_tab[276]
+#define __pyx_n_u_range __pyx_string_tab[277]
+#define __pyx_kp_u_re_validated __pyx_string_tab[278]
+#define __pyx_n_u_reliance __pyx_string_tab[279]
+#define __pyx_n_u_reliance_db_name __pyx_string_tab[280]
+#define __pyx_kp_u_reliance_sap __pyx_string_tab[281]
+#define __pyx_n_u_remove_metadata __pyx_string_tab[282]
+#define __pyx_kp_u_removed_successfully __pyx_string_tab[283]
+#define __pyx_n_u_result __pyx_string_tab[284]
+#define __pyx_n_u_return __pyx_string_tab[285]
+#define __pyx_n_u_rotation __pyx_string_tab[286]
+#define __pyx_n_u_rotation_info __pyx_string_tab[287]
+#define __pyx_n_u_sap_done __pyx_string_tab[288]
+#define __pyx_n_u_sap_status __pyx_string_tab[289]
+#define __pyx_n_u_save_document __pyx_string_tab[290]
+#define __pyx_n_u_save_session __pyx_string_tab[291]
+#define __pyx_n_u_scan_duration_sec __pyx_string_tab[292]
+#define __pyx_n_u_sdk_data_process __pyx_string_tab[293]
+#define __pyx_n_u_self __pyx_string_tab[294]
+#define __pyx_n_u_session_id __pyx_string_tab[295]
+#define __pyx_kp_u_session_id_2 __pyx_string_tab[296]
+#define __pyx_kp_u_set __pyx_string_tab[297]
+#define __pyx_n_u_set_name __pyx_string_tab[298]
+#define __pyx_n_u_set_tenant __pyx_string_tab[299]
+#define __pyx_n_u_shipsy __pyx_string_tab[300]
+#define __pyx_kp_u_skipping_correction __pyx_string_tab[301]
+#define __pyx_n_u_sleep __pyx_string_tab[302]
+#define __pyx_n_u_sort __pyx_string_tab[303]
+#define __pyx_kp_u_sort_2 __pyx_string_tab[304]
+#define __pyx_n_u_spec __pyx_string_tab[305]
+#define __pyx_kp_u_src_configs_env __pyx_string_tab[306]
+#define __pyx_n_u_src_data_handler_mongo __pyx_string_tab[307]
+#define __pyx_kp_u_src_data_handler_mongo_py __pyx_string_tab[308]
+#define __pyx_n_u_src_utils_datetime __pyx_string_tab[309]
+#define __pyx_n_u_status __pyx_string_tab[310]
+#define __pyx_n_u_storage __pyx_string_tab[311]
+#define __pyx_n_u_store __pyx_string_tab[312]
+#define __pyx_n_u_store_col __pyx_string_tab[313]
+#define __pyx_kp_u_store_doc __pyx_string_tab[314]
+#define __pyx_n_u_store_doc_2 __pyx_string_tab[315]
+#define __pyx_n_u_str __pyx_string_tab[316]
+#define __pyx_n_u_strftime __pyx_string_tab[317]
+#define __pyx_n_u_strip __pyx_string_tab[318]
+#define __pyx_n_u_strptime __pyx_string_tab[319]
+#define __pyx_n_u_target_doc __pyx_string_tab[320]
+#define __pyx_n_u_target_docs __pyx_string_tab[321]
+#define __pyx_n_u_test __pyx_string_tab[322]
+#define __pyx_n_u_time __pyx_string_tab[323]
+#define __pyx_n_u_timedelta __pyx_string_tab[324]
+#define __pyx_n_u_timestamp __pyx_string_tab[325]
+#define __pyx_n_u_to_date __pyx_string_tab[326]
+#define __pyx_kp_u_to_doc __pyx_string_tab[327]
+#define __pyx_kp_u_update_data __pyx_string_tab[328]
+#define __pyx_n_u_update_document __pyx_string_tab[329]
+#define __pyx_n_u_update_env_sap_status __pyx_string_tab[330]
+#define __pyx_n_u_update_many __pyx_string_tab[331]
+#define __pyx_n_u_update_one __pyx_string_tab[332]
+#define __pyx_n_u_update_revalidated_metadata __pyx_string_tab[333]
+#define __pyx_n_u_update_value __pyx_string_tab[334]
+#define __pyx_kp_u_update_value_Multicapture_docs __pyx_string_tab[335]
+#define __pyx_kp_u_update_value_Primary_doc_update __pyx_string_tab[336]
+#define __pyx_n_u_updated_dict __pyx_string_tab[337]
+#define __pyx_n_u_updated_doc __pyx_string_tab[338]
+#define __pyx_n_u_updated_document __pyx_string_tab[339]
+#define __pyx_n_u_updates __pyx_string_tab[340]
+#define __pyx_n_u_upright __pyx_string_tab[341]
+#define __pyx_n_u_user_col __pyx_string_tab[342]
+#define __pyx_kp_u_user_doc __pyx_string_tab[343]
+#define __pyx_n_u_user_id __pyx_string_tab[344]
+#define __pyx_kp_u_user_id_2 __pyx_string_tab[345]
+#define __pyx_n_u_user_validation __pyx_string_tab[346]
+#define __pyx_n_u_users __pyx_string_tab[347]
+#define __pyx_n_u_v __pyx_string_tab[348]
+#define __pyx_n_u_v_batch __pyx_string_tab[349]
+#define __pyx_n_u_v_batch_s __pyx_string_tab[350]
+#define __pyx_n_u_v_exp __pyx_string_tab[351]
+#define __pyx_n_u_v_exp_d __pyx_string_tab[352]
+#define __pyx_n_u_v_mfg __pyx_string_tab[353]
+#define __pyx_n_u_v_mfg_d __pyx_string_tab[354]
+#define __pyx_n_u_v_mrp __pyx_string_tab[355]
+#define __pyx_n_u_v_mrp_f __pyx_string_tab[356]
+#define __pyx_n_u_val __pyx_string_tab[357]
+#define __pyx_n_u_validate_ean_data __pyx_string_tab[358]
+#define __pyx_kp_u_validated __pyx_string_tab[359]
+#define __pyx_n_u_validated_doc __pyx_string_tab[360]
+#define __pyx_n_u_vinculum __pyx_string_tab[361]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -3534,7 +3538,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_type_3src_12data_handler_5mongo___pyx_scope_struct__validate_ean_data);
   for (int i=0; i<8; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
   for (int i=0; i<22; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<360; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<362; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   Py_CLEAR(clear_module_state->__pyx_float_0_2);
   Py_CLEAR(clear_module_state->__pyx_int_0);
   Py_CLEAR(clear_module_state->__pyx_int_1);
@@ -3563,7 +3567,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   Py_VISIT(traverse_module_state->__pyx_type_3src_12data_handler_5mongo___pyx_scope_struct__validate_ean_data);
   for (int i=0; i<8; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
   for (int i=0; i<22; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<360; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<362; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_float_0_2);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_0);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_int_1);
@@ -13755,7 +13759,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_30create_metadata(CY
  *             metadata_doc['rotation_info'] = data.get('rotation_info')
  *         if data.get('patch_info') is not None:             # <<<<<<<<<<<<<<
  *             metadata_doc['patch_info'] = data.get('patch_info')
- * 
+ *         if data.get('manual_capture') is True:
 */
   __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_data, __pyx_mstate_global->__pyx_n_u_patch_info, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 584, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -13767,8 +13771,8 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_30create_metadata(CY
  *             metadata_doc['rotation_info'] = data.get('rotation_info')
  *         if data.get('patch_info') is not None:
  *             metadata_doc['patch_info'] = data.get('patch_info')             # <<<<<<<<<<<<<<
- * 
- *         return self.save_document(metadata_doc)
+ *         if data.get('manual_capture') is True:
+ *             metadata_doc['manual_capture'] = True
 */
     __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_data, __pyx_mstate_global->__pyx_n_u_patch_info, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 585, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -13780,12 +13784,74 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_30create_metadata(CY
  *             metadata_doc['rotation_info'] = data.get('rotation_info')
  *         if data.get('patch_info') is not None:             # <<<<<<<<<<<<<<
  *             metadata_doc['patch_info'] = data.get('patch_info')
+ *         if data.get('manual_capture') is True:
+*/
+  }
+
+  /* "src/data_handler/mongo.py":586
+ *         if data.get('patch_info') is not None:
+ *             metadata_doc['patch_info'] = data.get('patch_info')
+ *         if data.get('manual_capture') is True:             # <<<<<<<<<<<<<<
+ *             metadata_doc['manual_capture'] = True
+ *         if data.get('edited_expiry') is True:
+*/
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_data, __pyx_mstate_global->__pyx_n_u_manual_capture, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 586, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_7 = (__pyx_t_1 == Py_True);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_7) {
+
+    /* "src/data_handler/mongo.py":587
+ *             metadata_doc['patch_info'] = data.get('patch_info')
+ *         if data.get('manual_capture') is True:
+ *             metadata_doc['manual_capture'] = True             # <<<<<<<<<<<<<<
+ *         if data.get('edited_expiry') is True:
+ *             metadata_doc['edited_expiry'] = True
+*/
+    if (unlikely((PyDict_SetItem(__pyx_v_metadata_doc, __pyx_mstate_global->__pyx_n_u_manual_capture, Py_True) < 0))) __PYX_ERR(0, 587, __pyx_L1_error)
+
+    /* "src/data_handler/mongo.py":586
+ *         if data.get('patch_info') is not None:
+ *             metadata_doc['patch_info'] = data.get('patch_info')
+ *         if data.get('manual_capture') is True:             # <<<<<<<<<<<<<<
+ *             metadata_doc['manual_capture'] = True
+ *         if data.get('edited_expiry') is True:
+*/
+  }
+
+  /* "src/data_handler/mongo.py":588
+ *         if data.get('manual_capture') is True:
+ *             metadata_doc['manual_capture'] = True
+ *         if data.get('edited_expiry') is True:             # <<<<<<<<<<<<<<
+ *             metadata_doc['edited_expiry'] = True
+ * 
+*/
+  __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_data, __pyx_mstate_global->__pyx_n_u_edited_expiry, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_7 = (__pyx_t_1 == Py_True);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_7) {
+
+    /* "src/data_handler/mongo.py":589
+ *             metadata_doc['manual_capture'] = True
+ *         if data.get('edited_expiry') is True:
+ *             metadata_doc['edited_expiry'] = True             # <<<<<<<<<<<<<<
+ * 
+ *         return self.save_document(metadata_doc)
+*/
+    if (unlikely((PyDict_SetItem(__pyx_v_metadata_doc, __pyx_mstate_global->__pyx_n_u_edited_expiry, Py_True) < 0))) __PYX_ERR(0, 589, __pyx_L1_error)
+
+    /* "src/data_handler/mongo.py":588
+ *         if data.get('manual_capture') is True:
+ *             metadata_doc['manual_capture'] = True
+ *         if data.get('edited_expiry') is True:             # <<<<<<<<<<<<<<
+ *             metadata_doc['edited_expiry'] = True
  * 
 */
   }
 
-  /* "src/data_handler/mongo.py":587
- *             metadata_doc['patch_info'] = data.get('patch_info')
+  /* "src/data_handler/mongo.py":591
+ *             metadata_doc['edited_expiry'] = True
  * 
  *         return self.save_document(metadata_doc)             # <<<<<<<<<<<<<<
  * 
@@ -13799,7 +13865,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_30create_metadata(CY
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_metadata_doc};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_save_document, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 587, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 591, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_r = __pyx_t_1;
@@ -13830,7 +13896,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_30create_metadata(CY
   return __pyx_r;
 }
 
-/* "src/data_handler/mongo.py":593
+/* "src/data_handler/mongo.py":597
  *     _MERGE_FIELDS = ("mrp", "mfg_date", "expiry_date", "batch_no", "img_url", "ocr_raw_output")
  * 
  *     def merge_multicapture_metadata(self, env_id: str, new_data: dict) -> bool:             # <<<<<<<<<<<<<<
@@ -13880,38 +13946,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_new_data,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 593, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 597, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 593, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 597, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 593, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 597, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 593, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 597, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "merge_multicapture_metadata", 0) < 0) __PYX_ERR(0, 593, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "merge_multicapture_metadata", 0) < 0) __PYX_ERR(0, 597, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("merge_multicapture_metadata", 1, 3, 3, i); __PYX_ERR(0, 593, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("merge_multicapture_metadata", 1, 3, 3, i); __PYX_ERR(0, 597, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 593, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 597, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 593, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 597, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 593, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 597, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_env_id = ((PyObject*)values[1]);
@@ -13919,7 +13985,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("merge_multicapture_metadata", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 593, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("merge_multicapture_metadata", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 597, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13930,8 +13996,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 593, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_new_data), (&PyDict_Type), 0, "new_data", 2))) __PYX_ERR(0, 593, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 597, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_new_data), (&PyDict_Type), 0, "new_data", 2))) __PYX_ERR(0, 597, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture_metadata(__pyx_self, __pyx_v_self, __pyx_v_env_id, __pyx_v_new_data);
 
   /* function exit code */
@@ -13993,7 +14059,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("merge_multicapture_metadata", 0);
 
-  /* "src/data_handler/mongo.py":602
+  /* "src/data_handler/mongo.py":606
  *         Returns True if a document was found and updated, False otherwise.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14009,71 +14075,71 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/data_handler/mongo.py":604
+      /* "src/data_handler/mongo.py":608
  *         try:
  *             # Fetch the earliest doc for this env_id (ascending _id = insertion order)
  *             first_doc = self.metadata.find_one(             # <<<<<<<<<<<<<<
  *                 {"env_id": env_id},
  *                 sort=[("_id", 1)]
 */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 604, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 608, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_5 = __pyx_t_6;
       __Pyx_INCREF(__pyx_t_5);
 
-      /* "src/data_handler/mongo.py":605
+      /* "src/data_handler/mongo.py":609
  *             # Fetch the earliest doc for this env_id (ascending _id = insertion order)
  *             first_doc = self.metadata.find_one(
  *                 {"env_id": env_id},             # <<<<<<<<<<<<<<
  *                 sort=[("_id", 1)]
  *             )
 */
-      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 605, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 609, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 605, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 609, __pyx_L3_error)
 
-      /* "src/data_handler/mongo.py":606
+      /* "src/data_handler/mongo.py":610
  *             first_doc = self.metadata.find_one(
  *                 {"env_id": env_id},
  *                 sort=[("_id", 1)]             # <<<<<<<<<<<<<<
  *             )
  *             if not first_doc:
 */
-      __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 606, __pyx_L3_error)
+      __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 610, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[2]);
       __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
-      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_mstate_global->__pyx_tuple[2]) != (0)) __PYX_ERR(0, 606, __pyx_L3_error);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_8, 0, __pyx_mstate_global->__pyx_tuple[2]) != (0)) __PYX_ERR(0, 610, __pyx_L3_error);
       __pyx_t_9 = 0;
       {
         PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_5, __pyx_t_7};
-        __pyx_t_10 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 604, __pyx_L3_error)
+        __pyx_t_10 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 608, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_10);
-        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_sort, __pyx_t_8, __pyx_t_10, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 604, __pyx_L3_error)
+        if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_sort, __pyx_t_8, __pyx_t_10, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 608, __pyx_L3_error)
         __pyx_t_4 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_find_one, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_10);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 604, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 608, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __pyx_v_first_doc = __pyx_t_4;
       __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":608
+      /* "src/data_handler/mongo.py":612
  *                 sort=[("_id", 1)]
  *             )
  *             if not first_doc:             # <<<<<<<<<<<<<<
  *                 print(f"[Mongo] merge_multicapture: no existing doc for env_id={env_id}")
  *                 return False
 */
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_first_doc); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 608, __pyx_L3_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_first_doc); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 612, __pyx_L3_error)
       __pyx_t_12 = (!__pyx_t_11);
       if (__pyx_t_12) {
 
-        /* "src/data_handler/mongo.py":609
+        /* "src/data_handler/mongo.py":613
  *             )
  *             if not first_doc:
  *                 print(f"[Mongo] merge_multicapture: no existing doc for env_id={env_id}")             # <<<<<<<<<<<<<<
@@ -14083,7 +14149,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_6 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_10 = __pyx_builtin_print; 
-        __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_merge_multicapture_no_exi, __pyx_v_env_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 609, __pyx_L3_error)
+        __pyx_t_8 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_merge_multicapture_no_exi, __pyx_v_env_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 613, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_8);
         __pyx_t_9 = 1;
         {
@@ -14092,12 +14158,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 609, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 613, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":610
+        /* "src/data_handler/mongo.py":614
  *             if not first_doc:
  *                 print(f"[Mongo] merge_multicapture: no existing doc for env_id={env_id}")
  *                 return False             # <<<<<<<<<<<<<<
@@ -14109,7 +14175,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_r = Py_False;
         goto __pyx_L7_try_return;
 
-        /* "src/data_handler/mongo.py":608
+        /* "src/data_handler/mongo.py":612
  *                 sort=[("_id", 1)]
  *             )
  *             if not first_doc:             # <<<<<<<<<<<<<<
@@ -14118,35 +14184,35 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
       }
 
-      /* "src/data_handler/mongo.py":612
+      /* "src/data_handler/mongo.py":616
  *                 return False
  * 
  *             updates = {}             # <<<<<<<<<<<<<<
  *             for field in self._MERGE_FIELDS:
  *                 existing = first_doc.get(field)
 */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 612, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 616, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v_updates = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":613
+      /* "src/data_handler/mongo.py":617
  * 
  *             updates = {}
  *             for field in self._MERGE_FIELDS:             # <<<<<<<<<<<<<<
  *                 existing = first_doc.get(field)
  *                 # Consider a field "empty" if it is None or the string "nan"
 */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_MERGE_FIELDS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 613, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_MERGE_FIELDS); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 617, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
         __pyx_t_10 = __pyx_t_4; __Pyx_INCREF(__pyx_t_10);
         __pyx_t_13 = 0;
         __pyx_t_14 = NULL;
       } else {
-        __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 613, __pyx_L3_error)
+        __pyx_t_13 = -1; __pyx_t_10 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 617, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 613, __pyx_L3_error)
+        __pyx_t_14 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_10); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 617, __pyx_L3_error)
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       for (;;) {
@@ -14155,7 +14221,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
             {
               Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_10);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 613, __pyx_L3_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 617, __pyx_L3_error)
               #endif
               if (__pyx_t_13 >= __pyx_temp) break;
             }
@@ -14165,7 +14231,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
             {
               Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_10);
               #if !CYTHON_ASSUME_SAFE_SIZE
-              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 613, __pyx_L3_error)
+              if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 617, __pyx_L3_error)
               #endif
               if (__pyx_t_13 >= __pyx_temp) break;
             }
@@ -14176,13 +14242,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
             #endif
             ++__pyx_t_13;
           }
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 613, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 617, __pyx_L3_error)
         } else {
           __pyx_t_4 = __pyx_t_14(__pyx_t_10);
           if (unlikely(!__pyx_t_4)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
-              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 613, __pyx_L3_error)
+              if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) __PYX_ERR(0, 617, __pyx_L3_error)
               PyErr_Clear();
             }
             break;
@@ -14192,7 +14258,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __Pyx_XDECREF_SET(__pyx_v_field, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":614
+        /* "src/data_handler/mongo.py":618
  *             updates = {}
  *             for field in self._MERGE_FIELDS:
  *                 existing = first_doc.get(field)             # <<<<<<<<<<<<<<
@@ -14206,13 +14272,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_field};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_9, (2-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 614, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 618, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_XDECREF_SET(__pyx_v_existing, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":617
+        /* "src/data_handler/mongo.py":621
  *                 # Consider a field "empty" if it is None or the string "nan"
  *                 is_empty = (
  *                     existing is None             # <<<<<<<<<<<<<<
@@ -14222,14 +14288,14 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_12 = (__pyx_v_existing == Py_None);
         if (!__pyx_t_12) {
         } else {
-          __pyx_t_8 = __Pyx_PyBool_FromLong(__pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 617, __pyx_L3_error)
+          __pyx_t_8 = __Pyx_PyBool_FromLong(__pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 621, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_8);
           __pyx_t_4 = __pyx_t_8;
           __pyx_t_8 = 0;
           goto __pyx_L12_bool_binop_done;
         }
 
-        /* "src/data_handler/mongo.py":618
+        /* "src/data_handler/mongo.py":622
  *                 is_empty = (
  *                     existing is None
  *                     or (isinstance(existing, str) and existing.strip().lower() == "nan")             # <<<<<<<<<<<<<<
@@ -14239,7 +14305,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_12 = PyUnicode_Check(__pyx_v_existing); 
         if (__pyx_t_12) {
         } else {
-          __pyx_t_8 = __Pyx_PyBool_FromLong(__pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 618, __pyx_L3_error)
+          __pyx_t_8 = __Pyx_PyBool_FromLong(__pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 622, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_8);
           __pyx_t_4 = __pyx_t_8;
           __pyx_t_8 = 0;
@@ -14252,7 +14318,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
           __pyx_t_7 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strip, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 618, __pyx_L3_error)
+          if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 622, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
         }
         __pyx_t_6 = __pyx_t_7;
@@ -14263,10 +14329,10 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 618, __pyx_L3_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 622, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
-        __pyx_t_7 = PyObject_RichCompare(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 618, __pyx_L3_error)
+        __pyx_t_7 = PyObject_RichCompare(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 622, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_INCREF(__pyx_t_7);
         __pyx_t_4 = __pyx_t_7;
@@ -14275,18 +14341,18 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __Pyx_XDECREF_SET(__pyx_v_is_empty, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":620
+        /* "src/data_handler/mongo.py":624
  *                     or (isinstance(existing, str) and existing.strip().lower() == "nan")
  *                 )
  *                 if not is_empty:             # <<<<<<<<<<<<<<
  *                     continue  # capture-1 value wins  skip
  * 
 */
-        __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_is_empty); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 620, __pyx_L3_error)
+        __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_is_empty); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 624, __pyx_L3_error)
         __pyx_t_11 = (!__pyx_t_12);
         if (__pyx_t_11) {
 
-          /* "src/data_handler/mongo.py":621
+          /* "src/data_handler/mongo.py":625
  *                 )
  *                 if not is_empty:
  *                     continue  # capture-1 value wins  skip             # <<<<<<<<<<<<<<
@@ -14295,7 +14361,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
           goto __pyx_L10_continue;
 
-          /* "src/data_handler/mongo.py":620
+          /* "src/data_handler/mongo.py":624
  *                     or (isinstance(existing, str) and existing.strip().lower() == "nan")
  *                 )
  *                 if not is_empty:             # <<<<<<<<<<<<<<
@@ -14304,19 +14370,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
         }
 
-        /* "src/data_handler/mongo.py":623
+        /* "src/data_handler/mongo.py":627
  *                     continue  # capture-1 value wins  skip
  * 
  *                 new_val = new_data.get(field)             # <<<<<<<<<<<<<<
  *                 # Only write if the new value is actually meaningful
  *                 if new_val is None:
 */
-        __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_new_data, __pyx_v_field, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 623, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyDict_GetItemDefault(__pyx_v_new_data, __pyx_v_field, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 627, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_XDECREF_SET(__pyx_v_new_val, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":625
+        /* "src/data_handler/mongo.py":629
  *                 new_val = new_data.get(field)
  *                 # Only write if the new value is actually meaningful
  *                 if new_val is None:             # <<<<<<<<<<<<<<
@@ -14326,7 +14392,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_11 = (__pyx_v_new_val == Py_None);
         if (__pyx_t_11) {
 
-          /* "src/data_handler/mongo.py":626
+          /* "src/data_handler/mongo.py":630
  *                 # Only write if the new value is actually meaningful
  *                 if new_val is None:
  *                     continue             # <<<<<<<<<<<<<<
@@ -14335,7 +14401,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
           goto __pyx_L10_continue;
 
-          /* "src/data_handler/mongo.py":625
+          /* "src/data_handler/mongo.py":629
  *                 new_val = new_data.get(field)
  *                 # Only write if the new value is actually meaningful
  *                 if new_val is None:             # <<<<<<<<<<<<<<
@@ -14344,7 +14410,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
         }
 
-        /* "src/data_handler/mongo.py":627
+        /* "src/data_handler/mongo.py":631
  *                 if new_val is None:
  *                     continue
  *                 if isinstance(new_val, str) and new_val.strip().lower() == "nan":             # <<<<<<<<<<<<<<
@@ -14364,7 +14430,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
           __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strip, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 627, __pyx_L3_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 631, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
         __pyx_t_7 = __pyx_t_8;
@@ -14375,16 +14441,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_9, (1-__pyx_t_9) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 627, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 631, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
-        __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 627, __pyx_L3_error)
+        __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 631, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_t_11 = __pyx_t_12;
         __pyx_L18_bool_binop_done:;
         if (__pyx_t_11) {
 
-          /* "src/data_handler/mongo.py":628
+          /* "src/data_handler/mongo.py":632
  *                     continue
  *                 if isinstance(new_val, str) and new_val.strip().lower() == "nan":
  *                     continue             # <<<<<<<<<<<<<<
@@ -14393,7 +14459,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
           goto __pyx_L10_continue;
 
-          /* "src/data_handler/mongo.py":627
+          /* "src/data_handler/mongo.py":631
  *                 if new_val is None:
  *                     continue
  *                 if isinstance(new_val, str) and new_val.strip().lower() == "nan":             # <<<<<<<<<<<<<<
@@ -14402,16 +14468,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
         }
 
-        /* "src/data_handler/mongo.py":629
+        /* "src/data_handler/mongo.py":633
  *                 if isinstance(new_val, str) and new_val.strip().lower() == "nan":
  *                     continue
  *                 updates[field] = new_val             # <<<<<<<<<<<<<<
  * 
  *             if not updates:
 */
-        if (unlikely((PyDict_SetItem(__pyx_v_updates, __pyx_v_field, __pyx_v_new_val) < 0))) __PYX_ERR(0, 629, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_v_updates, __pyx_v_field, __pyx_v_new_val) < 0))) __PYX_ERR(0, 633, __pyx_L3_error)
 
-        /* "src/data_handler/mongo.py":613
+        /* "src/data_handler/mongo.py":617
  * 
  *             updates = {}
  *             for field in self._MERGE_FIELDS:             # <<<<<<<<<<<<<<
@@ -14422,18 +14488,18 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "src/data_handler/mongo.py":631
+      /* "src/data_handler/mongo.py":635
  *                 updates[field] = new_val
  * 
  *             if not updates:             # <<<<<<<<<<<<<<
  *                 print(f"[Mongo] merge_multicapture: nothing to merge for env_id={env_id} (all fields already populated)")
  *                 return True  # doc exists, nothing needed  still counts as "handled"
 */
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_updates); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 631, __pyx_L3_error)
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_updates); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 635, __pyx_L3_error)
       __pyx_t_12 = (!__pyx_t_11);
       if (__pyx_t_12) {
 
-        /* "src/data_handler/mongo.py":632
+        /* "src/data_handler/mongo.py":636
  * 
  *             if not updates:
  *                 print(f"[Mongo] merge_multicapture: nothing to merge for env_id={env_id} (all fields already populated)")             # <<<<<<<<<<<<<<
@@ -14447,7 +14513,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_15[1] = __pyx_v_env_id;
         __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u_all_fields_already_populated;
         __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_15, 3, 56 + __Pyx_PyUnicode_GET_LENGTH(__pyx_v_env_id) + 31, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_v_env_id));
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 632, __pyx_L3_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 636, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_9 = 1;
         {
@@ -14456,12 +14522,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 632, __pyx_L3_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 636, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "src/data_handler/mongo.py":633
+        /* "src/data_handler/mongo.py":637
  *             if not updates:
  *                 print(f"[Mongo] merge_multicapture: nothing to merge for env_id={env_id} (all fields already populated)")
  *                 return True  # doc exists, nothing needed  still counts as "handled"             # <<<<<<<<<<<<<<
@@ -14473,7 +14539,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_r = Py_True;
         goto __pyx_L7_try_return;
 
-        /* "src/data_handler/mongo.py":631
+        /* "src/data_handler/mongo.py":635
  *                 updates[field] = new_val
  * 
  *             if not updates:             # <<<<<<<<<<<<<<
@@ -14482,7 +14548,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
 */
       }
 
-      /* "src/data_handler/mongo.py":635
+      /* "src/data_handler/mongo.py":639
  *                 return True  # doc exists, nothing needed  still counts as "handled"
  * 
  *             print(f"[Mongo] merge_multicapture: updating fields {list(updates.keys())} on doc {first_doc['_id']}")             # <<<<<<<<<<<<<<
@@ -14492,17 +14558,17 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
       __pyx_t_8 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_7 = __pyx_builtin_print; 
-      __pyx_t_4 = __Pyx_PyDict_Keys(__pyx_v_updates); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 635, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_Keys(__pyx_v_updates); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PySequence_ListKeepNew(__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 635, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PySequence_ListKeepNew(__pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 635, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_first_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 635, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_Dict_GetItem(__pyx_v_first_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 635, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_16[0] = __pyx_mstate_global->__pyx_kp_u_Mongo_merge_multicapture_updati;
@@ -14510,7 +14576,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
       __pyx_t_16[2] = __pyx_mstate_global->__pyx_kp_u_on_doc;
       __pyx_t_16[3] = __pyx_t_5;
       __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_16, 4, 44 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4) + 8 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_5), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_5));
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 635, __pyx_L3_error)
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 639, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -14521,47 +14587,47 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 635, __pyx_L3_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 639, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "src/data_handler/mongo.py":636
+      /* "src/data_handler/mongo.py":640
  * 
  *             print(f"[Mongo] merge_multicapture: updating fields {list(updates.keys())} on doc {first_doc['_id']}")
  *             self.metadata.update_one(             # <<<<<<<<<<<<<<
  *                 {"_id": first_doc["_id"]},
  *                 {"$set": updates}
 */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 636, __pyx_L3_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 640, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_6);
       __pyx_t_7 = __pyx_t_6;
       __Pyx_INCREF(__pyx_t_7);
 
-      /* "src/data_handler/mongo.py":637
+      /* "src/data_handler/mongo.py":641
  *             print(f"[Mongo] merge_multicapture: updating fields {list(updates.keys())} on doc {first_doc['_id']}")
  *             self.metadata.update_one(
  *                 {"_id": first_doc["_id"]},             # <<<<<<<<<<<<<<
  *                 {"$set": updates}
  *             )
 */
-      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 637, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 641, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_first_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 637, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_v_first_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 641, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_5) < 0) __PYX_ERR(0, 637, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_5) < 0) __PYX_ERR(0, 641, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "src/data_handler/mongo.py":638
+      /* "src/data_handler/mongo.py":642
  *             self.metadata.update_one(
  *                 {"_id": first_doc["_id"]},
  *                 {"$set": updates}             # <<<<<<<<<<<<<<
  *             )
  *             return True
 */
-      __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 638, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 642, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 638, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 642, __pyx_L3_error)
       __pyx_t_9 = 0;
       {
         PyObject *__pyx_callargs[3] = {__pyx_t_7, __pyx_t_8, __pyx_t_5};
@@ -14570,12 +14636,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 636, __pyx_L3_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 640, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_10);
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "src/data_handler/mongo.py":640
+      /* "src/data_handler/mongo.py":644
  *                 {"$set": updates}
  *             )
  *             return True             # <<<<<<<<<<<<<<
@@ -14587,7 +14653,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
       __pyx_r = Py_True;
       goto __pyx_L7_try_return;
 
-      /* "src/data_handler/mongo.py":602
+      /* "src/data_handler/mongo.py":606
  *         Returns True if a document was found and updated, False otherwise.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14603,7 +14669,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "src/data_handler/mongo.py":642
+    /* "src/data_handler/mongo.py":646
  *             return True
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14613,7 +14679,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
     __pyx_t_17 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_17) {
       __Pyx_AddTraceback("src.data_handler.mongo.Mongo.merge_multicapture_metadata", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 642, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_6, &__pyx_t_5) < 0) __PYX_ERR(0, 646, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_10);
       __Pyx_XGOTREF(__pyx_t_6);
       __Pyx_XGOTREF(__pyx_t_5);
@@ -14621,7 +14687,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
       __pyx_v_exc = __pyx_t_6;
       /*try:*/ {
 
-        /* "src/data_handler/mongo.py":643
+        /* "src/data_handler/mongo.py":647
  * 
  *         except Exception as exc:
  *             print(f"[Mongo] merge_multicapture error: {exc}")             # <<<<<<<<<<<<<<
@@ -14631,9 +14697,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         __pyx_t_7 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_4 = __pyx_builtin_print; 
-        __pyx_t_18 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 643, __pyx_L27_error)
+        __pyx_t_18 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 647, __pyx_L27_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __pyx_t_19 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_merge_multicapture_error, __pyx_t_18); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 643, __pyx_L27_error)
+        __pyx_t_19 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_merge_multicapture_error, __pyx_t_18); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 647, __pyx_L27_error)
         __Pyx_GOTREF(__pyx_t_19);
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         __pyx_t_9 = 1;
@@ -14643,12 +14709,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 643, __pyx_L27_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 647, __pyx_L27_error)
           __Pyx_GOTREF(__pyx_t_8);
         }
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "src/data_handler/mongo.py":644
+        /* "src/data_handler/mongo.py":648
  *         except Exception as exc:
  *             print(f"[Mongo] merge_multicapture error: {exc}")
  *             return False             # <<<<<<<<<<<<<<
@@ -14664,7 +14730,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
         goto __pyx_L26_return;
       }
 
-      /* "src/data_handler/mongo.py":642
+      /* "src/data_handler/mongo.py":646
  *             return True
  * 
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -14718,7 +14784,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
     }
     goto __pyx_L5_except_error;
 
-    /* "src/data_handler/mongo.py":602
+    /* "src/data_handler/mongo.py":606
  *         Returns True if a document was found and updated, False otherwise.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14745,7 +14811,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
     goto __pyx_L0;
   }
 
-  /* "src/data_handler/mongo.py":593
+  /* "src/data_handler/mongo.py":597
  *     _MERGE_FIELDS = ("mrp", "mfg_date", "expiry_date", "batch_no", "img_url", "ocr_raw_output")
  * 
  *     def merge_multicapture_metadata(self, env_id: str, new_data: dict) -> bool:             # <<<<<<<<<<<<<<
@@ -14778,7 +14844,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_32merge_multicapture
   return __pyx_r;
 }
 
-/* "src/data_handler/mongo.py":646
+/* "src/data_handler/mongo.py":650
  *             return False
  * 
  *     def update_revalidated_metadata(self, metadata_id: str, env_id: str, updates: dict) -> bool:             # <<<<<<<<<<<<<<
@@ -14829,44 +14895,44 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_metadata_id,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_updates,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 646, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 650, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 650, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 650, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 650, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 646, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 650, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_revalidated_metadata", 0) < 0) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_revalidated_metadata", 0) < 0) __PYX_ERR(0, 650, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 4; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("update_revalidated_metadata", 1, 4, 4, i); __PYX_ERR(0, 646, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("update_revalidated_metadata", 1, 4, 4, i); __PYX_ERR(0, 650, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 4)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 650, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 650, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 650, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 646, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 650, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_metadata_id = ((PyObject*)values[1]);
@@ -14875,7 +14941,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("update_revalidated_metadata", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 646, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("update_revalidated_metadata", 1, 4, 4, __pyx_nargs); __PYX_ERR(0, 650, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14886,9 +14952,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 0, "metadata_id", 2))) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_updates), (&PyDict_Type), 0, "updates", 2))) __PYX_ERR(0, 646, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_metadata_id), (&PyUnicode_Type), 0, "metadata_id", 2))) __PYX_ERR(0, 650, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_env_id), (&PyUnicode_Type), 0, "env_id", 2))) __PYX_ERR(0, 650, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_updates), (&PyDict_Type), 0, "updates", 2))) __PYX_ERR(0, 650, __pyx_L1_error)
   __pyx_r = __pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated_metadata(__pyx_self, __pyx_v_self, __pyx_v_metadata_id, __pyx_v_env_id, __pyx_v_updates);
 
   /* function exit code */
@@ -14953,7 +15019,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("update_revalidated_metadata", 0);
 
-  /* "src/data_handler/mongo.py":651
+  /* "src/data_handler/mongo.py":655
  *         Sets 're-validated': True along with newly recovered fields.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -14969,19 +15035,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/data_handler/mongo.py":652
+      /* "src/data_handler/mongo.py":656
  *         """
  *         try:
  *             query = {}             # <<<<<<<<<<<<<<
  *             if metadata_id:
  *                 query["metadata_id"] = metadata_id
 */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 652, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 656, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v_query = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":653
+      /* "src/data_handler/mongo.py":657
  *         try:
  *             query = {}
  *             if metadata_id:             # <<<<<<<<<<<<<<
@@ -14989,19 +15055,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
  *             elif env_id:
 */
       __pyx_t_5 = (__Pyx_PyUnicode_IS_TRUE(__pyx_v_metadata_id) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 653, __pyx_L3_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 657, __pyx_L3_error)
       if (__pyx_t_5) {
 
-        /* "src/data_handler/mongo.py":654
+        /* "src/data_handler/mongo.py":658
  *             query = {}
  *             if metadata_id:
  *                 query["metadata_id"] = metadata_id             # <<<<<<<<<<<<<<
  *             elif env_id:
  *                 query["env_id"] = env_id
 */
-        if (unlikely((PyDict_SetItem(__pyx_v_query, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_v_metadata_id) < 0))) __PYX_ERR(0, 654, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_v_query, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_v_metadata_id) < 0))) __PYX_ERR(0, 658, __pyx_L3_error)
 
-        /* "src/data_handler/mongo.py":653
+        /* "src/data_handler/mongo.py":657
  *         try:
  *             query = {}
  *             if metadata_id:             # <<<<<<<<<<<<<<
@@ -15011,7 +15077,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         goto __pyx_L9;
       }
 
-      /* "src/data_handler/mongo.py":655
+      /* "src/data_handler/mongo.py":659
  *             if metadata_id:
  *                 query["metadata_id"] = metadata_id
  *             elif env_id:             # <<<<<<<<<<<<<<
@@ -15019,19 +15085,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
  *             else:
 */
       __pyx_t_5 = (__Pyx_PyUnicode_IS_TRUE(__pyx_v_env_id) != 0);
-      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 655, __pyx_L3_error)
+      if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_5 < 0))) __PYX_ERR(0, 659, __pyx_L3_error)
       if (__pyx_t_5) {
 
-        /* "src/data_handler/mongo.py":656
+        /* "src/data_handler/mongo.py":660
  *                 query["metadata_id"] = metadata_id
  *             elif env_id:
  *                 query["env_id"] = env_id             # <<<<<<<<<<<<<<
  *             else:
  *                 return False
 */
-        if (unlikely((PyDict_SetItem(__pyx_v_query, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0))) __PYX_ERR(0, 656, __pyx_L3_error)
+        if (unlikely((PyDict_SetItem(__pyx_v_query, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0))) __PYX_ERR(0, 660, __pyx_L3_error)
 
-        /* "src/data_handler/mongo.py":655
+        /* "src/data_handler/mongo.py":659
  *             if metadata_id:
  *                 query["metadata_id"] = metadata_id
  *             elif env_id:             # <<<<<<<<<<<<<<
@@ -15041,7 +15107,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         goto __pyx_L9;
       }
 
-      /* "src/data_handler/mongo.py":658
+      /* "src/data_handler/mongo.py":662
  *                 query["env_id"] = env_id
  *             else:
  *                 return False             # <<<<<<<<<<<<<<
@@ -15056,7 +15122,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       }
       __pyx_L9:;
 
-      /* "src/data_handler/mongo.py":660
+      /* "src/data_handler/mongo.py":664
  *                 return False
  * 
  *             doc = None             # <<<<<<<<<<<<<<
@@ -15066,7 +15132,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       __Pyx_INCREF(Py_None);
       __pyx_v_doc = Py_None;
 
-      /* "src/data_handler/mongo.py":661
+      /* "src/data_handler/mongo.py":665
  * 
  *             doc = None
  *             for _ in range(5):             # <<<<<<<<<<<<<<
@@ -15076,50 +15142,50 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       for (__pyx_t_6 = 0; __pyx_t_6 < 5; __pyx_t_6+=1) {
         __pyx_v__ = __pyx_t_6;
 
-        /* "src/data_handler/mongo.py":662
+        /* "src/data_handler/mongo.py":666
  *             doc = None
  *             for _ in range(5):
  *                 doc = self.metadata.find_one(query, sort=[("_id", -1)])             # <<<<<<<<<<<<<<
  *                 if doc:
  *                     break
 */
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 662, __pyx_L3_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 666, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_8);
         __pyx_t_7 = __pyx_t_8;
         __Pyx_INCREF(__pyx_t_7);
-        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 662, __pyx_L3_error)
+        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 666, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[1]);
         __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_mstate_global->__pyx_tuple[1]) != (0)) __PYX_ERR(0, 662, __pyx_L3_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_mstate_global->__pyx_tuple[1]) != (0)) __PYX_ERR(0, 666, __pyx_L3_error);
         __pyx_t_10 = 0;
         {
           PyObject *__pyx_callargs[2 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_7, __pyx_v_query};
-          __pyx_t_11 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 662, __pyx_L3_error)
+          __pyx_t_11 = __Pyx_MakeVectorcallBuilderKwds(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 666, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_11);
-          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_sort, __pyx_t_9, __pyx_t_11, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 662, __pyx_L3_error)
+          if (__Pyx_VectorcallBuilder_AddArg(__pyx_mstate_global->__pyx_n_u_sort, __pyx_t_9, __pyx_t_11, __pyx_callargs+2, 0) < 0) __PYX_ERR(0, 666, __pyx_L3_error)
           __pyx_t_4 = __Pyx_Object_VectorcallMethod_CallFromBuilder(__pyx_mstate_global->__pyx_n_u_find_one, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET), __pyx_t_11);
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 662, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 666, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF_SET(__pyx_v_doc, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":663
+        /* "src/data_handler/mongo.py":667
  *             for _ in range(5):
  *                 doc = self.metadata.find_one(query, sort=[("_id", -1)])
  *                 if doc:             # <<<<<<<<<<<<<<
  *                     break
  *                 import time
 */
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_doc); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 663, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_doc); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 667, __pyx_L3_error)
         if (__pyx_t_5) {
 
-          /* "src/data_handler/mongo.py":664
+          /* "src/data_handler/mongo.py":668
  *                 doc = self.metadata.find_one(query, sort=[("_id", -1)])
  *                 if doc:
  *                     break             # <<<<<<<<<<<<<<
@@ -15128,7 +15194,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
           goto __pyx_L11_break;
 
-          /* "src/data_handler/mongo.py":663
+          /* "src/data_handler/mongo.py":667
  *             for _ in range(5):
  *                 doc = self.metadata.find_one(query, sort=[("_id", -1)])
  *                 if doc:             # <<<<<<<<<<<<<<
@@ -15137,19 +15203,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
         }
 
-        /* "src/data_handler/mongo.py":665
+        /* "src/data_handler/mongo.py":669
  *                 if doc:
  *                     break
  *                 import time             # <<<<<<<<<<<<<<
  *                 time.sleep(0.2)
  * 
 */
-        __pyx_t_4 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_time, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 665, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_time, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 669, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_XDECREF_SET(__pyx_v_time, __pyx_t_4);
         __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":666
+        /* "src/data_handler/mongo.py":670
  *                     break
  *                 import time
  *                 time.sleep(0.2)             # <<<<<<<<<<<<<<
@@ -15163,25 +15229,25 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
           PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_mstate_global->__pyx_float_0_2};
           __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_sleep, __pyx_callargs+__pyx_t_10, (2-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 666, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 670, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
       __pyx_L11_break:;
 
-      /* "src/data_handler/mongo.py":668
+      /* "src/data_handler/mongo.py":672
  *                 time.sleep(0.2)
  * 
  *             if not doc:             # <<<<<<<<<<<<<<
  *                 print(f"[Mongo] update_revalidated_metadata: no doc found for {query}")
  *                 return False
 */
-      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_doc); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 668, __pyx_L3_error)
+      __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_doc); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 672, __pyx_L3_error)
       __pyx_t_12 = (!__pyx_t_5);
       if (__pyx_t_12) {
 
-        /* "src/data_handler/mongo.py":669
+        /* "src/data_handler/mongo.py":673
  * 
  *             if not doc:
  *                 print(f"[Mongo] update_revalidated_metadata: no doc found for {query}")             # <<<<<<<<<<<<<<
@@ -15191,9 +15257,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __pyx_t_8 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_11 = __pyx_builtin_print; 
-        __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_query, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 669, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_v_query, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 673, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_update_revalidated_metada, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 669, __pyx_L3_error)
+        __pyx_t_7 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_update_revalidated_metada, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 673, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __pyx_t_10 = 1;
@@ -15203,12 +15269,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 669, __pyx_L3_error)
+          if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 673, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_4);
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "src/data_handler/mongo.py":670
+        /* "src/data_handler/mongo.py":674
  *             if not doc:
  *                 print(f"[Mongo] update_revalidated_metadata: no doc found for {query}")
  *                 return False             # <<<<<<<<<<<<<<
@@ -15220,7 +15286,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __pyx_r = Py_False;
         goto __pyx_L7_try_return;
 
-        /* "src/data_handler/mongo.py":668
+        /* "src/data_handler/mongo.py":672
  *                 time.sleep(0.2)
  * 
  *             if not doc:             # <<<<<<<<<<<<<<
@@ -15229,19 +15295,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
       }
 
-      /* "src/data_handler/mongo.py":672
+      /* "src/data_handler/mongo.py":676
  *                 return False
  * 
  *             doc_updates = {}             # <<<<<<<<<<<<<<
  *             for k, v in updates.items():
  *                 if v is not None:
 */
-      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 672, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 676, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_v_doc_updates = ((PyObject*)__pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":673
+      /* "src/data_handler/mongo.py":677
  * 
  *             doc_updates = {}
  *             for k, v in updates.items():             # <<<<<<<<<<<<<<
@@ -15249,7 +15315,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
  *                     if isinstance(v, str) and v.strip().lower() == "nan":
 */
       __pyx_t_13 = 0;
-      __pyx_t_11 = __Pyx_dict_iterator(__pyx_v_updates, 1, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_14), (&__pyx_t_15)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 673, __pyx_L3_error)
+      __pyx_t_11 = __Pyx_dict_iterator(__pyx_v_updates, 1, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_14), (&__pyx_t_15)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 677, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_XDECREF(__pyx_t_4);
       __pyx_t_4 = __pyx_t_11;
@@ -15257,7 +15323,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       while (1) {
         __pyx_t_16 = __Pyx_dict_iter_next(__pyx_t_4, __pyx_t_14, &__pyx_t_13, &__pyx_t_11, &__pyx_t_7, NULL, __pyx_t_15);
         if (unlikely(__pyx_t_16 == 0)) break;
-        if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 673, __pyx_L3_error)
+        if (unlikely(__pyx_t_16 == -1)) __PYX_ERR(0, 677, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_11);
@@ -15265,7 +15331,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_7);
         __pyx_t_7 = 0;
 
-        /* "src/data_handler/mongo.py":674
+        /* "src/data_handler/mongo.py":678
  *             doc_updates = {}
  *             for k, v in updates.items():
  *                 if v is not None:             # <<<<<<<<<<<<<<
@@ -15275,7 +15341,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __pyx_t_12 = (__pyx_v_v != Py_None);
         if (__pyx_t_12) {
 
-          /* "src/data_handler/mongo.py":675
+          /* "src/data_handler/mongo.py":679
  *             for k, v in updates.items():
  *                 if v is not None:
  *                     if isinstance(v, str) and v.strip().lower() == "nan":             # <<<<<<<<<<<<<<
@@ -15295,7 +15361,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
             PyObject *__pyx_callargs[2] = {__pyx_t_9, NULL};
             __pyx_t_8 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strip, __pyx_callargs+__pyx_t_10, (1-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 675, __pyx_L3_error)
+            if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 679, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_8);
           }
           __pyx_t_11 = __pyx_t_8;
@@ -15306,16 +15372,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
             __pyx_t_7 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_lower, __pyx_callargs+__pyx_t_10, (1-__pyx_t_10) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-            if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 675, __pyx_L3_error)
+            if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 679, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_7);
           }
-          __pyx_t_5 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 675, __pyx_L3_error)
+          __pyx_t_5 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_nan, Py_EQ)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 679, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           __pyx_t_12 = __pyx_t_5;
           __pyx_L18_bool_binop_done:;
           if (__pyx_t_12) {
 
-            /* "src/data_handler/mongo.py":676
+            /* "src/data_handler/mongo.py":680
  *                 if v is not None:
  *                     if isinstance(v, str) and v.strip().lower() == "nan":
  *                         continue             # <<<<<<<<<<<<<<
@@ -15324,7 +15390,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
             goto __pyx_L14_continue;
 
-            /* "src/data_handler/mongo.py":675
+            /* "src/data_handler/mongo.py":679
  *             for k, v in updates.items():
  *                 if v is not None:
  *                     if isinstance(v, str) and v.strip().lower() == "nan":             # <<<<<<<<<<<<<<
@@ -15333,7 +15399,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
           }
 
-          /* "src/data_handler/mongo.py":677
+          /* "src/data_handler/mongo.py":681
  *                     if isinstance(v, str) and v.strip().lower() == "nan":
  *                         continue
  *                     if k in ["mfg_date", "expiry_date"] and isinstance(v, str):             # <<<<<<<<<<<<<<
@@ -15342,13 +15408,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
 */
           __Pyx_INCREF(__pyx_v_k);
           __pyx_t_7 = __pyx_v_k;
-          __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_mfg_date, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 677, __pyx_L3_error)
+          __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_mfg_date, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 681, __pyx_L3_error)
           if (!__pyx_t_17) {
           } else {
             __pyx_t_5 = __pyx_t_17;
             goto __pyx_L23_bool_binop_done;
           }
-          __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_expiry_date, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 677, __pyx_L3_error)
+          __pyx_t_17 = (__Pyx_PyUnicode_Equals(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_expiry_date, Py_EQ)); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 681, __pyx_L3_error)
           __pyx_t_5 = __pyx_t_17;
           __pyx_L23_bool_binop_done:;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -15363,22 +15429,22 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
           __pyx_L21_bool_binop_done:;
           if (__pyx_t_12) {
 
-            /* "src/data_handler/mongo.py":678
+            /* "src/data_handler/mongo.py":682
  *                         continue
  *                     if k in ["mfg_date", "expiry_date"] and isinstance(v, str):
  *                         parsed = self.datetime.format_datetime_array([v])             # <<<<<<<<<<<<<<
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":
 */
-            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 678, __pyx_L3_error)
+            __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 682, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_11);
             __pyx_t_8 = __pyx_t_11;
             __Pyx_INCREF(__pyx_t_8);
-            __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 678, __pyx_L3_error)
+            __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 682, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_9);
             __Pyx_INCREF(__pyx_v_v);
             __Pyx_GIVEREF(__pyx_v_v);
-            if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_v_v) != (0)) __PYX_ERR(0, 678, __pyx_L3_error);
+            if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_v_v) != (0)) __PYX_ERR(0, 682, __pyx_L3_error);
             __pyx_t_10 = 0;
             {
               PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_t_9};
@@ -15386,33 +15452,33 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
               __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-              if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 678, __pyx_L3_error)
+              if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 682, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_7);
             }
             __Pyx_XDECREF_SET(__pyx_v_parsed, __pyx_t_7);
             __pyx_t_7 = 0;
 
-            /* "src/data_handler/mongo.py":679
+            /* "src/data_handler/mongo.py":683
  *                     if k in ["mfg_date", "expiry_date"] and isinstance(v, str):
  *                         parsed = self.datetime.format_datetime_array([v])
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v             # <<<<<<<<<<<<<<
  *                     elif k == "mrp":
  *                         try:
 */
-            __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_parsed); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 679, __pyx_L3_error)
+            __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_v_parsed); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 683, __pyx_L3_error)
             if (__pyx_t_17) {
             } else {
               __pyx_t_12 = __pyx_t_17;
               goto __pyx_L25_bool_binop_done;
             }
-            __pyx_t_11 = __Pyx_GetItemInt(__pyx_v_parsed, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 679, __pyx_L3_error)
+            __pyx_t_11 = __Pyx_GetItemInt(__pyx_v_parsed, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 683, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_11);
-            __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 679, __pyx_L3_error)
+            __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely((__pyx_t_17 < 0))) __PYX_ERR(0, 683, __pyx_L3_error)
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
             __pyx_t_12 = __pyx_t_17;
             __pyx_L25_bool_binop_done:;
             if (__pyx_t_12) {
-              __pyx_t_11 = __Pyx_GetItemInt(__pyx_v_parsed, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 679, __pyx_L3_error)
+              __pyx_t_11 = __Pyx_GetItemInt(__pyx_v_parsed, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 683, __pyx_L3_error)
               __Pyx_GOTREF(__pyx_t_11);
               __pyx_t_7 = __pyx_t_11;
               __pyx_t_11 = 0;
@@ -15420,10 +15486,10 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __Pyx_INCREF(__pyx_v_v);
               __pyx_t_7 = __pyx_v_v;
             }
-            if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_t_7) < 0))) __PYX_ERR(0, 679, __pyx_L3_error)
+            if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_t_7) < 0))) __PYX_ERR(0, 683, __pyx_L3_error)
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-            /* "src/data_handler/mongo.py":677
+            /* "src/data_handler/mongo.py":681
  *                     if isinstance(v, str) and v.strip().lower() == "nan":
  *                         continue
  *                     if k in ["mfg_date", "expiry_date"] and isinstance(v, str):             # <<<<<<<<<<<<<<
@@ -15433,17 +15499,17 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
             goto __pyx_L20;
           }
 
-          /* "src/data_handler/mongo.py":680
+          /* "src/data_handler/mongo.py":684
  *                         parsed = self.datetime.format_datetime_array([v])
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":             # <<<<<<<<<<<<<<
  *                         try:
  *                             doc_updates[k] = float(v)
 */
-          __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_k, __pyx_mstate_global->__pyx_n_u_mrp, Py_EQ)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 680, __pyx_L3_error)
+          __pyx_t_12 = (__Pyx_PyUnicode_Equals(__pyx_v_k, __pyx_mstate_global->__pyx_n_u_mrp, Py_EQ)); if (unlikely((__pyx_t_12 < 0))) __PYX_ERR(0, 684, __pyx_L3_error)
           if (__pyx_t_12) {
 
-            /* "src/data_handler/mongo.py":681
+            /* "src/data_handler/mongo.py":685
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":
  *                         try:             # <<<<<<<<<<<<<<
@@ -15459,19 +15525,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __Pyx_XGOTREF(__pyx_t_20);
               /*try:*/ {
 
-                /* "src/data_handler/mongo.py":682
+                /* "src/data_handler/mongo.py":686
  *                     elif k == "mrp":
  *                         try:
  *                             doc_updates[k] = float(v)             # <<<<<<<<<<<<<<
  *                         except (ValueError, TypeError):
  *                             doc_updates[k] = v
 */
-                __pyx_t_7 = __Pyx_PyNumber_Float(__pyx_v_v); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 682, __pyx_L27_error)
+                __pyx_t_7 = __Pyx_PyNumber_Float(__pyx_v_v); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 686, __pyx_L27_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_t_7) < 0))) __PYX_ERR(0, 682, __pyx_L27_error)
+                if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_t_7) < 0))) __PYX_ERR(0, 686, __pyx_L27_error)
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-                /* "src/data_handler/mongo.py":681
+                /* "src/data_handler/mongo.py":685
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":
  *                         try:             # <<<<<<<<<<<<<<
@@ -15489,7 +15555,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
               __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-              /* "src/data_handler/mongo.py":683
+              /* "src/data_handler/mongo.py":687
  *                         try:
  *                             doc_updates[k] = float(v)
  *                         except (ValueError, TypeError):             # <<<<<<<<<<<<<<
@@ -15499,19 +15565,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __pyx_t_16 = __Pyx_PyErr_ExceptionMatches2(__pyx_builtin_ValueError, __pyx_builtin_TypeError);
               if (__pyx_t_16) {
                 __Pyx_AddTraceback("src.data_handler.mongo.Mongo.update_revalidated_metadata", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_11, &__pyx_t_9) < 0) __PYX_ERR(0, 683, __pyx_L29_except_error)
+                if (__Pyx_GetException(&__pyx_t_7, &__pyx_t_11, &__pyx_t_9) < 0) __PYX_ERR(0, 687, __pyx_L29_except_error)
                 __Pyx_XGOTREF(__pyx_t_7);
                 __Pyx_XGOTREF(__pyx_t_11);
                 __Pyx_XGOTREF(__pyx_t_9);
 
-                /* "src/data_handler/mongo.py":684
+                /* "src/data_handler/mongo.py":688
  *                             doc_updates[k] = float(v)
  *                         except (ValueError, TypeError):
  *                             doc_updates[k] = v             # <<<<<<<<<<<<<<
  *                     else:
  *                         doc_updates[k] = v
 */
-                if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_v_v) < 0))) __PYX_ERR(0, 684, __pyx_L29_except_error)
+                if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_v_v) < 0))) __PYX_ERR(0, 688, __pyx_L29_except_error)
                 __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
                 __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
                 __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -15519,7 +15585,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               }
               goto __pyx_L29_except_error;
 
-              /* "src/data_handler/mongo.py":681
+              /* "src/data_handler/mongo.py":685
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":
  *                         try:             # <<<<<<<<<<<<<<
@@ -15540,7 +15606,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
               __pyx_L34_try_end:;
             }
 
-            /* "src/data_handler/mongo.py":680
+            /* "src/data_handler/mongo.py":684
  *                         parsed = self.datetime.format_datetime_array([v])
  *                         doc_updates[k] = parsed[0] if (parsed and parsed[0]) else v
  *                     elif k == "mrp":             # <<<<<<<<<<<<<<
@@ -15550,7 +15616,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
             goto __pyx_L20;
           }
 
-          /* "src/data_handler/mongo.py":686
+          /* "src/data_handler/mongo.py":690
  *                             doc_updates[k] = v
  *                     else:
  *                         doc_updates[k] = v             # <<<<<<<<<<<<<<
@@ -15558,11 +15624,11 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
  *             doc_updates["re-validated"] = True
 */
           /*else*/ {
-            if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_v_v) < 0))) __PYX_ERR(0, 686, __pyx_L3_error)
+            if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_v_k, __pyx_v_v) < 0))) __PYX_ERR(0, 690, __pyx_L3_error)
           }
           __pyx_L20:;
 
-          /* "src/data_handler/mongo.py":674
+          /* "src/data_handler/mongo.py":678
  *             doc_updates = {}
  *             for k, v in updates.items():
  *                 if v is not None:             # <<<<<<<<<<<<<<
@@ -15574,35 +15640,35 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":688
+      /* "src/data_handler/mongo.py":692
  *                         doc_updates[k] = v
  * 
  *             doc_updates["re-validated"] = True             # <<<<<<<<<<<<<<
  * 
  *             self.metadata.update_one({"_id": doc["_id"]}, {"$set": doc_updates})
 */
-      if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_mstate_global->__pyx_kp_u_re_validated, Py_True) < 0))) __PYX_ERR(0, 688, __pyx_L3_error)
+      if (unlikely((PyDict_SetItem(__pyx_v_doc_updates, __pyx_mstate_global->__pyx_kp_u_re_validated, Py_True) < 0))) __PYX_ERR(0, 692, __pyx_L3_error)
 
-      /* "src/data_handler/mongo.py":690
+      /* "src/data_handler/mongo.py":694
  *             doc_updates["re-validated"] = True
  * 
  *             self.metadata.update_one({"_id": doc["_id"]}, {"$set": doc_updates})             # <<<<<<<<<<<<<<
  *             print(f"[Mongo] update_revalidated_metadata: applied {list(doc_updates.keys())} to doc {doc['_id']}")
  *             return True
 */
-      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 690, __pyx_L3_error)
+      __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 694, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_9 = __pyx_t_11;
       __Pyx_INCREF(__pyx_t_9);
-      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 690, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 694, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 690, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyObject_Dict_GetItem(__pyx_v_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 694, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_8) < 0) __PYX_ERR(0, 690, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_8) < 0) __PYX_ERR(0, 694, __pyx_L3_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 690, __pyx_L3_error)
+      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 694, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_8);
-      if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_doc_updates) < 0) __PYX_ERR(0, 690, __pyx_L3_error)
+      if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_doc_updates) < 0) __PYX_ERR(0, 694, __pyx_L3_error)
       __pyx_t_10 = 0;
       {
         PyObject *__pyx_callargs[3] = {__pyx_t_9, __pyx_t_7, __pyx_t_8};
@@ -15611,12 +15677,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 690, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 694, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":691
+      /* "src/data_handler/mongo.py":695
  * 
  *             self.metadata.update_one({"_id": doc["_id"]}, {"$set": doc_updates})
  *             print(f"[Mongo] update_revalidated_metadata: applied {list(doc_updates.keys())} to doc {doc['_id']}")             # <<<<<<<<<<<<<<
@@ -15626,17 +15692,17 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       __pyx_t_11 = NULL;
       __Pyx_INCREF(__pyx_builtin_print);
       __pyx_t_8 = __pyx_builtin_print; 
-      __pyx_t_7 = __Pyx_PyDict_Keys(__pyx_v_doc_updates); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 691, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyDict_Keys(__pyx_v_doc_updates); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = __Pyx_PySequence_ListKeepNew(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 691, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_PySequence_ListKeepNew(__pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_9, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 691, __pyx_L3_error)
+      __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_9, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_v_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 691, __pyx_L3_error)
+      __pyx_t_9 = __Pyx_PyObject_Dict_GetItem(__pyx_v_doc, __pyx_mstate_global->__pyx_n_u_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_t_9, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 691, __pyx_L3_error)
+      __pyx_t_21 = __Pyx_PyObject_FormatSimple(__pyx_t_9, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_21);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_22[0] = __pyx_mstate_global->__pyx_kp_u_Mongo_update_revalidated_metada_2;
@@ -15644,7 +15710,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       __pyx_t_22[2] = __pyx_mstate_global->__pyx_kp_u_to_doc;
       __pyx_t_22[3] = __pyx_t_21;
       __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_22, 4, 45 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7) + 8 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_21), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_21));
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 691, __pyx_L3_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 695, __pyx_L3_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
@@ -15655,12 +15721,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 691, __pyx_L3_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 695, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_4);
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "src/data_handler/mongo.py":692
+      /* "src/data_handler/mongo.py":696
  *             self.metadata.update_one({"_id": doc["_id"]}, {"$set": doc_updates})
  *             print(f"[Mongo] update_revalidated_metadata: applied {list(doc_updates.keys())} to doc {doc['_id']}")
  *             return True             # <<<<<<<<<<<<<<
@@ -15672,7 +15738,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       __pyx_r = Py_True;
       goto __pyx_L7_try_return;
 
-      /* "src/data_handler/mongo.py":651
+      /* "src/data_handler/mongo.py":655
  *         Sets 're-validated': True along with newly recovered fields.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -15688,7 +15754,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "src/data_handler/mongo.py":693
+    /* "src/data_handler/mongo.py":697
  *             print(f"[Mongo] update_revalidated_metadata: applied {list(doc_updates.keys())} to doc {doc['_id']}")
  *             return True
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -15698,7 +15764,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
     __pyx_t_15 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_15) {
       __Pyx_AddTraceback("src.data_handler.mongo.Mongo.update_revalidated_metadata", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_8, &__pyx_t_9) < 0) __PYX_ERR(0, 693, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_8, &__pyx_t_9) < 0) __PYX_ERR(0, 697, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_4);
       __Pyx_XGOTREF(__pyx_t_8);
       __Pyx_XGOTREF(__pyx_t_9);
@@ -15706,7 +15772,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
       __pyx_v_exc = __pyx_t_8;
       /*try:*/ {
 
-        /* "src/data_handler/mongo.py":694
+        /* "src/data_handler/mongo.py":698
  *             return True
  *         except Exception as exc:
  *             print(f"[Mongo] update_revalidated_metadata error: {exc}")             # <<<<<<<<<<<<<<
@@ -15716,9 +15782,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         __pyx_t_21 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_7 = __pyx_builtin_print; 
-        __pyx_t_23 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_23)) __PYX_ERR(0, 694, __pyx_L42_error)
+        __pyx_t_23 = __Pyx_PyObject_FormatSimple(__pyx_v_exc, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_23)) __PYX_ERR(0, 698, __pyx_L42_error)
         __Pyx_GOTREF(__pyx_t_23);
-        __pyx_t_24 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_update_revalidated_metada_3, __pyx_t_23); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 694, __pyx_L42_error)
+        __pyx_t_24 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_Mongo_update_revalidated_metada_3, __pyx_t_23); if (unlikely(!__pyx_t_24)) __PYX_ERR(0, 698, __pyx_L42_error)
         __Pyx_GOTREF(__pyx_t_24);
         __Pyx_DECREF(__pyx_t_23); __pyx_t_23 = 0;
         __pyx_t_10 = 1;
@@ -15728,12 +15794,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
           __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
           __Pyx_DECREF(__pyx_t_24); __pyx_t_24 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 694, __pyx_L42_error)
+          if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 698, __pyx_L42_error)
           __Pyx_GOTREF(__pyx_t_11);
         }
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-        /* "src/data_handler/mongo.py":695
+        /* "src/data_handler/mongo.py":699
  *         except Exception as exc:
  *             print(f"[Mongo] update_revalidated_metadata error: {exc}")
  *             return False             # <<<<<<<<<<<<<<
@@ -15749,7 +15815,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
         goto __pyx_L41_return;
       }
 
-      /* "src/data_handler/mongo.py":693
+      /* "src/data_handler/mongo.py":697
  *             print(f"[Mongo] update_revalidated_metadata: applied {list(doc_updates.keys())} to doc {doc['_id']}")
  *             return True
  *         except Exception as exc:             # <<<<<<<<<<<<<<
@@ -15803,7 +15869,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
     }
     goto __pyx_L5_except_error;
 
-    /* "src/data_handler/mongo.py":651
+    /* "src/data_handler/mongo.py":655
  *         Sets 're-validated': True along with newly recovered fields.
  *         """
  *         try:             # <<<<<<<<<<<<<<
@@ -15830,7 +15896,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
     goto __pyx_L0;
   }
 
-  /* "src/data_handler/mongo.py":646
+  /* "src/data_handler/mongo.py":650
  *             return False
  * 
  *     def update_revalidated_metadata(self, metadata_id: str, env_id: str, updates: dict) -> bool:             # <<<<<<<<<<<<<<
@@ -15864,7 +15930,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_34update_revalidated
   return __pyx_r;
 }
 
-/* "src/data_handler/mongo.py":697
+/* "src/data_handler/mongo.py":701
  *             return False
  * 
  *     def check_env_doc(self, env_id):             # <<<<<<<<<<<<<<
@@ -15912,39 +15978,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_env_id,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 697, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 701, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 697, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 701, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 697, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 701, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "check_env_doc", 0) < 0) __PYX_ERR(0, 697, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "check_env_doc", 0) < 0) __PYX_ERR(0, 701, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("check_env_doc", 1, 2, 2, i); __PYX_ERR(0, 697, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("check_env_doc", 1, 2, 2, i); __PYX_ERR(0, 701, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 697, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 701, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 697, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 701, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_env_id = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("check_env_doc", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 697, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("check_env_doc", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 701, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -15997,7 +16063,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("check_env_doc", 0);
 
-  /* "src/data_handler/mongo.py":698
+  /* "src/data_handler/mongo.py":702
  * 
  *     def check_env_doc(self, env_id):
  *         try:             # <<<<<<<<<<<<<<
@@ -16013,30 +16079,30 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/data_handler/mongo.py":699
+      /* "src/data_handler/mongo.py":703
  *     def check_env_doc(self, env_id):
  *         try:
  *             if env_id:             # <<<<<<<<<<<<<<
  *                 # Check if a document with the same 'end_id' exists
  *                 existing_doc = self.env.find_one({"env_id": env_id})
 */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_env_id); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 699, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_env_id); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 703, __pyx_L3_error)
       if (__pyx_t_4) {
 
-        /* "src/data_handler/mongo.py":701
+        /* "src/data_handler/mongo.py":705
  *             if env_id:
  *                 # Check if a document with the same 'end_id' exists
  *                 existing_doc = self.env.find_one({"env_id": env_id})             # <<<<<<<<<<<<<<
  * 
  *                 if existing_doc:
 */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 701, __pyx_L3_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 705, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = __pyx_t_7;
         __Pyx_INCREF(__pyx_t_6);
-        __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 701, __pyx_L3_error)
+        __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 705, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_8);
-        if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 701, __pyx_L3_error)
+        if (PyDict_SetItem(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 705, __pyx_L3_error)
         __pyx_t_9 = 0;
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_8};
@@ -16044,23 +16110,23 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 701, __pyx_L3_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 705, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __pyx_v_existing_doc = __pyx_t_5;
         __pyx_t_5 = 0;
 
-        /* "src/data_handler/mongo.py":703
+        /* "src/data_handler/mongo.py":707
  *                 existing_doc = self.env.find_one({"env_id": env_id})
  * 
  *                 if existing_doc:             # <<<<<<<<<<<<<<
  *                     print("Document already exists:", existing_doc)
  *                     return existing_doc, True
 */
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_existing_doc); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 703, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_existing_doc); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 707, __pyx_L3_error)
         if (__pyx_t_4) {
 
-          /* "src/data_handler/mongo.py":704
+          /* "src/data_handler/mongo.py":708
  * 
  *                 if existing_doc:
  *                     print("Document already exists:", existing_doc)             # <<<<<<<<<<<<<<
@@ -16076,12 +16142,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
             __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+__pyx_t_9, (3-__pyx_t_9) | (__pyx_t_9*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 704, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 708, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "src/data_handler/mongo.py":705
+          /* "src/data_handler/mongo.py":709
  *                 if existing_doc:
  *                     print("Document already exists:", existing_doc)
  *                     return existing_doc, True             # <<<<<<<<<<<<<<
@@ -16089,19 +16155,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
  *             print(f"An error occurred: {e}")
 */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 705, __pyx_L3_error)
+          __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 709, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_INCREF(__pyx_v_existing_doc);
           __Pyx_GIVEREF(__pyx_v_existing_doc);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_existing_doc) != (0)) __PYX_ERR(0, 705, __pyx_L3_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_existing_doc) != (0)) __PYX_ERR(0, 709, __pyx_L3_error);
           __Pyx_INCREF(Py_True);
           __Pyx_GIVEREF(Py_True);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, Py_True) != (0)) __PYX_ERR(0, 705, __pyx_L3_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, Py_True) != (0)) __PYX_ERR(0, 709, __pyx_L3_error);
           __pyx_r = __pyx_t_5;
           __pyx_t_5 = 0;
           goto __pyx_L7_try_return;
 
-          /* "src/data_handler/mongo.py":703
+          /* "src/data_handler/mongo.py":707
  *                 existing_doc = self.env.find_one({"env_id": env_id})
  * 
  *                 if existing_doc:             # <<<<<<<<<<<<<<
@@ -16110,7 +16176,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
 */
         }
 
-        /* "src/data_handler/mongo.py":699
+        /* "src/data_handler/mongo.py":703
  *     def check_env_doc(self, env_id):
  *         try:
  *             if env_id:             # <<<<<<<<<<<<<<
@@ -16119,7 +16185,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
 */
       }
 
-      /* "src/data_handler/mongo.py":698
+      /* "src/data_handler/mongo.py":702
  * 
  *     def check_env_doc(self, env_id):
  *         try:             # <<<<<<<<<<<<<<
@@ -16137,7 +16203,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "src/data_handler/mongo.py":706
+    /* "src/data_handler/mongo.py":710
  *                     print("Document already exists:", existing_doc)
  *                     return existing_doc, True
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -16147,7 +16213,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
     __pyx_t_10 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_10) {
       __Pyx_AddTraceback("src.data_handler.mongo.Mongo.check_env_doc", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_8, &__pyx_t_7) < 0) __PYX_ERR(0, 706, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_8, &__pyx_t_7) < 0) __PYX_ERR(0, 710, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_8);
       __Pyx_XGOTREF(__pyx_t_7);
@@ -16155,7 +16221,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
       __pyx_v_e = __pyx_t_8;
       /*try:*/ {
 
-        /* "src/data_handler/mongo.py":707
+        /* "src/data_handler/mongo.py":711
  *                     return existing_doc, True
  *         except Exception as e:
  *             print(f"An error occurred: {e}")             # <<<<<<<<<<<<<<
@@ -16165,9 +16231,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
         __pyx_t_11 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_12 = __pyx_builtin_print; 
-        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 707, __pyx_L16_error)
+        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 711, __pyx_L16_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_An_error_occurred, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 707, __pyx_L16_error)
+        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_An_error_occurred, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 711, __pyx_L16_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_9 = 1;
@@ -16177,12 +16243,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
           __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 707, __pyx_L16_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 711, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/data_handler/mongo.py":708
+        /* "src/data_handler/mongo.py":712
  *         except Exception as e:
  *             print(f"An error occurred: {e}")
  *             return None             # <<<<<<<<<<<<<<
@@ -16197,7 +16263,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
         goto __pyx_L15_return;
       }
 
-      /* "src/data_handler/mongo.py":706
+      /* "src/data_handler/mongo.py":710
  *                     print("Document already exists:", existing_doc)
  *                     return existing_doc, True
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -16251,7 +16317,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
     }
     goto __pyx_L5_except_error;
 
-    /* "src/data_handler/mongo.py":698
+    /* "src/data_handler/mongo.py":702
  * 
  *     def check_env_doc(self, env_id):
  *         try:             # <<<<<<<<<<<<<<
@@ -16279,7 +16345,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
     __pyx_L8_try_end:;
   }
 
-  /* "src/data_handler/mongo.py":697
+  /* "src/data_handler/mongo.py":701
  *             return False
  * 
  *     def check_env_doc(self, env_id):             # <<<<<<<<<<<<<<
@@ -16309,7 +16375,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_36check_env_doc(CYTH
   return __pyx_r;
 }
 
-/* "src/data_handler/mongo.py":711
+/* "src/data_handler/mongo.py":715
  * 
  * 
  *     def create_env_doc(self, data):             # <<<<<<<<<<<<<<
@@ -16357,39 +16423,39 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_data,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 711, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 715, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 711, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 715, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 711, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 715, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "create_env_doc", 0) < 0) __PYX_ERR(0, 711, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "create_env_doc", 0) < 0) __PYX_ERR(0, 715, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("create_env_doc", 1, 2, 2, i); __PYX_ERR(0, 711, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("create_env_doc", 1, 2, 2, i); __PYX_ERR(0, 715, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 711, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 715, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 711, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 715, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_data = values[1];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("create_env_doc", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 711, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("create_env_doc", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 715, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16443,7 +16509,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("create_env_doc", 0);
 
-  /* "src/data_handler/mongo.py":712
+  /* "src/data_handler/mongo.py":716
  * 
  *     def create_env_doc(self, data):
  *         try:             # <<<<<<<<<<<<<<
@@ -16459,24 +16525,24 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "src/data_handler/mongo.py":713
+      /* "src/data_handler/mongo.py":717
  *     def create_env_doc(self, data):
  *         try:
  *             if data:             # <<<<<<<<<<<<<<
  *                 # Insert the new document if no existing document is found
  *                 status = self.env.insert_one(data)
 */
-      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_data); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 713, __pyx_L3_error)
+      __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_data); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 717, __pyx_L3_error)
       if (__pyx_t_4) {
 
-        /* "src/data_handler/mongo.py":715
+        /* "src/data_handler/mongo.py":719
  *             if data:
  *                 # Insert the new document if no existing document is found
  *                 status = self.env.insert_one(data)             # <<<<<<<<<<<<<<
  *                 print("Document created with environment_id:", status.inserted_id)
  *                 if status.inserted_id:
 */
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 715, __pyx_L3_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 719, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_6 = __pyx_t_7;
         __Pyx_INCREF(__pyx_t_6);
@@ -16486,13 +16552,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
           __pyx_t_5 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_insert_one, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 715, __pyx_L3_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 719, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __pyx_v_status = __pyx_t_5;
         __pyx_t_5 = 0;
 
-        /* "src/data_handler/mongo.py":716
+        /* "src/data_handler/mongo.py":720
  *                 # Insert the new document if no existing document is found
  *                 status = self.env.insert_one(data)
  *                 print("Document created with environment_id:", status.inserted_id)             # <<<<<<<<<<<<<<
@@ -16502,7 +16568,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
         __pyx_t_7 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_6 = __pyx_builtin_print; 
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 716, __pyx_L3_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 720, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_9);
         __pyx_t_8 = 1;
         {
@@ -16511,40 +16577,40 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 716, __pyx_L3_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 720, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "src/data_handler/mongo.py":717
+        /* "src/data_handler/mongo.py":721
  *                 status = self.env.insert_one(data)
  *                 print("Document created with environment_id:", status.inserted_id)
  *                 if status.inserted_id:             # <<<<<<<<<<<<<<
  *                     # Retrieve the newly created document and return it
  *                     new_doc = self.env.find_one({"_id": status.inserted_id})
 */
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 717, __pyx_L3_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 721, __pyx_L3_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 717, __pyx_L3_error)
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 721, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         if (__pyx_t_4) {
 
-          /* "src/data_handler/mongo.py":719
+          /* "src/data_handler/mongo.py":723
  *                 if status.inserted_id:
  *                     # Retrieve the newly created document and return it
  *                     new_doc = self.env.find_one({"_id": status.inserted_id})             # <<<<<<<<<<<<<<
  *                     print("Document saved successfully:", new_doc)
  *                     return new_doc, True
 */
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 719, __pyx_L3_error)
+          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_env); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 723, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_9);
           __pyx_t_6 = __pyx_t_9;
           __Pyx_INCREF(__pyx_t_6);
-          __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 719, __pyx_L3_error)
+          __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 723, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 719, __pyx_L3_error)
+          __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_status, __pyx_mstate_global->__pyx_n_u_inserted_id); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 723, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_10);
-          if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_10) < 0) __PYX_ERR(0, 719, __pyx_L3_error)
+          if (PyDict_SetItem(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_id, __pyx_t_10) < 0) __PYX_ERR(0, 723, __pyx_L3_error)
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
           __pyx_t_8 = 0;
           {
@@ -16553,13 +16619,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 719, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 723, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __pyx_v_new_doc = __pyx_t_5;
           __pyx_t_5 = 0;
 
-          /* "src/data_handler/mongo.py":720
+          /* "src/data_handler/mongo.py":724
  *                     # Retrieve the newly created document and return it
  *                     new_doc = self.env.find_one({"_id": status.inserted_id})
  *                     print("Document saved successfully:", new_doc)             # <<<<<<<<<<<<<<
@@ -16575,12 +16641,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
             __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (3-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
             __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 720, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 724, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "src/data_handler/mongo.py":721
+          /* "src/data_handler/mongo.py":725
  *                     new_doc = self.env.find_one({"_id": status.inserted_id})
  *                     print("Document saved successfully:", new_doc)
  *                     return new_doc, True             # <<<<<<<<<<<<<<
@@ -16588,19 +16654,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
  *                     print("Document not saved.")
 */
           __Pyx_XDECREF(__pyx_r);
-          __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 721, __pyx_L3_error)
+          __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 725, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_INCREF(__pyx_v_new_doc);
           __Pyx_GIVEREF(__pyx_v_new_doc);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_new_doc) != (0)) __PYX_ERR(0, 721, __pyx_L3_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_new_doc) != (0)) __PYX_ERR(0, 725, __pyx_L3_error);
           __Pyx_INCREF(Py_True);
           __Pyx_GIVEREF(Py_True);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, Py_True) != (0)) __PYX_ERR(0, 721, __pyx_L3_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, Py_True) != (0)) __PYX_ERR(0, 725, __pyx_L3_error);
           __pyx_r = __pyx_t_5;
           __pyx_t_5 = 0;
           goto __pyx_L7_try_return;
 
-          /* "src/data_handler/mongo.py":717
+          /* "src/data_handler/mongo.py":721
  *                 status = self.env.insert_one(data)
  *                 print("Document created with environment_id:", status.inserted_id)
  *                 if status.inserted_id:             # <<<<<<<<<<<<<<
@@ -16609,7 +16675,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
 */
         }
 
-        /* "src/data_handler/mongo.py":723
+        /* "src/data_handler/mongo.py":727
  *                     return new_doc, True
  *                 else:
  *                     print("Document not saved.")             # <<<<<<<<<<<<<<
@@ -16626,12 +16692,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
             __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 723, __pyx_L3_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 727, __pyx_L3_error)
             __Pyx_GOTREF(__pyx_t_5);
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "src/data_handler/mongo.py":724
+          /* "src/data_handler/mongo.py":728
  *                 else:
  *                     print("Document not saved.")
  *                     return None, False             # <<<<<<<<<<<<<<
@@ -16644,7 +16710,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
           goto __pyx_L7_try_return;
         }
 
-        /* "src/data_handler/mongo.py":713
+        /* "src/data_handler/mongo.py":717
  *     def create_env_doc(self, data):
  *         try:
  *             if data:             # <<<<<<<<<<<<<<
@@ -16653,7 +16719,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
 */
       }
 
-      /* "src/data_handler/mongo.py":726
+      /* "src/data_handler/mongo.py":730
  *                     return None, False
  *             else:
  *                 print("No data provided.")             # <<<<<<<<<<<<<<
@@ -16670,12 +16736,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
           __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+__pyx_t_8, (2-__pyx_t_8) | (__pyx_t_8*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 726, __pyx_L3_error)
+          if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 730, __pyx_L3_error)
           __Pyx_GOTREF(__pyx_t_5);
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "src/data_handler/mongo.py":727
+        /* "src/data_handler/mongo.py":731
  *             else:
  *                 print("No data provided.")
  *                 return None, False             # <<<<<<<<<<<<<<
@@ -16688,7 +16754,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
         goto __pyx_L7_try_return;
       }
 
-      /* "src/data_handler/mongo.py":712
+      /* "src/data_handler/mongo.py":716
  * 
  *     def create_env_doc(self, data):
  *         try:             # <<<<<<<<<<<<<<
@@ -16703,7 +16769,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "src/data_handler/mongo.py":728
+    /* "src/data_handler/mongo.py":732
  *                 print("No data provided.")
  *                 return None, False
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -16713,7 +16779,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
     __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_11) {
       __Pyx_AddTraceback("src.data_handler.mongo.Mongo.create_env_doc", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_7, &__pyx_t_9) < 0) __PYX_ERR(0, 728, __pyx_L5_except_error)
+      if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_7, &__pyx_t_9) < 0) __PYX_ERR(0, 732, __pyx_L5_except_error)
       __Pyx_XGOTREF(__pyx_t_5);
       __Pyx_XGOTREF(__pyx_t_7);
       __Pyx_XGOTREF(__pyx_t_9);
@@ -16721,7 +16787,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
       __pyx_v_e = __pyx_t_7;
       /*try:*/ {
 
-        /* "src/data_handler/mongo.py":729
+        /* "src/data_handler/mongo.py":733
  *                 return None, False
  *         except Exception as e:
  *             print(f"An error occurred: {e}")             # <<<<<<<<<<<<<<
@@ -16731,9 +16797,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
         __pyx_t_10 = NULL;
         __Pyx_INCREF(__pyx_builtin_print);
         __pyx_t_12 = __pyx_builtin_print; 
-        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 729, __pyx_L16_error)
+        __pyx_t_13 = __Pyx_PyObject_FormatSimple(__pyx_v_e, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 733, __pyx_L16_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_An_error_occurred, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 729, __pyx_L16_error)
+        __pyx_t_14 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_An_error_occurred, __pyx_t_13); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 733, __pyx_L16_error)
         __Pyx_GOTREF(__pyx_t_14);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __pyx_t_8 = 1;
@@ -16743,12 +16809,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
           __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 729, __pyx_L16_error)
+          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 733, __pyx_L16_error)
           __Pyx_GOTREF(__pyx_t_6);
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "src/data_handler/mongo.py":730
+        /* "src/data_handler/mongo.py":734
  *         except Exception as e:
  *             print(f"An error occurred: {e}")
  *             return None, False             # <<<<<<<<<<<<<<
@@ -16764,7 +16830,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
         goto __pyx_L15_return;
       }
 
-      /* "src/data_handler/mongo.py":728
+      /* "src/data_handler/mongo.py":732
  *                 print("No data provided.")
  *                 return None, False
  *         except Exception as e:             # <<<<<<<<<<<<<<
@@ -16818,7 +16884,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
     }
     goto __pyx_L5_except_error;
 
-    /* "src/data_handler/mongo.py":712
+    /* "src/data_handler/mongo.py":716
  * 
  *     def create_env_doc(self, data):
  *         try:             # <<<<<<<<<<<<<<
@@ -16845,7 +16911,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
     goto __pyx_L0;
   }
 
-  /* "src/data_handler/mongo.py":711
+  /* "src/data_handler/mongo.py":715
  * 
  * 
  *     def create_env_doc(self, data):             # <<<<<<<<<<<<<<
@@ -16874,7 +16940,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_38create_env_doc(CYT
   return __pyx_r;
 }
 
-/* "src/data_handler/mongo.py":732
+/* "src/data_handler/mongo.py":736
  *             return None, False
  * 
  *     def update_value(self, env_id, data):             # <<<<<<<<<<<<<<
@@ -16923,38 +16989,38 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_self,&__pyx_mstate_global->__pyx_n_u_env_id,&__pyx_mstate_global->__pyx_n_u_data,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 732, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 736, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 732, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 736, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 732, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 736, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 732, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 736, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_value", 0) < 0) __PYX_ERR(0, 732, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "update_value", 0) < 0) __PYX_ERR(0, 736, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("update_value", 1, 3, 3, i); __PYX_ERR(0, 732, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("update_value", 1, 3, 3, i); __PYX_ERR(0, 736, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 732, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 736, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 732, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 736, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 732, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 736, __pyx_L3_error)
     }
     __pyx_v_self = values[0];
     __pyx_v_env_id = values[1];
@@ -16962,7 +17028,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("update_value", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 732, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("update_value", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 736, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -17022,93 +17088,93 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("update_value", 0);
 
-  /* "src/data_handler/mongo.py":733
+  /* "src/data_handler/mongo.py":737
  * 
  *     def update_value(self, env_id, data):
  *         updates = {}             # <<<<<<<<<<<<<<
  *         # Always target the FIRST (initial) capture doc for this env_id.
  *         # In a multicapture flow the second doc has capture_type="multicapture";
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 733, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 737, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_updates = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":738
+  /* "src/data_handler/mongo.py":742
  *         # user edits must go to the primary doc so they are visible to SAP/get_session.
  *         pipeline = [
  *             {"$match": {"env_id": env_id, "capture_type": {"$exists": False}}},  # skip multicapture docs             # <<<<<<<<<<<<<<
  *             {"$sort": {"_id": 1}},   # oldest first  the initial capture doc
  *             {"$limit": 1}
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 738, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 738, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 738, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 738, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 742, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_exists, Py_False) < 0) __PYX_ERR(0, 738, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_t_3) < 0) __PYX_ERR(0, 738, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_exists, Py_False) < 0) __PYX_ERR(0, 742, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_t_3) < 0) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_kp_u_match, __pyx_t_2) < 0) __PYX_ERR(0, 738, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_kp_u_match, __pyx_t_2) < 0) __PYX_ERR(0, 742, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":739
+  /* "src/data_handler/mongo.py":743
  *         pipeline = [
  *             {"$match": {"env_id": env_id, "capture_type": {"$exists": False}}},  # skip multicapture docs
  *             {"$sort": {"_id": 1}},   # oldest first  the initial capture doc             # <<<<<<<<<<<<<<
  *             {"$limit": 1}
  *         ]
 */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 739, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 743, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 739, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 743, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 739, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_sort_2, __pyx_t_3) < 0) __PYX_ERR(0, 739, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 743, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_sort_2, __pyx_t_3) < 0) __PYX_ERR(0, 743, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "src/data_handler/mongo.py":740
+  /* "src/data_handler/mongo.py":744
  *             {"$match": {"env_id": env_id, "capture_type": {"$exists": False}}},  # skip multicapture docs
  *             {"$sort": {"_id": 1}},   # oldest first  the initial capture doc
  *             {"$limit": 1}             # <<<<<<<<<<<<<<
  *         ]
  * 
 */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 740, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 744, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_limit, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 740, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_limit, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 744, __pyx_L1_error)
 
-  /* "src/data_handler/mongo.py":737
+  /* "src/data_handler/mongo.py":741
  *         # In a multicapture flow the second doc has capture_type="multicapture";
  *         # user edits must go to the primary doc so they are visible to SAP/get_session.
  *         pipeline = [             # <<<<<<<<<<<<<<
  *             {"$match": {"env_id": env_id, "capture_type": {"$exists": False}}},  # skip multicapture docs
  *             {"$sort": {"_id": 1}},   # oldest first  the initial capture doc
 */
-  __pyx_t_4 = PyList_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 737, __pyx_L1_error)
+  __pyx_t_4 = PyList_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 741, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 737, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 741, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 737, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 741, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_3);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 2, __pyx_t_3) != (0)) __PYX_ERR(0, 737, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_4, 2, __pyx_t_3) != (0)) __PYX_ERR(0, 741, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
   __pyx_t_3 = 0;
   __pyx_v_pipeline = ((PyObject*)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "src/data_handler/mongo.py":744
+  /* "src/data_handler/mongo.py":748
  * 
  *         # Execute the pipeline to get the first (initial) capture document
  *         target_docs = list(self.metadata.aggregate(pipeline))             # <<<<<<<<<<<<<<
  *         print(f'metadata (first capture): {target_docs}')
  *         print(f'data: {data}')
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 744, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 748, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = __pyx_t_2;
   __Pyx_INCREF(__pyx_t_3);
@@ -17118,16 +17184,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __pyx_t_4 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_aggregate, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 744, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 748, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
   }
-  __pyx_t_2 = __Pyx_PySequence_ListKeepNew(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 744, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PySequence_ListKeepNew(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 748, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_target_docs = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":745
+  /* "src/data_handler/mongo.py":749
  *         # Execute the pipeline to get the first (initial) capture document
  *         target_docs = list(self.metadata.aggregate(pipeline))
  *         print(f'metadata (first capture): {target_docs}')             # <<<<<<<<<<<<<<
@@ -17137,9 +17203,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_4 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_3 = __pyx_builtin_print; 
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_target_docs, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 745, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_target_docs, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 749, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_metadata_first_capture, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 745, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_metadata_first_capture, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 749, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = 1;
@@ -17149,12 +17215,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 745, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 749, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":746
+  /* "src/data_handler/mongo.py":750
  *         target_docs = list(self.metadata.aggregate(pipeline))
  *         print(f'metadata (first capture): {target_docs}')
  *         print(f'data: {data}')             # <<<<<<<<<<<<<<
@@ -17164,9 +17230,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_3 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_6 = __pyx_builtin_print; 
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 746, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_data, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 750, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_data_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 746, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_data_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 750, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_5 = 1;
@@ -17176,12 +17242,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 746, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 750, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":748
+  /* "src/data_handler/mongo.py":752
  *         print(f'data: {data}')
  * 
  *         if not target_docs:             # <<<<<<<<<<<<<<
@@ -17189,78 +17255,78 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
  *             fallback = list(self.metadata.aggregate([
 */
   __pyx_t_7 = (__Pyx_PyList_GET_SIZE(__pyx_v_target_docs) != 0);
-  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_7 < 0))) __PYX_ERR(0, 748, __pyx_L1_error)
+  if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_7 < 0))) __PYX_ERR(0, 752, __pyx_L1_error)
   __pyx_t_8 = (!__pyx_t_7);
   if (__pyx_t_8) {
 
-    /* "src/data_handler/mongo.py":750
+    /* "src/data_handler/mongo.py":754
  *         if not target_docs:
  *             # Fallback: no non-multicapture doc found  try any doc (handles edge cases)
  *             fallback = list(self.metadata.aggregate([             # <<<<<<<<<<<<<<
  *                 {"$match": {"env_id": env_id}},
  *                 {"$sort": {"_id": 1}},
 */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 750, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 754, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_6 = __pyx_t_1;
     __Pyx_INCREF(__pyx_t_6);
 
-    /* "src/data_handler/mongo.py":751
+    /* "src/data_handler/mongo.py":755
  *             # Fallback: no non-multicapture doc found  try any doc (handles edge cases)
  *             fallback = list(self.metadata.aggregate([
  *                 {"$match": {"env_id": env_id}},             # <<<<<<<<<<<<<<
  *                 {"$sort": {"_id": 1}},
  *                 {"$limit": 1}
 */
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 751, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 755, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 751, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 755, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 751, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_match, __pyx_t_4) < 0) __PYX_ERR(0, 751, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 755, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_match, __pyx_t_4) < 0) __PYX_ERR(0, 755, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "src/data_handler/mongo.py":752
+    /* "src/data_handler/mongo.py":756
  *             fallback = list(self.metadata.aggregate([
  *                 {"$match": {"env_id": env_id}},
  *                 {"$sort": {"_id": 1}},             # <<<<<<<<<<<<<<
  *                 {"$limit": 1}
  *             ]))
 */
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 752, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 756, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 752, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 756, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 752, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_sort_2, __pyx_t_9) < 0) __PYX_ERR(0, 752, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_id, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 756, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_sort_2, __pyx_t_9) < 0) __PYX_ERR(0, 756, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "src/data_handler/mongo.py":753
+    /* "src/data_handler/mongo.py":757
  *                 {"$match": {"env_id": env_id}},
  *                 {"$sort": {"_id": 1}},
  *                 {"$limit": 1}             # <<<<<<<<<<<<<<
  *             ]))
  *             if not fallback:
 */
-    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 753, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 757, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_kp_u_limit, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 753, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_9, __pyx_mstate_global->__pyx_kp_u_limit, __pyx_mstate_global->__pyx_int_1) < 0) __PYX_ERR(0, 757, __pyx_L1_error)
 
-    /* "src/data_handler/mongo.py":750
+    /* "src/data_handler/mongo.py":754
  *         if not target_docs:
  *             # Fallback: no non-multicapture doc found  try any doc (handles edge cases)
  *             fallback = list(self.metadata.aggregate([             # <<<<<<<<<<<<<<
  *                 {"$match": {"env_id": env_id}},
  *                 {"$sort": {"_id": 1}},
 */
-    __pyx_t_10 = PyList_New(3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 750, __pyx_L1_error)
+    __pyx_t_10 = PyList_New(3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 754, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 750, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 754, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 750, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 754, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 2, __pyx_t_9) != (0)) __PYX_ERR(0, 750, __pyx_L1_error);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_10, 2, __pyx_t_9) != (0)) __PYX_ERR(0, 754, __pyx_L1_error);
     __pyx_t_3 = 0;
     __pyx_t_4 = 0;
     __pyx_t_9 = 0;
@@ -17271,16 +17337,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 750, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 754, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
     }
-    __pyx_t_1 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 750, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 754, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_fallback = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "src/data_handler/mongo.py":755
+    /* "src/data_handler/mongo.py":759
  *                 {"$limit": 1}
  *             ]))
  *             if not fallback:             # <<<<<<<<<<<<<<
@@ -17288,11 +17354,11 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
  *             target_docs = fallback
 */
     __pyx_t_8 = (__Pyx_PyList_GET_SIZE(__pyx_v_fallback) != 0);
-    if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 755, __pyx_L1_error)
+    if (unlikely(((!CYTHON_ASSUME_SAFE_MACROS) && __pyx_t_8 < 0))) __PYX_ERR(0, 759, __pyx_L1_error)
     __pyx_t_7 = (!__pyx_t_8);
     if (__pyx_t_7) {
 
-      /* "src/data_handler/mongo.py":756
+      /* "src/data_handler/mongo.py":760
  *             ]))
  *             if not fallback:
  *                 return {"message": "Document not found.", "updated_document": None}             # <<<<<<<<<<<<<<
@@ -17300,15 +17366,15 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
  * 
 */
       __Pyx_XDECREF(__pyx_r);
-      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 756, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 760, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_not_found) < 0) __PYX_ERR(0, 756, __pyx_L1_error)
-      if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 756, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_not_found) < 0) __PYX_ERR(0, 760, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 760, __pyx_L1_error)
       __pyx_r = __pyx_t_1;
       __pyx_t_1 = 0;
       goto __pyx_L0;
 
-      /* "src/data_handler/mongo.py":755
+      /* "src/data_handler/mongo.py":759
  *                 {"$limit": 1}
  *             ]))
  *             if not fallback:             # <<<<<<<<<<<<<<
@@ -17317,7 +17383,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
     }
 
-    /* "src/data_handler/mongo.py":757
+    /* "src/data_handler/mongo.py":761
  *             if not fallback:
  *                 return {"message": "Document not found.", "updated_document": None}
  *             target_docs = fallback             # <<<<<<<<<<<<<<
@@ -17327,7 +17393,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_INCREF(__pyx_v_fallback);
     __Pyx_DECREF_SET(__pyx_v_target_docs, __pyx_v_fallback);
 
-    /* "src/data_handler/mongo.py":748
+    /* "src/data_handler/mongo.py":752
  *         print(f'data: {data}')
  * 
  *         if not target_docs:             # <<<<<<<<<<<<<<
@@ -17336,19 +17402,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
   }
 
-  /* "src/data_handler/mongo.py":760
+  /* "src/data_handler/mongo.py":764
  * 
  *         # Get the document from the list
  *         target_doc = target_docs[0]             # <<<<<<<<<<<<<<
  * 
  *         # Extract the ObjectId from the target document
 */
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_target_docs, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 760, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_target_docs, 0, long, 1, __Pyx_PyLong_From_long, 1, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 764, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_target_doc = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":763
+  /* "src/data_handler/mongo.py":767
  * 
  *         # Extract the ObjectId from the target document
  *         oid = target_doc.get('_id')             # <<<<<<<<<<<<<<
@@ -17362,24 +17428,24 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_get, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 763, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 767, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_oid = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":764
+  /* "src/data_handler/mongo.py":768
  *         # Extract the ObjectId from the target document
  *         oid = target_doc.get('_id')
  *         if not oid:             # <<<<<<<<<<<<<<
  *             return {"message": "Document does not have a valid ObjectId.", "updated_document": None}
  * 
 */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_oid); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 764, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_oid); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 768, __pyx_L1_error)
   __pyx_t_8 = (!__pyx_t_7);
   if (__pyx_t_8) {
 
-    /* "src/data_handler/mongo.py":765
+    /* "src/data_handler/mongo.py":769
  *         oid = target_doc.get('_id')
  *         if not oid:
  *             return {"message": "Document does not have a valid ObjectId.", "updated_document": None}             # <<<<<<<<<<<<<<
@@ -17387,15 +17453,15 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
  *         for field_name, new_value in data.items():
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 765, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 769, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_does_not_have_a_valid_O) < 0) __PYX_ERR(0, 765, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 765, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_does_not_have_a_valid_O) < 0) __PYX_ERR(0, 769, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 769, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "src/data_handler/mongo.py":764
+    /* "src/data_handler/mongo.py":768
  *         # Extract the ObjectId from the target document
  *         oid = target_doc.get('_id')
  *         if not oid:             # <<<<<<<<<<<<<<
@@ -17404,7 +17470,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
   }
 
-  /* "src/data_handler/mongo.py":767
+  /* "src/data_handler/mongo.py":771
  *             return {"message": "Document does not have a valid ObjectId.", "updated_document": None}
  * 
  *         for field_name, new_value in data.items():             # <<<<<<<<<<<<<<
@@ -17414,9 +17480,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_11 = 0;
   if (unlikely(__pyx_v_data == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-    __PYX_ERR(0, 767, __pyx_L1_error)
+    __PYX_ERR(0, 771, __pyx_L1_error)
   }
-  __pyx_t_2 = __Pyx_dict_iterator(__pyx_v_data, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_12), (&__pyx_t_13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 767, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_dict_iterator(__pyx_v_data, 0, __pyx_mstate_global->__pyx_n_u_items, (&__pyx_t_12), (&__pyx_t_13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 771, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_1);
   __pyx_t_1 = __pyx_t_2;
@@ -17424,7 +17490,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   while (1) {
     __pyx_t_14 = __Pyx_dict_iter_next(__pyx_t_1, __pyx_t_12, &__pyx_t_11, &__pyx_t_2, &__pyx_t_10, NULL, __pyx_t_13);
     if (unlikely(__pyx_t_14 == 0)) break;
-    if (unlikely(__pyx_t_14 == -1)) __PYX_ERR(0, 767, __pyx_L1_error)
+    if (unlikely(__pyx_t_14 == -1)) __PYX_ERR(0, 771, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_XDECREF_SET(__pyx_v_field_name, __pyx_t_2);
@@ -17432,7 +17498,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF_SET(__pyx_v_new_value, __pyx_t_10);
     __pyx_t_10 = 0;
 
-    /* "src/data_handler/mongo.py":769
+    /* "src/data_handler/mongo.py":773
  *         for field_name, new_value in data.items():
  * 
  *             if new_value is not None and new_value != "":             # <<<<<<<<<<<<<<
@@ -17445,29 +17511,29 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
       __pyx_t_8 = __pyx_t_7;
       goto __pyx_L9_bool_binop_done;
     }
-    __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_new_value, __pyx_mstate_global->__pyx_kp_u_, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 769, __pyx_L1_error)
+    __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_new_value, __pyx_mstate_global->__pyx_kp_u_, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 773, __pyx_L1_error)
     __pyx_t_8 = __pyx_t_7;
     __pyx_L9_bool_binop_done:;
     if (__pyx_t_8) {
 
-      /* "src/data_handler/mongo.py":772
+      /* "src/data_handler/mongo.py":776
  * 
  *                 # EAN
  *                 if field_name == 'ean':             # <<<<<<<<<<<<<<
  *                     new_value = str(new_value).strip()
  * 
 */
-      __pyx_t_8 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_ean, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 772, __pyx_L1_error)
+      __pyx_t_8 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_ean, Py_EQ)); if (unlikely((__pyx_t_8 < 0))) __PYX_ERR(0, 776, __pyx_L1_error)
       if (__pyx_t_8) {
 
-        /* "src/data_handler/mongo.py":773
+        /* "src/data_handler/mongo.py":777
  *                 # EAN
  *                 if field_name == 'ean':
  *                     new_value = str(new_value).strip()             # <<<<<<<<<<<<<<
  * 
  *                 # Date fields
 */
-        __pyx_t_6 = __Pyx_PyObject_Unicode(__pyx_v_new_value); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 773, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_Unicode(__pyx_v_new_value); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 777, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_2 = __pyx_t_6;
         __Pyx_INCREF(__pyx_t_2);
@@ -17477,13 +17543,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __pyx_t_10 = __Pyx_PyObject_FastCallMethod(__pyx_mstate_global->__pyx_n_u_strip, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 773, __pyx_L1_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 777, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
         __Pyx_DECREF_SET(__pyx_v_new_value, __pyx_t_10);
         __pyx_t_10 = 0;
 
-        /* "src/data_handler/mongo.py":772
+        /* "src/data_handler/mongo.py":776
  * 
  *                 # EAN
  *                 if field_name == 'ean':             # <<<<<<<<<<<<<<
@@ -17492,7 +17558,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
       }
 
-      /* "src/data_handler/mongo.py":776
+      /* "src/data_handler/mongo.py":780
  * 
  *                 # Date fields
  *                 if field_name in ['mfg_date', 'expiry_date']:             # <<<<<<<<<<<<<<
@@ -17501,35 +17567,35 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
       __Pyx_INCREF(__pyx_v_field_name);
       __pyx_t_10 = __pyx_v_field_name;
-      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_mfg_date, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 776, __pyx_L1_error)
+      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_mfg_date, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 780, __pyx_L1_error)
       if (!__pyx_t_7) {
       } else {
         __pyx_t_8 = __pyx_t_7;
         goto __pyx_L13_bool_binop_done;
       }
-      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_expiry_date, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 776, __pyx_L1_error)
+      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_t_10, __pyx_mstate_global->__pyx_n_u_expiry_date, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 780, __pyx_L1_error)
       __pyx_t_8 = __pyx_t_7;
       __pyx_L13_bool_binop_done:;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_7 = __pyx_t_8;
       if (__pyx_t_7) {
 
-        /* "src/data_handler/mongo.py":777
+        /* "src/data_handler/mongo.py":781
  *                 # Date fields
  *                 if field_name in ['mfg_date', 'expiry_date']:
  *                     formatted_date = self.datetime.format_datetime_array([new_value])[0]             # <<<<<<<<<<<<<<
  *                     if formatted_date is None:
  *                         return {
 */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 777, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 781, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_6 = __pyx_t_2;
         __Pyx_INCREF(__pyx_t_6);
-        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 777, __pyx_L1_error)
+        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 781, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_INCREF(__pyx_v_new_value);
         __Pyx_GIVEREF(__pyx_v_new_value);
-        if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_v_new_value) != (0)) __PYX_ERR(0, 777, __pyx_L1_error);
+        if (__Pyx_PyList_SET_ITEM(__pyx_t_9, 0, __pyx_v_new_value) != (0)) __PYX_ERR(0, 781, __pyx_L1_error);
         __pyx_t_5 = 0;
         {
           PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_9};
@@ -17537,16 +17603,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 777, __pyx_L1_error)
+          if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 781, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
         }
-        __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_10, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 777, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_10, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 781, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_XDECREF_SET(__pyx_v_formatted_date, __pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "src/data_handler/mongo.py":778
+        /* "src/data_handler/mongo.py":782
  *                 if field_name in ['mfg_date', 'expiry_date']:
  *                     formatted_date = self.datetime.format_datetime_array([new_value])[0]
  *                     if formatted_date is None:             # <<<<<<<<<<<<<<
@@ -17556,7 +17622,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
         __pyx_t_7 = (__pyx_v_formatted_date == Py_None);
         if (__pyx_t_7) {
 
-          /* "src/data_handler/mongo.py":779
+          /* "src/data_handler/mongo.py":783
  *                     formatted_date = self.datetime.format_datetime_array([new_value])[0]
  *                     if formatted_date is None:
  *                         return {             # <<<<<<<<<<<<<<
@@ -17565,41 +17631,41 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
           __Pyx_XDECREF(__pyx_r);
 
-          /* "src/data_handler/mongo.py":780
+          /* "src/data_handler/mongo.py":784
  *                     if formatted_date is None:
  *                         return {
  *                             "message": f"Invalid date format for {field_name}.",             # <<<<<<<<<<<<<<
  *                             "updated_document": None
  *                         }
 */
-          __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 780, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 784, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_v_field_name, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 780, __pyx_L1_error)
+          __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_v_field_name, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 784, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
           __pyx_t_15[0] = __pyx_mstate_global->__pyx_kp_u_Invalid_date_format_for;
           __pyx_t_15[1] = __pyx_t_10;
           __pyx_t_15[2] = __pyx_mstate_global->__pyx_kp_u__2;
           __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_15, 3, 24 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10) + 1, 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10));
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 780, __pyx_L1_error)
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 784, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_9);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-          if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_message, __pyx_t_9) < 0) __PYX_ERR(0, 780, __pyx_L1_error)
+          if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_message, __pyx_t_9) < 0) __PYX_ERR(0, 784, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "src/data_handler/mongo.py":781
+          /* "src/data_handler/mongo.py":785
  *                         return {
  *                             "message": f"Invalid date format for {field_name}.",
  *                             "updated_document": None             # <<<<<<<<<<<<<<
  *                         }
  *                     new_value = formatted_date
 */
-          if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 780, __pyx_L1_error)
+          if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 784, __pyx_L1_error)
           __pyx_r = __pyx_t_2;
           __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           goto __pyx_L0;
 
-          /* "src/data_handler/mongo.py":778
+          /* "src/data_handler/mongo.py":782
  *                 if field_name in ['mfg_date', 'expiry_date']:
  *                     formatted_date = self.datetime.format_datetime_array([new_value])[0]
  *                     if formatted_date is None:             # <<<<<<<<<<<<<<
@@ -17608,7 +17674,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
         }
 
-        /* "src/data_handler/mongo.py":783
+        /* "src/data_handler/mongo.py":787
  *                             "updated_document": None
  *                         }
  *                     new_value = formatted_date             # <<<<<<<<<<<<<<
@@ -17618,7 +17684,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
         __Pyx_INCREF(__pyx_v_formatted_date);
         __Pyx_DECREF_SET(__pyx_v_new_value, __pyx_v_formatted_date);
 
-        /* "src/data_handler/mongo.py":776
+        /* "src/data_handler/mongo.py":780
  * 
  *                 # Date fields
  *                 if field_name in ['mfg_date', 'expiry_date']:             # <<<<<<<<<<<<<<
@@ -17627,17 +17693,17 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
       }
 
-      /* "src/data_handler/mongo.py":786
+      /* "src/data_handler/mongo.py":790
  * 
  *                 # MRP
  *                 if field_name == 'mrp':             # <<<<<<<<<<<<<<
  *                     try:
  *                         new_value = float(new_value)
 */
-      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_mrp, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 786, __pyx_L1_error)
+      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_mrp, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 790, __pyx_L1_error)
       if (__pyx_t_7) {
 
-        /* "src/data_handler/mongo.py":787
+        /* "src/data_handler/mongo.py":791
  *                 # MRP
  *                 if field_name == 'mrp':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17653,19 +17719,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __Pyx_XGOTREF(__pyx_t_18);
           /*try:*/ {
 
-            /* "src/data_handler/mongo.py":788
+            /* "src/data_handler/mongo.py":792
  *                 if field_name == 'mrp':
  *                     try:
  *                         new_value = float(new_value)             # <<<<<<<<<<<<<<
  *                     except ValueError:
  *                         return {
 */
-            __pyx_t_2 = __Pyx_PyNumber_Float(__pyx_v_new_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 788, __pyx_L17_error)
+            __pyx_t_2 = __Pyx_PyNumber_Float(__pyx_v_new_value); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 792, __pyx_L17_error)
             __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF_SET(__pyx_v_new_value, __pyx_t_2);
             __pyx_t_2 = 0;
 
-            /* "src/data_handler/mongo.py":787
+            /* "src/data_handler/mongo.py":791
  *                 # MRP
  *                 if field_name == 'mrp':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17685,7 +17751,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "src/data_handler/mongo.py":789
+          /* "src/data_handler/mongo.py":793
  *                     try:
  *                         new_value = float(new_value)
  *                     except ValueError:             # <<<<<<<<<<<<<<
@@ -17695,12 +17761,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __pyx_t_14 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
           if (__pyx_t_14) {
             __Pyx_AddTraceback("src.data_handler.mongo.Mongo.update_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_9, &__pyx_t_10) < 0) __PYX_ERR(0, 789, __pyx_L19_except_error)
+            if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_9, &__pyx_t_10) < 0) __PYX_ERR(0, 793, __pyx_L19_except_error)
             __Pyx_XGOTREF(__pyx_t_2);
             __Pyx_XGOTREF(__pyx_t_9);
             __Pyx_XGOTREF(__pyx_t_10);
 
-            /* "src/data_handler/mongo.py":790
+            /* "src/data_handler/mongo.py":794
  *                         new_value = float(new_value)
  *                     except ValueError:
  *                         return {             # <<<<<<<<<<<<<<
@@ -17709,25 +17775,25 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
             __Pyx_XDECREF(__pyx_r);
 
-            /* "src/data_handler/mongo.py":791
+            /* "src/data_handler/mongo.py":795
  *                     except ValueError:
  *                         return {
  *                             "message": "Invalid value for 'mrp'.",             # <<<<<<<<<<<<<<
  *                             "updated_document": None
  *                         }
 */
-            __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 791, __pyx_L19_except_error)
+            __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 795, __pyx_L19_except_error)
             __Pyx_GOTREF(__pyx_t_6);
-            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Invalid_value_for_mrp) < 0) __PYX_ERR(0, 791, __pyx_L19_except_error)
+            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Invalid_value_for_mrp) < 0) __PYX_ERR(0, 795, __pyx_L19_except_error)
 
-            /* "src/data_handler/mongo.py":792
+            /* "src/data_handler/mongo.py":796
  *                         return {
  *                             "message": "Invalid value for 'mrp'.",
  *                             "updated_document": None             # <<<<<<<<<<<<<<
  *                         }
  * 
 */
-            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 791, __pyx_L19_except_error)
+            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 795, __pyx_L19_except_error)
             __pyx_r = __pyx_t_6;
             __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -17738,7 +17804,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           }
           goto __pyx_L19_except_error;
 
-          /* "src/data_handler/mongo.py":787
+          /* "src/data_handler/mongo.py":791
  *                 # MRP
  *                 if field_name == 'mrp':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17760,7 +17826,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __pyx_L24_try_end:;
         }
 
-        /* "src/data_handler/mongo.py":786
+        /* "src/data_handler/mongo.py":790
  * 
  *                 # MRP
  *                 if field_name == 'mrp':             # <<<<<<<<<<<<<<
@@ -17769,17 +17835,17 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
       }
 
-      /* "src/data_handler/mongo.py":796
+      /* "src/data_handler/mongo.py":800
  * 
  *                 # Quantity
  *                 if field_name == 'qty':             # <<<<<<<<<<<<<<
  *                     try:
  *                         new_value = int(new_value)
 */
-      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_qty, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 796, __pyx_L1_error)
+      __pyx_t_7 = (__Pyx_PyUnicode_Equals(__pyx_v_field_name, __pyx_mstate_global->__pyx_n_u_qty, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 800, __pyx_L1_error)
       if (__pyx_t_7) {
 
-        /* "src/data_handler/mongo.py":797
+        /* "src/data_handler/mongo.py":801
  *                 # Quantity
  *                 if field_name == 'qty':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17795,19 +17861,19 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __Pyx_XGOTREF(__pyx_t_16);
           /*try:*/ {
 
-            /* "src/data_handler/mongo.py":798
+            /* "src/data_handler/mongo.py":802
  *                 if field_name == 'qty':
  *                     try:
  *                         new_value = int(new_value)             # <<<<<<<<<<<<<<
  *                     except ValueError:
  *                         return {
 */
-            __pyx_t_10 = __Pyx_PyNumber_Int(__pyx_v_new_value); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 798, __pyx_L28_error)
+            __pyx_t_10 = __Pyx_PyNumber_Int(__pyx_v_new_value); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 802, __pyx_L28_error)
             __Pyx_GOTREF(__pyx_t_10);
             __Pyx_DECREF_SET(__pyx_v_new_value, __pyx_t_10);
             __pyx_t_10 = 0;
 
-            /* "src/data_handler/mongo.py":797
+            /* "src/data_handler/mongo.py":801
  *                 # Quantity
  *                 if field_name == 'qty':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17827,7 +17893,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-          /* "src/data_handler/mongo.py":799
+          /* "src/data_handler/mongo.py":803
  *                     try:
  *                         new_value = int(new_value)
  *                     except ValueError:             # <<<<<<<<<<<<<<
@@ -17837,12 +17903,12 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __pyx_t_14 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ValueError);
           if (__pyx_t_14) {
             __Pyx_AddTraceback("src.data_handler.mongo.Mongo.update_value", __pyx_clineno, __pyx_lineno, __pyx_filename);
-            if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_9, &__pyx_t_2) < 0) __PYX_ERR(0, 799, __pyx_L30_except_error)
+            if (__Pyx_GetException(&__pyx_t_10, &__pyx_t_9, &__pyx_t_2) < 0) __PYX_ERR(0, 803, __pyx_L30_except_error)
             __Pyx_XGOTREF(__pyx_t_10);
             __Pyx_XGOTREF(__pyx_t_9);
             __Pyx_XGOTREF(__pyx_t_2);
 
-            /* "src/data_handler/mongo.py":800
+            /* "src/data_handler/mongo.py":804
  *                         new_value = int(new_value)
  *                     except ValueError:
  *                         return {             # <<<<<<<<<<<<<<
@@ -17851,25 +17917,25 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
             __Pyx_XDECREF(__pyx_r);
 
-            /* "src/data_handler/mongo.py":801
+            /* "src/data_handler/mongo.py":805
  *                     except ValueError:
  *                         return {
  *                             "message": "Invalid value for 'qty'.",             # <<<<<<<<<<<<<<
  *                             "updated_document": None
  *                         }
 */
-            __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 801, __pyx_L30_except_error)
+            __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 805, __pyx_L30_except_error)
             __Pyx_GOTREF(__pyx_t_6);
-            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Invalid_value_for_qty) < 0) __PYX_ERR(0, 801, __pyx_L30_except_error)
+            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Invalid_value_for_qty) < 0) __PYX_ERR(0, 805, __pyx_L30_except_error)
 
-            /* "src/data_handler/mongo.py":802
+            /* "src/data_handler/mongo.py":806
  *                         return {
  *                             "message": "Invalid value for 'qty'.",
  *                             "updated_document": None             # <<<<<<<<<<<<<<
  *                         }
  * 
 */
-            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 801, __pyx_L30_except_error)
+            if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 805, __pyx_L30_except_error)
             __pyx_r = __pyx_t_6;
             __pyx_t_6 = 0;
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -17880,7 +17946,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           }
           goto __pyx_L30_except_error;
 
-          /* "src/data_handler/mongo.py":797
+          /* "src/data_handler/mongo.py":801
  *                 # Quantity
  *                 if field_name == 'qty':
  *                     try:             # <<<<<<<<<<<<<<
@@ -17902,7 +17968,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
           __pyx_L35_try_end:;
         }
 
-        /* "src/data_handler/mongo.py":796
+        /* "src/data_handler/mongo.py":800
  * 
  *                 # Quantity
  *                 if field_name == 'qty':             # <<<<<<<<<<<<<<
@@ -17911,16 +17977,16 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
       }
 
-      /* "src/data_handler/mongo.py":805
+      /* "src/data_handler/mongo.py":809
  *                         }
  * 
  *                 updates[field_name] = new_value             # <<<<<<<<<<<<<<
  * 
  *         # If no updates are to be made, return a message indicating no changes
 */
-      if (unlikely((PyDict_SetItem(__pyx_v_updates, __pyx_v_field_name, __pyx_v_new_value) < 0))) __PYX_ERR(0, 805, __pyx_L1_error)
+      if (unlikely((PyDict_SetItem(__pyx_v_updates, __pyx_v_field_name, __pyx_v_new_value) < 0))) __PYX_ERR(0, 809, __pyx_L1_error)
 
-      /* "src/data_handler/mongo.py":769
+      /* "src/data_handler/mongo.py":773
  *         for field_name, new_value in data.items():
  * 
  *             if new_value is not None and new_value != "":             # <<<<<<<<<<<<<<
@@ -17931,18 +17997,18 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":808
+  /* "src/data_handler/mongo.py":812
  * 
  *         # If no updates are to be made, return a message indicating no changes
  *         if not updates:             # <<<<<<<<<<<<<<
  *             return {"message": "No valid fields to update.", "updated_document": None}
  * 
 */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_updates); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 808, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_updates); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 812, __pyx_L1_error)
   __pyx_t_8 = (!__pyx_t_7);
   if (__pyx_t_8) {
 
-    /* "src/data_handler/mongo.py":809
+    /* "src/data_handler/mongo.py":813
  *         # If no updates are to be made, return a message indicating no changes
  *         if not updates:
  *             return {"message": "No valid fields to update.", "updated_document": None}             # <<<<<<<<<<<<<<
@@ -17950,15 +18016,15 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
  *         print(f'update_data: {updates}')
 */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 809, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 813, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_No_valid_fields_to_update) < 0) __PYX_ERR(0, 809, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 809, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_No_valid_fields_to_update) < 0) __PYX_ERR(0, 813, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 813, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "src/data_handler/mongo.py":808
+    /* "src/data_handler/mongo.py":812
  * 
  *         # If no updates are to be made, return a message indicating no changes
  *         if not updates:             # <<<<<<<<<<<<<<
@@ -17967,7 +18033,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
   }
 
-  /* "src/data_handler/mongo.py":811
+  /* "src/data_handler/mongo.py":815
  *             return {"message": "No valid fields to update.", "updated_document": None}
  * 
  *         print(f'update_data: {updates}')             # <<<<<<<<<<<<<<
@@ -17977,9 +18043,9 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_9 = __pyx_builtin_print; 
-  __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_v_updates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 811, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_v_updates, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 815, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_update_data, __pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 811, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_mstate_global->__pyx_kp_u_update_data, __pyx_t_10); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 815, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __pyx_t_5 = 1;
@@ -17989,44 +18055,44 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 811, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 815, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":814
+  /* "src/data_handler/mongo.py":818
  * 
  *         #  Write 1: update the first/primary capture doc
  *         result = self.metadata.update_one(             # <<<<<<<<<<<<<<
  *             {"_id": oid},
  *             {"$set": updates}
 */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 814, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 818, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_9 = __pyx_t_6;
   __Pyx_INCREF(__pyx_t_9);
 
-  /* "src/data_handler/mongo.py":815
+  /* "src/data_handler/mongo.py":819
  *         #  Write 1: update the first/primary capture doc
  *         result = self.metadata.update_one(
  *             {"_id": oid},             # <<<<<<<<<<<<<<
  *             {"$set": updates}
  *         )
 */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 815, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 819, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id, __pyx_v_oid) < 0) __PYX_ERR(0, 815, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id, __pyx_v_oid) < 0) __PYX_ERR(0, 819, __pyx_L1_error)
 
-  /* "src/data_handler/mongo.py":816
+  /* "src/data_handler/mongo.py":820
  *         result = self.metadata.update_one(
  *             {"_id": oid},
  *             {"$set": updates}             # <<<<<<<<<<<<<<
  *         )
  *         print(f"[update_value] Primary doc updated: matched={result.matched_count} modified={result.modified_count}")
 */
-  __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 816, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 820, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 816, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_10, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 820, __pyx_L1_error)
   __pyx_t_5 = 0;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_9, __pyx_t_2, __pyx_t_10};
@@ -18035,13 +18101,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 814, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 818, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":818
+  /* "src/data_handler/mongo.py":822
  *             {"$set": updates}
  *         )
  *         print(f"[update_value] Primary doc updated: matched={result.matched_count} modified={result.modified_count}")             # <<<<<<<<<<<<<<
@@ -18051,14 +18117,14 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_10 = __pyx_builtin_print; 
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_matched_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 818, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_matched_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 822, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 818, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 822, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 818, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 822, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 818, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 822, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_19[0] = __pyx_mstate_global->__pyx_kp_u_update_value_Primary_doc_update;
@@ -18066,7 +18132,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_19[2] = __pyx_mstate_global->__pyx_kp_u_modified;
   __pyx_t_19[3] = __pyx_t_4;
   __pyx_t_2 = __Pyx_PyUnicode_Join(__pyx_t_19, 4, 44 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_9) + 10 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4));
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 818, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 822, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -18077,45 +18143,45 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 818, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 822, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":824
+  /* "src/data_handler/mongo.py":828
  *         # the user's corrections, so both the first and multicapture docs show
  *         # the same edited root values.
  *         mc_result = self.metadata.update_many(             # <<<<<<<<<<<<<<
  *             {"env_id": env_id, "capture_type": "multicapture"},
  *             {"$set": updates}
 */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 824, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 828, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_10 = __pyx_t_2;
   __Pyx_INCREF(__pyx_t_10);
 
-  /* "src/data_handler/mongo.py":825
+  /* "src/data_handler/mongo.py":829
  *         # the same edited root values.
  *         mc_result = self.metadata.update_many(
  *             {"env_id": env_id, "capture_type": "multicapture"},             # <<<<<<<<<<<<<<
  *             {"$set": updates}
  *         )
 */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 825, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 829, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 825, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_n_u_multicapture) < 0) __PYX_ERR(0, 825, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_v_env_id) < 0) __PYX_ERR(0, 829, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_capture_type, __pyx_mstate_global->__pyx_n_u_multicapture) < 0) __PYX_ERR(0, 829, __pyx_L1_error)
 
-  /* "src/data_handler/mongo.py":826
+  /* "src/data_handler/mongo.py":830
  *         mc_result = self.metadata.update_many(
  *             {"env_id": env_id, "capture_type": "multicapture"},
  *             {"$set": updates}             # <<<<<<<<<<<<<<
  *         )
  *         print(f"[update_value] Multicapture docs updated: matched={mc_result.matched_count} modified={mc_result.modified_count}")
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 826, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 830, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 826, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_set, __pyx_v_updates) < 0) __PYX_ERR(0, 830, __pyx_L1_error)
   __pyx_t_5 = 0;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_10, __pyx_t_6, __pyx_t_4};
@@ -18124,13 +18190,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 824, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 828, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_mc_result = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":828
+  /* "src/data_handler/mongo.py":832
  *             {"$set": updates}
  *         )
  *         print(f"[update_value] Multicapture docs updated: matched={mc_result.matched_count} modified={mc_result.modified_count}")             # <<<<<<<<<<<<<<
@@ -18140,14 +18206,14 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
   __pyx_t_4 = __pyx_builtin_print; 
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_matched_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_matched_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 828, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_mstate_global->__pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_19[0] = __pyx_mstate_global->__pyx_kp_u_update_value_Multicapture_docs;
@@ -18155,7 +18221,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   __pyx_t_19[2] = __pyx_mstate_global->__pyx_kp_u_modified;
   __pyx_t_19[3] = __pyx_t_9;
   __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_19, 4, 50 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_10) + 10 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_9), 127 | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_10) | __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9));
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 828, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -18166,53 +18232,53 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 828, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 832, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "src/data_handler/mongo.py":830
+  /* "src/data_handler/mongo.py":834
  *         print(f"[update_value] Multicapture docs updated: matched={mc_result.matched_count} modified={mc_result.modified_count}")
  * 
  *         if result.modified_count > 0 or mc_result.modified_count > 0:             # <<<<<<<<<<<<<<
  *             updated_doc = self.metadata.find_one({"_id": oid})
  *             return {
 */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (!__pyx_t_7) {
   } else {
     __pyx_t_8 = __pyx_t_7;
     goto __pyx_L40_bool_binop_done;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_mc_result, __pyx_mstate_global->__pyx_n_u_modified_count); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_mstate_global->__pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 830, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_8 = __pyx_t_7;
   __pyx_L40_bool_binop_done:;
   if (__pyx_t_8) {
 
-    /* "src/data_handler/mongo.py":831
+    /* "src/data_handler/mongo.py":835
  * 
  *         if result.modified_count > 0 or mc_result.modified_count > 0:
  *             updated_doc = self.metadata.find_one({"_id": oid})             # <<<<<<<<<<<<<<
  *             return {
  *                 "message": "Document updated successfully.",
 */
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 831, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_metadata); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 835, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_4 = __pyx_t_6;
     __Pyx_INCREF(__pyx_t_4);
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 831, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 835, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id, __pyx_v_oid) < 0) __PYX_ERR(0, 831, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_id, __pyx_v_oid) < 0) __PYX_ERR(0, 835, __pyx_L1_error)
     __pyx_t_5 = 0;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_t_2};
@@ -18220,13 +18286,13 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 831, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 835, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __pyx_v_updated_doc = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "src/data_handler/mongo.py":832
+    /* "src/data_handler/mongo.py":836
  *         if result.modified_count > 0 or mc_result.modified_count > 0:
  *             updated_doc = self.metadata.find_one({"_id": oid})
  *             return {             # <<<<<<<<<<<<<<
@@ -18235,30 +18301,30 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
     __Pyx_XDECREF(__pyx_r);
 
-    /* "src/data_handler/mongo.py":833
+    /* "src/data_handler/mongo.py":837
  *             updated_doc = self.metadata.find_one({"_id": oid})
  *             return {
  *                 "message": "Document updated successfully.",             # <<<<<<<<<<<<<<
  *                 "updated_document": updated_doc
  *             }
 */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 833, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 837, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_updated_successfully) < 0) __PYX_ERR(0, 833, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_updated_successfully) < 0) __PYX_ERR(0, 837, __pyx_L1_error)
 
-    /* "src/data_handler/mongo.py":834
+    /* "src/data_handler/mongo.py":838
  *             return {
  *                 "message": "Document updated successfully.",
  *                 "updated_document": updated_doc             # <<<<<<<<<<<<<<
  *             }
  *         else:
 */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, __pyx_v_updated_doc) < 0) __PYX_ERR(0, 833, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, __pyx_v_updated_doc) < 0) __PYX_ERR(0, 837, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "src/data_handler/mongo.py":830
+    /* "src/data_handler/mongo.py":834
  *         print(f"[update_value] Multicapture docs updated: matched={mc_result.matched_count} modified={mc_result.modified_count}")
  * 
  *         if result.modified_count > 0 or mc_result.modified_count > 0:             # <<<<<<<<<<<<<<
@@ -18267,7 +18333,7 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
 */
   }
 
-  /* "src/data_handler/mongo.py":837
+  /* "src/data_handler/mongo.py":841
  *             }
  *         else:
  *             return {             # <<<<<<<<<<<<<<
@@ -18277,30 +18343,30 @@ static PyObject *__pyx_pf_3src_12data_handler_5mongo_5Mongo_40update_value(CYTHO
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
 
-    /* "src/data_handler/mongo.py":838
+    /* "src/data_handler/mongo.py":842
  *         else:
  *             return {
  *                 "message": "Document update failed or no changes made.",             # <<<<<<<<<<<<<<
  *                 "updated_document": None
  *             }
 */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 838, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 842, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_update_failed_or_no_cha) < 0) __PYX_ERR(0, 838, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_message, __pyx_mstate_global->__pyx_kp_u_Document_update_failed_or_no_cha) < 0) __PYX_ERR(0, 842, __pyx_L1_error)
 
-    /* "src/data_handler/mongo.py":839
+    /* "src/data_handler/mongo.py":843
  *             return {
  *                 "message": "Document update failed or no changes made.",
  *                 "updated_document": None             # <<<<<<<<<<<<<<
  *             }
 */
-    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 838, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_updated_document, Py_None) < 0) __PYX_ERR(0, 842, __pyx_L1_error)
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
   }
 
-  /* "src/data_handler/mongo.py":732
+  /* "src/data_handler/mongo.py":736
  *             return None, False
  * 
  *     def update_value(self, env_id, data):             # <<<<<<<<<<<<<<
@@ -19291,88 +19357,88 @@ __Pyx_RefNannySetupContext("PyInit_mongo", 0);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_create_metadata, __pyx_t_2) < 0) __PYX_ERR(0, 536, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":591
+  /* "src/data_handler/mongo.py":595
  *     # Root-level fields that are candidates for multicapture merging.
  *     # `predicted` is deliberately excluded.
  *     _MERGE_FIELDS = ("mrp", "mfg_date", "expiry_date", "batch_no", "img_url", "ocr_raw_output")             # <<<<<<<<<<<<<<
  * 
  *     def merge_multicapture_metadata(self, env_id: str, new_data: dict) -> bool:
 */
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_MERGE_FIELDS, __pyx_mstate_global->__pyx_tuple[7]) < 0) __PYX_ERR(0, 591, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_MERGE_FIELDS, __pyx_mstate_global->__pyx_tuple[7]) < 0) __PYX_ERR(0, 595, __pyx_L1_error)
 
-  /* "src/data_handler/mongo.py":593
+  /* "src/data_handler/mongo.py":597
  *     _MERGE_FIELDS = ("mrp", "mfg_date", "expiry_date", "batch_no", "img_url", "ocr_raw_output")
  * 
  *     def merge_multicapture_metadata(self, env_id: str, new_data: dict) -> bool:             # <<<<<<<<<<<<<<
  *         """
  *         Find the FIRST (oldest) metadata document for `env_id` and fill in any
 */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 593, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 597, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 593, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_new_data, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 593, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 593, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_33merge_multicapture_metadata, 0, __pyx_mstate_global->__pyx_n_u_Mongo_merge_multicapture_metadat, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 593, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 597, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_new_data, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 597, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 597, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_33merge_multicapture_metadata, 0, __pyx_mstate_global->__pyx_n_u_Mongo_merge_multicapture_metadat, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 597, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_4, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_merge_multicapture_metadata, __pyx_t_4) < 0) __PYX_ERR(0, 593, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_merge_multicapture_metadata, __pyx_t_4) < 0) __PYX_ERR(0, 597, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "src/data_handler/mongo.py":646
+  /* "src/data_handler/mongo.py":650
  *             return False
  * 
  *     def update_revalidated_metadata(self, metadata_id: str, env_id: str, updates: dict) -> bool:             # <<<<<<<<<<<<<<
  *         """
  *         Updates metadata document when full-image revalidation recovers missing attributes.
 */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 646, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 650, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_updates, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_35update_revalidated_metadata, 0, __pyx_mstate_global->__pyx_n_u_Mongo_update_revalidated_metadat, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 646, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_metadata_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 650, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_env_id, __pyx_mstate_global->__pyx_n_u_str) < 0) __PYX_ERR(0, 650, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_updates, __pyx_mstate_global->__pyx_n_u_dict) < 0) __PYX_ERR(0, 650, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_return, __pyx_mstate_global->__pyx_n_u_bool) < 0) __PYX_ERR(0, 650, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_35update_revalidated_metadata, 0, __pyx_mstate_global->__pyx_n_u_Mongo_update_revalidated_metadat, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 650, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_update_revalidated_metadata, __pyx_t_2) < 0) __PYX_ERR(0, 646, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_update_revalidated_metadata, __pyx_t_2) < 0) __PYX_ERR(0, 650, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":697
+  /* "src/data_handler/mongo.py":701
  *             return False
  * 
  *     def check_env_doc(self, env_id):             # <<<<<<<<<<<<<<
  *         try:
  *             if env_id:
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_37check_env_doc, 0, __pyx_mstate_global->__pyx_n_u_Mongo_check_env_doc, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[19])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 697, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_37check_env_doc, 0, __pyx_mstate_global->__pyx_n_u_Mongo_check_env_doc, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[19])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_check_env_doc, __pyx_t_2) < 0) __PYX_ERR(0, 697, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_check_env_doc, __pyx_t_2) < 0) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":711
+  /* "src/data_handler/mongo.py":715
  * 
  * 
  *     def create_env_doc(self, data):             # <<<<<<<<<<<<<<
  *         try:
  *             if data:
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_39create_env_doc, 0, __pyx_mstate_global->__pyx_n_u_Mongo_create_env_doc, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[20])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 711, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_39create_env_doc, 0, __pyx_mstate_global->__pyx_n_u_Mongo_create_env_doc, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[20])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 715, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_create_env_doc, __pyx_t_2) < 0) __PYX_ERR(0, 711, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_create_env_doc, __pyx_t_2) < 0) __PYX_ERR(0, 715, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "src/data_handler/mongo.py":732
+  /* "src/data_handler/mongo.py":736
  *             return None, False
  * 
  *     def update_value(self, env_id, data):             # <<<<<<<<<<<<<<
  *         updates = {}
  *         # Always target the FIRST (initial) capture doc for this env_id.
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_41update_value, 0, __pyx_mstate_global->__pyx_n_u_Mongo_update_value, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[21])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 732, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_3src_12data_handler_5mongo_5Mongo_41update_value, 0, __pyx_mstate_global->__pyx_n_u_Mongo_update_value, NULL, __pyx_mstate_global->__pyx_n_u_src_data_handler_mongo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[21])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 736, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_update_value, __pyx_t_2) < 0) __PYX_ERR(0, 732, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_update_value, __pyx_t_2) < 0) __PYX_ERR(0, 736, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "src/data_handler/mongo.py":12
@@ -19618,6 +19684,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_ean, sizeof(__pyx_k_ean), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ean */
   {__pyx_k_ean_code, sizeof(__pyx_k_ean_code), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ean_code */
   {__pyx_k_ean_validated, sizeof(__pyx_k_ean_validated), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ean_validated */
+  {__pyx_k_edited_expiry, sizeof(__pyx_k_edited_expiry), 0, 1, 1}, /* PyObject cname: __pyx_n_u_edited_expiry */
   {__pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_enable */
   {__pyx_k_env, sizeof(__pyx_k_env), 0, 1, 1}, /* PyObject cname: __pyx_n_u_env */
   {__pyx_k_env_col, sizeof(__pyx_k_env_col), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_env_col */
@@ -19671,6 +19738,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_lower, sizeof(__pyx_k_lower), 0, 1, 1}, /* PyObject cname: __pyx_n_u_lower */
   {__pyx_k_m_d_Y, sizeof(__pyx_k_m_d_Y), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_m_d_Y */
   {__pyx_k_main, sizeof(__pyx_k_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main */
+  {__pyx_k_manual_capture, sizeof(__pyx_k_manual_capture), 0, 1, 1}, /* PyObject cname: __pyx_n_u_manual_capture */
   {__pyx_k_manual_entry, sizeof(__pyx_k_manual_entry), 0, 1, 1}, /* PyObject cname: __pyx_n_u_manual_entry */
   {__pyx_k_match, sizeof(__pyx_k_match), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_match */
   {__pyx_k_matched_count, sizeof(__pyx_k_matched_count), 0, 1, 1}, /* PyObject cname: __pyx_n_u_matched_count */
@@ -19831,7 +19899,7 @@ static int __Pyx_InitCachedBuiltins(__pyx_mstatetype *__pyx_mstate) {
   __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_print); if (!__pyx_builtin_print) __PYX_ERR(0, 38, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 50, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(0, 356, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 661, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 665, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -19898,14 +19966,14 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[4]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[4]);
 
-  /* "src/data_handler/mongo.py":724
+  /* "src/data_handler/mongo.py":728
  *                 else:
  *                     print("Document not saved.")
  *                     return None, False             # <<<<<<<<<<<<<<
  *             else:
  *                 print("No data provided.")
 */
-  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 724, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[5] = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_mstate_global->__pyx_tuple[5])) __PYX_ERR(0, 728, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[5]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[5]);
 
@@ -19920,14 +19988,14 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[6]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[6]);
 
-  /* "src/data_handler/mongo.py":591
+  /* "src/data_handler/mongo.py":595
  *     # Root-level fields that are candidates for multicapture merging.
  *     # `predicted` is deliberately excluded.
  *     _MERGE_FIELDS = ("mrp", "mfg_date", "expiry_date", "batch_no", "img_url", "ocr_raw_output")             # <<<<<<<<<<<<<<
  * 
  *     def merge_multicapture_metadata(self, env_id: str, new_data: dict) -> bool:
 */
-  __pyx_mstate_global->__pyx_tuple[7] = PyTuple_Pack(6, __pyx_mstate_global->__pyx_n_u_mrp, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_mstate_global->__pyx_n_u_batch_no, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_mstate_global->__pyx_n_u_ocr_raw_output); if (unlikely(!__pyx_mstate_global->__pyx_tuple[7])) __PYX_ERR(0, 591, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[7] = PyTuple_Pack(6, __pyx_mstate_global->__pyx_n_u_mrp, __pyx_mstate_global->__pyx_n_u_mfg_date, __pyx_mstate_global->__pyx_n_u_expiry_date, __pyx_mstate_global->__pyx_n_u_batch_no, __pyx_mstate_global->__pyx_n_u_img_url, __pyx_mstate_global->__pyx_n_u_ocr_raw_output); if (unlikely(!__pyx_mstate_global->__pyx_tuple[7])) __PYX_ERR(0, 595, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[7]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[7]);
   __Pyx_RefNannyFinishContext();
@@ -20063,32 +20131,32 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate_global->__pyx_codeobj_tab[15] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_remove_metadata, __pyx_k_A_q_Yk_6_4A_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[15])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 536, 564};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 6, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 536, 616};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_ean_code, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_metadata_id, __pyx_mstate->__pyx_n_u_metadata_doc};
     __pyx_mstate_global->__pyx_codeobj_tab[16] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_create_metadata, __pyx_k_Na_Q_t4q_1_4t1A_D_4t1A_D_c_d_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[16])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 10, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 593, 307};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 10, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 597, 307};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_new_data, __pyx_mstate->__pyx_n_u_first_doc, __pyx_mstate->__pyx_n_u_updates, __pyx_mstate->__pyx_n_u_field, __pyx_mstate->__pyx_n_u_existing, __pyx_mstate->__pyx_n_u_is_empty, __pyx_mstate->__pyx_n_u_new_val, __pyx_mstate->__pyx_n_u_exc};
     __pyx_mstate_global->__pyx_codeobj_tab[17] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_merge_multicapture_metadata, __pyx_k_2_IYa_1_Rwa_t1_Qb_SST_q_a_Q_9D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[17])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 646, 394};
+    const __Pyx_PyCode_New_function_description descr = {4, 0, 0, 13, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 650, 394};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_metadata_id, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_updates, __pyx_mstate->__pyx_n_u_query, __pyx_mstate->__pyx_n_u_doc_2, __pyx_mstate->__pyx_n_u__7, __pyx_mstate->__pyx_n_u_time, __pyx_mstate->__pyx_n_u_doc_updates, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_v, __pyx_mstate->__pyx_n_u_parsed, __pyx_mstate->__pyx_n_u_exc};
     __pyx_mstate_global->__pyx_codeobj_tab[18] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_update_revalidated_metadata, __pyx_k_7_NR_A_q_Q_q_Ql_q_U_1_d_9AWE_81, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[18])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 697, 71};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 4, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 701, 71};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_existing_doc, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[19] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_check_env_doc, __pyx_k_A_q_t4y_A_1_6a_A_1_1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[19])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 711, 130};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 715, 130};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_status, __pyx_mstate->__pyx_n_u_new_doc, __pyx_mstate->__pyx_n_u_e};
     __pyx_mstate_global->__pyx_codeobj_tab[20] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_create_env_doc, __pyx_k_A_q_T_AQ_Q_vQ_6_d_ir_a_9A_6_Qa_v, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[20])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 15, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 732, 599};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 15, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 736, 599};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_env_id, __pyx_mstate->__pyx_n_u_data, __pyx_mstate->__pyx_n_u_updates, __pyx_mstate->__pyx_n_u_pipeline, __pyx_mstate->__pyx_n_u_target_docs, __pyx_mstate->__pyx_n_u_fallback, __pyx_mstate->__pyx_n_u_target_doc, __pyx_mstate->__pyx_n_u_oid, __pyx_mstate->__pyx_n_u_field_name, __pyx_mstate->__pyx_n_u_new_value, __pyx_mstate->__pyx_n_u_formatted_date, __pyx_mstate->__pyx_n_u_result, __pyx_mstate->__pyx_n_u_mc_result, __pyx_mstate->__pyx_n_u_updated_doc};
     __pyx_mstate_global->__pyx_codeobj_tab[21] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_data_handler_mongo_py, __pyx_mstate->__pyx_n_u_update_value, __pyx_k_A_1_a_wa_q_d_4y_1_Qb_a_Qb_4q_t1D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[21])) goto bad;
   }

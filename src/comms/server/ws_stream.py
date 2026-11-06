@@ -164,16 +164,22 @@ stream_router = APIRouter()
 # ---------------------------------------------------------------------------
 
 def _ws_validate_token(token: str, client_name: str) -> bool:
-    """Validate a JWT token for the given client. Mirrors api.py logic."""
-    secret_key        = os.getenv("JWT_SECRET_KEY")
-    algorithm         = os.getenv("JWT_ALGORITHM", "HS256")
-    shipsy_secret_key = os.getenv("SHIPSY_SECRET_KEY")
-    shipsy_algorithm  = os.getenv("SHIPSY_ALGORITHM", "HS256")
+    """Validate a JWT token for the given client. Mirrors api.py _pick_jwt_key logic."""
+    client = (client_name or "").strip().lower()
 
-    if (client_name or "").strip().lower() == "shipsy":
-        key, algo = shipsy_secret_key, shipsy_algorithm
+    if client == "shipsy":
+        key  = os.getenv("SHIPSY_SECRET_KEY")
+        algo = os.getenv("SHIPSY_ALGORITHM", "HS256")
+    elif client == "reliance-sap":
+        key  = os.getenv("RELIANCE_SAP_SECRET_KEY")
+        algo = os.getenv("RELIANCE_SAP_ALGORITHM", "HS256")
+    elif client == "vinculum":
+        key  = os.getenv("VINCULUM_SECRET_KEY")
+        algo = os.getenv("VINCULUM_ALGORITHM", "HS256")
     else:
-        key, algo = secret_key, algorithm
+        # default: reliance + any unknown client
+        key  = os.getenv("JWT_SECRET_KEY")
+        algo = os.getenv("JWT_ALGORITHM", "HS256")
 
     try:
         header = jwt.get_unverified_header(token)

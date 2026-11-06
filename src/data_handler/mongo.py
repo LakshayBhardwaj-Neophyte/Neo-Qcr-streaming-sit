@@ -583,6 +583,10 @@ class Mongo:
             metadata_doc['rotation_info'] = data.get('rotation_info')
         if data.get('patch_info') is not None:
             metadata_doc['patch_info'] = data.get('patch_info')
+        if data.get('manual_capture') is True:
+            metadata_doc['manual_capture'] = True
+        if data.get('edited_expiry') is True:
+            metadata_doc['edited_expiry'] = True
             
         return self.save_document(metadata_doc)
 
