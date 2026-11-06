@@ -183,6 +183,91 @@ def test_jwt_token(token, secret_key=None, algorithm=None):
 
 
 # ---------------------------------------------------------------------------
+# Shipsy business-rule helpers
+# ---------------------------------------------------------------------------
+
+def _apply_shipsy_single_date_rule(metadata: dict, snapshot: dict) -> None:
+    """
+    Shipsy-only: When only expiry_date is detected (mfg_date missing/null),
+    decide whether the date should actually be treated as mfg_date.
+
+    Rule 1 — date is WITHIN last 2 days (today-2 <= date <= today) → keep as expiry_date
+             date is OUTSIDE last 2 days (older than 2 days OR future) → treat as mfg_date
+    Rule 2 — when promoting to mfg_date: if day == last day of its month → change day to 01
+    """
+    import calendar
+    from datetime import datetime as _dt, timedelta as _td
+
+    def _is_missing(val):
+        if val is None:
+            return True
+        if isinstance(val, str) and val.strip().lower() in ("", "nan", "none", "null"):
+            return True
+        return False
+
+    mfg = metadata.get("mfg_date")
+    exp = metadata.get("expiry_date")
+
+    # Only apply when mfg is missing AND exp is present
+    if not _is_missing(mfg) or _is_missing(exp):
+        return
+
+    exp_str = str(exp).strip()
+    exp_dt = None
+    for fmt in ("%d-%m-%Y", "%Y-%m-%d", "%d/%m/%Y"):
+        try:
+            exp_dt = _dt.strptime(exp_str, fmt)
+            break
+        except ValueError:
+            continue
+
+    if exp_dt is None:
+        print(f"[Shipsy rule] Could not parse date: {exp_str!r} — skipping")
+        return
+
+    today        = _dt.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    two_days_ago = today - _td(days=2)
+
+    # Within last 2 days → genuine expiry, keep as-is
+    if two_days_ago <= exp_dt <= today:
+        print(f"[Shipsy rule] Single date {exp_str!r} is within last 2 days → kept as expiry_date")
+        return
+
+    # Outside last 2 days (older OR future) → treat as mfg_date
+    # Rule 2: last day of month → change to 1st
+    last_day     = calendar.monthrange(exp_dt.year, exp_dt.month)[1]
+    was_last_day = (exp_dt.day == last_day)
+    if was_last_day:
+        exp_dt = exp_dt.replace(day=1)
+
+    new_mfg_str = exp_dt.strftime("%d-%m-%Y")
+
+    # Update metadata (API response to SDK)
+    metadata["mfg_date"]    = new_mfg_str
+    metadata["expiry_date"] = None
+
+    # Update snapshot["data"] (goes to MongoDB metadata doc root fields via orchestrator)
+    if isinstance(snapshot.get("data"), dict):
+        snapshot["data"]["mfg_date"]     = new_mfg_str
+        snapshot["data"]["expiry_date"]  = None
+        snapshot["data"]["edited_expiry"] = True   # flag: expiry was reinterpreted as mfg
+
+    # Patch snapshot["dates"] so orchestrator's format_datetime_array produces
+    # mfg_date=new_mfg_str, expiry_date=None in the root-level DB fields.
+    # dates[0] → mfg, dates[1] → expiry (absent → None)
+    snapshot["dates"] = [new_mfg_str]
+
+    # Clear resolved_expiry — the orchestrator has a fallback that re-applies it
+    # to expiry_date if it's still set. We must nullify it so expiry stays None.
+    snapshot["resolved_expiry"] = None
+
+    print(
+        f"[Shipsy rule] Single date {exp_str!r} → mfg_date={new_mfg_str!r}"
+        f"  (day_was_last_of_month={was_last_day})"
+    )
+
+
+# ---------------------------------------------------------------------------
 # Request models  (unchanged)
 # ---------------------------------------------------------------------------
 
@@ -628,6 +713,10 @@ class SdkAPI:
                 snapshot = result["snapshot"]
                 record_metadata_fields(metadata, client_name)
 
+                # ── Shipsy single-date rule ──────────────────────────────
+                if client_name == "shipsy":
+                    _apply_shipsy_single_date_rule(metadata, snapshot)
+
                 # Calculate latency if session_start is provided
                 session_start = req.get("session_start")
                 scan_duration = None
@@ -829,6 +918,10 @@ class SdkAPI:
                 metadata = result["metadata"]
                 snapshot = result["snapshot"]
                 record_metadata_fields(metadata, client_name)
+
+                # ── Shipsy single-date rule ──────────────────────────────
+                if client_name == "shipsy":
+                    _apply_shipsy_single_date_rule(metadata, snapshot)
 
                 metadata["qty"]         = 1
                 metadata["metadata_id"] = new_metadata_id

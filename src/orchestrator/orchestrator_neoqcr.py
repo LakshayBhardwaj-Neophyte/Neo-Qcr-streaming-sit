@@ -485,6 +485,10 @@ class Orchestrator:
                 processed_data["manual_capture"] = True
                 print("[save_metadata] manual_capture=True → flagged in DB document")
 
+            if snapshot.get("data", {}).get("edited_expiry") is True:
+                processed_data["edited_expiry"] = True
+                print("[save_metadata] edited_expiry=True → Shipsy single-date rule applied, flagged in DB document")
+
             # ---- Write to DB ------------------------------------------
             if env_id:
                 check_result = self.database.check_env_doc(env_id)
