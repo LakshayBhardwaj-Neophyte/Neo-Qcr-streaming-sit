@@ -285,6 +285,8 @@ class Payload(BaseModel):
     rotation_info: Optional[str] = None
     patch_info:   Optional[str]  = None
     manual_capture: Optional[bool] = None       # optional — True when operator manually captures
+    device_uid:   Optional[str] = None           # optional — unique device identifier
+    device_model: Optional[str] = None           # optional — device model name
 
 
 class UserRequest(BaseModel):
@@ -382,6 +384,10 @@ class SdkAPI:
                 "patch_info": form.get("patch_info"),
                 "is_streaming": str(form.get("is_streaming")).lower() == "true",
                 "manual_capture": str(form.get("manual_capture", "")).lower() == "true" or None,
+                "device_uid":   form.get("device_uid") or None,
+                "device_model": form.get("device_model") or None,
+                # Multicapture stream: period already read by paddle-OCR in ws_stream
+                "expiry_period": form.get("expiry_period") or None,
             }
 
         if "application/json" in content_type:
@@ -406,6 +412,8 @@ class SdkAPI:
                 "rotation_info": payload.rotation_info,
                 "patch_info": payload.patch_info,
                 "manual_capture": payload.manual_capture if payload.manual_capture else None,
+                "device_uid":   payload.device_uid or None,
+                "device_model": payload.device_model or None,
             }
 
         raise ValueError("Unsupported content-type — use application/json or multipart/form-data")
@@ -427,6 +435,8 @@ class SdkAPI:
         pid:               Optional[str] = None,
         request_id:        Optional[str] = None,
         scan_duration:     Optional[float] = None,
+        device_uid:        Optional[str] = None,
+        device_model:      Optional[str] = None,
     ) -> None:
         try:
             print(f"[BG save] image={image_name}  skip_upload={skip_image_upload}  pid={pid}")
@@ -444,6 +454,8 @@ class SdkAPI:
                 pid               = pid,
                 request_id        = request_id,
                 scan_duration     = scan_duration,
+                device_uid        = device_uid,
+                device_model      = device_model,
             )
             print("[BG save] Done")
         except Exception as exc:
@@ -707,15 +719,27 @@ class SdkAPI:
                     metadata_id  = metadata_id,
                     client_name  = client_name,
                     user_id      = user_id,
+                    # only passed for multicapture stream (needs rebuilt orchestrator .so)
+                    **({"ocr_period": req["expiry_period"]}
+                       if capture_type and req.get("expiry_period") else {}),
                 )
 
                 metadata = result["metadata"]
                 snapshot = result["snapshot"]
                 record_metadata_fields(metadata, client_name)
 
-                # ── Shipsy single-date rule ──────────────────────────────
-                if client_name == "shipsy":
+                # ── Single-date rule (reliance + shipsy) ─────────────────
+                if client_name in ("shipsy", "reliance"):
                     _apply_shipsy_single_date_rule(metadata, snapshot)
+                    # Keep the Redis session in sync with what the SDK sees, so a
+                    # later multicapture reads the promoted mfg_date from Redis.
+                    if not capture_type and snapshot.get("data", {}).get("edited_expiry"):
+                        _sess = self.orchestrator.session_cache.get(env_id)
+                        if _sess:
+                            _sess["mfg_date"]    = metadata.get("mfg_date")
+                            _sess["expiry_date"] = None
+                            self.orchestrator.session_cache.set(env_id, _sess)
+                            print(f"[/process] Redis session synced with single-date rule: mfg={_sess['mfg_date']}")
 
                 # Calculate latency if session_start is provided
                 session_start = req.get("session_start")
@@ -833,6 +857,8 @@ class SdkAPI:
                         "pid":               pid,
                         "request_id":        request_id,
                         "scan_duration":     scan_duration,
+                        "device_uid":        req.get("device_uid"),
+                        "device_model":      req.get("device_model"),
                     },
                     daemon=True,
                 ).start()
@@ -919,8 +945,8 @@ class SdkAPI:
                 snapshot = result["snapshot"]
                 record_metadata_fields(metadata, client_name)
 
-                # ── Shipsy single-date rule ──────────────────────────────
-                if client_name == "shipsy":
+                # ── Single-date rule (reliance + shipsy) ─────────────────
+                if client_name in ("shipsy", "reliance"):
                     _apply_shipsy_single_date_rule(metadata, snapshot)
 
                 metadata["qty"]         = 1
@@ -993,6 +1019,8 @@ class SdkAPI:
                         "skip_image_upload": skip_upload,
                         "pid":               pid,
                         "request_id":        request_id,
+                        "device_uid":        req.get("device_uid"),
+                        "device_model":      req.get("device_model"),
                     },
                     daemon=True,
                 ).start()

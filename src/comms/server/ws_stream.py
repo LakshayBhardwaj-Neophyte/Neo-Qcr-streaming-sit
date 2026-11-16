@@ -34,6 +34,11 @@ load_dotenv("src/configs/.env")
 # Maximum time the stream runs before giving up (no MFG/EXP found → 422).
 STREAM_MAX_DURATION_S: int = int(os.getenv("STREAM_MAX_DURATION_S", "20"))
 
+# Multicapture (capture_type=true): no quality gate, no VLM. Frames are sampled
+# at MULTICAPTURE_FPS and sent straight to paddle-OCR for the expiry period.
+MULTICAPTURE_FPS: float           = max(0.1, float(os.getenv("MULTICAPTURE_FPS", "1")))
+MULTICAPTURE_MAX_OCR_FRAMES: int  = int(os.getenv("MULTICAPTURE_MAX_OCR_FRAMES", "15"))
+
 # 2-class patch classifier: 0 = good (usable), 1 = bad (discard, keep streaming).
 GOOD_CLASS_ID: int = 0
 
@@ -482,9 +487,19 @@ async def stream_endpoint(
 
     is_recapture_bool = str(is_recapture).strip().lower() in ("true", "1", "yes")
 
+    # Multicapture: 1 fps sampling → paddle-OCR only (no quality gate, no VLM).
+    is_multicapture = (
+        str(capture_type).strip().lower() in ("true", "1", "multicapture")
+        and not is_recapture_bool
+    )
+    mc_last_bucket: int = -1   # last 1-fps bucket already sent to paddle-OCR
+    mc_ocr_count:   int = 0    # frames sent to paddle-OCR so far
+    mc_result_sent: bool = False  # result already delivered to SDK from Redis
+
     print(
         f"[WS /ws/stream] Session opened — env_id={env_id}  client={client_name}  "
         f"request_id={request_id}  ean={ean_code}  is_recapture={is_recapture_bool}  "
+        f"multicapture={is_multicapture}  "
         f"max_duration={STREAM_MAX_DURATION_S}s  save_frames={SAVE_FRAMES}\n"
         f"  → Frames save dir: {session_dir}"
     )
@@ -581,6 +596,49 @@ async def stream_endpoint(
             WS_DATE_FOUND_LATENCY.labels(client_label).observe(time.monotonic() - session_start)
             print(f"[WS][VLM] Frame {seq} WON ✓ — mfg={mfg}  exp={exp}")
 
+    # ── Nested coroutine: paddle-OCR on one sampled frame (multicapture) ──
+
+    async def process_frame_period_ocr(frame_img: Image.Image, seq: int) -> None:
+        """
+        Multicapture only. Send the full frame to paddle-OCR; the first frame
+        that yields an expiry period (e.g. '18 months') wins.
+        """
+        nonlocal winner_result
+
+        if date_found_event.is_set():
+            return
+
+        try:
+            from src.orchestrator.orchestrator_neoqcr import _call_period_ocr_api
+            period = await _call_period_ocr_api(frame_img)
+        except asyncio.CancelledError:
+            return
+        except Exception as exc:
+            print(f"[WS][PeriodOCR] Frame {seq} error: {exc}")
+            return
+
+        if date_found_event.is_set():
+            print(f"[WS][PeriodOCR] Frame {seq} — already won by another frame, discarding")
+            return
+
+        if not period:
+            print(f"[WS][PeriodOCR] Frame {seq} — no period found, continuing stream")
+            return
+
+        async with winner_lock:
+            if date_found_event.is_set():
+                print(f"[WS][PeriodOCR] Frame {seq} — lost the race, discarding")
+                return
+
+            winner_result = {
+                "seq":           seq,
+                "original_img":  frame_img,
+                "expiry_period": period,
+            }
+            date_found_event.set()
+            WS_DATE_FOUND_LATENCY.labels(client_label).observe(time.monotonic() - session_start)
+            print(f"[WS][PeriodOCR] Frame {seq} WON ✓ — period={period}")
+
     # ── Receive loop ─────────────────────────────────────────────────────
     try:
         while True:
@@ -663,6 +721,49 @@ async def stream_endpoint(
                 )
                 t_blob.start()
                 save_threads.append(t_blob)
+
+            # ── Multicapture: 1-fps sampling → paddle-OCR (no gate, no VLM) ─
+            if is_multicapture:
+                mc_bucket  = int(arrival_ts * MULTICAPTURE_FPS)
+                mc_sampled = (
+                    mc_bucket != mc_last_bucket
+                    and mc_ocr_count < MULTICAPTURE_MAX_OCR_FRAMES
+                    and not date_found_event.is_set()
+                )
+
+                if STREAM_FRAMES_BLOB_ENABLED:
+                    seq_sec[seq] = int(arrival_ts)
+                    bucket = int(arrival_ts * STREAM_FRAMES_FPS)
+                    held   = stream_slots.get(bucket)
+                    if held is None or (mc_sampled and not held[3]):
+                        stream_slots[bucket] = (int(arrival_ts), seq, jpeg, mc_sampled)
+
+                print(
+                    f"[WS][MC] Frame seq={seq}  ts={arrival_ts:.2f}s  "
+                    f"sampled={mc_sampled}  ocr_frames={mc_ocr_count}"
+                )
+
+                # No quality gate in multicapture → every frame is acceptable.
+                try:
+                    await websocket.send_json({
+                        "type":        "frame_result",
+                        "seq":         seq,
+                        "frame_ts":    round(arrival_ts, 3),
+                        "detections":  [],
+                        "is_good":     True,
+                        "ocr_sampled": mc_sampled,
+                    })
+                except Exception as send_exc:
+                    print(f"[WS] Send error on frame {seq}: {send_exc}")
+                    break
+
+                if mc_sampled:
+                    mc_last_bucket = mc_bucket
+                    mc_ocr_count  += 1
+                    vlm_tasks.append(asyncio.create_task(
+                        process_frame_period_ocr(img, seq)
+                    ))
+                continue
 
             # ── Classify (thread-pool — does not block event loop) ─────────
             loop       = asyncio.get_event_loop()
@@ -819,6 +920,10 @@ async def stream_endpoint(
                 "type":    "error",
                 "code":    422,
                 "message": (
+                    "Could not read the expiry period (e.g. 'Best before 18 months') "
+                    "from the product label. Please ensure it is clearly visible, "
+                    "well-lit, and try again."
+                    if is_multicapture else
                     "Could not extract manufacturing or expiry date from the product "
                     "label. Please ensure the label is clearly visible, well-lit, "
                     "and try again."
@@ -870,8 +975,58 @@ async def stream_endpoint(
             print(f"[WS] Could not start original upload thread: {exc}")
 
         # ── Step 2: Decision tree → which image to send to /process ───────
+        #   Multicapture: no decision tree. Build the result from the Redis
+        #   session (capture-1 data + mfg_date) and the OCR'd period, send it to
+        #   the SDK right away, then POST /process below only for the DB save.
         _dt_t0 = time.perf_counter()
-        final_image, used_full = await _apply_decision_tree(winner_result, orchestrator)
+        if is_multicapture:
+            from src.core.think.machine_learning.computer_vision.text_analytics.key_value_extraction.regex_module.expiry_period_calculator import calculate_expiry_date
+
+            period       = winner_result["expiry_period"]
+            session_meta = dict(orchestrator.session_cache.get(env_id) or {})
+            cached_mfg   = session_meta.get("mfg_date")
+
+            computed_expiry = None
+            if not _is_missing(cached_mfg):
+                try:
+                    computed_expiry = calculate_expiry_date(cached_mfg, period)
+                except Exception as exc:
+                    print(f"[WS][MC] calculate_expiry_date failed: {exc}")
+
+            if computed_expiry:
+                session_meta["expiry_date"] = computed_expiry
+                orchestrator.session_cache.set(env_id, session_meta)
+                print(f"[WS][MC] mfg='{cached_mfg}' + period='{period}' → expiry='{computed_expiry}'")
+            else:
+                print(
+                    f"[WS][MC] period='{period}' but no usable mfg_date in Redis "
+                    f"session (env_id={env_id}) — returning period without expiry"
+                )
+
+            mc_parts = image_name.split("_")
+            mc_metadata = dict(session_meta)
+            mc_metadata["expiry_period"] = period
+            mc_metadata["qty"]           = 1
+            mc_metadata["metadata_id"]   = metadata_id or (
+                f"{env_id}{mc_parts[3].split('.jpg')[0]}" if len(mc_parts) >= 4 else None
+            )
+
+            try:
+                await websocket.send_json({
+                    "type":       "process_result",
+                    "status":     200,
+                    "result":     {"metadata": mc_metadata, "request_id": request_id},
+                    "request_id": request_id,
+                    "timings":    {"date_found_s": round(time.monotonic() - session_start, 2)},
+                })
+                mc_result_sent = True
+                print(f"[WS][MC] Result sent to SDK: {mc_metadata}")
+            except Exception as send_exc:
+                print(f"[WS][MC] Could not send result: {send_exc}")
+
+            final_image, used_full = winner_result["original_img"], True
+        else:
+            final_image, used_full = await _apply_decision_tree(winner_result, orchestrator)
         _dt_ms = (time.perf_counter() - _dt_t0) * 1000
         print(
             f"[WS] Decision tree done in {_dt_ms:.1f}ms  "
@@ -912,6 +1067,9 @@ async def stream_endpoint(
             "is_streaming":       (None, "true"),
             "image":              (image_name, final_jpeg_bytes, "image/jpeg"),
         }
+        # Multicapture: pass the period already found so /process skips OCR.
+        if is_multicapture:
+            multipart_data["expiry_period"] = (None, winner_result["expiry_period"])
 
         print(
             f"[WS] POSTing to {endpoint_label} — "
@@ -929,35 +1087,47 @@ async def stream_endpoint(
         ws_outcome = "success" if resp.status_code == 200 else "error"
 
         # ── Step 6: Forward result over WebSocket ─────────────────────────
-        try:
-            await websocket.send_json({
-                "type":       "process_result",
-                "status":     resp.status_code,
-                "result":     process_result,
-                "request_id": request_id,
-                "timings": {
-                    "decision_tree_ms": round(_dt_ms,   1),
-                    "process_ms":       round(_proc_ms, 1),
-                },
-            })
-            print("[WS] Process result sent to SDK")
-        except Exception as send_exc:
-            print(f"[WS] Could not send process result: {send_exc}")
+        # Multicapture already sent its result above; /process was DB-save only.
+        if is_multicapture:
+            print(f"[WS][MC] DB save via {endpoint_label} done: {process_result}")
+            ws_outcome = "success"
+        else:
+            try:
+                await websocket.send_json({
+                    "type":       "process_result",
+                    "status":     resp.status_code,
+                    "result":     process_result,
+                    "request_id": request_id,
+                    "timings": {
+                        "decision_tree_ms": round(_dt_ms,   1),
+                        "process_ms":       round(_proc_ms, 1),
+                    },
+                })
+                print("[WS] Process result sent to SDK")
+            except Exception as send_exc:
+                print(f"[WS] Could not send process result: {send_exc}")
 
     except httpx.TimeoutException:
         print("[WS] /process call timed out")
-        try:
-            await websocket.send_json({"error": "Processing timed out — please retry"})
-        except Exception:
-            pass
+        if mc_result_sent:
+            # SDK already has the multicapture result — only the DB save failed.
+            ws_outcome = "success"
+        else:
+            try:
+                await websocket.send_json({"error": "Processing timed out — please retry"})
+            except Exception:
+                pass
 
     except Exception as exc:
         print(f"[WS] Pipeline error: {exc}")
         traceback.print_exc()
-        try:
-            await websocket.send_json({"error": f"Processing failed: {str(exc)}"})
-        except Exception:
-            pass
+        if mc_result_sent:
+            ws_outcome = "success"
+        else:
+            try:
+                await websocket.send_json({"error": f"Processing failed: {str(exc)}"})
+            except Exception:
+                pass
 
     finally:
         _end_session_metrics(ws_outcome)

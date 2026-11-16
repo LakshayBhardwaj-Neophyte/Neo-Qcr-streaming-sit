@@ -23,6 +23,164 @@ from src.utils.monitoring import time_calculate
 from src.utils.session_cache import SessionCache
 from src.utils.prom_metrics import VLM_LATENCY
 
+# ---------------------------------------------------------------------------
+# Multicapture — Period OCR helper
+# ---------------------------------------------------------------------------
+# Endpoint for the external paddle-OCR-style API that accepts an image and
+# returns raw text. Set PERIOD_OCR_API_URL in .env when the endpoint is ready.
+# Leave blank to skip the period-OCR path gracefully.
+#
+# TODO: replace placeholder URL with real endpoint once available
+# Expected request : POST <PERIOD_OCR_API_URL>  multipart/form-data  field: "image"
+# Expected response: { "raw_text": "Best before 18 months from manufacturing date" }
+#                 OR: plain text body
+# ---------------------------------------------------------------------------
+
+import re as _re_period
+import io as _io_period
+import os as _os_period
+
+_PERIOD_OCR_API_URL: str = _os_period.getenv("PERIOD_OCR_API_URL", "")  # set in .env
+
+# Regex patterns for expiry period text commonly found on FMCG labels.
+# Keyword-prefixed:
+#   "Best before 18 months"   "Best Before: 36 Months"   "Best By 18 Months"
+#   "BB: 18 months"           "BBE: 24 months"            "B.B.: 24 months"
+#   "Use before 24 months"    "Use within 30 days"
+#   "Shelf life: 12 months"   "Expires in 6 months"
+#   "Expiry period: 24 months" "Valid for 12 months"      "Consume within 6 months"
+# Standalone (no keyword needed):
+#   "18 months from manufacturing date"   "24 months from date of manufacture"
+#   "24 Months from Manufacture"          "18 months from packing"
+# Regex patterns for expiry period text commonly found on FMCG labels.
+# Keyword-prefixed (clean text):
+#   "Best before 18 months"   "Best Before: 36 Months"   "Best By 18 Months"
+#   "BB: 18 months"           "BBE: 24 months"            "B.B.: 24 months"
+#   "Use before 24 months"    "Use within 30 days"
+#   "Date of Expiry: 24 months"  "Valid for 12 months"
+# OCR-garbled keyword:
+#   "Best be ore 18 months"   "se before 36 months"
+# Standalone (number near manufactur/mfd/mfg):
+#   "3 years from MFD"   "24 Months from date of manufacture"
+#   "3 years from the date of BIS Lic.No.: manufacturing."
+_PERIOD_PATTERN = _re_period.compile(
+    r"""
+    (?:
+        # Keyword-prefixed patterns (clean text)
+        best\s*(?:before|use(?:\s*by)?|by)\s*[:\-]?\s*|  # best before / best use by / best by
+        best\s+be\w*\s*(?:\w+\s+)?|                      # OCR-garbled: "best be ore"
+        b\.?b\.?[ed]?\s*[:\-]\s*|                        # BB: / BBE: / BBD: / B.B.:
+        use\s*(?:before|within|by)\s*[:\-]?\s*|          # use before / within / by
+        shelf\s*life\s*[:\-]?\s*|                        # shelf life:
+        expires?\s*in\s+|                                # expires in
+        expiry\s*period\s*[:\-]?\s*|                     # expiry period:
+        date\s*of\s*expiry\s*[:\-]?\s*|                  # date of expiry:
+        consume\s*within\s*|                             # consume within
+        valid\s*for\s*|                                  # valid for
+        (?:[\w]+\s+)?before\s+                           # garbled: "se before" / "ore before"
+    )
+    (\d{1,4})\s*(months?|years?|days?|weeks?)            # number + unit  (groups 1 & 2)
+    |
+    # Standalone: number+unit near manufactur/mfd/mfg
+    (\d{1,4})\s*(months?|years?|days?|weeks?)            # number + unit  (groups 3 & 4)
+    (?=.{0,120}(?:manufactur|mfd\b|mfg\b))               # keyword within 120 chars ahead
+    """,
+    _re_period.IGNORECASE | _re_period.VERBOSE,
+)
+
+
+def _preprocess_ocr_text(text: str) -> str:
+    """
+    Fix common OCR artefacts before period regex matching.
+    """
+    if not text:
+        return text
+    import re as _re2
+    # O/o confused with 0 in numeric context: "6O DAYS" -> "60 DAYS"
+    text = _re2.sub(
+        r'(\d)[Oo](?=\s*(?:days?|months?|years?|weeks?))',
+        r'\g<1>0', text, flags=_re2.IGNORECASE,
+    )
+    # Z confused with 2 in dotmatrix/inkjet: "BEFOREZ4" -> "BEFORE24", "Z4 MONTHS" -> "24 MONTHS"
+    text = _re2.sub(r'(?<=[A-Za-z])Z(\d)', r'2\1', text)   # fused: BEFOREZ4 -> BEFORE24
+    text = _re2.sub(r'\bZ(\d)',             r'2\1', text)   # standalone: Z4 -> 24
+    # MONTHSFRON -> MONTHS FROM  (N/M OCR confusion on inkjet labels)
+    text = _re2.sub(r'MONTHSFRON\b', 'MONTHS FROM', text, flags=_re2.IGNORECASE)
+    # Merge fix: "DAYSOF" -> "DAYS OF", "MONTHSOF" -> "MONTHS OF"
+    text = _re2.sub(
+        r'(DAYS|MONTHS|YEARS|WEEKS)OF\b',
+        r'\1 OF', text, flags=_re2.IGNORECASE,
+    )
+    return text
+
+
+def _extract_period_from_text(raw_text: str) -> str | None:
+    """
+    Extract an expiry period string from OCR raw text.
+    Returns a string like '12 months', '2 years', '30 days' or None.
+    Groups 1&2 = keyword-prefixed match; Groups 3&4 = standalone match.
+    """
+    if not raw_text:
+        return None
+    print(f"[PeriodOCR] Full raw_text ({len(raw_text)} chars): {raw_text!r}")
+    text = _preprocess_ocr_text(raw_text)
+    m = _PERIOD_PATTERN.search(text)
+    if m:
+        quantity = m.group(1) or m.group(3)
+        unit     = (m.group(2) or m.group(4)).rstrip("s").lower()
+        result   = f"{quantity} {unit}s"
+        print(f"[PeriodOCR] Extracted period: {result!r}")
+        return result
+    print("[PeriodOCR] No period found in text")
+    return None
+
+
+async def _call_period_ocr_api(image_data) -> str | None:
+    """
+    POST the image to the external period-OCR API and return the extracted
+    expiry period string (e.g. '18 months'), or None if unavailable/failed.
+    """
+    if not _PERIOD_OCR_API_URL:
+        print("[PeriodOCR] PERIOD_OCR_API_URL not set — skipping period OCR")
+        return None
+
+    try:
+        import httpx
+        from PIL import Image as _PILImage
+
+        # Encode image to JPEG bytes
+        if isinstance(image_data, _PILImage.Image):
+            buf = _io_period.BytesIO()
+            image_data.save(buf, format="JPEG", quality=95)
+            img_bytes = buf.getvalue()
+        elif isinstance(image_data, (bytes, bytearray)):
+            img_bytes = bytes(image_data)
+        else:
+            print("[PeriodOCR] Unsupported image_data type — skipping")
+            return None
+
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            resp = await client.post(
+                _PERIOD_OCR_API_URL,
+                files={"image": ("frame.jpg", img_bytes, "image/jpeg")},
+            )
+
+        if resp.status_code != 200:
+            print(f"[PeriodOCR] API returned HTTP {resp.status_code} — skipping")
+            return None
+
+        # Try JSON response first, fall back to plain text
+        try:
+            raw_text = resp.json().get("raw_text") or resp.text
+        except Exception:
+            raw_text = resp.text
+
+        return _extract_period_from_text(raw_text)
+
+    except Exception as exc:
+        print(f"[PeriodOCR] API call failed: {exc} — skipping period OCR")
+        return None
+
 from dotenv import load_dotenv
 load_dotenv('src/configs/.env')
 
@@ -171,6 +329,7 @@ class Orchestrator:
         client_name: Optional[str] = None,
         recapture_flag: bool = False,
         user_id: Optional[str] = None,
+        ocr_period: Optional[str] = None,
     ) -> Dict[str, Any]:
         """
         Runs inference and returns a bundle containing:
@@ -223,24 +382,43 @@ class Orchestrator:
             url_holder["complete"] = True   # Reliance: no parallel upload needed
 
         # ---- 3. Run inference (while upload continues) -----------------
-        ocr_query = (
-            "what is the maximum retail price, manufacturing date, "
-            "expiry date, batch number in the retail image?"
+        #
+        # MULTICAPTURE OPTIMISATION:
+        # If this is a multicapture second-scan (capture_type=True AND a session
+        # already exists in cache), skip the VLM entirely.  We will call the
+        # lightweight paddle-OCR API instead to extract an expiry period.
+        # For the first scan of a multicapture sequence (session not yet cached)
+        # we still run the VLM so we can store mfg_date in the session.
+        _is_multicapture_second_scan = (
+            capture_type
+            and not recapture_flag
+            and self.session_cache.get(env_id) is not None
         )
 
-        t0 = time.perf_counter()
-        ocr_result = await self.qwen_model.process_batch(image, ocr_query)
-        model_time_ms = (time.perf_counter() - t0) * 1000
-        VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
-        print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
-        print(f"Inference result: {ocr_result}")
+        if _is_multicapture_second_scan:
+            print("[MULTICAPTURE] Second scan detected — skipping VLM, using PeriodOCR API only")
+            ocr_result     = []
+            model_time_ms  = 0.0
+            mrp, dates, batch_no = None, [None, None, None], None
+            data           = MetadataProcessor.create_metadata(mrp, dates, batch_no)
+        else:
+            ocr_query = (
+                "what is the maximum retail price, manufacturing date, "
+                "expiry date, batch number in the retail image?"
+            )
+            t0 = time.perf_counter()
+            ocr_result = await self.qwen_model.process_batch(image, ocr_query)
+            model_time_ms = (time.perf_counter() - t0) * 1000
+            VLM_LATENCY.labels("process_image_get_metadata", client_name or "unknown").observe(model_time_ms / 1000)
+            print(f"[TIMER] Inference: {model_time_ms:.2f} ms")
+            print(f"Inference result: {ocr_result}")
 
-        # ---- 4. Extract metadata (all local) ---------------------------
-        t0 = time.perf_counter()
-        mrp, dates, batch_no = self._extract_metadata(ocr_result)
-        print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")
+            # ---- 4. Extract metadata (all local) -----------------------
+            t0 = time.perf_counter()
+            mrp, dates, batch_no = self._extract_metadata(ocr_result)
+            print(f"[TIMER] Regex extraction: {(time.perf_counter() - t0) * 1000:.2f} ms")
 
-        data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
+            data = MetadataProcessor.create_metadata(mrp, dates, batch_no)
 
         # ---- 5. Session cache (keyed by env_id — already isolated) -----
         if recapture_flag:
@@ -250,103 +428,149 @@ class Orchestrator:
             if not session_meta:
                 self.session_cache.set(env_id, copy.deepcopy(data))
             else:
-                for key, value in session_meta.items():
-                    if value is None or (isinstance(value, str) and value.lower() == "nan"):
-                        if key in data and data[key] is not None:
-                            session_meta[key] = data[key]
-
-                # ── Multicapture expiry resolution ──────────────────────────────────
-                import re as _re
-                session_expiry = session_meta.get("expiry_date")
-                session_mfg    = session_meta.get("mfg_date")
-                new_expiry     = data.get("expiry_date")
-
-                _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'
-                _PERIOD_RE = r'\b(months?|years?|days?|weeks?)\b'
-
-                # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
-                # NeoVLM puts a single date in expiry, so that date is the MFG date.
-                if (
-                    session_expiry
-                    and isinstance(session_expiry, str)
-                    and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
-                    and new_expiry
-                    and isinstance(new_expiry, str)
-                    and _re.match(_DATE_RE, new_expiry)
-                ):
-                    resolved = calculate_expiry_date(new_expiry, session_expiry)
-                    if resolved:
-                        print(
-                            f"[MULTICAPTURE] Case A1 — period '{session_expiry}' + "
-                            f"new date (as mfg) '{new_expiry}' → expiry='{resolved}'"
-                        )
-                        session_meta["mfg_date"]    = new_expiry
-                        session_meta["expiry_date"] = resolved
-
-                # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
-                elif (
-                    session_expiry
-                    and isinstance(session_expiry, str)
-                    and _re.match(_DATE_RE, session_expiry)
-                    and new_expiry
-                    and isinstance(new_expiry, str)
-                    and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
-                ):
-                    resolved = calculate_expiry_date(session_expiry, new_expiry)
-                    if resolved:
-                        print(
-                            f"[MULTICAPTURE] Case A2 — date (as mfg) '{session_expiry}' + "
-                            f"new period '{new_expiry}' → expiry='{resolved}'"
-                        )
-                        session_meta["mfg_date"]    = session_expiry
-                        session_meta["expiry_date"] = resolved
-
-                # Case A (legacy): period string + mfg was null-merged into session
-                elif (
-                    session_expiry
-                    and isinstance(session_expiry, str)
-                    and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
-                    and session_meta.get("mfg_date")
-                ):
-                    resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
-                    if resolved:
-                        print(
-                            f"[MULTICAPTURE] Case A (legacy) — period '{session_expiry}' + "
-                            f"mfg='{session_meta['mfg_date']}' → expiry='{resolved}'"
-                        )
-                        session_meta["expiry_date"] = resolved
-
-                # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
-                # Apply MFG < EXP rule to assign roles.
-                elif (
-                    session_expiry
-                    and isinstance(session_expiry, str)
-                    and _re.match(_DATE_RE, session_expiry)
-                    and new_expiry
-                    and isinstance(new_expiry, str)
-                    and _re.match(_DATE_RE, new_expiry)
-                    and not session_mfg
-                ):
-                    try:
-                        from datetime import datetime as _dt
-                        d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
-                        d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
-                        if d1 != d2:
-                            mfg_date = session_expiry if d1 < d2 else new_expiry
-                            exp_date = new_expiry     if d1 < d2 else session_expiry
+                # ── NEW: Expiry-period OCR via external API (multicapture second scan) ──
+                # This scan is specifically for "best before / use before / best use by"
+                # period text. We POST the image to a paddle-OCR-style API, extract the
+                # period with regex, then compute expiry_date from the already-stored mfg_date.
+                # Multicapture stream already ran paddle-OCR → reuse its period.
+                _period_from_ocr = ocr_period or await _call_period_ocr_api(image_data)
+                if _period_from_ocr:
+                    _cached_mfg = session_meta.get("mfg_date")
+                    if _cached_mfg:
+                        _computed_expiry = calculate_expiry_date(_cached_mfg, _period_from_ocr)
+                        if _computed_expiry:
                             print(
-                                f"[MULTICAPTURE] Case B — two dates '{session_expiry}' & '{new_expiry}' "
-                                f"→ mfg='{mfg_date}'  expiry='{exp_date}'"
+                                f"[MULTICAPTURE][PeriodOCR] period='{_period_from_ocr}' + "
+                                f"mfg='{_cached_mfg}' → expiry='{_computed_expiry}'"
                             )
-                            session_meta["mfg_date"]    = mfg_date
-                            session_meta["expiry_date"] = exp_date
+                            session_meta["expiry_date"] = _computed_expiry
+                            self.session_cache.set(env_id, session_meta)
+                            # Skip further date resolution — we already have the answer
+                            metadata = copy.deepcopy(self.session_cache.get(env_id))
+                            print(f"[MULTICAPTURE] Final Metadata Returned: {metadata}")
+                            return {
+                                "metadata":   metadata,
+                                "snapshot": {
+                                    "image":           image_data,
+                                    "data":            session_meta,
+                                    "ocr_raw":         ocr_result[0] if ocr_result else "N/A",
+                                    "dates":           dates,
+                                    "url_holder":      url_holder,
+                                    "capture_type":    capture_type,
+                                    "model_time_ms":   model_time_ms,
+                                    "resolved_expiry": _computed_expiry,
+                                },
+                            }
                         else:
                             print(
-                                f"[MULTICAPTURE] Case B — identical date '{session_expiry}' captured again; keeping as expiry"
+                                f"[MULTICAPTURE][PeriodOCR] period='{_period_from_ocr}' found "
+                                f"but mfg_date missing in session — cannot calculate expiry"
                             )
-                    except (ValueError, AttributeError):
-                        pass
-                self.session_cache.set(env_id, session_meta)
+                    else:
+                        print(
+                            f"[MULTICAPTURE][PeriodOCR] period='{_period_from_ocr}' found "
+                            f"but no mfg_date in session cache — cannot calculate expiry"
+                        )
+                # ── END period OCR block ─────────────────────────────────────────────
+                # ── Fallback: existing date-merge / expiry-resolution (when period OCR skipped) ──
+                if not _period_from_ocr:
+                    for key, value in session_meta.items():
+                        if value is None or (isinstance(value, str) and value.lower() == "nan"):
+                            if key in data and data[key] is not None:
+                                session_meta[key] = data[key]
+
+                    # ── Multicapture expiry resolution ───────────────────────────────
+                    import re as _re
+                    session_expiry = session_meta.get("expiry_date")
+                    session_mfg    = session_meta.get("mfg_date")
+                    new_expiry     = data.get("expiry_date")
+
+                    _DATE_RE   = r'^\d{2}-\d{2}-\d{4}$'
+                    _PERIOD_RE = r'\b(months?|years?|days?|weeks?)\b'
+
+                    # Case A1: session has period string + new capture has DD-MM-YYYY in expiry.
+                    # NeoVLM puts a single date in expiry, so that date is the MFG date.
+                    if (
+                        session_expiry
+                        and isinstance(session_expiry, str)
+                        and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
+                        and new_expiry
+                        and isinstance(new_expiry, str)
+                        and _re.match(_DATE_RE, new_expiry)
+                    ):
+                        resolved = calculate_expiry_date(new_expiry, session_expiry)
+                        if resolved:
+                            print(
+                                f"[MULTICAPTURE] Case A1 — period '{session_expiry}' + "
+                                f"new date (as mfg) '{new_expiry}' → expiry='{resolved}'"
+                            )
+                            session_meta["mfg_date"]    = new_expiry
+                            session_meta["expiry_date"] = resolved
+
+                    # Case A2: session has DD-MM-YYYY in expiry + new capture has period string in expiry.
+                    elif (
+                        session_expiry
+                        and isinstance(session_expiry, str)
+                        and _re.match(_DATE_RE, session_expiry)
+                        and new_expiry
+                        and isinstance(new_expiry, str)
+                        and _re.search(_PERIOD_RE, new_expiry, _re.IGNORECASE)
+                    ):
+                        resolved = calculate_expiry_date(session_expiry, new_expiry)
+                        if resolved:
+                            print(
+                                f"[MULTICAPTURE] Case A2 — date (as mfg) '{session_expiry}' + "
+                                f"new period '{new_expiry}' → expiry='{resolved}'"
+                            )
+                            session_meta["mfg_date"]    = session_expiry
+                            session_meta["expiry_date"] = resolved
+
+                    # Case A (legacy): period string + mfg was null-merged into session
+                    elif (
+                        session_expiry
+                        and isinstance(session_expiry, str)
+                        and _re.search(_PERIOD_RE, session_expiry, _re.IGNORECASE)
+                        and session_meta.get("mfg_date")
+                    ):
+                        resolved = calculate_expiry_date(session_meta["mfg_date"], session_expiry)
+                        if resolved:
+                            print(
+                                f"[MULTICAPTURE] Case A (legacy) — period '{session_expiry}' + "
+                                f"mfg='{session_meta['mfg_date']}' → expiry='{resolved}'"
+                            )
+                            session_meta["expiry_date"] = resolved
+
+                    # Case B: both captures produced a DD-MM-YYYY in expiry, no MFG yet.
+                    # Apply MFG < EXP rule to assign roles.
+                    elif (
+                        session_expiry
+                        and isinstance(session_expiry, str)
+                        and _re.match(_DATE_RE, session_expiry)
+                        and new_expiry
+                        and isinstance(new_expiry, str)
+                        and _re.match(_DATE_RE, new_expiry)
+                        and not session_mfg
+                    ):
+                        try:
+                            from datetime import datetime as _dt
+                            d1 = _dt.strptime(session_expiry, '%d-%m-%Y')
+                            d2 = _dt.strptime(new_expiry, '%d-%m-%Y')
+                            if d1 != d2:
+                                mfg_date = session_expiry if d1 < d2 else new_expiry
+                                exp_date = new_expiry     if d1 < d2 else session_expiry
+                                print(
+                                    f"[MULTICAPTURE] Case B — two dates '{session_expiry}' & '{new_expiry}' "
+                                    f"→ mfg='{mfg_date}'  expiry='{exp_date}'"
+                                )
+                                session_meta["mfg_date"]    = mfg_date
+                                session_meta["expiry_date"] = exp_date
+                            else:
+                                print(
+                                    f"[MULTICAPTURE] Case B — identical date '{session_expiry}' captured again; keeping as expiry"
+                                )
+                        except (ValueError, AttributeError):
+                            pass
+                    self.session_cache.set(env_id, session_meta)
         else:
             self.session_cache.set(env_id, copy.deepcopy(data))
 
@@ -393,6 +617,8 @@ class Orchestrator:
         pid: Optional[str] = None,
         request_id: Optional[str] = None,   # optional request ID (shipsy & reliance)
         scan_duration: Optional[float] = None,
+        device_uid:   Optional[str] = None,
+        device_model: Optional[str] = None,
     ) -> None:
         """
         Saves metadata to the database.
@@ -496,6 +722,18 @@ class Orchestrator:
                     # env doc exists, stamp request_id if provided
                     if request_id:
                         self.database.save_session(request_id, env_id)
+                    # update device fields if provided
+                    device_updates = {}
+                    if device_uid:
+                        device_updates["device_uid"]   = device_uid
+                    if device_model:
+                        device_updates["device_model"] = device_model
+                    if device_updates:
+                        self.database.env.update_one(
+                            {"env_id": env_id},
+                            {"$set": device_updates}
+                        )
+                        print(f"[save_metadata] env doc updated with device fields: {list(device_updates.keys())}")
                 else:
                     # env doc does not exist, create it with request_id
                     env_data = MetadataProcessor.create_env_data(store_id, device_id, user_id, env_id)
@@ -503,6 +741,10 @@ class Orchestrator:
                         env_data["client_name"] = client_name
                         if request_id:
                             env_data["session_id"] = request_id
+                        if device_uid:
+                            env_data["device_uid"]   = device_uid
+                        if device_model:
+                            env_data["device_model"] = device_model
                         self.database.create_env_doc(env_data)
 
                 if recapture_flag and rec_metadata_id:
