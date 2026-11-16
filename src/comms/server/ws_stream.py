@@ -488,8 +488,11 @@ async def stream_endpoint(
     is_recapture_bool = str(is_recapture).strip().lower() in ("true", "1", "yes")
 
     # Multicapture: 1 fps sampling → paddle-OCR only (no quality gate, no VLM).
+    # RELIANCE ONLY — every other client keeps the old flow (gate → VLM →
+    # decision tree → /process) even when capture_type=true.
     is_multicapture = (
-        str(capture_type).strip().lower() in ("true", "1", "multicapture")
+        client_label == "reliance"
+        and str(capture_type).strip().lower() in ("true", "1", "multicapture")
         and not is_recapture_bool
     )
     mc_last_bucket: int = -1   # last 1-fps bucket already sent to paddle-OCR

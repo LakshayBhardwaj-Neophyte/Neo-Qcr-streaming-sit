@@ -389,8 +389,12 @@ class Orchestrator:
         # lightweight paddle-OCR API instead to extract an expiry period.
         # For the first scan of a multicapture sequence (session not yet cached)
         # we still run the VLM so we can store mfg_date in the session.
+        # RELIANCE ONLY: skip-VLM + paddle-OCR multicapture. Every other client
+        # keeps the old (commit 35f253a) flow: VLM always runs, then date-merge.
+        _is_reliance = (client_name or "").strip().lower() == "reliance"
         _is_multicapture_second_scan = (
-            capture_type
+            _is_reliance
+            and capture_type
             and not recapture_flag
             and self.session_cache.get(env_id) is not None
         )
@@ -433,7 +437,11 @@ class Orchestrator:
                 # period text. We POST the image to a paddle-OCR-style API, extract the
                 # period with regex, then compute expiry_date from the already-stored mfg_date.
                 # Multicapture stream already ran paddle-OCR → reuse its period.
-                _period_from_ocr = ocr_period or await _call_period_ocr_api(image_data)
+                # Non-reliance → None → falls through to the old date-merge below.
+                _period_from_ocr = (
+                    (ocr_period or await _call_period_ocr_api(image_data))
+                    if _is_reliance else None
+                )
                 if _period_from_ocr:
                     _cached_mfg = session_meta.get("mfg_date")
                     if _cached_mfg:

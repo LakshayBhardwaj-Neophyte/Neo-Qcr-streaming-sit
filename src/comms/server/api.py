@@ -719,9 +719,10 @@ class SdkAPI:
                     metadata_id  = metadata_id,
                     client_name  = client_name,
                     user_id      = user_id,
-                    # only passed for multicapture stream (needs rebuilt orchestrator .so)
+                    # reliance multicapture stream only (needs rebuilt orchestrator .so)
                     **({"ocr_period": req["expiry_period"]}
-                       if capture_type and req.get("expiry_period") else {}),
+                       if client_name == "reliance" and capture_type and req.get("expiry_period")
+                       else {}),
                 )
 
                 metadata = result["metadata"]
@@ -731,9 +732,13 @@ class SdkAPI:
                 # ── Single-date rule (reliance + shipsy) ─────────────────
                 if client_name in ("shipsy", "reliance"):
                     _apply_shipsy_single_date_rule(metadata, snapshot)
-                    # Keep the Redis session in sync with what the SDK sees, so a
-                    # later multicapture reads the promoted mfg_date from Redis.
-                    if not capture_type and snapshot.get("data", {}).get("edited_expiry"):
+                    # Reliance only: keep the Redis session in sync with what the SDK
+                    # sees, so a later multicapture reads the promoted mfg_date.
+                    if (
+                        client_name == "reliance"
+                        and not capture_type
+                        and snapshot.get("data", {}).get("edited_expiry")
+                    ):
                         _sess = self.orchestrator.session_cache.get(env_id)
                         if _sess:
                             _sess["mfg_date"]    = metadata.get("mfg_date")
